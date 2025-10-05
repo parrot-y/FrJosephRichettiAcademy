@@ -4,7 +4,7 @@
 
 // Basic authentication
 $admin_username = "admin";
-$admin_password = "richetti2024";
+$admin_password = "FrJoseph2024!";
 
 session_start();
 

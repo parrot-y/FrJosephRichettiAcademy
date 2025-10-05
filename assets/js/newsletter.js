@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
             removeExistingNewsletterMessages();
             
             // Send AJAX request
-            console.log("Sending request to:", "newsletter_handler_local.php");
-            fetch('newsletter_handler_local.php', {
+            console.log("Sending request to:", "newsletter_handler.php");
+            fetch('newsletter_handler.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
