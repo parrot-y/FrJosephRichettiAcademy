@@ -1,0 +1,507 @@
+/* Fr. Joseph Richetti Catholic School - Mobile Responsive Optimization */
+
+/* Base Mobile Styles */
+@media (max-width: 768px) {
+    
+    /* Header and Navigation */
+    .header-area .main-nav .logo {
+        padding: 15px 0;
+    }
+    
+    .header-area .main-nav .logo .logo-img {
+        height: 35px;
+        width: auto;
+    }
+    
+    .header-area .main-nav .logo .logo-text {
+        font-size: 14px;
+        line-height: 1.2;
+        margin-left: 8px;
+    }
+    
+    /* Main Banner */
+    .main-banner {
+        padding: 80px 0 60px 0;
+        min-height: auto;
+    }
+    
+    .main-banner .caption h2 {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .main-banner .caption p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .main-banner .caption .school-motto {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    /* Section Headings */
+    .section-heading h2 {
+        font-size: 24px !important;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .section-heading p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* About Section */
+    .about-us .count-area-content {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .about-us .count-digit {
+        font-size: 36px;
+    }
+    
+    .about-us .count-title {
+        font-size: 14px;
+    }
+    
+    /* Admissions Section */
+    .admissions-container {
+        margin: 20px 0;
+    }
+    
+    .admission-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .admission-card h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .admission-card p, .admission-card li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .admission-requirements ul {
+        padding-left: 20px;
+    }
+    
+    /* CBC Programs Section */
+    .cbc-programs-container {
+        margin: 20px 0;
+    }
+    
+    .cbc-tabs-nav {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+    
+    .cbc-tab-btn {
+        padding: 15px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .cbc-tab-btn:last-child {
+        border-bottom: none;
+    }
+    
+    .cbc-level-header h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .cbc-level-header p {
+        font-size: 14px;
+    }
+    
+    .cbc-subject-card {
+        margin-bottom: 15px;
+        padding: 20px 15px;
+    }
+    
+    .cbc-subject-card h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .cbc-subject-card p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .subject-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .subject-icon i {
+        font-size: 20px;
+    }
+    
+    /* Activities Section */
+    .activity-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .activity-card h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .activity-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .activity-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .activity-icon i {
+        font-size: 20px;
+    }
+    
+    /* Achievements Section */
+    .achievements-enhanced {
+        padding: 60px 0;
+    }
+    
+    .stat-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .stat-card .count-digit {
+        font-size: 28px;
+    }
+    
+    .stat-card .count-title {
+        font-size: 14px;
+    }
+    
+    .events-gallery h3 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .event-card {
+        margin-bottom: 20px;
+    }
+    
+    .event-card .event-image {
+        height: 180px;
+    }
+    
+    .event-card .event-content {
+        padding: 20px 15px;
+    }
+    
+    .event-card .event-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .event-card .event-description {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+        padding: 60px 0;
+    }
+    
+    .newsletter-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .newsletter-card .post-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-card .post-excerpt {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .newsletter-card .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .newsletter-subscribe {
+        padding: 30px 20px;
+    }
+    
+    .newsletter-subscribe h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+    
+    /* Downloads Section */
+    .download-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .download-card h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .download-card p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    /* Contact Section */
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .contact-info {
+        margin-bottom: 30px;
+    }
+    
+    .contact-info h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-info p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    
+    #contact input,
+    #contact textarea {
+        margin-bottom: 15px;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    #form-submit {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    /* General Mobile Improvements */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+    .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+    .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* Button Improvements */
+    .main-button-red a,
+    .main-button-yellow a,
+    .view-more-btn {
+        padding: 12px 25px;
+        font-size: 13px;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    /* Spacing Improvements */
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-heading {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    /* Image Responsiveness */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Table Responsiveness */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+    
+    /* Form Message Responsiveness */
+    .contact-message,
+    .newsletter-message {
+        margin: 15px 10px;
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+    
+    /* Video Responsiveness */
+    .video {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video iframe,
+    .video object,
+    .video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575px) {
+    
+    .main-banner .caption h2 {
+        font-size: 20px;
+    }
+    
+    .section-heading h2 {
+        font-size: 20px !important;
+    }
+    
+    .cbc-level-header h3 {
+        font-size: 18px;
+    }
+    
+    .events-gallery h3 {
+        font-size: 18px;
+    }
+    
+    .newsletter-subscribe h3 {
+        font-size: 18px;
+    }
+    
+    .stat-card .count-digit {
+        font-size: 24px;
+    }
+    
+    .admission-card,
+    .activity-card,
+    .event-card,
+    .newsletter-card,
+    .download-card {
+        padding: 15px 10px;
+    }
+    
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Landscape Phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .main-banner {
+        padding: 60px 0 40px 0;
+    }
+    
+    .main-banner .caption h2 {
+        font-size: 22px;
+    }
+    
+    section {
+        padding: 50px 0;
+    }
+}
+
+/* Tablet Improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .cbc-tab-btn {
+        padding: 18px 12px;
+        font-size: 13px;
+    }
+    
+    .event-card .event-image {
+        height: 200px;
+    }
+    
+    .stat-card {
+        padding: 25px 20px;
+    }
+    
+    .newsletter-card {
+        padding: 25px 20px;
+    }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+    
+    .cbc-subject-card:hover,
+    .event-card:hover,
+    .newsletter-card:hover,
+    .stat-card:hover {
+        transform: none;
+    }
+    
+    .cbc-tab-btn {
+        padding: 20px 15px;
+        min-height: 60px;
+    }
+    
+    .main-button-red a,
+    .main-button-yellow a,
+    .view-more-btn,
+    .newsletter-form button {
+        min-height: 48px;
+        padding: 15px 25px;
+    }
+}
