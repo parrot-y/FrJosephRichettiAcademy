@@ -83,3 +83,16 @@
         gap: 8px;
     }
 }
+/* Contact form submit button */
+#form-submit,
+.button {
+    background-color: #8b1538 !important;
+    border-color: #8b1538 !important;
+    color: #fff !important;
+}
+
+#form-submit:hover,
+.button:hover {
+    background-color: #6d1028 !important;
+    opacity: 0.9 !important;
+}

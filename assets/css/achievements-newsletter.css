@@ -51,7 +51,7 @@
 .stat-card .stat-icon {
     width: 60px;
     height: 60px;
-    background: #1f272b;
+    background: #8b1538;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
 
 .stat-card .stat-icon i {
     font-size: 24px;
-    color: #1f272b;
+    color: #fff;
 }
 
 .stat-card .count-digit {
@@ -80,7 +80,7 @@
 .stat-card .count-title {
     font-size: 16px;
     font-weight: 600;
-    color: #1f272b;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -136,7 +136,7 @@
     top: 15px;
     right: 15px;
     background: #8b1538;
-    color: #1f272b;
+    color: #fff;
     padding: 8px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -148,7 +148,7 @@
 }
 
 .event-card .event-title {
-    color: #1f272b;
+    color: #fff;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -164,7 +164,7 @@
 
 .event-card .event-category {
     display: inline-block;
-    background: #1f272b;
+    background: #8b1538;
     color: #fff;
     padding: 5px 12px;
     border-radius: 15px;
@@ -181,7 +181,7 @@
 .newsletter-section {
     background: #f8f8f8;
     padding: 100px 0;
-    color: #1f272b;
+    color: #fff;
 }
 
 .newsletter-section .section-heading {
@@ -190,7 +190,7 @@
 }
 
 .newsletter-section .section-heading h2 {
-    color: #1f272b;
+    color: #fff;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -247,7 +247,7 @@
 }
 
 .newsletter-card .post-title {
-    color: #1f272b;
+    color: #fff;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -272,7 +272,7 @@
 }
 
 .newsletter-card .read-more:hover {
-    color: #1f272b;
+    color: #fff;
 }
 
 /* Newsletter Subscription */
@@ -285,7 +285,7 @@
 }
 
 .newsletter-subscribe h3 {
-    color: #1f272b;
+    color: #fff;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -309,7 +309,7 @@
     border: none;
     border-radius: 25px;
     background: #fff;
-    color: #1f272b;
+    color: #fff;
     font-size: 14px;
     backdrop-filter: blur(10px);
 }
@@ -349,7 +349,7 @@
 
 .view-more-btn {
     display: inline-block;
-    background: #1f272b;
+    background: #8b1538;
     color: #fff;
     padding: 15px 30px;
     border-radius: 25px;
@@ -363,7 +363,7 @@
 
 .view-more-btn:hover {
     background: #8b1538;
-    color: #1f272b;
+    color: #fff;
     transform: translateY(-2px);
 }
 
