@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
             removeExistingNewsletterMessages();
             
             // Send AJAX request
-            fetch('newsletter_handler.php', {
+            console.log("Sending request to:", "newsletter_handler_local.php");
+            fetch('newsletter_handler_local.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error("Newsletter Error Details:", error); alert("Debug: " + error.message);
                 showNewsletterMessage('An error occurred. Please try again or contact us directly at frjosephrichetti@gmail.com', 'error');
             })
             .finally(() => {

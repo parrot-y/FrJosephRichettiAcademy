@@ -1,0 +1,14 @@
+[
+    {
+        "email": "test@example.com",
+        "subscribed_date": "2025-10-05 14:14:08",
+        "status": "active",
+        "ip_address": "::1"
+    },
+    {
+        "email": "vidonyihemstone99@gmail.com",
+        "subscribed_date": "2025-10-05 14:50:35",
+        "status": "active",
+        "ip_address": "::1"
+    }
+]
