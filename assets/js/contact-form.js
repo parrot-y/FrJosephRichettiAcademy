@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             removeExistingMessages();
             
             // Send AJAX request
-            fetch('contact_handler.php', {
+            fetch('contact_handler_local.php', {
                 method: 'POST',
                 body: formData
             })

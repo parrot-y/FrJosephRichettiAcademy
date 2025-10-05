@@ -1,0 +1,11 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "Admission Inquiry",
+        "message": "I would like to know about admission requirements",
+        "submitted_date": "2025-10-05 15:07:32",
+        "ip_address": "::1",
+        "status": "new"
+    }
+]
