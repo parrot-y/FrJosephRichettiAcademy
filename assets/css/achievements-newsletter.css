@@ -45,7 +45,7 @@
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border-color: #2563eb;
+    border-color: #8b1538;
 }
 
 .stat-card .stat-icon {
@@ -61,19 +61,19 @@
 }
 
 .stat-card:hover .stat-icon {
-    background: #2563eb;
+    background: #8b1538;
     transform: scale(1.1);
 }
 
 .stat-card .stat-icon i {
     font-size: 24px;
-    color: #fff;
+    color: #1f272b;
 }
 
 .stat-card .count-digit {
     font-size: 36px;
     font-weight: 700;
-    color: #2563eb;
+    color: #8b1538;
     margin-bottom: 10px;
 }
 
@@ -135,8 +135,8 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #2563eb;
-    color: #fff;
+    background: #8b1538;
+    color: #1f272b;
     padding: 8px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -174,14 +174,14 @@
 }
 
 .event-card:hover .event-category {
-    background: #2563eb;
+    background: #8b1538;
 }
 
 /* Newsletter Section */
 .newsletter-section {
-    background: linear-gradient(135deg, #1f272b 0%, #2d3748 100%);
+    background: #f8f8f8;
     padding: 100px 0;
-    color: #fff;
+    color: #1f272b;
 }
 
 .newsletter-section .section-heading {
@@ -190,7 +190,7 @@
 }
 
 .newsletter-section .section-heading h2 {
-    color: #fff;
+    color: #1f272b;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -198,7 +198,7 @@
 }
 
 .newsletter-section .section-heading p {
-    color: rgba(255,255,255,0.8);
+    color: #666;
     font-size: 16px;
     max-width: 600px;
     margin: 0 auto;
@@ -210,19 +210,19 @@
 }
 
 .newsletter-card {
-    background: rgba(255,255,255,0.1);
+    background: #fff;
     border-radius: 15px;
     padding: 30px;
     margin-bottom: 30px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #eee;
     backdrop-filter: blur(10px);
 }
 
 .newsletter-card:hover {
-    background: rgba(255,255,255,0.15);
+    background: #fff;
     transform: translateY(-5px);
-    border-color: #2563eb;
+    border-color: #8b1538;
 }
 
 .newsletter-card .post-meta {
@@ -233,8 +233,8 @@
 }
 
 .newsletter-card .post-date {
-    background: #2563eb;
-    color: #1f272b;
+    background: #8b1538;
+    color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 12px;
@@ -242,12 +242,12 @@
 }
 
 .newsletter-card .post-author {
-    color: rgba(255,255,255,0.8);
+    color: #666;
     font-size: 14px;
 }
 
 .newsletter-card .post-title {
-    color: #fff;
+    color: #1f272b;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -255,14 +255,14 @@
 }
 
 .newsletter-card .post-excerpt {
-    color: rgba(255,255,255,0.8);
+    color: #666;
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .newsletter-card .read-more {
-    color: #2563eb;
+    color: #8b1538;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -272,27 +272,27 @@
 }
 
 .newsletter-card .read-more:hover {
-    color: #fff;
+    color: #1f272b;
 }
 
 /* Newsletter Subscription */
 .newsletter-subscribe {
-    background: rgba(255,255,255,0.1);
+    background: #fff;
     border-radius: 15px;
     padding: 40px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #eee;
 }
 
 .newsletter-subscribe h3 {
-    color: #fff;
+    color: #1f272b;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
 .newsletter-subscribe p {
-    color: rgba(255,255,255,0.8);
+    color: #666;
     margin-bottom: 30px;
 }
 
@@ -308,14 +308,14 @@
     padding: 15px 20px;
     border: none;
     border-radius: 25px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
+    background: #fff;
+    color: #1f272b;
     font-size: 14px;
     backdrop-filter: blur(10px);
 }
 
 .newsletter-form input::placeholder {
-    color: rgba(255,255,255,0.6);
+    color: #999;
 }
 
 .newsletter-form input:focus {
@@ -325,8 +325,8 @@
 
 .newsletter-form button {
     padding: 15px 25px;
-    background: #2563eb;
-    color: #1f272b;
+    background: #8b1538;
+    color: #fff;
     border: none;
     border-radius: 25px;
     font-size: 14px;
@@ -362,7 +362,7 @@
 }
 
 .view-more-btn:hover {
-    background: #2563eb;
+    background: #8b1538;
     color: #1f272b;
     transform: translateY(-2px);
 }
