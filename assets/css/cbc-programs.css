@@ -1,0 +1,344 @@
+/* Fr. Joseph Richetti Catholic School - CBC Programs Styling */
+
+/* Override section heading for CBC programs to match site style */
+#programs .section-heading h2 {
+    color: #1f272b !important;
+    border-bottom: 1px solid #eee !important;
+    background: none !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+#programs .section-heading p {
+    color: #1f272b !important;
+    font-size: 18px !important;
+    margin-top: 0px !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    margin-bottom: 30px !important;
+}
+
+/* Ensure section has proper background */
+#programs {
+    background: #fff !important;
+    padding: 80px 0 !important;
+}
+
+/* CBC Programs Container */
+.cbc-programs-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+/* Tab Navigation */
+.cbc-tabs-nav {
+    display: flex;
+    background: #1f272b;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.cbc-tab-btn {
+    flex: 1;
+    padding: 20px 15px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cbc-tab-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.cbc-tab-btn.active {
+    background: rgba(255,255,255,0.2);
+    box-shadow: inset 0 -3px 0 #f5a425;
+}
+
+.cbc-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #f5a425;
+}
+
+/* Tab Content */
+.cbc-tabs-content {
+    padding: 40px 30px;
+    background: #fff;
+}
+
+.cbc-tab-content {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.cbc-tab-content.active {
+    display: block;
+}
+
+/* Level Header */
+.cbc-level-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.cbc-level-header h3 {
+    color: #1f272b;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cbc-level-header p {
+    color: #666;
+    font-size: 16px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Subject Cards */
+.cbc-subject-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cbc-subject-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #f5a425;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.cbc-subject-card:hover {
+    border-color: #f5a425;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.cbc-subject-card:hover::before {
+    transform: scaleX(1);
+}
+
+.subject-icon {
+    width: 60px;
+    height: 60px;
+    background: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+}
+
+.cbc-subject-card:hover .subject-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: #f5a425;
+}
+
+.subject-icon i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.cbc-subject-card h4 {
+    color: #1f272b;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.cbc-subject-card:hover h4 {
+    color: #f5a425;
+}
+
+.cbc-subject-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Download Section */
+.cbc-download-section {
+    background: #f8f8f8;
+    border-radius: 15px;
+    padding: 40px 30px;
+    margin-top: 50px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.cbc-download-section h4 {
+    color: #1f272b;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cbc-download-section p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .cbc-tabs-nav {
+        flex-wrap: wrap;
+    }
+    
+    .cbc-tab-btn {
+        flex: 1 1 50%;
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+    
+    .cbc-level-header h3 {
+        font-size: 24px;
+    }
+    
+    .cbc-tabs-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cbc-tab-btn {
+        flex: 1 1 100%;
+        font-size: 13px;
+        padding: 12px 8px;
+    }
+    
+    .cbc-level-header h3 {
+        font-size: 20px;
+    }
+    
+    .cbc-subject-card {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .subject-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .subject-icon i {
+        font-size: 20px;
+    }
+    
+    .cbc-subject-card h4 {
+        font-size: 16px;
+    }
+    
+    .cbc-download-section {
+        padding: 30px 20px;
+        margin-top: 30px;
+    }
+    
+    .cbc-download-section h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cbc-programs-container {
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    
+    .cbc-tabs-nav {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .cbc-tab-btn {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+    
+    .cbc-tabs-content {
+        padding: 20px 15px;
+    }
+    
+    .cbc-level-header {
+        margin-bottom: 25px;
+    }
+    
+    .cbc-level-header h3 {
+        font-size: 18px;
+    }
+    
+    .cbc-subject-card {
+        padding: 15px 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .cbc-tabs-nav {
+        display: none;
+    }
+    
+    .cbc-tab-content {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    .cbc-subject-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
