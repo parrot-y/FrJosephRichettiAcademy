@@ -45,7 +45,7 @@
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border-color: #f5a425;
+    border-color: #2563eb;
 }
 
 .stat-card .stat-icon {
@@ -61,7 +61,7 @@
 }
 
 .stat-card:hover .stat-icon {
-    background: #f5a425;
+    background: #2563eb;
     transform: scale(1.1);
 }
 
@@ -73,7 +73,7 @@
 .stat-card .count-digit {
     font-size: 36px;
     font-weight: 700;
-    color: #f5a425;
+    color: #2563eb;
     margin-bottom: 10px;
 }
 
@@ -135,7 +135,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #f5a425;
+    background: #2563eb;
     color: #fff;
     padding: 8px 12px;
     border-radius: 20px;
@@ -174,7 +174,7 @@
 }
 
 .event-card:hover .event-category {
-    background: #f5a425;
+    background: #2563eb;
 }
 
 /* Newsletter Section */
@@ -222,7 +222,7 @@
 .newsletter-card:hover {
     background: rgba(255,255,255,0.15);
     transform: translateY(-5px);
-    border-color: #f5a425;
+    border-color: #2563eb;
 }
 
 .newsletter-card .post-meta {
@@ -233,7 +233,7 @@
 }
 
 .newsletter-card .post-date {
-    background: #f5a425;
+    background: #2563eb;
     color: #1f272b;
     padding: 8px 15px;
     border-radius: 20px;
@@ -262,7 +262,7 @@
 }
 
 .newsletter-card .read-more {
-    color: #f5a425;
+    color: #2563eb;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -325,7 +325,7 @@
 
 .newsletter-form button {
     padding: 15px 25px;
-    background: #f5a425;
+    background: #2563eb;
     color: #1f272b;
     border: none;
     border-radius: 25px;
@@ -362,7 +362,7 @@
 }
 
 .view-more-btn:hover {
-    background: #f5a425;
+    background: #2563eb;
     color: #1f272b;
     transform: translateY(-2px);
 }
