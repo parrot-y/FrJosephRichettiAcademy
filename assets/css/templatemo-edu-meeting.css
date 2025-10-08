@@ -130,12 +130,12 @@ body {
 }
 
 ::selection {
-  background: #8b1538;
+  background: #00BCD4;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #8b1538;
+  background: #00BCD4;
   color: #fff;
 }
 
@@ -158,7 +158,7 @@ body {
 .main-button-red a {
   font-size: 13px;
   color: #fff;
-  background-color: #8b1538;
+  background-color: #00BCD4;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -174,7 +174,7 @@ body {
 .main-button-yellow a {
   font-size: 13px;
   color: #fff;
-  background-color: #8b1538;
+  background-color: #00BCD4;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -235,12 +235,12 @@ header
 }
 
 .sub-header .right-icons ul li a:hover {
-  color: #8b1538;
+  color: #00BCD4;
 }
 
 .sub-header .left-content p em {
    font-style: normal;
-   color: #8b1538;
+   color: #00BCD4;
 }
 
 .background-header {
@@ -350,12 +350,12 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #8b1538!important;
+  color: #00BCD4!important;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: #8b1538!important;
+  color: #00BCD4!important;
   opacity: 1;
 }
 
@@ -417,7 +417,7 @@ header
 
 .header-area .main-nav .nav li.has-sub ul li a:hover {
   background: #fff;
-  color: #8b1538!important;
+  color: #00BCD4!important;
   padding-left: 25px;
 }
 
@@ -557,7 +557,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #8b1538;
+  color: #00BCD4;
 }
 
 @media (max-width: 1200px) {
@@ -576,7 +576,7 @@ header
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #8b1538!important;
+    color: #00BCD4!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -634,7 +634,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #8b1538!important;
+    color: #00BCD4!important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -739,7 +739,7 @@ banner
 
 .main-banner .caption h2 em {
   font-style: normal;
-  color: #8b1538;
+  color: #00BCD4;
   font-weight: 900;
 }
 
@@ -1082,7 +1082,7 @@ section.apply-now .item p {
   transition: transform 200ms ease-in-out;
 }
 .accordion-head.is-open {
-  color: #8b1538;
+  color: #00BCD4;
   border-bottom: none;
 }
 .accordion-head.is-open .icon {
@@ -1138,7 +1138,7 @@ section.our-courses {
 }
 
 .our-courses .item .down-content .info ul li i {
-  color: #8b1538;
+  color: #00BCD4;
   font-size: 14px;
 }
 
@@ -1287,7 +1287,7 @@ section.our-facts h2 {
 
 .count-digit {
     margin: 5px 0px;
-    color: #8b1538;
+    color: #00BCD4;
     font-weight: 700;
     font-size: 36px;
 }
@@ -1383,7 +1383,7 @@ section.contact-us #contact textarea {
 section.contact-us #contact button {
   font-size: 13px;
   color: #fff;
-  background-color: #8b1538;
+  background-color: #00BCD4;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -1399,7 +1399,7 @@ section.contact-us #contact button:hover {
 }
 
 section.contact-us .right-info {
-  background-color: #8b1538;
+  background-color: #00BCD4;
   border-radius: 20px;
   padding: 40px;
 }
@@ -1444,7 +1444,7 @@ section.contact-us .right-info ul li span {
 }
 
 .footer p a {
-  color: #8b1538;
+  color: #00BCD4;
 }
 
 
@@ -1521,7 +1521,7 @@ section.meetings-page .filters li {
 
 section.meetings-page .filters ul li.active,
 section.meetings-page .filters ul li:hover {
-  background-color: #8b1538;
+  background-color: #00BCD4;
   color: #fff;
 }
 
@@ -1562,7 +1562,7 @@ section.meetings-page .main-button-red a {
 
 section.meetings-page .pagination ul li.active a,
 section.meetings-page .pagination ul li a:hover {
-  background-color: #8b1538;
+  background-color: #00BCD4;
   color: #fff;
 }
 
@@ -1676,7 +1676,7 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 .meeting-single-item .down-content .share ul li a:hover {
-  color: #8b1538;
+  color: #00BCD4;
 }
 
 /* Meeting item column */

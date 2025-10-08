@@ -45,13 +45,13 @@
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border-color: #8b1538;
+    border-color: #00BCD4;
 }
 
 .stat-card .stat-icon {
     width: 60px;
     height: 60px;
-    background: #8b1538;
+    background: #00BCD4;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@
 }
 
 .stat-card:hover .stat-icon {
-    background: #8b1538;
+    background: #00BCD4;
     transform: scale(1.1);
 }
 
@@ -73,7 +73,7 @@
 .stat-card .count-digit {
     font-size: 36px;
     font-weight: 700;
-    color: #8b1538;
+    color: #00BCD4;
     margin-bottom: 10px;
 }
 
@@ -135,7 +135,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     padding: 8px 12px;
     border-radius: 20px;
@@ -164,7 +164,7 @@
 
 .event-card .event-category {
     display: inline-block;
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     padding: 5px 12px;
     border-radius: 15px;
@@ -174,7 +174,7 @@
 }
 
 .event-card:hover .event-category {
-    background: #8b1538;
+    background: #00BCD4;
 }
 
 /* Newsletter Section */
@@ -222,7 +222,7 @@
 .newsletter-card:hover {
     background: #fff;
     transform: translateY(-5px);
-    border-color: #8b1538;
+    border-color: #00BCD4;
 }
 
 .newsletter-card .post-meta {
@@ -233,7 +233,7 @@
 }
 
 .newsletter-card .post-date {
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -262,7 +262,7 @@
 }
 
 .newsletter-card .read-more {
-    color: #8b1538;
+    color: #00BCD4;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -325,7 +325,7 @@
 
 .newsletter-form button {
     padding: 15px 25px;
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -349,7 +349,7 @@
 
 .view-more-btn {
     display: inline-block;
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     padding: 15px 30px;
     border-radius: 25px;
@@ -362,7 +362,7 @@
 }
 
 .view-more-btn:hover {
-    background: #8b1538;
+    background: #00BCD4;
     color: #fff;
     transform: translateY(-2px);
 }
