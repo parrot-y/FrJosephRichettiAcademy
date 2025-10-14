@@ -1,0 +1,110 @@
+/* ===== HEADER LOGO IMPROVEMENTS ===== */
+/* Remove duplicate school name text and enhance logo size */
+
+/* HIDE DUPLICATE SCHOOL NAME TEXT IN HEADER */
+.header-area .main-nav .logo .logo-text {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* ENHANCE LOGO SIZE AND POSITIONING */
+.header-area .main-nav .logo {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}
+
+.header-area .main-nav .logo .logo-img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+    transition: all 0.3s ease !important;
+}
+
+.header-area .main-nav .logo:hover .logo-img {
+    transform: scale(1.05) !important;
+}
+
+/* RESPONSIVE LOGO SIZING */
+@media (max-width: 768px) {
+    .header-area .main-nav .logo .logo-img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-area .main-nav .logo .logo-img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+/* ENSURE LOGO VISIBILITY */
+.header-area .main-nav .logo {
+    z-index: 1000 !important;
+    position: relative !important;
+}
+
+/* IMPROVE NAVIGATION SPACING */
+.header-area .main-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.header-area .main-nav .nav {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ENSURE NO LAYOUT CONFLICTS */
+.header-area {
+    position: absolute !important;
+    top: 40px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    background: rgba(35, 45, 57, 0.9) !important;
+    transition: all 0.5s ease !important;
+}
+
+/* MOBILE NAVIGATION IMPROVEMENTS */
+@media (max-width: 768px) {
+    .header-area .main-nav {
+        padding: 0 15px !important;
+    }
+    
+    .header-area .main-nav .nav {
+        display: none !important;
+    }
+    
+    .header-area .main-nav .menu-trigger {
+        display: block !important;
+    }
+}
+
+/* ENSURE CLEAN LOGO DISPLAY */
+.header-area .main-nav .logo img {
+    max-width: none !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+@media (max-width: 768px) {
+    .header-area .main-nav .logo img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-area .main-nav .logo img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
