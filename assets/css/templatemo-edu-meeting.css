@@ -779,7 +779,7 @@ services
 }
 
 .services .item {
-  background-image: url(../images/service-item-bg.jpg);
+  background-color: #00BCD4;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -787,11 +787,39 @@ services
   text-align: center;
   color: #fff;
   padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.services .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
 }
 
 .services .item .icon {
-  max-width: 60px;
+  max-width: 80px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.services .item .icon img {
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.services .item:hover .icon {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.services .item:hover .icon img {
+  transform: scale(1.1);
 }
 
 .services .item h4 {
@@ -830,11 +858,11 @@ services
 .services .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #00BCD4;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -869,11 +897,11 @@ services
 .services .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #00BCD4;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1170,16 +1198,19 @@ section.our-courses {
   transition: all .5s;
   width: 7px;
   height: 7px;
-  background-color: #fff;
+  background-color: #00BCD4;
   margin: 0px 5px;
   border-radius: 50%;
   outline: none;
+  opacity: 0.3;
 }
 
 .our-courses .owl-dots .active {
   width: 24px;
   height: 8px;
   border-radius: 4px;
+  background-color: #00BCD4;
+  opacity: 1;
 }
     
 .our-courses .owl-nav .owl-prev{
@@ -1197,11 +1228,11 @@ section.our-courses {
 .our-courses .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #00BCD4;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1236,11 +1267,11 @@ section.our-courses {
 .our-courses .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #00BCD4;
   width: 50px;
   height: 50px;
   border-radius: 50%;
