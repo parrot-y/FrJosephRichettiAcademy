@@ -1,0 +1,174 @@
+/* ===== HOMEPAGE SPECIFIC FIXES ===== */
+/* Fix homepage banner positioning and navigation */
+
+/* RESET HOMEPAGE MAIN BANNER */
+.main-banner {
+    position: relative !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.main-banner .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* HOMEPAGE CONTENT POSITIONING - HIDE TEXT, SHOW ONLY BUTTON */
+.main-banner .left-content {
+    position: relative !important;
+    z-index: 2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 200px !important;
+    text-align: center !important;
+}
+
+.main-banner .left-content h6 {
+    display: none !important;
+}
+
+.main-banner .left-content h2 {
+    display: none !important;
+}
+
+.main-banner .left-content p {
+    display: none !important;
+}
+
+/* HOMEPAGE CALL TO ACTION BUTTON - ORIGINAL COLOR */
+.main-banner .main-button-red {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-top: 30px !important;
+}
+
+.main-banner .main-button-red a {
+    background: #00BCD4 !important;
+    color: #fff !important;
+    padding: 15px 30px !important;
+    border-radius: 25px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3) !important;
+}
+
+.main-banner .main-button-red a:hover {
+    background: #0097A7 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4) !important;
+}
+
+/* HOMEPAGE OVERLAY */
+.main-banner::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: 1 !important;
+}
+
+/* HOMEPAGE RESPONSIVE */
+@media (max-width: 768px) {
+    .main-banner {
+        min-height: 80vh !important;
+        height: 80vh !important;
+        padding: 40px 0 !important;
+    }
+    
+    .main-banner .left-content {
+        margin-top: 150px !important;
+    }
+    
+    .main-banner .main-button-red a {
+        padding: 12px 25px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-banner {
+        min-height: 70vh !important;
+        height: 70vh !important;
+    }
+    
+    .main-banner .left-content {
+        margin-top: 120px !important;
+    }
+}
+
+/* FIX NAVIGATION LINKS */
+.header-area .main-nav .nav li a {
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 0 15px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border: transparent !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.header-area .main-nav .nav li a:hover {
+    color: #00BCD4 !important;
+}
+
+.header-area .main-nav .nav li a.active {
+    color: #00BCD4 !important;
+}
+
+/* ENSURE PROPER SECTION SPACING */
+.section {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+/* HOMEPAGE SPECIFIC OVERRIDES */
+body.homepage .main-banner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+body.homepage .section:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* ENSURE NO LAYOUT CONFLICTS */
+.homepage .header-area {
+    position: absolute !important;
+    top: 40px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    background: transparent !important;
+}
+
+.homepage .sub-header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 998 !important;
+    background: rgba(35, 45, 57, 0.9) !important;
+}

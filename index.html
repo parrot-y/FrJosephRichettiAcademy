@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241014">
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241014b">
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +44,23 @@
         .container { padding: 0 15px; }
         input, textarea, button { font-size: 16px; min-height: 44px; }
       }
+      
+      /* FORCE HIDE TEXT ON HOMEPAGE */
+      .homepage .main-banner .left-content h6,
+      .homepage .main-banner .left-content h2,
+      .homepage .main-banner .left-content p {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .homepage .main-banner .left-content {
+        text-align: center !important;
+        margin-top: 200px !important;
+      }
     </style>
 <!--
 
@@ -53,7 +71,7 @@ https://templatemo.com/tm-569-edu-meeting
 -->
   </head>
 
-<body>
+<body class="homepage">
 
   <!-- Sub Header -->
   <div class="sub-header">
@@ -91,14 +109,14 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          <li class="scroll-to-section"><a href="#about">About</a></li>
+                          <li><a href="index.html" class="active">Home</a></li>
+                          <li><a href="about-academy.html">About</a></li>
                           <li class="scroll-to-section"><a href="#admissions">Admissions</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Academics</a>
                               <ul class="sub-menu">
-                                  <li><a href="#programs">Programs</a></li>
-                                  <li><a href="#activities">Activities</a></li>
+                                  <li class="scroll-to-section"><a href="#programs">Programs</a></li>
+                                  <li><a href="activities-clubs.html">Activities</a></li>
                               </ul>
                           </li>
                           <li class="scroll-to-section"><a href="#achievements">Achievements</a></li> 
