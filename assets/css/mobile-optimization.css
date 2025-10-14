@@ -1,0 +1,535 @@
+/* ===== MOBILE OPTIMIZATION CSS ===== */
+/* Enhances existing design for better mobile experience without changing the original layout */
+
+/* ===== RESPONSIVE IMPROVEMENTS ===== */
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  
+  /* Improve button sizes for touch */
+  .main-button-red a,
+  .main-button-yellow a,
+  button,
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Better navigation for mobile */
+  .main-nav .nav li a {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  
+  /* Improve form inputs for mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    min-height: 44px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 15px;
+  }
+  
+  /* Better spacing for mobile */
+  .section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Improve card layouts */
+  .meeting-item,
+  .meeting-single-item {
+    margin-bottom: 30px;
+  }
+  
+  /* Better text sizing */
+  h1, h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+  }
+  
+  h3, h4 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Improve image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better video responsiveness */
+  video {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Improve carousel navigation */
+  .owl-nav button {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  
+  /* Better table responsiveness */
+  .enrollment-table {
+    font-size: 14px;
+  }
+  
+  .enrollment-table th,
+  .enrollment-table td {
+    padding: 8px 6px;
+  }
+  
+  /* Improve footer for mobile */
+  .contact-us .right-info ul li {
+    margin-bottom: 20px;
+  }
+  
+  /* Better sub-header for mobile */
+  .sub-header {
+    padding: 10px 0;
+  }
+  
+  .sub-header .left-content p {
+    font-size: 14px;
+  }
+  
+  .sub-header .right-icons ul li {
+    margin: 0 5px;
+  }
+}
+
+/* ===== TABLET OPTIMIZATIONS ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .container {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  
+  /* Better grid layouts for tablet */
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust font sizes for tablet */
+  h1, h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  
+  /* Better spacing for tablet */
+  .section {
+    padding: 80px 0;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  
+  /* Reduce animation complexity on mobile */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Disable parallax on mobile for better performance */
+  .parallax {
+    transform: none !important;
+  }
+  
+  /* Optimize carousel for mobile */
+  .owl-carousel .owl-item {
+    transform: translateZ(0); /* Enable hardware acceleration */
+  }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Better focus indicators */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #00BCD4;
+  outline-offset: 2px;
+}
+
+/* Improve contrast for better readability */
+@media (prefers-contrast: high) {
+  .section-heading h2,
+  .caption h2,
+  .down-content h4 {
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  }
+}
+
+/* ===== LOADING OPTIMIZATIONS ===== */
+
+/* Skeleton loading for images */
+img:not([src]),
+img[src=""] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+}
+
+@keyframes loading-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== TOUCH IMPROVEMENTS ===== */
+
+/* Better touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  
+  /* Remove hover effects on touch devices */
+  .meeting-item:hover,
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* Add touch feedback instead */
+  .meeting-item:active,
+  .card:active,
+  .btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Better link touch targets */
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ===== ORIENTATION HANDLING ===== */
+
+/* Landscape phone optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  
+  .main-banner {
+    min-height: 70vh;
+  }
+  
+  .caption {
+    padding: 20px 0;
+  }
+  
+  .caption h2 {
+    font-size: 2rem;
+  }
+  
+  .caption p {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+}
+
+/* ===== NETWORK OPTIMIZATIONS ===== */
+
+/* Optimize for slow connections */
+@media (prefers-reduced-data: reduce) {
+  
+  /* Disable autoplay videos on slow connections */
+  video[autoplay] {
+    autoplay: false;
+  }
+  
+  /* Reduce animation complexity */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Hide non-essential images */
+  .decorative-image {
+    display: none;
+  }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  
+  /* Adjust colors for dark mode while keeping brand colors */
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .card,
+  .meeting-item,
+  .meeting-single-item {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .section-heading h2,
+  .down-content h4 {
+    color: #ffffff;
+  }
+  
+  .down-content p {
+    color: #cccccc;
+  }
+  
+  /* Keep brand colors intact */
+  .main-button-red a,
+  .main-button-yellow a {
+    background-color: #00BCD4; /* Keep original brand color */
+  }
+}
+
+/* ===== PRINT OPTIMIZATIONS ===== */
+@media print {
+  
+  /* Hide non-essential elements when printing */
+  .sub-header,
+  .header-area,
+  video,
+  .owl-nav,
+  .owl-dots,
+  .main-button-red,
+  .main-button-yellow {
+    display: none !important;
+  }
+  
+  /* Optimize text for printing */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: white;
+  }
+  
+  /* Better page breaks */
+  .section {
+    page-break-inside: avoid;
+    margin: 20px 0;
+  }
+  
+  /* Optimize images for printing */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  
+  /* Disable animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep essential transitions but make them instant */
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ===== HIGH RESOLUTION DISPLAY SUPPORT ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  /* Optimize images for high-DPI displays */
+  .logo-img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Better icon rendering */
+  .fa {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ===== SAFE AREA SUPPORT (for devices with notches) ===== */
+@supports (padding: max(0px)) {
+  
+  .header-area,
+  .sub-header {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+  
+  .main-banner {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+  
+  .contact-us {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ===== ENHANCED MOBILE NAVIGATION ===== */
+@media (max-width: 768px) {
+  
+  /* Better mobile menu trigger */
+  .menu-trigger {
+    padding: 15px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Improve submenu for mobile */
+  .main-nav .nav .sub-menu {
+    position: static;
+    display: block;
+    background: rgba(0,0,0,0.1);
+    box-shadow: none;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .main-nav .nav .sub-menu li a {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Better logo sizing for mobile */
+  .logo {
+    max-width: 200px;
+  }
+  
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logo-text {
+    font-size: 14px;
+  }
+}
+
+/* ===== PERFORMANCE HINTS ===== */
+
+/* Enable hardware acceleration for smooth animations */
+.owl-carousel,
+.meeting-item,
+.card,
+.btn {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== FLEXIBLE GRID IMPROVEMENTS ===== */
+@media (max-width: 576px) {
+  
+  /* Single column layout for very small screens */
+  .row > [class*="col-"] {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Better spacing for small screens */
+  .meeting-single-item .thumb {
+    margin-bottom: 20px;
+  }
+  
+  .down-content {
+    padding: 20px 15px;
+  }
+}
+
+/* ===== ENHANCED TOUCH INTERACTIONS ===== */
+
+/* Better carousel touch support */
+.owl-carousel {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+
+/* Improve button touch feedback */
+.main-button-red a:active,
+.main-button-yellow a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Better form touch experience */
+input:focus,
+textarea:focus {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* ===== LOADING STATE IMPROVEMENTS ===== */
+
+/* Better loading states for mobile */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00BCD4;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

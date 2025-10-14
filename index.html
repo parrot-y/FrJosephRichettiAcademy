@@ -25,6 +25,24 @@
     <link rel="stylesheet" href="assets/css/cbc-programs.css?v=20241014">
     <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241014">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+    <link rel="stylesheet" href="assets/css/minimal-fix-only.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/disable-scroll-animations.css?v=20241014">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Minimal CSS for performance -->
+    <style>
+      img { max-width: 100%; height: auto; }
+      .loading { opacity: 0.7; pointer-events: none; }
+      @media (max-width: 768px) {
+        .container { padding: 0 15px; }
+        input, textarea, button { font-size: 16px; min-height: 44px; }
+      }
+    </style>
 <!--
 
 TemplateMo 569 Edu Meeting
@@ -832,7 +850,7 @@ https://templatemo.com/tm-569-edu-meeting
               <li><a href="#">Leadership Development</a></li>
             </ul>
             <div class="main-button-red">
-              <a href="#contact">Join a Club</a>
+              <a href="activities-clubs.html">Learn More</a>
             </div>
           </div>
         </div>
@@ -1216,9 +1234,9 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="row">
                     <div class="col-8">
                       <ul>
-                        <li><i class="fa fa-map-marker"></i> P.O Box 78-00219, Kiambu</li>
-                        <li><i class="fa fa-phone"></i> 0717142643</li>
-                        <li><i class="fa fa-envelope"></i> frjosephrichetti@gmail.com</li>
+                        <li><i class="fa fa-calculator"></i></li>
+                        <li><i class="fa fa-download"></i></li>
+                        <li><i class="fa fa-check"></i></li>
                       </ul>
                     </div>
                     <div class="col-4">
@@ -1318,6 +1336,8 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/contact-form.js"></script>
     <script src="assets/js/newsletter.js"></script>
     <script src="assets/js/mobile-navigation.js"></script>
+    
+    <!-- Keep original functionality only -->
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');

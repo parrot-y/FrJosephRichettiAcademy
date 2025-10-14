@@ -1,0 +1,386 @@
+/* Activities & Clubs Page Styling */
+
+/* Activities Overview Section */
+.activities-overview {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.activity-category-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activity-category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.activity-category-card h4 {
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.activity-category-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Featured Activity Section */
+.featured-activity {
+    padding: 80px 0;
+    background: white;
+}
+
+.activity-carousel {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.activity-carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.activity-details {
+    padding-left: 40px;
+}
+
+.activity-details h3 {
+    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.activity-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.info-item strong {
+    color: #1e3a8a;
+    display: inline-block;
+    width: 120px;
+}
+
+.activity-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.activity-benefits li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.activity-achievements {
+    background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.activity-achievements h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* All Activities Grid */
+.all-activities {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.activity-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 188, 212, 0.9);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.activity-content {
+    padding: 25px;
+}
+
+.activity-content h4 {
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.activity-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.activity-highlights {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 3px;
+}
+
+.activity-stats {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00BCD4;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mini Carousel Styling */
+.activity-mini-carousel .owl-dots {
+    text-align: center;
+    margin-top: 15px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.activity-mini-carousel .owl-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 0 3px;
+    transition: all 0.3s ease;
+}
+
+.activity-mini-carousel .owl-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Join Activities CTA */
+.join-activities-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e3a8a 0%, #00BCD4 100%);
+    color: white;
+    text-align: center;
+}
+
+.join-activities-cta h2 {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.join-activities-cta p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .main-button-red,
+.cta-buttons .main-button-yellow {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .activity-details {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    
+    .activity-carousel img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-overview {
+        padding: 60px 0;
+    }
+    
+    .featured-activity {
+        padding: 60px 0;
+    }
+    
+    .all-activities {
+        padding: 60px 0;
+    }
+    
+    .join-activities-cta {
+        padding: 60px 0;
+    }
+    
+    .activity-category-card {
+        height: auto;
+        padding: 30px 20px;
+    }
+    
+    .activity-details h3 {
+        font-size: 24px;
+    }
+    
+    .join-activities-cta h2 {
+        font-size: 28px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .main-button-red,
+    .cta-buttons .main-button-yellow {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-content {
+        padding: 20px;
+    }
+    
+    .activity-image {
+        height: 200px;
+    }
+    
+    .activity-carousel img {
+        height: 250px;
+    }
+    
+    .activity-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stat {
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+}
+
+/* Owl Carousel Custom Styling for Activities */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    background: rgba(0, 188, 212, 0.8) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    transition: all 0.3s ease !important;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    left: 15px !important;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    right: 15px !important;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background: rgba(0, 188, 212, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}

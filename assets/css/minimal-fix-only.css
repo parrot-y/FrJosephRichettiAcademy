@@ -1,0 +1,283 @@
+/* ===== MINIMAL FIX ONLY ===== */
+/* ONLY fix logo positioning and navigation - DO NOT CHANGE ANYTHING ELSE */
+
+/* RESET BODY PADDING - Remove the padding that's causing white space */
+body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* RESET HEADER TO ORIGINAL BEHAVIOR */
+.header-area {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    z-index: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    display: block !important;
+    align-items: normal !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+/* RESET SUB-HEADER */
+.sub-header {
+    margin-top: 0 !important;
+    position: static !important;
+    z-index: auto !important;
+}
+
+/* RESET MAIN BANNER */
+.main-banner,
+.heading-page {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: static !important;
+    z-index: auto !important;
+}
+
+/* ONLY FIX LOGO SIZE - Keep everything else original */
+.header-area .main-nav .logo {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    line-height: normal !important;
+    max-width: 300px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    z-index: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    clear: none !important;
+}
+
+.header-area .main-nav .logo .logo-img {
+    height: 45px !important;
+    width: auto !important;
+    max-height: 45px !important;
+    position: static !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
+}
+
+.header-area .main-nav .logo .logo-text {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 200px !important;
+}
+
+/* Mobile logo adjustments */
+@media (max-width: 767px) {
+    .header-area .main-nav .logo .logo-img {
+        height: 35px !important;
+        max-height: 35px !important;
+    }
+    
+    .header-area .main-nav .logo .logo-text {
+        font-size: 14px !important;
+        max-width: 150px !important;
+        color: #1e1e1e !important;
+    }
+    
+    .header-area .main-nav .logo {
+        max-width: 200px !important;
+        gap: 6px !important;
+    }
+}
+
+/* Very small screens - hide text */
+@media (max-width: 480px) {
+    .header-area .main-nav .logo .logo-text {
+        display: none !important;
+    }
+    
+    .header-area .main-nav .logo {
+        justify-content: flex-start !important;
+        max-width: 60px !important;
+    }
+}
+
+/* REMOVE ALL SMOOTH SCROLLING EFFECTS */
+html {
+    scroll-behavior: auto !important;
+    scroll-padding-top: 0 !important;
+}
+
+body {
+    scroll-behavior: auto !important;
+    overflow-x: visible !important;
+}
+
+/* REMOVE ALL TRANSFORM EFFECTS THAT CAUSE SHUFFLING */
+* {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    -webkit-perspective: none !important;
+    perspective: none !important;
+    will-change: auto !important;
+    transition: none !important;
+}
+
+/* REMOVE ALL TRANSITIONS THAT CAUSE WEIRD EFFECTS */
+.header-area,
+.section,
+.meeting-item,
+.meeting-single-item,
+.owl-carousel,
+button,
+.btn,
+img,
+.container,
+.row {
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+/* RESET SECTIONS TO ORIGINAL */
+.section {
+    scroll-margin-top: 0 !important;
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+/* RESET CAROUSEL TO ORIGINAL */
+.owl-carousel {
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+.owl-carousel .owl-item {
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+/* RESET BUTTONS TO ORIGINAL */
+button,
+.btn,
+.main-button-red a,
+.main-button-yellow a {
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+/* RESET IMAGES TO ORIGINAL */
+img {
+    transition: none !important;
+    will-change: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+/* RESET NAVIGATION TO ORIGINAL BEHAVIOR */
+.header-area .main-nav {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.header-area .main-nav .nav {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    background: transparent !important;
+}
+
+/* Mobile menu - keep original functionality */
+@media (max-width: 767px) {
+    .header-area .main-nav .menu-trigger {
+        display: block !important;
+    }
+    
+    .header-area .main-nav .nav {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(35, 45, 57, 0.98) !important;
+        display: none !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+        z-index: 999 !important;
+    }
+    
+    .header-area .main-nav .nav.active {
+        display: flex !important;
+    }
+}
+
+/* REMOVE ALL GPU ACCELERATION */
+.header-area,
+.main-banner,
+.owl-carousel,
+.meeting-item,
+.btn {
+    -webkit-transform: none !important;
+    transform: none !important;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+}
+
+/* DISABLE ALL ANIMATIONS */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        animation-duration: 0s !important;
+        animation-timing-function: linear !important;
+        transition-duration: 0s !important;
+    }
+}
+
+/* FORCE DISABLE ALL MOTION */
+* {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+}

@@ -1,0 +1,274 @@
+/* ===== DISABLE SCROLL ANIMATIONS FIX ===== */
+/* Remove all shuffling/animation effects during scroll - SPECIFIC FIX ONLY */
+
+/* DISABLE ALL SCROLL-BASED ANIMATIONS */
+* {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+}
+
+/* DISABLE SMOOTH SCROLLING */
+html {
+    scroll-behavior: auto !important;
+}
+
+body {
+    scroll-behavior: auto !important;
+}
+
+/* DISABLE ALL TRANSITIONS ON SCROLL-AFFECTED ELEMENTS */
+.header-area,
+.main-banner,
+.section,
+.meeting-item,
+.meeting-single-item,
+.card,
+.container,
+.row,
+[class*="col-"],
+.owl-carousel,
+.owl-item,
+.fade-in,
+.parallax {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -ms-animation: none !important;
+    -o-animation: none !important;
+}
+
+/* DISABLE INTERSECTION OBSERVER ANIMATIONS */
+.fade-in,
+.fade-in.visible,
+.animate-on-scroll,
+.scroll-animation {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE PARALLAX EFFECTS */
+.parallax,
+[data-parallax],
+.bg-parallax {
+    transform: none !important;
+    -webkit-transform: none !important;
+    background-attachment: scroll !important;
+}
+
+/* DISABLE CAROUSEL ANIMATIONS DURING SCROLL */
+.owl-carousel .owl-stage {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+.owl-carousel .owl-item {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE HEADER SCROLL ANIMATIONS */
+.header-area.header-sticky {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+.background-header {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE SCROLL-TRIGGERED EFFECTS */
+.scroll-up,
+.scroll-down,
+.scrolled,
+.on-scroll {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    animation: none !important;
+}
+
+/* DISABLE ANY JAVASCRIPT-TRIGGERED SCROLL ANIMATIONS */
+.js-scroll,
+.aos-animate,
+.wow,
+.animated {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE WAYPOINT ANIMATIONS */
+.waypoint,
+.in-view,
+.visible {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* FORCE STATIC POSITIONING FOR PROBLEMATIC ELEMENTS */
+.fixed-on-scroll,
+.sticky-on-scroll {
+    position: static !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE TRANSFORM3D AND GPU ACCELERATION */
+* {
+    -webkit-transform: none !important;
+    -webkit-transform-style: flat !important;
+    -webkit-backface-visibility: visible !important;
+    transform-style: flat !important;
+    backface-visibility: visible !important;
+    will-change: auto !important;
+    contain: none !important;
+}
+
+/* DISABLE SCROLL SNAP */
+html,
+body,
+.scroll-container {
+    scroll-snap-type: none !important;
+    scroll-snap-align: none !important;
+}
+
+/* DISABLE MOMENTUM SCROLLING */
+body,
+.scroll-container {
+    -webkit-overflow-scrolling: auto !important;
+    overflow-scrolling: auto !important;
+}
+
+/* DISABLE ANY CUSTOM SCROLL BEHAVIORS */
+.smooth-scroll,
+.custom-scroll,
+.scroll-behavior {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE SCROLL-BASED TRANSFORMS */
+[data-scroll],
+[data-scroll-speed],
+[data-scroll-direction] {
+    transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+}
+
+/* DISABLE LOTTIE/BODYMOVIN ANIMATIONS */
+.lottie,
+.bodymovin {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* DISABLE GSAP/TWEENMAX ANIMATIONS */
+.gsap,
+.tween {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* OVERRIDE ANY INLINE STYLES */
+[style*="transform"],
+[style*="transition"],
+[style*="animation"] {
+    transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* DISABLE SCROLL EVENTS IN JAVASCRIPT */
+.no-scroll-events {
+    pointer-events: auto !important;
+}
+
+/* FORCE IMMEDIATE RENDERING */
+* {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+}
+
+/* DISABLE PREFERS-REDUCED-MOTION OVERRIDES */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* FORCE ALL MOTION TO BE DISABLED */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* KEEP ONLY ESSENTIAL HOVER EFFECTS (NO ANIMATIONS) */
+a:hover,
+button:hover,
+.btn:hover {
+    transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* DISABLE ANY REMAINING KEYFRAME ANIMATIONS */
+@keyframes fadeIn,
+@keyframes slideIn,
+@keyframes bounce,
+@keyframes pulse,
+@keyframes shake,
+@keyframes zoom,
+@keyframes rotate {
+    from, to {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* DISABLE WEBKIT ANIMATIONS */
+@-webkit-keyframes fadeIn,
+@-webkit-keyframes slideIn,
+@-webkit-keyframes bounce,
+@-webkit-keyframes pulse,
+@-webkit-keyframes shake,
+@-webkit-keyframes zoom,
+@-webkit-keyframes rotate {
+    from, to {
+        -webkit-transform: none !important;
+        opacity: 1 !important;
+    }
+}

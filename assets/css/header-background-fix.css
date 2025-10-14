@@ -1,0 +1,98 @@
+/* ===== HEADER BACKGROUND FIX ===== */
+/* Fix the header background to match Netlify version */
+
+/* FORCE PROPER HEADER BACKGROUND */
+.header-area {
+    background-color: rgba(35, 45, 57, 0.9) !important;
+    position: absolute !important;
+    top: 40px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    transition: all 0.5s ease 0s !important;
+}
+
+/* ENSURE LOGO TEXT IS VISIBLE */
+.header-area .main-nav .logo {
+    color: #fff !important;
+}
+
+.header-area .main-nav .logo .logo-text {
+    color: #fff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* ENSURE NAVIGATION LINKS ARE VISIBLE */
+.header-area .main-nav .nav li a {
+    color: #fff !important;
+}
+
+.header-area .main-nav .nav li a:hover {
+    color: #00BCD4 !important;
+}
+
+.header-area .main-nav .nav li a.active {
+    color: #00BCD4 !important;
+}
+
+/* BACKGROUND HEADER STATE */
+.background-header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15) !important;
+}
+
+.background-header .main-nav .logo,
+.background-header .main-nav .logo .logo-text {
+    color: #1e1e1e !important;
+    text-shadow: none !important;
+}
+
+.background-header .main-nav .nav li a {
+    color: #1e1e1e !important;
+}
+
+.background-header .main-nav .nav li a:hover,
+.background-header .main-nav .nav li a.active {
+    color: #00BCD4 !important;
+}
+
+/* MOBILE HEADER BACKGROUND */
+@media (max-width: 767px) {
+    .header-area {
+        background-color: rgba(35, 45, 57, 0.95) !important;
+    }
+    
+    .header-area .main-nav .logo .logo-text {
+        color: #1e1e1e !important;
+        text-shadow: none !important;
+    }
+    
+    .background-header .main-nav .logo .logo-text {
+        color: #1e1e1e !important;
+    }
+}
+
+/* MENU TRIGGER VISIBILITY */
+.header-area .main-nav .menu-trigger {
+    color: #fff !important;
+}
+
+.background-header .main-nav .menu-trigger {
+    color: #1e1e1e !important;
+}
+
+/* MOBILE NAVIGATION MENU */
+@media (max-width: 767px) {
+    .header-area .main-nav .nav {
+        background: rgba(35, 45, 57, 0.98) !important;
+    }
+    
+    .header-area .main-nav .nav li a {
+        color: #fff !important;
+    }
+    
+    .header-area .main-nav .nav li a:hover,
+    .header-area .main-nav .nav li a.active {
+        color: #00BCD4 !important;
+    }
+}
