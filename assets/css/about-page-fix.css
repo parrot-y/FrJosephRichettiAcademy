@@ -1,17 +1,19 @@
 /* ===== ABOUT PAGE UX IMPROVEMENTS ===== */
 /* Ensure smooth user experience without breaking existing functionality */
 
-/* ABOUT PAGE HEADER BANNER FIX */
+/* ABOUT PAGE HEADER BANNER FIX - LARGER SIZE */
 .heading-page {
     position: relative !important;
     background-attachment: scroll !important;
     background-size: cover !important;
     background-position: center center !important;
-    min-height: 300px !important;
+    min-height: 500px !important;
+    height: 60vh !important;
     display: flex !important;
     align-items: center !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .heading-page .container {
@@ -24,6 +26,36 @@
     color: #fff !important;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
     margin-bottom: 15px !important;
+}
+
+.heading-page h6 {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.heading-page h2 {
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+}
+
+/* ENSURE PROPER OVERLAY */
+.heading-page::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: 1 !important;
+}
+
+.heading-page .container {
+    z-index: 2 !important;
 }
 
 /* ABOUT CONTENT SECTIONS */
@@ -81,7 +113,8 @@
 /* ABOUT PAGE RESPONSIVE */
 @media (max-width: 768px) {
     .heading-page {
-        min-height: 250px !important;
+        min-height: 400px !important;
+        height: 50vh !important;
         padding: 40px 0 !important;
     }
     
@@ -92,6 +125,17 @@
     .heading-page h2 {
         font-size: 28px !important;
         line-height: 1.2 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading-page {
+        min-height: 350px !important;
+        height: 45vh !important;
+    }
+    
+    .heading-page h2 {
+        font-size: 24px !important;
     }
     
     .meetings-page {
