@@ -21,25 +21,38 @@
     z-index: 2 !important;
 }
 
-/* HOMEPAGE CONTENT POSITIONING - HIDE TEXT, SHOW ONLY BUTTON */
-.main-banner .left-content {
+/* HOMEPAGE CONTENT POSITIONING - SHOW SCHOOL NAME AND BUTTON */
+.main-banner .caption {
     position: relative !important;
     z-index: 2 !important;
     padding: 0 !important;
     margin: 0 !important;
-    margin-top: 200px !important;
+    margin-top: 150px !important;
     text-align: center !important;
 }
 
-.main-banner .left-content h6 {
+.main-banner .caption .school-motto {
     display: none !important;
 }
 
-.main-banner .left-content h2 {
+.main-banner .caption h6 {
     display: none !important;
 }
 
-.main-banner .left-content p {
+.main-banner .caption h2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #fff !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+}
+
+.main-banner .caption p {
     display: none !important;
 }
 
@@ -91,7 +104,7 @@
         padding: 40px 0 !important;
     }
     
-    .main-banner .left-content {
+    .main-banner .caption {
         margin-top: 150px !important;
     }
     
@@ -107,7 +120,7 @@
         height: 70vh !important;
     }
     
-    .main-banner .left-content {
+    .main-banner .caption {
         margin-top: 120px !important;
     }
 }

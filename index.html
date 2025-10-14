@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241014">
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241014b">
+    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241014c">
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,10 +45,10 @@
         input, textarea, button { font-size: 16px; min-height: 44px; }
       }
       
-      /* FORCE HIDE TEXT ON HOMEPAGE */
-      .homepage .main-banner .left-content h6,
-      .homepage .main-banner .left-content h2,
-      .homepage .main-banner .left-content p {
+      /* SHOW ONLY SCHOOL NAME AND BUTTON ON HOMEPAGE */
+      .homepage .main-banner .caption .school-motto,
+      .homepage .main-banner .caption h6,
+      .homepage .main-banner .caption p {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -57,9 +57,34 @@
         padding: 0 !important;
       }
       
-      .homepage .main-banner .left-content {
+      .homepage .main-banner .caption h2 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #fff !important;
+        font-size: 42px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        margin-bottom: 30px !important;
+        line-height: 1.2 !important;
+      }
+      
+      .homepage .main-banner .caption {
         text-align: center !important;
-        margin-top: 200px !important;
+        margin-top: 150px !important;
+      }
+      
+      @media (max-width: 768px) {
+        .homepage .main-banner .caption h2 {
+          font-size: 32px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .homepage .main-banner .caption h2 {
+          font-size: 28px !important;
+        }
       }
     </style>
 <!--
