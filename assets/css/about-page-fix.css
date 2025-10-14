@@ -1,0 +1,226 @@
+/* ===== ABOUT PAGE UX IMPROVEMENTS ===== */
+/* Ensure smooth user experience without breaking existing functionality */
+
+/* ABOUT PAGE HEADER BANNER FIX */
+.heading-page {
+    position: relative !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    min-height: 300px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.heading-page .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.heading-page h6,
+.heading-page h2 {
+    color: #fff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+    margin-bottom: 15px !important;
+}
+
+/* ABOUT CONTENT SECTIONS */
+.meetings-page {
+    padding: 60px 0 !important;
+    position: relative !important;
+}
+
+.meeting-single-item {
+    background: #fff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    margin-bottom: 30px !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.meeting-single-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* ABOUT PAGE IMAGES */
+.meeting-single-item .thumb img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px 10px 0 0 !important;
+    transition: transform 0.3s ease !important;
+}
+
+.meeting-single-item:hover .thumb img {
+    transform: scale(1.05) !important;
+}
+
+/* ABOUT TEXT CONTENT */
+.meeting-single-item .down-content {
+    padding: 30px !important;
+}
+
+.meeting-single-item .down-content h4 {
+    color: #1e1e1e !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    line-height: 1.3 !important;
+}
+
+.meeting-single-item .down-content p {
+    color: #666 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+}
+
+/* ABOUT PAGE RESPONSIVE */
+@media (max-width: 768px) {
+    .heading-page {
+        min-height: 250px !important;
+        padding: 40px 0 !important;
+    }
+    
+    .heading-page h6 {
+        font-size: 14px !important;
+    }
+    
+    .heading-page h2 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .meetings-page {
+        padding: 40px 0 !important;
+    }
+    
+    .meeting-single-item .down-content {
+        padding: 20px !important;
+    }
+    
+    .meeting-single-item .down-content h4 {
+        font-size: 20px !important;
+    }
+    
+    .meeting-single-item .down-content p {
+        font-size: 14px !important;
+    }
+}
+
+/* ENSURE NO INTERLOCKING PIECES */
+.about-section,
+.history-section,
+.mission-section {
+    position: relative !important;
+    z-index: 1 !important;
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* SMOOTH SCROLLING FOR ABOUT PAGE ONLY */
+.about-page-smooth {
+    scroll-behavior: smooth !important;
+}
+
+/* ABOUT PAGE NAVIGATION LINKS */
+.about-nav-link {
+    transition: color 0.3s ease !important;
+}
+
+.about-nav-link:hover {
+    color: #00BCD4 !important;
+}
+
+/* ABOUT PAGE BUTTONS */
+.about-page .main-button-red a,
+.about-page .main-button-yellow a {
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    padding: 12px 25px !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+
+.about-page .main-button-red a:hover,
+.about-page .main-button-yellow a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* ABOUT PAGE LOADING STATE */
+.about-content-loading {
+    opacity: 0.7 !important;
+    pointer-events: none !important;
+}
+
+.about-content-loaded {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: opacity 0.5s ease !important;
+}
+
+/* ABOUT PAGE ACCESSIBILITY */
+.about-page a:focus,
+.about-page button:focus {
+    outline: 2px solid #00BCD4 !important;
+    outline-offset: 2px !important;
+}
+
+/* ABOUT PAGE PRINT STYLES */
+@media print {
+    .heading-page {
+        background: none !important;
+        color: #000 !important;
+    }
+    
+    .heading-page h6,
+    .heading-page h2 {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+    
+    .meeting-single-item {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* ENSURE COMPATIBILITY WITH EXISTING STYLES */
+.about-page-wrapper {
+    position: relative !important;
+    overflow-x: hidden !important;
+}
+
+/* FIX ANY POTENTIAL OVERLAPPING ISSUES */
+.about-page .header-area {
+    z-index: 999 !important;
+}
+
+.about-page .heading-page {
+    z-index: 1 !important;
+}
+
+.about-page .meetings-page {
+    z-index: 1 !important;
+}
+
+/* ENSURE SMOOTH TRANSITIONS */
+.about-page * {
+    box-sizing: border-box !important;
+}
+
+/* ABOUT PAGE PERFORMANCE OPTIMIZATION */
+.about-page img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.about-page .meeting-single-item {
+    contain: layout style paint !important;
+}

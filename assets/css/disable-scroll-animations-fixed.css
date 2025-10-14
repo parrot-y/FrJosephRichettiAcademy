@@ -1,48 +1,42 @@
 /* ===== DISABLE SCROLL ANIMATIONS FIX ===== */
-/* Remove all shuffling/animation effects during scroll - SPECIFIC FIX ONLY */
+/* Remove all shuffling/animation effects during scroll - FIXED VERSION */
 
-/* DISABLE ALL SCROLL-BASED ANIMATIONS */
-* {
+/* DISABLE SCROLL-BASED ANIMATIONS - SPECIFIC ONLY */
+.scroll-animation,
+.fade-in,
+.animate-on-scroll,
+.parallax-element {
     animation: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
     transition: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
     transform: none !important;
     -webkit-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
-    -o-transform: none !important;
+    will-change: auto !important;
 }
 
 /* DISABLE SMOOTH SCROLLING */
 html {
     scroll-behavior: auto !important;
+    scroll-snap-type: none !important;
 }
 
 body {
     scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: auto !important;
 }
 
-/* DISABLE ALL TRANSITIONS ON SCROLL-AFFECTED ELEMENTS */
-.header-area,
-.main-banner,
-.section,
-.meeting-item,
-.meeting-single-item,
-.card,
-.container,
-.row,
-[class*="col-"],
-.owl-carousel,
-.owl-item,
-.fade-in,
-.parallax {
+/* DISABLE ONLY SCROLL-TRIGGERED ANIMATIONS */
+.scroll-triggered,
+.on-scroll-animate,
+.fade-in.animated,
+.parallax-scroll {
     animation: none !important;
     transition: none !important;
     transform: none !important;
     -webkit-transform: none !important;
-    -webkit-animation: none !important;
-    -moz-animation: none !important;
-    -ms-animation: none !important;
-    -o-animation: none !important;
 }
 
 /* DISABLE INTERSECTION OBSERVER ANIMATIONS */
@@ -132,30 +126,10 @@ body {
     -webkit-transform: none !important;
 }
 
-/* DISABLE TRANSFORM3D AND GPU ACCELERATION */
-* {
-    -webkit-transform: none !important;
-    -webkit-transform-style: flat !important;
-    -webkit-backface-visibility: visible !important;
-    transform-style: flat !important;
-    backface-visibility: visible !important;
-    will-change: auto !important;
-    contain: none !important;
-}
-
 /* DISABLE SCROLL SNAP */
-html,
-body,
 .scroll-container {
     scroll-snap-type: none !important;
     scroll-snap-align: none !important;
-}
-
-/* DISABLE MOMENTUM SCROLLING */
-body,
-.scroll-container {
-    -webkit-overflow-scrolling: auto !important;
-    overflow-scrolling: auto !important;
 }
 
 /* DISABLE ANY CUSTOM SCROLL BEHAVIORS */
@@ -208,31 +182,25 @@ body,
     pointer-events: auto !important;
 }
 
-/* FORCE IMMEDIATE RENDERING */
-* {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-}
-
 /* DISABLE PREFERS-REDUCED-MOTION OVERRIDES */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    .scroll-animation,
+    .fade-in,
+    .animate-on-scroll {
         animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
-        scroll-behavior: auto !important;
     }
 }
 
-/* FORCE ALL MOTION TO BE DISABLED */
+/* FORCE SCROLL ANIMATIONS TO BE DISABLED */
 @media (prefers-reduced-motion: no-preference) {
-    * {
+    .scroll-animation,
+    .fade-in,
+    .animate-on-scroll {
         animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
-        scroll-behavior: auto !important;
     }
 }
 
@@ -246,29 +214,47 @@ button:hover,
 }
 
 /* DISABLE ANY REMAINING KEYFRAME ANIMATIONS */
-@keyframes fadeIn,
-@keyframes slideIn,
-@keyframes bounce,
-@keyframes pulse,
-@keyframes shake,
-@keyframes zoom,
+@keyframes fadeIn {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
+@keyframes slideIn {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
+@keyframes bounce {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
+@keyframes pulse {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
+@keyframes shake {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
+@keyframes zoom {
+    from, to { transform: none !important; opacity: 1 !important; }
+}
 @keyframes rotate {
-    from, to {
-        transform: none !important;
-        opacity: 1 !important;
-    }
+    from, to { transform: none !important; opacity: 1 !important; }
 }
 
 /* DISABLE WEBKIT ANIMATIONS */
-@-webkit-keyframes fadeIn,
-@-webkit-keyframes slideIn,
-@-webkit-keyframes bounce,
-@-webkit-keyframes pulse,
-@-webkit-keyframes shake,
-@-webkit-keyframes zoom,
+@-webkit-keyframes fadeIn {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
+@-webkit-keyframes slideIn {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
+@-webkit-keyframes bounce {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
+@-webkit-keyframes pulse {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
+@-webkit-keyframes shake {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
+@-webkit-keyframes zoom {
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
+}
 @-webkit-keyframes rotate {
-    from, to {
-        -webkit-transform: none !important;
-        opacity: 1 !important;
-    }
+    from, to { -webkit-transform: none !important; opacity: 1 !important; }
 }

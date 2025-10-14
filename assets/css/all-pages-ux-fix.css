@@ -1,0 +1,245 @@
+/* ===== ALL PAGES UX IMPROVEMENTS ===== */
+/* Ensure smooth user experience across all pages without breaking functionality */
+
+/* PREVENT INTERLOCKING PIECES */
+.section {
+    position: relative !important;
+    z-index: 1 !important;
+    clear: both !important;
+}
+
+.container {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* ENSURE PROPER SPACING BETWEEN SECTIONS */
+.section + .section {
+    margin-top: 0 !important;
+}
+
+/* IMPROVE BUTTON INTERACTIONS */
+.main-button-red a,
+.main-button-yellow a,
+.btn {
+    cursor: pointer !important;
+    user-select: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.main-button-red a:hover,
+.main-button-yellow a:hover,
+.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* IMPROVE CARD INTERACTIONS */
+.meeting-item,
+.meeting-single-item {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.meeting-item:hover,
+.meeting-single-item:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* ENSURE IMAGES ARE RESPONSIVE */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* IMPROVE NAVIGATION UX */
+.main-nav .nav li a {
+    transition: all 0.3s ease !important;
+}
+
+.main-nav .nav li a:hover {
+    color: #00BCD4 !important;
+}
+
+/* IMPROVE FORM UX */
+input,
+textarea,
+select {
+    transition: all 0.3s ease !important;
+    border-radius: 5px !important;
+    padding: 12px 15px !important;
+    border: 1px solid #ddd !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00BCD4 !important;
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1) !important;
+    outline: none !important;
+}
+
+/* ACCESSIBILITY IMPROVEMENTS */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #00BCD4 !important;
+    outline-offset: 2px !important;
+}
+
+/* MOBILE UX IMPROVEMENTS */
+@media (max-width: 768px) {
+    /* Ensure touch targets are large enough */
+    a,
+    button,
+    .btn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Improve mobile navigation */
+    .main-nav .nav li a {
+        padding: 15px 20px !important;
+        font-size: 16px !important;
+    }
+    
+    /* Improve mobile forms */
+    input,
+    textarea {
+        font-size: 16px !important;
+        padding: 15px !important;
+    }
+}
+
+/* LOADING STATES */
+.loading {
+    opacity: 0.7 !important;
+    pointer-events: none !important;
+    position: relative !important;
+}
+
+.loading::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: -10px 0 0 -10px !important;
+    border: 2px solid #00BCD4 !important;
+    border-top: 2px solid transparent !important;
+    border-radius: 50% !important;
+    animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ENSURE NO LAYOUT SHIFTS */
+* {
+    box-sizing: border-box !important;
+}
+
+/* IMPROVE CAROUSEL UX */
+.owl-carousel {
+    position: relative !important;
+}
+
+.owl-carousel .owl-nav {
+    position: absolute !important;
+    top: 50% !important;
+    width: 100% !important;
+    transform: translateY(-50%) !important;
+    pointer-events: none !important;
+}
+
+.owl-carousel .owl-nav button {
+    pointer-events: auto !important;
+    background: rgba(0, 188, 212, 0.8) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background: rgba(0, 188, 212, 1) !important;
+    transform: scale(1.1) !important;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    float: left !important;
+    margin-left: 10px !important;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    float: right !important;
+    margin-right: 10px !important;
+}
+
+/* IMPROVE SCROLL BEHAVIOR */
+html {
+    scroll-behavior: auto !important;
+}
+
+/* ENSURE PROPER Z-INDEX STACKING */
+.header-area {
+    z-index: 999 !important;
+}
+
+.sub-header {
+    z-index: 998 !important;
+}
+
+.main-banner,
+.heading-page {
+    z-index: 1 !important;
+}
+
+.section {
+    z-index: 1 !important;
+}
+
+/* PERFORMANCE OPTIMIZATIONS */
+.section,
+.container,
+.meeting-item,
+.meeting-single-item {
+    contain: layout style !important;
+}
+
+/* PRINT STYLES */
+@media print {
+    .header-area,
+    .sub-header,
+    .menu-trigger {
+        display: none !important;
+    }
+    
+    .main-banner,
+    .heading-page,
+    .section {
+        page-break-inside: avoid !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid !important;
+    }
+}
