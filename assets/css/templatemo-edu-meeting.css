@@ -808,7 +808,7 @@ services
 }
 
 .services .item .icon img {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) saturate(100%) invert(85%) sepia(58%) saturate(2476%) hue-rotate(2deg) brightness(118%) contrast(119%);
   transition: all 0.3s ease;
 }
 
@@ -820,6 +820,7 @@ services
 
 .services .item:hover .icon img {
   transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(85%) sepia(58%) saturate(2476%) hue-rotate(2deg) brightness(130%) contrast(125%);
 }
 
 .services .item h4 {
