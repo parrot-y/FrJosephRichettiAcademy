@@ -3,6 +3,47 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Mobile Menu Toggle Functionality
+    const menuTrigger = document.querySelector('.menu-trigger');
+    const nav = document.querySelector('.main-nav .nav');
+    
+    if (menuTrigger && nav) {
+        menuTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle mobile menu
+            nav.classList.toggle('mobile-active');
+            menuTrigger.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (nav.classList.contains('mobile-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !menuTrigger.contains(e.target)) {
+                nav.classList.remove('mobile-active');
+                menuTrigger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('mobile-active');
+                menuTrigger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav a[href^="#"]');
     navLinks.forEach(link => {
@@ -12,13 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                // Close mobile menu if open
-                const navToggle = document.querySelector('.nav-toggle');
-                const nav = document.querySelector('.nav');
-                if (navToggle && nav.classList.contains('nav-open')) {
-                    nav.classList.remove('nav-open');
-                }
-                
                 // Smooth scroll to section
                 targetSection.scrollIntoView({
                     behavior: 'smooth',

@@ -1,0 +1,209 @@
+/* ===== MOBILE NAVIGATION FIX ===== */
+/* Make mobile menu icon clearly visible and functional */
+
+/* MOBILE MENU TRIGGER - ALWAYS VISIBLE ON MOBILE */
+.menu-trigger {
+    display: none !important;
+    background: rgba(0, 188, 212, 0.9) !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 1001 !important;
+}
+
+.menu-trigger span {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.menu-trigger:hover {
+    background: rgba(0, 188, 212, 1) !important;
+    transform: scale(1.05) !important;
+}
+
+/* SHOW MENU TRIGGER ON MOBILE DEVICES */
+@media (max-width: 991px) {
+    .menu-trigger {
+        display: block !important;
+    }
+    
+    .header-area .main-nav .nav {
+        display: none !important;
+    }
+}
+
+/* HAMBURGER ICON STYLE */
+.menu-trigger::before {
+    content: '☰' !important;
+    font-size: 18px !important;
+    margin-right: 8px !important;
+    color: #fff !important;
+}
+
+/* MOBILE NAVIGATION DROPDOWN */
+.header-area .main-nav .nav.mobile-active {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(35, 45, 57, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 0 0 10px 10px !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+    z-index: 1000 !important;
+    padding: 20px 0 !important;
+}
+
+.header-area .main-nav .nav.mobile-active li {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.header-area .main-nav .nav.mobile-active li:last-child {
+    border-bottom: none !important;
+}
+
+.header-area .main-nav .nav.mobile-active li a {
+    display: block !important;
+    padding: 15px 20px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.header-area .main-nav .nav.mobile-active li a:hover {
+    background: rgba(0, 188, 212, 0.2) !important;
+    color: #00BCD4 !important;
+}
+
+/* SUBMENU HANDLING ON MOBILE */
+.header-area .main-nav .nav.mobile-active li.has-sub .sub-menu {
+    display: block !important;
+    position: static !important;
+    background: rgba(0,0,0,0.2) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+}
+
+.header-area .main-nav .nav.mobile-active li.has-sub .sub-menu li a {
+    padding-left: 40px !important;
+    font-size: 14px !important;
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* ENSURE MOBILE MENU IS FUNCTIONAL */
+@media (max-width: 991px) {
+    .header-area {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(35, 45, 57, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 999 !important;
+        padding: 10px 0 !important;
+    }
+    
+    .header-area .main-nav {
+        position: relative !important;
+        padding: 0 20px !important;
+    }
+    
+    .sub-header {
+        display: none !important;
+    }
+    
+    .main-banner,
+    .heading-page {
+        margin-top: 80px !important;
+        padding-top: 20px !important;
+    }
+}
+
+/* TABLET SPECIFIC ADJUSTMENTS */
+@media (max-width: 768px) and (min-width: 481px) {
+    .menu-trigger {
+        padding: 12px 18px !important;
+    }
+    
+    .menu-trigger span {
+        font-size: 15px !important;
+    }
+}
+
+/* PHONE SPECIFIC ADJUSTMENTS */
+@media (max-width: 480px) {
+    .menu-trigger {
+        padding: 10px 15px !important;
+    }
+    
+    .menu-trigger span {
+        font-size: 13px !important;
+    }
+    
+    .header-area .main-nav {
+        padding: 0 15px !important;
+    }
+}
+
+/* ENSURE TOUCH FRIENDLY */
+@media (max-width: 991px) {
+    .menu-trigger {
+        min-height: 44px !important;
+        min-width: 80px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .header-area .main-nav .nav.mobile-active li a {
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* CLOSE BUTTON FOR MOBILE MENU */
+.mobile-menu-close {
+    display: none !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 20px !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+}
+
+@media (max-width: 991px) {
+    .header-area .main-nav .nav.mobile-active .mobile-menu-close {
+        display: block !important;
+    }
+}
+
+/* ACTIVE STATE FOR MENU TRIGGER */
+.menu-trigger.active {
+    background: rgba(0, 188, 212, 1) !important;
+    transform: scale(0.95) !important;
+}
+
+.menu-trigger.active::before {
+    content: '✕' !important;
+}

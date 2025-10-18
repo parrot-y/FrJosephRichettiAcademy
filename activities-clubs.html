@@ -30,6 +30,24 @@
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/activities-page-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241014">
+
+  <style>
+    /* Taekwondo Carousel Dots Styling */
+    .activity-images .owl-dots .owl-dot {
+      background-color: #00BCD4 !important;
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+    .activity-images .owl-dots .owl-dot.active {
+      background-color: #00BCD4 !important;
+      opacity: 1;
+    }
+    .activity-images .owl-dots .owl-dot:hover {
+      background-color: #00BCD4 !important;
+      opacity: 0.7;
+    }
+  </style>
 
   </head>
 
@@ -123,29 +141,29 @@
       <div class="row">
         <!-- Home Science Club -->
         <div class="col-lg-6">
-          <div class="meeting-single-item fade-in card">
+          <div class="meeting-single-item">
             <div class="thumb">
               <div class="price">
                 <span>35 Students</span>
               </div>
               <div class="date">
-                <h6>Tue <span>Thu</span></h6>
+                <h6>Every <span>Sat</span></h6>
               </div>
               <div class="owl-carousel owl-theme activity-images">
                 <div class="item">
-                  <img src="assets/images/meeting-01.jpg" alt="Home Science 1">
+                  <img src="assets/images/homescience.jpg" alt="Home Science Session">
                 </div>
                 <div class="item">
-                  <img src="assets/images/meeting-02.jpg" alt="Home Science 2">
+                  <img src="assets/images/homescience1.jpg" alt="Home Science Practice">
                 </div>
                 <div class="item">
-                  <img src="assets/images/meeting-03.jpg" alt="Home Science 3">
+                  <img src="assets/images/homescience2.jpg" alt="Home Science Activities">
                 </div>
               </div>
             </div>
             <div class="down-content">
               <h4>🍳 Home Science Club</h4>
-              <p><strong>Time:</strong> 3:30 PM - 5:00 PM<br>
+              <p><strong>Time:</strong> 9:00 AM - 12:00 PM<br>
               <strong>Instructor:</strong> Mrs. Sarah Wanjiku<br>
               <strong>Students:</strong> 35 enrolled</p>
             </div>
@@ -195,13 +213,13 @@
               </div>
               <div class="owl-carousel owl-theme activity-images">
                   <div class="item">
-                    <img src="assets/images/course-03.jpg" alt="Taekwondo 1">
+                    <img src="assets/images/taekwondo.jpg" alt="Taekwondo Training Session">
                   </div>
                   <div class="item">
-                    <img src="assets/images/course-04.jpg" alt="Taekwondo 2">
+                    <img src="assets/images/taekwondo1.jpg" alt="Taekwondo Class in Action">
                   </div>
                   <div class="item">
-                    <img src="assets/images/meeting-01.jpg" alt="Taekwondo 3">
+                    <img src="assets/images/taekwondo2.jpg" alt="Taekwondo Students Practicing">
                   </div>
               </div>
             </div>
@@ -214,33 +232,33 @@
           </div>
         </div>
 
-        <!-- Volleyball -->
+        <!-- Skating -->
         <div class="col-lg-6">
           <div class="meeting-single-item">
             <div class="thumb">
               <div class="price">
-                <span>28 Students</span>
+                <span>24 Students</span>
               </div>
               <div class="date">
                 <h6>Tue <span>Thu</span></h6>
               </div>
               <div class="owl-carousel owl-theme activity-images">
                   <div class="item">
-                    <img src="assets/images/meeting-02.jpg" alt="Volleyball 1">
+                    <img src="assets/images/skating.jpg" alt="Skating Session">
                   </div>
                   <div class="item">
-                    <img src="assets/images/meeting-03.jpg" alt="Volleyball 2">
+                    <img src="assets/images/skating1.jpg" alt="Skating Practice">
                   </div>
                   <div class="item">
-                    <img src="assets/images/meeting-04.jpg" alt="Volleyball 3">
+                    <img src="assets/images/skating2.jpg" alt="Skating Fun">
                   </div>
               </div>
             </div>
             <div class="down-content">
-              <h4>🏐 Volleyball</h4>
+              <h4>🛼 Skating</h4>
               <p><strong>Time:</strong> 4:00 PM - 6:00 PM<br>
-              <strong>Coach:</strong> Coach Mary Njeri<br>
-              <strong>Students:</strong> 28 enrolled</p>
+              <strong>Instructor:</strong> Coach Sarah Kimani<br>
+              <strong>Students:</strong> 24 enrolled</p>
             </div>
           </div>
         </div>
@@ -467,12 +485,15 @@
         items: 1,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 2500,
+        autoplayTimeout: 3000,
         autoplayHoverPause: true,
+        autoplaySpeed: 800,
         nav: false,
-        dots: false,
+        dots: true,
+        dotsContainer: false,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
+        smartSpeed: 1000,
         responsive: {
           0: { items: 1 },
           600: { items: 1 },
@@ -481,6 +502,8 @@
       });
     });
   </script>
+  
+  <script src="assets/js/mobile-navigation.js"></script>
 </body>
 
 </html>
