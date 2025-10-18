@@ -185,3 +185,70 @@ body.homepage .section:first-of-type {
     z-index: 998 !important;
     background: rgba(35, 45, 57, 0.9) !important;
 }
+
+/* ===== AUTO-ROTATING CAROUSEL STYLES ===== */
+.carousel-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+.carousel-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    opacity: 0 !important;
+    transition: opacity 1s ease-in-out !important;
+}
+
+.carousel-slide.active {
+    opacity: 1 !important;
+}
+
+/* Ensure carousel covers full screen on all sizes */
+@media (max-width: 1200px) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    
+    .main-banner {
+        min-height: 100vh !important;
+        height: 100vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    
+    .main-banner {
+        min-height: 100vh !important;
+        height: 100vh !important;
+    }
+}
+
+/* Ensure smooth transitions and proper layering */
+.carousel-slide {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    will-change: opacity !important;
+}
