@@ -1,35 +1,28 @@
-// Fr. Joseph Richetti Catholic School - Mobile Navigation Enhancement
-// Improves mobile navigation experience and touch interactions
+// Fr. Joseph Richetti Catholic School - Fixed Mobile Navigation
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Mobile Menu Toggle Functionality
+    // Simple Mobile Menu Toggle - Works with existing jQuery system
     const menuTrigger = document.querySelector('.menu-trigger');
     const nav = document.querySelector('.main-nav .nav');
     
     if (menuTrigger && nav) {
+        // Remove any existing click handlers to avoid conflicts
+        menuTrigger.onclick = null;
+        
         menuTrigger.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            // Toggle mobile menu
-            nav.classList.toggle('mobile-active');
-            menuTrigger.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            if (nav.classList.contains('mobile-active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !menuTrigger.contains(e.target)) {
+            // Simple toggle - show/hide the navigation
+            if (nav.style.display === 'block' || nav.classList.contains('mobile-active')) {
+                nav.style.display = 'none';
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
-                document.body.style.overflow = '';
+            } else {
+                nav.style.display = 'block';
+                nav.classList.add('mobile-active');
+                menuTrigger.classList.add('active');
             }
         });
         
@@ -37,10 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = nav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
+                nav.style.display = 'none';
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
-                document.body.style.overflow = '';
             });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !menuTrigger.contains(e.target)) {
+                nav.style.display = 'none';
+                nav.classList.remove('mobile-active');
+                menuTrigger.classList.remove('active');
+            }
         });
     }
     
