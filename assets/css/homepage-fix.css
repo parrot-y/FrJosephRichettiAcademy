@@ -470,7 +470,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== ADMISSION SECTIONS TEXT VISIBILITY FIXES ===== */
 
-/* Simple fix: just make the background darker so white text is visible */
+/* Use dark slate background to match site theme */
 section.apply-now .item {
-    background-color: rgba(0, 0, 0, 0.7) !important; /* Dark background so white text shows */
+    background-color: rgba(31, 41, 55, 0.85) !important; /* Dark slate background */
+}
+
+/* Make sure all text in admission sections is white and clearly visible */
+section.apply-now .item h3,
+section.apply-now .item p {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }

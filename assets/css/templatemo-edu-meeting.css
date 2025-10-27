@@ -80,7 +80,7 @@ header, nav, section, article, aside, footer, hgroup {
 }
 
 html, body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Tw Cen MT', 'Century Gothic', 'Poppins', sans-serif;
   font-weight: 400;
   background-color: #fff;
   font-size: 16px;
@@ -1053,7 +1053,7 @@ apply now
 */
 
 section.apply-now {
-  background-image: url(../images/apply-bg.jpg);
+  background-image: url(../images/carousel-5.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
