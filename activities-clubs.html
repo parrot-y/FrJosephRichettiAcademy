@@ -31,23 +31,96 @@
     <link rel="stylesheet" href="assets/css/activities-page-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241014">
-
-  <style>
-    /* Taekwondo Carousel Dots Styling */
-    .activity-images .owl-dots .owl-dot {
-      background-color: #00BCD4 !important;
-      opacity: 0.3;
-      transition: all 0.3s ease;
-    }
-    .activity-images .owl-dots .owl-dot.active {
-      background-color: #00BCD4 !important;
-      opacity: 1;
-    }
-    .activity-images .owl-dots .owl-dot:hover {
-      background-color: #00BCD4 !important;
-      opacity: 0.7;
-    }
-  </style>
+    <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
+    
+    <style>
+      /* Taekwondo Carousel Dots Styling */
+      .activity-images .owl-dots .owl-dot {
+        background-color: #00BCD4 !important;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+      }
+      .activity-images .owl-dots .owl-dot.active {
+        background-color: #00BCD4 !important;
+        opacity: 1;
+      }
+      .activity-images .owl-dots .owl-dot:hover {
+        background-color: #00BCD4 !important;
+        opacity: 0.7;
+      }
+      
+      /* MOBILE MENU - COMPLETE MATCH HOMEPAGE */
+      @media (max-width: 991px) {
+          /* HAMBURGER ICON - VISIBLE */
+          body .header-area .main-nav .menu-trigger,
+          body .header-area .main-nav a.menu-trigger {
+              display: block !important;
+              position: absolute !important;
+              top: 10px !important;
+              right: 10px !important;
+              width: 50px !important;
+              height: 50px !important;
+              padding: 12px 8px !important;
+              background: transparent !important;
+              z-index: 999999 !important;
+              cursor: pointer !important;
+          }
+          
+          /* HAMBURGER 3 LINES */
+          body .header-area .main-nav .menu-trigger span {
+              display: block !important;
+              width: 30px !important;
+              height: 4px !important;
+              background: #fff !important;
+              margin-bottom: 6px !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger span:last-child {
+              margin-bottom: 0 !important;
+          }
+          
+          /* X ANIMATION */
+          body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
+              transform: rotate(45deg) translate(7px, 7px) !important;
+          }
+          body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
+              opacity: 0 !important;
+          }
+          body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
+              transform: rotate(-45deg) translate(7px, -7px) !important;
+          }
+          
+          /* MENU BACKGROUND */
+          body .header-area .main-nav .nav,
+          body .header-area .main-nav ul.nav,
+          body .header-area .main-nav .nav.mobile-active {
+              background: #2c3e50 !important;
+              background-color: #2c3e50 !important;
+              background-image: none !important;
+          }
+          
+          body .header-area .main-nav .nav li,
+          body .header-area .main-nav .nav.mobile-active li {
+              background: transparent !important;
+              background-color: transparent !important;
+              border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+              pointer-events: auto !important;
+          }
+          
+          body .header-area .main-nav .nav li a {
+              color: #ffffff !important;
+              background: transparent !important;
+              pointer-events: auto !important;
+              z-index: 999999 !important;
+          }
+          
+          body .header-area .main-nav .nav li a:hover {
+              background: rgba(255,255,255,0.1) !important;
+              color: #ffffff !important;
+          }
+      }
+    </style>
 
   </head>
 
@@ -473,7 +546,82 @@
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/custom.js?v=20241027"></script>
+  
+  <!-- MOBILE MENU FIX - EXACT MATCH HOMEPAGE -->
+  <script>
+    console.log('INLINE SCRIPT LOADED - ACTIVITIES PAGE');
+    
+    window.addEventListener('load', function() {
+        console.log('PAGE FULLY LOADED - Overriding menu handlers...');
+        
+        const hamburger = document.querySelector('.menu-trigger');
+        const nav = document.querySelector('.main-nav .nav');
+        
+        console.log('Hamburger found:', hamburger);
+        console.log('Nav found:', nav);
+        
+        if (hamburger && nav) {
+            // CLONE hamburger to remove ALL old event listeners
+            const newHamburger = hamburger.cloneNode(true);
+            hamburger.parentNode.replaceChild(newHamburger, hamburger);
+            
+            const hamburgerFinal = document.querySelector('.menu-trigger');
+            console.log('Old handlers removed, setting up new handler...');
+            
+            // NEW HAMBURGER HANDLER
+            hamburgerFinal.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                
+                console.log('*** HAMBURGER CLICKED ***');
+                
+                if (nav.classList.contains('mobile-active')) {
+                    console.log('CLOSING menu');
+                    nav.classList.remove('mobile-active');
+                    hamburgerFinal.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                } else {
+                    console.log('OPENING menu');
+                    nav.classList.add('mobile-active');
+                    hamburgerFinal.classList.add('active');
+                    document.body.classList.add('menu-open');
+                }
+                
+                return false;
+            });
+            
+            // HANDLE ALL CLICKS - LINKS AND OVERLAY
+            document.addEventListener('click', function(e) {
+                if (!document.body.classList.contains('menu-open')) return;
+                
+                // Check if clicking inside nav
+                if (nav.contains(e.target)) {
+                    const link = e.target.closest('a');
+                    if (link && link.tagName === 'A') {
+                        const href = link.getAttribute('href');
+                        console.log('*** LINK CLICKED, href:', href);
+                        
+                        // Close menu INSTANTLY
+                        nav.classList.remove('mobile-active');
+                        hamburgerFinal.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        
+                        console.log('Menu closed, link will navigate');
+                    }
+                } else if (!hamburgerFinal.contains(e.target)) {
+                    console.log('Clicked OUTSIDE menu, closing');
+                    nav.classList.remove('mobile-active');
+                    hamburgerFinal.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            }, false);
+        } else {
+            console.error('Hamburger or Nav not found!');
+        }
+    });
+  </script>
   
   <!-- Keep original functionality only -->
   

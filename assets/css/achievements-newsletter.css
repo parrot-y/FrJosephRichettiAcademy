@@ -45,85 +45,44 @@
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border-color: #00BCD4;
+    border-color: #1B8A8A;
 }
 
 .stat-card .stat-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #00BCD4, #0097A7);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-card .stat-icon::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-  opacity: 0;
+    width: 60px;
+    height: 60px;
+    background: #1B8A8A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
 }
 
 .stat-card:hover .stat-icon {
-  background: linear-gradient(135deg, #00BCD4, #006064);
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.stat-card:hover .stat-icon::before {
-  opacity: 1;
-  animation: shimmer 1.5s ease-in-out;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    background: #1B8A8A;
+    transform: scale(1.1);
 }
 
 .stat-card .stat-icon i {
-  font-size: 32px;
-  color: #FFD700;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  position: relative;
+    font-size: 24px;
+    color: #fff;
 }
 
 .stat-card .count-digit {
     font-size: 36px;
     font-weight: 700;
-    color: #00BCD4;
+    color: #1B8A8A;
     margin-bottom: 10px;
 }
 
 .stat-card .count-title {
     font-size: 16px;
     font-weight: 600;
-    color: #1f272b;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.stat-card .count-description {
-    font-size: 14px;
-    font-weight: 400;
-    color: #666;
-    line-height: 1.4;
-    font-style: italic;
 }
 
 /* Events & Achievements Gallery */
@@ -176,7 +135,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     padding: 8px 12px;
     border-radius: 20px;
@@ -205,7 +164,7 @@
 
 .event-card .event-category {
     display: inline-block;
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     padding: 5px 12px;
     border-radius: 15px;
@@ -215,7 +174,7 @@
 }
 
 .event-card:hover .event-category {
-    background: #00BCD4;
+    background: #1B8A8A;
 }
 
 /* Newsletter Section */
@@ -263,7 +222,7 @@
 .newsletter-card:hover {
     background: #fff;
     transform: translateY(-5px);
-    border-color: #00BCD4;
+    border-color: #1B8A8A;
 }
 
 .newsletter-card .post-meta {
@@ -274,7 +233,7 @@
 }
 
 .newsletter-card .post-date {
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -303,7 +262,7 @@
 }
 
 .newsletter-card .read-more {
-    color: #00BCD4;
+    color: #1B8A8A;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -366,7 +325,7 @@
 
 .newsletter-form button {
     padding: 15px 25px;
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -390,7 +349,7 @@
 
 .view-more-btn {
     display: inline-block;
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     padding: 15px 30px;
     border-radius: 25px;
@@ -403,7 +362,7 @@
 }
 
 .view-more-btn:hover {
-    background: #00BCD4;
+    background: #1B8A8A;
     color: #fff;
     transform: translateY(-2px);
 }

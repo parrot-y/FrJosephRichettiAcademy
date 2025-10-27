@@ -86,13 +86,13 @@
 /* Contact form submit button */
 #form-submit,
 .button {
-    background-color: #00BCD4 !important;
-    border-color: #00BCD4 !important;
+    background-color: #1B8A8A !important;
+    border-color: #1B8A8A !important;
     color: #fff !important;
 }
 
 #form-submit:hover,
 .button:hover {
-    background-color: #00A5BD !important;
+    background-color: #003875 !important;
     opacity: 0.9 !important;
 }

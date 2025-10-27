@@ -1,0 +1,286 @@
+/* ===== SIMPLE MOBILE MENU - OVERRIDE ALL CONFLICTS ===== */
+
+/* HEADER STYLING - DESKTOP ONLY (USE ORIGINAL TEMPLATE COLORS) */
+@media (min-width: 992px) {
+    /* Top section - original template color */
+    .sub-header {
+        background-color: #1f272b !important;
+        padding: 8px 0 !important;
+    }
+
+    /* Bottom section - original template color */
+    .header-area {
+        background-color: rgba(35, 45, 57, 0.9) !important;
+        padding: 10px 0 !important;
+    }
+    
+    /* Force homepage to use same exact colors */
+    .homepage .sub-header {
+        background-color: #1f272b !important;
+        padding: 8px 0 !important;
+    }
+    
+    .homepage .header-area {
+        background-color: rgba(35, 45, 57, 0.9) !important;
+        padding: 10px 0 !important;
+    }
+}
+
+/* MOBILE - NO WHITE SPACE, NO BLOCKING */
+@media (max-width: 991px) {
+    .sub-header,
+    .homepage .sub-header {
+        display: none !important;
+    }
+
+    .header-area,
+    .homepage .header-area,
+    .header-area.header-sticky {
+        background: transparent !important;
+        background-color: transparent !important;
+        padding: 5px 0 !important;
+        margin: 0 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        z-index: 9999 !important;
+    }
+    
+    /* Remove any body padding that creates white space */
+    body {
+        padding-top: 0 !important;
+    }
+}
+
+/* Keep text visible on both */
+.sub-header p,
+.sub-header a,
+.header-area .logo-text,
+.header-area .nav li a {
+    color: #fff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+}
+
+/* FORCE REMOVE ALL BACKGROUNDS AND CONFLICTS FROM HAMBURGER */
+.menu-trigger,
+.menu-trigger::before,
+.menu-trigger::after,
+.header-area .main-nav .menu-trigger,
+.background-header .main-nav .menu-trigger {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* MOBILE LOGO - BIG, TOP CORNER, WITH SCHOOL NAME */
+@media (max-width: 991px) {
+    .header-area .main-nav {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 5px 10px !important;
+    }
+    
+    .header-area .main-nav .logo {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 10px !important;
+        flex: 1 !important;
+        max-width: calc(100% - 60px) !important;
+    }
+    
+    .header-area .main-nav .logo .logo-img {
+        height: 70px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .header-area .main-nav .logo .logo-text {
+        display: block !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+    }
+}
+
+/* DESKTOP NAV HIDDEN ON MOBILE - SHOWN WHEN ACTIVE */
+@media (max-width: 991px) {
+    /* Hide by default - position off screen */
+    .header-area .main-nav .nav {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+/* HAMBURGER ICON - SIMPLE AND VISIBLE */
+@media (max-width: 991px) {
+    .menu-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 99999 !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Remove any pseudo elements that might be adding backgrounds */
+    .menu-trigger::before,
+    .menu-trigger::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    .menu-trigger span {
+        display: block !important;
+        width: 30px !important;
+        height: 3px !important;
+        background: #fff !important;
+        background-color: #fff !important;
+        margin: 6px auto !important;
+        transition: 0.3s !important;
+        position: relative !important;
+        border: none !important;
+    }
+    
+    /* Remove any pseudo elements from spans */
+    .menu-trigger span::before,
+    .menu-trigger span::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    .menu-trigger span:nth-child(1) {
+        top: 0 !important;
+    }
+    
+    .menu-trigger span:nth-child(2) {
+        top: 0 !important;
+    }
+    
+    .menu-trigger span:nth-child(3) {
+        top: 0 !important;
+    }
+    
+    /* When menu is active */
+    .menu-trigger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px) !important;
+    }
+    
+    .menu-trigger.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .menu-trigger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px) !important;
+    }
+    
+    /* MOBILE MENU - DARK BACKGROUND, SLIDES FROM RIGHT */
+    .header-area .main-nav .nav {
+        position: fixed !important;
+        top: 0 !important;
+        right: -350px !important;
+        left: auto !important;
+        width: 300px !important;
+        height: 100vh !important;
+        background: #1f272b !important;
+        background-color: #1f272b !important;
+        z-index: 999999 !important;
+        padding: 100px 0 20px 0 !important;
+        margin: 0 !important;
+        overflow-y: auto !important;
+        box-shadow: -8px 0 30px rgba(0,0,0,0.8) !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* When active - slide in from RIGHT */
+    .header-area .main-nav .nav.mobile-active {
+        right: 0 !important;
+    }
+    
+    /* Menu items styling */
+    .header-area .main-nav .nav li {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .header-area .main-nav .nav li a {
+        display: block !important;
+        padding: 20px 30px !important;
+        color: #ffffff !important;
+        background: transparent !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        text-align: left !important;
+        text-shadow: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    .header-area .main-nav .nav li a:hover,
+    .header-area .main-nav .nav li a.active {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+    }
+    
+    /* Submenu styling */
+    .header-area .main-nav .nav li.has-sub ul.sub-menu {
+        position: static !important;
+        display: none !important;
+        background: rgba(0,0,0,0.2) !important;
+        padding: 0 !important;
+    }
+    
+    .header-area .main-nav .nav li.has-sub ul.sub-menu li a {
+        padding-left: 40px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Dark overlay */
+    body.menu-open::after {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 9997 !important;
+    }
+    
+    body.menu-open {
+        overflow: hidden !important;
+    }
+}
+
+/* DESKTOP - HIDE HAMBURGER */
+@media (min-width: 992px) {
+    .menu-trigger {
+        display: none !important;
+    }
+}

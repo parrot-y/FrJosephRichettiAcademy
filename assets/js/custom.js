@@ -150,8 +150,9 @@
 	  })
 	
 
-	// Menu Dropdown Toggle
-	if($('.menu-trigger').length){
+	// Menu Dropdown Toggle - DISABLED FOR MOBILE
+	// Mobile menu handled by inline script in index.html
+	if(false && $('.menu-trigger').length){
 		$(".menu-trigger").on('click', function() {	
 			$(this).toggleClass('active');
 			$('.header-area .nav').slideToggle(200);
@@ -159,7 +160,7 @@
 	}
 
 
-	// Menu elevator animation
+	// Menu elevator animation - FIXED FOR MOBILE
 	$('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -167,8 +168,10 @@
 			if (target.length) {
 				var width = $(window).width();
 				if(width < 991) {
+					// Use classes instead of slideUp
 					$('.menu-trigger').removeClass('active');
-					$('.header-area .nav').slideUp(200);	
+					$('.header-area .nav').removeClass('mobile-active');
+					$('body').removeClass('menu-open');
 				}				
 				$('html,body').animate({
 					scrollTop: (target.offset().top) - 80

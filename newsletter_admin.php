@@ -89,7 +89,7 @@ if (file_exists($log_file)) {
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            border-left: 4px solid #8b1538;
+            border-left: 4px solid #0047AB;
         }
         .stat-number {
             font-size: 32px;
@@ -151,7 +151,7 @@ if (file_exists($log_file)) {
             display: inline-block;
         }
         .btn:hover {
-            background: #8b1538;
+            background: #0047AB;
         }
         .error {
             color: #e53e3e;
@@ -163,7 +163,7 @@ if (file_exists($log_file)) {
         }
         .section h2 {
             color: #1f272b;
-            border-bottom: 2px solid #8b1538;
+            border-bottom: 2px solid #0047AB;
             padding-bottom: 10px;
         }
         .log-entry {
@@ -175,7 +175,7 @@ if (file_exists($log_file)) {
             border-radius: 3px;
         }
         .export-btn {
-            background: #8b1538;
+            background: #0047AB;
             color: #1f272b;
         }
         .logout-link {

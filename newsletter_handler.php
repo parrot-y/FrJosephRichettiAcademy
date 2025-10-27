@@ -78,7 +78,7 @@ function send_confirmation_email($subscriber_email, $school_email, $school_name,
             .header { background: #1f272b; color: white; padding: 20px; text-align: center; }
             .content { padding: 20px; background: #f8f8f8; }
             .footer { background: #1f272b; color: white; padding: 15px; text-align: center; font-size: 12px; }
-            .button { display: inline-block; background: #8b1538; color: #1f272b; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+            .button { display: inline-block; background: #0047AB; color: #1f272b; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; }
         </style>
     </head>
     <body>

@@ -57,7 +57,7 @@ if (file_exists($log_file)) {
         .header { background: #1f272b; color: white; padding: 20px; margin: -30px -30px 30px -30px; border-radius: 10px 10px 0 0; }
         .header h1 { margin: 0; font-size: 24px; }
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #8b1538; }
+        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #0047AB; }
         .stat-number { font-size: 32px; font-weight: bold; color: #1f272b; margin-bottom: 5px; }
         .stat-label { color: #666; font-size: 14px; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -68,15 +68,15 @@ if (file_exists($log_file)) {
         label { display: block; margin-bottom: 5px; font-weight: 600; }
         input[type="text"], input[type="password"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; }
         .btn { background: #1f272b; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-block; }
-        .btn:hover { background: #8b1538; }
+        .btn:hover { background: #0047AB; }
         .error { color: #e53e3e; margin-top: 10px; font-size: 14px; }
         .section { margin-bottom: 40px; }
-        .section h2 { color: #1f272b; border-bottom: 2px solid #8b1538; padding-bottom: 10px; }
+        .section h2 { color: #1f272b; border-bottom: 2px solid #0047AB; padding-bottom: 10px; }
         .message-preview { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .status-new { color: #8b1538; font-weight: bold; }
+        .status-new { color: #0047AB; font-weight: bold; }
         .logout-link { float: right; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; }
         .logout-link:hover { color: white; }
-        .export-btn { background: #8b1538; color: white; }
+        .export-btn { background: #0047AB; color: white; }
     </style>
 </head>
 <body>

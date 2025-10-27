@@ -1,0 +1,190 @@
+/* ===== FINAL MOBILE FIX - HIGHEST PRIORITY ===== */
+
+/* MOBILE ONLY */
+@media (max-width: 991px) {
+    
+    /* HEADER - AT TOP */
+    body .header-area,
+    body.homepage .header-area {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    body .header-area .main-nav {
+        padding: 5px 10px !important;
+    }
+    
+    /* LOGO - TOP LEFT CORNER */
+    body .header-area .main-nav .logo {
+        position: absolute !important;
+        top: 5px !important;
+        left: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+    
+    /* LOGO IMAGE - BIG SIZE */
+    body .header-area .main-nav .logo .logo-img,
+    body.homepage .header-area .main-nav .logo .logo-img {
+        height: 70px !important;
+        width: auto !important;
+        min-height: 70px !important;
+    }
+    
+    body .header-area .main-nav .logo .logo-text,
+    body.homepage .header-area .main-nav .logo .logo-text {
+        display: block !important;
+        font-size: 11px !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+    }
+    
+    /* HAMBURGER - TOP RIGHT CORNER */
+    body .header-area .main-nav .menu-trigger,
+    body .header-area .main-nav a.menu-trigger,
+    .header-area .main-nav .menu-trigger,
+    .menu-trigger {
+        display: block !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 12px 8px !important;
+        background: transparent !important;
+        border: none !important;
+        z-index: 999999 !important;
+        cursor: pointer !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger span,
+    body .header-area .main-nav a.menu-trigger span,
+    .header-area .main-nav .menu-trigger span,
+    .menu-trigger span {
+        display: block !important;
+        position: relative !important;
+        width: 30px !important;
+        height: 4px !important;
+        margin-bottom: 6px !important;
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        border: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger span:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Remove any pseudo elements that might hide the lines */
+    body .header-area .main-nav .menu-trigger span::before,
+    body .header-area .main-nav .menu-trigger span::after,
+    .menu-trigger span::before,
+    .menu-trigger span::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* When active - turn to X */
+    body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px) !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px) !important;
+    }
+    
+    /* MENU - DARK, SLIDES FROM RIGHT - STRONGEST OVERRIDE */
+    body .header-area .main-nav .nav,
+    body .header-area .main-nav ul.nav,
+    .header-area .main-nav .nav,
+    html body .header-area .main-nav .nav {
+        position: fixed !important;
+        top: 0 !important;
+        right: -400px !important;
+        left: auto !important;
+        bottom: 0 !important;
+        width: 85% !important;
+        max-width: 350px !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        background: #2c3e50 !important;
+        background-color: #2c3e50 !important;
+        z-index: 999998 !important;
+        padding: 100px 0 20px 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        transition: right 0.4s ease !important;
+        overflow-y: auto !important;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.9) !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+    
+    /* MENU ACTIVE - SLIDE IN FROM RIGHT */
+    body .header-area .main-nav .nav.mobile-active,
+    body .header-area .main-nav ul.nav.mobile-active,
+    .header-area .main-nav .nav.mobile-active,
+    html body .header-area .main-nav .nav.mobile-active {
+        right: 0 !important;
+        left: auto !important;
+        display: flex !important;
+    }
+    
+    /* MENU ITEMS - WHITE TEXT */
+    body .header-area .main-nav .nav li,
+    html body .header-area .main-nav .nav li {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        list-style: none !important;
+    }
+    
+    body .header-area .main-nav .nav li a,
+    html body .header-area .main-nav .nav li a,
+    body .header-area .main-nav .nav li a:link,
+    body .header-area .main-nav .nav li a:visited {
+        display: block !important;
+        padding: 20px 30px !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    body .header-area .main-nav .nav li a:hover,
+    body .header-area .main-nav .nav li a:active {
+        background: rgba(255,255,255,0.1) !important;
+        color: #ffffff !important;
+    }
+    
+    /* OVERLAY - BEHIND MENU */
+    body.menu-open::after {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 999997 !important;
+        pointer-events: none !important;
+    }
+}
