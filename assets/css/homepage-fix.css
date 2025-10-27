@@ -186,7 +186,13 @@ body.homepage .section:first-of-type {
     background: rgba(35, 45, 57, 0.9) !important;
 }
 
-/* ===== AUTO-ROTATING CAROUSEL STYLES ===== */
+/* ===== FULL COVERAGE CAROUSEL LIKE DURHAM EXAMPLE ===== */
+.main-banner {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    position: relative !important;
+}
+
 .carousel-container {
     position: absolute !important;
     top: 0 !important;
@@ -206,8 +212,12 @@ body.homepage .section:first-of-type {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
     opacity: 0 !important;
-    transition: opacity 1s ease-in-out !important;
+    transition: opacity 1.5s ease-in-out !important;
+    /* Crystal clear images like Durham example */
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
 .carousel-slide.active {
@@ -251,4 +261,216 @@ body.homepage .section:first-of-type {
     transform: translateZ(0) !important;
     backface-visibility: hidden !important;
     will-change: opacity !important;
+}
+
+/* ===== CLEAR IMAGE VISIBILITY IMPROVEMENTS ===== */
+
+/* Durham-style overlay - VERY minimal, let images shine */
+.video-overlay {
+    background: rgba(0, 0, 0, 0.15) !important; /* Very subtle like Durham */
+}
+
+/* Durham-style text positioning - centered and clean */
+.main-banner .caption {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    width: 90% !important;
+    max-width: 900px !important;
+}
+
+/* Clean white text like Durham - NO black backgrounds */
+.main-banner .caption h2 {
+    background: none !important;
+    color: #ffffff !important;
+    font-size: 3rem !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) !important; /* Subtle shadow for readability */
+    letter-spacing: 1px !important;
+}
+
+.main-banner .caption p {
+    background: none !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 300 !important;
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+    line-height: 1.6 !important;
+}
+
+.main-banner .caption h6 {
+    background: none !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.main-banner .school-motto {
+    background: none !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Simple Apply Now button - bottom right corner */
+.hero-cta-button {
+    position: fixed !important;
+    bottom: 40px !important;
+    right: 40px !important;
+    z-index: 9999 !important;
+}
+
+.hero-cta-button .apply-btn {
+    background: #ffffff !important;
+    color: #1a202c !important;
+    padding: 15px 35px !important;
+    border-radius: 5px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-cta-button .apply-btn:hover {
+    background: #f7fafc !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Mobile adjustments - keep clean Durham style */
+@media (max-width: 768px) {
+    .main-banner .caption {
+        width: 95% !important;
+    }
+    
+    .main-banner .caption h2 {
+        font-size: 2rem !important;
+    }
+    
+    .main-banner .caption p {
+        font-size: 1rem !important;
+    }
+    
+    .hero-cta-button {
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+    
+    .hero-cta-button .apply-btn {
+        padding: 12px 25px !important;
+        font-size: 14px !important;
+    }
+}
+
+
+/* ===== SECTION TITLES VISIBILITY FIXES ===== */
+
+/* Reduce space before About Our Academy section */
+.upcoming-meetings {
+    padding-top: 60px !important;
+    margin-top: 0 !important;
+    background-color: #ffffff !important;
+}
+
+/* Fix About Our Academy title visibility - White text on dark background */
+#about .section-heading h2 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    margin-bottom: 30px !important;
+    font-size: 36px !important;
+    text-align: center !important;
+    position: relative !important;
+    padding-bottom: 20px !important;
+    background: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Fix Activities & Clubs title visibility */
+#activities .section-heading h2,
+section.upcoming-meetings#activities .section-heading h2 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    margin-bottom: 30px !important;
+    font-size: 36px !important;
+    text-align: center !important;
+    position: relative !important;
+    padding-bottom: 20px !important;
+    background: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Fix Downloads section title visibility */
+#downloads .section-heading h2,
+section.our-courses#downloads .section-heading h2 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    margin-bottom: 30px !important;
+    font-size: 36px !important;
+    text-align: center !important;
+    position: relative !important;
+    padding-bottom: 20px !important;
+    background: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    letter-spacing: 0.5px !important;
+}
+
+.section-heading p {
+    color: #4a5568 !important;
+    font-weight: 500 !important;
+}
+
+/* Fix admission sections visibility */
+.accordion-head span {
+    color: #1a202c !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+}
+
+.accordion-body .content p {
+    color: #2d3748 !important;
+    line-height: 1.6 !important;
+}
+
+/* Ensure all section headings are visible */
+h1, h2, h3, h4, h5, h6 {
+    color: #1a202c !important;
+    font-weight: 600 !important;
+}
+
+/* Fix any white text that might be invisible */
+.upcoming-meetings h2,
+.apply-now h2,
+.our-courses h2 {
+    color: #1a202c !important;
+    text-shadow: none !important;
+}
+
+/* ===== ADMISSION SECTIONS TEXT VISIBILITY FIXES ===== */
+
+/* Simple fix: just make the background darker so white text is visible */
+section.apply-now .item {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Dark background so white text shows */
 }

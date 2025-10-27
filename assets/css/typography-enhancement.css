@@ -1,0 +1,338 @@
+/* Fr. Joseph Richetti Catholic School - Professional Typography Enhancement */
+/* High-standard, accessible, and readable font system */
+
+/* ===== GOOGLE FONTS IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ===== FONT VARIABLES ===== */
+:root {
+    /* Primary Font Stack - Traditional Serif for Headings */
+    --font-heading: 'Crimson Text', 'Times New Roman', 'Georgia', serif;
+    
+    /* Secondary Font Stack - Clean Sans-serif for Body */
+    --font-body: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Accent Font Stack - Elegant Serif for Special Elements */
+    --font-accent: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Font Sizes - Responsive Scale */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+    --font-size-6xl: 3.75rem;   /* 60px */
+    
+    /* Line Heights */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+    
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+}
+
+/* ===== BASE TYPOGRAPHY RESET ===== */
+* {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== BODY TEXT STYLING ===== */
+body {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: var(--line-height-normal) !important;
+    letter-spacing: var(--letter-spacing-normal) !important;
+    color: #2d3748 !important;
+}
+
+/* ===== HEADING STYLES ===== */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-heading) !important;
+    font-weight: var(--font-weight-bold) !important;
+    line-height: var(--line-height-tight) !important;
+    letter-spacing: var(--letter-spacing-tight) !important;
+    color: #1a202c !important;
+    margin-bottom: 0.5em !important;
+}
+
+h1, .h1 {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: var(--font-weight-extrabold) !important;
+}
+
+h2, .h2 {
+    font-size: var(--font-size-4xl) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+
+h3, .h3 {
+    font-size: var(--font-size-3xl) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+
+h4, .h4 {
+    font-size: var(--font-size-2xl) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+h5, .h5 {
+    font-size: var(--font-size-xl) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+h6, .h6 {
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-medium) !important;
+}
+
+/* ===== PARAGRAPH AND TEXT STYLES ===== */
+p {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: var(--line-height-relaxed) !important;
+    margin-bottom: 1em !important;
+    color: #4a5568 !important;
+}
+
+/* Large paragraph text */
+.lead, .text-lead {
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: var(--line-height-relaxed) !important;
+    color: #2d3748 !important;
+}
+
+/* Small text */
+small, .small, .text-sm {
+    font-size: var(--font-size-sm) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: var(--line-height-normal) !important;
+}
+
+/* ===== SPECIAL TYPOGRAPHY CLASSES ===== */
+.font-accent {
+    font-family: var(--font-accent) !important;
+}
+
+.font-heading {
+    font-family: var(--font-heading) !important;
+}
+
+.font-body {
+    font-family: var(--font-body) !important;
+}
+
+/* ===== SCHOOL-SPECIFIC STYLING ===== */
+
+/* School name and branding */
+.school-name, .logo-text {
+    font-family: var(--font-accent) !important;
+    font-weight: var(--font-weight-bold) !important;
+    letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+/* School motto and taglines */
+.school-motto, .tagline {
+    font-family: var(--font-accent) !important;
+    font-style: italic !important;
+    font-weight: var(--font-weight-medium) !important;
+    letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+/* Section headings */
+.section-heading h2 {
+    font-family: var(--font-heading) !important;
+    font-size: var(--font-size-4xl) !important;
+    font-weight: var(--font-weight-bold) !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    color: #1a202c !important;
+}
+
+.section-heading p {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-normal) !important;
+    text-align: center !important;
+    color: #718096 !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* ===== NAVIGATION TYPOGRAPHY ===== */
+.main-nav .nav li a {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-medium) !important;
+    letter-spacing: var(--letter-spacing-wide) !important;
+    text-transform: uppercase !important;
+}
+
+/* ===== BUTTON TYPOGRAPHY ===== */
+.main-button-red a,
+.main-button-yellow a,
+button,
+.btn {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    letter-spacing: var(--letter-spacing-wide) !important;
+    text-transform: uppercase !important;
+}
+
+/* ===== CARD TYPOGRAPHY ===== */
+.services .item h4,
+.meeting-item h4,
+.stat-card .count-title {
+    font-family: var(--font-heading) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+.services .item p,
+.meeting-item p,
+.stat-card .count-description {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-sm) !important;
+    line-height: var(--line-height-relaxed) !important;
+}
+
+/* ===== FORM TYPOGRAPHY ===== */
+input, textarea, select {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: var(--line-height-normal) !important;
+}
+
+label {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-sm) !important;
+    font-weight: var(--font-weight-medium) !important;
+    letter-spacing: var(--letter-spacing-wide) !important;
+    text-transform: uppercase !important;
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* High contrast for better readability */
+@media (prefers-contrast: high) {
+    body {
+        color: #000000 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #000000 !important;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+
+/* Large screens */
+@media (min-width: 1200px) {
+    :root {
+        --font-size-base: 1.125rem;    /* 18px */
+        --font-size-lg: 1.25rem;       /* 20px */
+        --font-size-xl: 1.375rem;      /* 22px */
+        --font-size-2xl: 1.625rem;     /* 26px */
+        --font-size-3xl: 2rem;         /* 32px */
+        --font-size-4xl: 2.5rem;       /* 40px */
+        --font-size-5xl: 3.5rem;       /* 56px */
+    }
+}
+
+/* Medium screens */
+@media (max-width: 991px) {
+    :root {
+        --font-size-4xl: 2rem;         /* 32px */
+        --font-size-5xl: 2.5rem;       /* 40px */
+    }
+    
+    .section-heading h2 {
+        font-size: var(--font-size-3xl) !important;
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    :root {
+        --font-size-3xl: 1.625rem;     /* 26px */
+        --font-size-4xl: 1.875rem;     /* 30px */
+        --font-size-5xl: 2.25rem;      /* 36px */
+    }
+    
+    body {
+        font-size: var(--font-size-base) !important;
+    }
+    
+    .section-heading h2 {
+        font-size: var(--font-size-2xl) !important;
+    }
+    
+    .section-heading p {
+        font-size: var(--font-size-base) !important;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    :root {
+        --font-size-2xl: 1.375rem;     /* 22px */
+        --font-size-3xl: 1.5rem;       /* 24px */
+        --font-size-4xl: 1.75rem;      /* 28px */
+        --font-size-5xl: 2rem;         /* 32px */
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    body {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+        color: #000000 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Times New Roman', serif !important;
+        color: #000000 !important;
+        page-break-after: avoid !important;
+    }
+    
+    p {
+        orphans: 3 !important;
+        widows: 3 !important;
+    }
+}
