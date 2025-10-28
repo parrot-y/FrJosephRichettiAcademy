@@ -496,6 +496,113 @@
         width: 20px !important;
       }
       
+      /* ===== GOOGLE MAPS CONTAINER - LARGE ===== */
+      .map-container-large {
+        width: 100% !important;
+      }
+      
+      .map-container-large h2 {
+        color: #1a202c !important;
+        font-size: 2.2rem !important;
+        font-weight: 700 !important;
+      }
+      
+      .map-container-large iframe {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .map-container-large iframe:hover {
+        box-shadow: 0 12px 40px rgba(0,0,0,0.2) !important;
+      }
+      
+      /* ===== CONTACT FORM SIDE PANEL ===== */
+      .contact-form-side {
+        background: #f8f9fa !important;
+        padding: 35px 30px !important;
+        border-radius: 15px !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+        height: 100% !important;
+      }
+      
+      .contact-form-side h2 {
+        color: #1a202c !important;
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 25px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 3px solid #78D1C5 !important;
+      }
+      
+      .contact-form-side .form-group {
+        margin-bottom: 20px !important;
+      }
+      
+      .contact-form-side input,
+      .contact-form-side textarea {
+        width: 100% !important;
+        padding: 15px !important;
+        border: 2px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        font-size: 0.95rem !important;
+        transition: all 0.3s ease !important;
+        background: white !important;
+      }
+      
+      .contact-form-side input:focus,
+      .contact-form-side textarea:focus {
+        border-color: #78D1C5 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(120, 209, 197, 0.1) !important;
+      }
+      
+      .contact-form-side .button {
+        width: 100% !important;
+        padding: 15px !important;
+        background: linear-gradient(135deg, #78D1C5 0%, #0097A7 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .contact-form-side .button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(120, 209, 197, 0.3) !important;
+      }
+      
+      /* CONTACT SECTION MOBILE RESPONSIVE */
+      @media (max-width: 991px) {
+        .map-container-large {
+          margin-bottom: 30px !important;
+        }
+        
+        .map-container-large iframe {
+          height: 400px !important;
+        }
+        
+        .contact-form-side {
+          margin-bottom: 30px !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .map-container-large h2 {
+          font-size: 1.8rem !important;
+        }
+        
+        .contact-form-side h2 {
+          font-size: 1.6rem !important;
+        }
+        
+        .map-container-large iframe {
+          height: 350px !important;
+        }
+      }
+      
       /* ===== CBC PROGRAMS CLEAN STYLING - OPTION 3 ===== */
       .cbc-subject-card .subject-icon {
         display: none !important;
@@ -2312,64 +2419,35 @@ https://templatemo.com/tm-569-edu-meeting
   <section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 align-self-center">
-          <div class="row">
-            <div class="col-lg-12">
-              <form id="contact" action="contact_handler.php" method="post">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h2>Contact Fr. Joseph Richetti Catholic School</h2>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="name" type="text" id="name" placeholder="Your Full Name*" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
-                  </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="Subject (e.g., Admission Inquiry)*" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" type="text" class="form-control" id="message" placeholder="Your message about admission, programs, or general inquiries..." required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
+        <!-- GOOGLE MAPS - LARGER SPACE -->
+        <div class="col-lg-7 col-md-6 mb-4">
+          <div class="map-container-large">
+            <h2 style="margin-bottom: 25px; color: #1a202c; font-weight: 700;">Visit Our Campus</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2446386147166!2d36.75629282295066!3d-1.1755681241147191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f231424294209%3A0xd5d5fb26d3bcd72e!2sFather%20Joseph%20Richetti%20Academy!5e0!3m2!1sen!2ske!4v1761656928226!5m2!1sen!2ske" width="100%" height="500" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="right-info">
-            <ul>
-              <li>
-                <h6>Phone Number</h6>
-                <span>0717142643</span>
-              </li>
-              <li>
-                <h6>Email Address</h6>
-                <span>frjosephrichetti@gmail.com</span>
-              </li>
-              <li>
-                <h6>Street Address</h6>
-                <span>P.O Box 78-00219, Kiambu</span>
-              </li>
-              <li>
-                <h6>Website URL</h6>
-                <span>www.fjrichetti.ac.ke</span>
-              </li>
-            </ul>
+        
+        <!-- CONTACT FORM - SIDE PANEL -->
+        <div class="col-lg-5 col-md-6">
+          <div class="contact-form-side">
+            <h2>Get In Touch</h2>
+            <form id="contact" action="contact_handler.php" method="post">
+              <div class="form-group">
+                <input name="name" type="text" id="name" placeholder="Your Full Name*" required="">
+              </div>
+              <div class="form-group">
+                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address*" required="">
+              </div>
+              <div class="form-group">
+                <input name="subject" type="text" id="subject" placeholder="Subject*" required="">
+              </div>
+              <div class="form-group">
+                <textarea name="message" type="text" class="form-control" id="message" placeholder="Your message..." required="" rows="5"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="form-submit" class="button">SEND MESSAGE</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
