@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Text Colors for School Name</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('assets/images/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .color-option {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .school-name {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .color-label {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Option 1: Pure White with Strong Shadow */
+        .option-1 {
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9),
+                         4px 4px 8px rgba(0, 0, 0, 0.8),
+                         -1px -1px 0 rgba(0, 0, 0, 0.9),
+                         1px -1px 0 rgba(0, 0, 0, 0.9),
+                         -1px 1px 0 rgba(0, 0, 0, 0.9),
+                         1px 1px 0 rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Option 2: Turquoise (Your Brand Color) */
+        .option-2 {
+            color: #78D1C5;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 3: Gold/Yellow */
+        .option-3 {
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 4: Light Blue */
+        .option-4 {
+            color: #87CEEB;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 5: Bright Cyan */
+        .option-5 {
+            color: #00FFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 6: Lime Green */
+        .option-6 {
+            color: #7FFF00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 7: Coral/Orange */
+        .option-7 {
+            color: #FF7F50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        /* Option 8: Bright Yellow */
+        .option-8 {
+            color: #FFFF00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1),
+                         4px 4px 8px rgba(0, 0, 0, 0.9),
+                         -2px -2px 0 rgba(0, 0, 0, 1),
+                         2px -2px 0 rgba(0, 0, 0, 1),
+                         -2px 2px 0 rgba(0, 0, 0, 1),
+                         2px 2px 0 rgba(0, 0, 0, 1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .school-name {
+                font-size: 2rem;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="test-section">
+        <div class="container">
+            
+            <div class="header">
+                <h1>🎨 Choose Your Text Color</h1>
+                <p>Scroll down to see which color looks best for your school name</p>
+            </div>
+            
+            <div class="grid">
+                
+                <!-- Option 1 -->
+                <div class="color-option">
+                    <h2 class="school-name option-1">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 1: Pure White (#FFFFFF) - Current</span>
+                </div>
+                
+                <!-- Option 2 -->
+                <div class="color-option">
+                    <h2 class="school-name option-2">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 2: Turquoise (#78D1C5) - Your Brand Color</span>
+                </div>
+                
+                <!-- Option 3 -->
+                <div class="color-option">
+                    <h2 class="school-name option-3">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 3: Gold (#FFD700) - Luxurious</span>
+                </div>
+                
+                <!-- Option 4 -->
+                <div class="color-option">
+                    <h2 class="school-name option-4">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 4: Sky Blue (#87CEEB) - Soft & Professional</span>
+                </div>
+                
+                <!-- Option 5 -->
+                <div class="color-option">
+                    <h2 class="school-name option-5">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 5: Bright Cyan (#00FFFF) - Bold & Modern</span>
+                </div>
+                
+                <!-- Option 6 -->
+                <div class="color-option">
+                    <h2 class="school-name option-6">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 6: Lime Green (#7FFF00) - Energetic</span>
+                </div>
+                
+                <!-- Option 7 -->
+                <div class="color-option">
+                    <h2 class="school-name option-7">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 7: Coral Orange (#FF7F50) - Warm & Inviting</span>
+                </div>
+                
+                <!-- Option 8 -->
+                <div class="color-option">
+                    <h2 class="school-name option-8">FR. JOSEPH RICHETTI CATHOLIC SCHOOL</h2>
+                    <span class="color-label">Option 8: Bright Yellow (#FFFF00) - High Visibility</span>
+                </div>
+                
+            </div>
+            
+            <div class="header" style="margin-top: 60px;">
+                <p><strong>Which option do you like best?</strong><br>
+                Just tell me the number (1-8) and I'll apply it to your homepage!</p>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

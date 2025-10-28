@@ -10,7 +10,7 @@
     <!-- Professional Typography Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <title>Fr. Joseph Richetti Catholic School - Excellence in Education</title>
 
@@ -19,10 +19,13 @@
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Scroll Animations -->
+    <link rel="stylesheet" href="assets/css/scroll-animations.css">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css?v=20241014c">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css?v=20241028-turquoise">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <link rel="stylesheet" href="assets/css/contact-form.css?v=20241014">
@@ -31,13 +34,14 @@
     <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241014">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <link rel="stylesheet" href="assets/css/minimal-fix-only.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241028">
+    <!-- DISABLED: This was blocking AOS animations -->
+    <!-- <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled"> -->
+    <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
-    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241027">
+    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241027p">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
     
@@ -50,6 +54,389 @@
     <style>
       img { max-width: 100%; height: auto; }
       .loading { opacity: 0.7; pointer-events: none; }
+      
+      /* Enable smooth scrolling */
+      html {
+        scroll-behavior: smooth !important;
+      }
+      
+      /* FORCE ENABLE AOS ANIMATIONS - More Impact */
+      [data-aos] {
+        opacity: 0 !important;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+      
+      [data-aos].aos-animate {
+        opacity: 1 !important;
+      }
+      
+      [data-aos="fade-up"] {
+        transform: translateY(100px) !important;
+      }
+      
+      [data-aos="fade-up"].aos-animate {
+        transform: translateY(0) !important;
+      }
+      
+      [data-aos="fade-down"] {
+        transform: translateY(-100px) !important;
+      }
+      
+      [data-aos="fade-down"].aos-animate {
+        transform: translateY(0) !important;
+      }
+      
+      [data-aos="fade-left"] {
+        transform: translateX(100px) !important;
+      }
+      
+      [data-aos="fade-left"].aos-animate {
+        transform: translateX(0) !important;
+      }
+      
+      [data-aos="fade-right"] {
+        transform: translateX(-100px) !important;
+      }
+      
+      [data-aos="fade-right"].aos-animate {
+        transform: translateX(0) !important;
+      }
+      
+      [data-aos="zoom-in"] {
+        transform: scale(0.6) !important;
+      }
+      
+      [data-aos="zoom-in"].aos-animate {
+        transform: scale(1) !important;
+      }
+      
+      /* OVERRIDE ALL CSS - FORCE EXACT MATCH TO TEST */
+      
+      /* Sub-header styling - EXACT from test */
+      .sub-header {
+        background: rgba(250, 250, 250, 0.95) !important;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #e5e5e5 !important;
+      }
+      
+      .sub-header .left-content p {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        color: #666 !important;
+        line-height: 1.5 !important;
+      }
+      
+      .sub-header .left-content em {
+        color: #78D1C5 !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+      }
+      
+      .sub-header .right-icons ul {
+        display: flex !important;
+        gap: 15px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-content: flex-end !important;
+      }
+      
+      .sub-header .right-icons ul li {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .sub-header .right-icons ul li a {
+        color: #666 !important;
+        font-size: 14px !important;
+      }
+      
+      /* Header area - DESKTOP ONLY - dark background for white nav text - SMALLER */
+      @media (min-width: 992px) {
+        .header-area {
+          background: #1f292e !important;
+          padding: 10px 0 !important;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+        }
+        
+        .header-area .main-nav {
+          background: transparent !important;
+          padding: 0 !important;
+          min-height: auto !important;
+        }
+        
+        .header-area .main-nav .logo {
+          display: flex !important;
+          align-items: center !important;
+        }
+        
+        .header-area .main-nav .logo .logo-img {
+          height: 55px !important;
+          width: auto !important;
+        }
+        
+        .header-area .main-nav .logo .logo-text {
+          color: #fff !important;
+          margin-left: 15px !important;
+          font-size: 16px !important;
+          font-weight: 600 !important;
+        }
+      }
+      
+      /* HOVER EFFECTS FROM ABOUT PAGE - DESKTOP ONLY */
+      @media (min-width: 992px) {
+        .header-area .main-nav .nav li a {
+          position: relative;
+          transition: all 0.3s ease !important;
+          color: #fff !important;
+          font-size: 15px !important;
+          font-weight: 500 !important;
+          padding: 10px 15px !important;
+        }
+        
+        .header-area .main-nav .nav li a.active {
+          color: #fff !important;
+        }
+        
+        .header-area .main-nav .nav li a:hover {
+          transform: translateY(-2px);
+          color: #78D1C5 !important;
+        }
+        
+        .header-area .main-nav .nav li a::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #78D1C5 0%, #0097A7 100%);
+          transition: width 0.3s ease;
+        }
+        
+        .header-area .main-nav .nav li a:hover::after {
+          width: 100%;
+        }
+        
+        .header-area .main-nav .nav li.has-sub:hover .sub-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        
+        .header-area .main-nav .nav li .sub-menu {
+          transition: all 0.4s ease;
+          transform: translateY(-10px);
+        }
+        
+        .header-area .main-nav .nav li .sub-menu li a:hover {
+          background: rgba(120, 209, 197, 0.1);
+          padding-left: 20px;
+        }
+        
+        .sub-header .right-icons ul li a {
+          transition: all 0.3s ease;
+        }
+        
+        .sub-header .right-icons ul li a:hover {
+          transform: translateY(-3px) scale(1.1);
+          color: #78D1C5 !important;
+        }
+        
+        .header-area .main-nav .logo {
+          transition: all 0.3s ease;
+        }
+        
+        .header-area .main-nav .logo:hover {
+          transform: scale(1.02);
+        }
+      }
+      
+      /* ===== ABOUT SECTION PREMIUM STYLING ===== */
+      #about .section-heading h2 {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 2.8rem !important;
+        font-weight: 700 !important;
+        color: #fff !important;
+      }
+      
+      #about .categories {
+        background: #fff !important;
+        border: none !important;
+        border-radius: 20px !important;
+        padding: 35px 30px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      #about .categories h4 {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        color: #0097A7 !important;
+        margin-bottom: 25px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+      
+      #about .categories h4::before {
+        content: '✨' !important;
+        font-size: 1.8rem !important;
+      }
+      
+      #about .categories ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin-bottom: 30px !important;
+      }
+      
+      #about .categories ul li {
+        padding: 14px 0 !important;
+        border-bottom: 1px solid rgba(120, 209, 197, 0.2) !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        color: #2d3748 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      #about .categories ul li:last-child {
+        border-bottom: none !important;
+      }
+      
+      #about .categories ul li::before {
+        content: '✓' !important;
+        color: #78D1C5 !important;
+        font-weight: 700 !important;
+        font-size: 1.3rem !important;
+      }
+      
+      #about .categories ul li:hover {
+        padding-left: 10px !important;
+        color: #0097A7 !important;
+      }
+      
+      #about .cta-button {
+        display: block !important;
+        width: 100% !important;
+        background: transparent !important;
+        color: #2d3748 !important;
+        border: 2px solid rgba(120, 209, 197, 0.5) !important;
+        padding: 16px 25px !important;
+        border-radius: 12px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+      }
+      
+      #about .cta-button:hover {
+        background: linear-gradient(135deg, #78D1C5 0%, #0097A7 100%) !important;
+        color: white !important;
+        border-color: transparent !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 30px rgba(120, 209, 197, 0.5) !important;
+      }
+      
+      #about .cta-button i {
+        margin-left: 8px !important;
+        transition: transform 0.3s ease !important;
+      }
+      
+      #about .cta-button:hover i {
+        transform: translateX(5px) !important;
+      }
+      
+      #about .meeting-item {
+        background: white !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        border: 2px solid transparent !important;
+        height: 100% !important;
+      }
+      
+      #about .meeting-item:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(120, 209, 197, 0.25) !important;
+        border-color: #78D1C5 !important;
+      }
+      
+      #about .meeting-item .thumb {
+        position: relative !important;
+        height: 220px !important;
+        overflow: hidden !important;
+      }
+      
+      #about .meeting-item .thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.6s ease !important;
+      }
+      
+      #about .meeting-item:hover .thumb img {
+        transform: scale(1.15) rotate(2deg) !important;
+      }
+      
+      #about .meeting-item .price {
+        position: absolute !important;
+        top: 12px !important;
+        right: 12px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: blur(10px) !important;
+        color: #2d3748 !important;
+        padding: 4px 10px !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        font-size: 0.75rem !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        border: none !important;
+        transition: all 0.3s ease !important;
+        opacity: 0.8 !important;
+        line-height: 1 !important;
+      }
+      
+      #about .meeting-item .price span {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: inline !important;
+      }
+      
+      #about .meeting-item:hover .price {
+        background: rgba(120, 209, 197, 0.95) !important;
+        color: white !important;
+        transform: scale(1.05) !important;
+        opacity: 1 !important;
+        box-shadow: 0 4px 15px rgba(120, 209, 197, 0.4) !important;
+      }
+      
+      #about .meeting-item .down-content {
+        padding: 25px !important;
+      }
+      
+      #about .meeting-item .down-content h4 {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        color: #1a202c !important;
+        margin-bottom: 12px !important;
+      }
+      
+      #about .meeting-item .down-content p {
+        font-size: 1rem !important;
+        color: #718096 !important;
+        line-height: 1.7 !important;
+        margin: 0 !important;
+      }
       
       /* ABSOLUTE STRONGEST MOBILE MENU OVERRIDE - KILLS TEMPLATEMO CSS */
       @media (max-width: 991px) {
@@ -84,6 +471,35 @@
               cursor: pointer !important;
               position: relative !important;
               z-index: 999999 !important;
+          }
+          
+          /* DARK NAVY BLUE HEADER ON SCROLL */
+          body .header-area.background-header {
+              background: rgba(15, 32, 59, 0.85) !important;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          /* DEFAULT HEADER - SEMI-TRANSPARENT */
+          body .header-area {
+              background: rgba(0, 0, 0, 0.3) !important;
+              backdrop-filter: blur(10px) !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          /* HAMBURGER ICON - VISIBLE AND FUNCTIONAL */
+          body .header-area .main-nav .menu-trigger,
+          body .header-area .main-nav a.menu-trigger {
+              display: block !important;
+              position: absolute !important;
+              top: 10px !important;
+              right: 10px !important;
+              width: 50px !important;
+              height: 50px !important;
+              padding: 12px 8px !important;
+              background: transparent !important;
+              z-index: 999999 !important;
+              cursor: pointer !important;
           }
           
           /* MENU MUST BE ON TOP */
@@ -145,6 +561,132 @@
       }
       
       /* ===== CUSTOM SCROLL ANIMATIONS ===== */
+      /* ===== TYPEWRITER HERO ANIMATION ===== */
+      .hero-typewriter-container {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .school-name-hero {
+        font-size: 3.5rem !important;
+        font-weight: 700 !important;
+        color: #8B0000 !important;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
+                     4px 4px 8px rgba(255, 255, 255, 0.6),
+                     -2px -2px 0 rgba(255, 255, 255, 0.9),
+                     2px -2px 0 rgba(255, 255, 255, 0.9),
+                     -2px 2px 0 rgba(255, 255, 255, 0.9),
+                     2px 2px 0 rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 40px;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2px;
+      }
+      
+      .school-name-hero span {
+        color: #8B0000 !important;
+      }
+      
+      #typewriter-text {
+        color: #8B0000 !important;
+      }
+      
+      .blinking-cursor {
+        display: inline-block;
+        width: 4px;
+        height: 1.1em;
+        background-color: #8B0000;
+        margin-left: 5px;
+        animation: blink 0.8s ease-in-out infinite;
+        vertical-align: middle;
+        box-shadow: 0 0 10px rgba(139, 0, 0, 0.8);
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      
+      .cta-button-hero {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      
+      .cta-button-hero.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .apply-now-hero {
+        background: #78D1C5;
+        color: #ffffff;
+        padding: 22px 60px;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 10px 30px rgba(120, 209, 197, 0.4);
+        transition: all 0.3s ease;
+      }
+      
+      .apply-now-hero:hover {
+        background: #5fb8a8;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(120, 209, 197, 0.6);
+        color: #ffffff;
+        text-decoration: none;
+      }
+      
+      .apply-now-hero:active {
+        transform: translateY(-2px);
+      }
+      
+      .apply-now-hero i {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+      }
+      
+      .apply-now-hero:hover i {
+        transform: translateX(5px);
+      }
+      
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .school-name-hero {
+          font-size: 2rem;
+          min-height: 80px;
+        }
+        
+        .apply-now-hero {
+          padding: 18px 45px;
+          font-size: 18px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .school-name-hero {
+          font-size: 1.5rem;
+          letter-spacing: 1px;
+        }
+        
+        .apply-now-hero {
+          padding: 16px 40px;
+          font-size: 16px;
+        }
+      }
+      
       /* Smooth, professional animations for sections and cards */
       
       /* Custom animation timings - adjust these values to change speed */
@@ -225,67 +767,73 @@ https://templatemo.com/tm-569-edu-meeting
 
 <body class="homepage">
 
-  <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>Excellence in Education • <em>Character Development</em> • Academic Achievement</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <a href="index.html" class="logo">
-                          <img src="assets/images/fr joseph logo_page-0001.jpg" alt="Fr. Joseph Richetti Catholic School Logo" class="logo-img">
-                          <span class="logo-text">Fr. Joseph Richetti Catholic School</span>
-                      </a>
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="index.html" class="active">Home</a></li>
-                          <li><a href="about-academy.html">About</a></li>
-                          <li><a href="#admissions" class="scroll-to-section">Admissions</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Academics</a>
-                              <ul class="sub-menu">
-                                  <li><a href="#programs" class="scroll-to-section">Programs</a></li>
-                                  <li><a href="activities-clubs.html">Activities</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="#achievements" class="scroll-to-section">Achievements</a></li> 
-                          <li><a href="#newsletter" class="scroll-to-section">Newsletter</a></li>
-                          <li><a href="#contact" class="scroll-to-section">Contact</a></li> 
-                      </ul>        
-                      <a class='menu-trigger' id='mobile-menu-trigger'>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
+  <!-- HEADER WRAPPER - Exact structure from test -->
+  <div style="position: relative; background: white;">
+      
+      <!-- Sub Header FIRST -->
+      <div class="sub-header">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-sm-8">
+                      <div class="left-content">
+                          <p>Excellence in Education • <em>Character Development</em> • Academic Achievement</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                      <div class="right-icons">
+                          <ul>
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+
+      <!-- ***** Header Area Start ***** -->
+      <header class="header-area header-sticky" style="position: relative; z-index: 10;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav class="main-nav">
+                          <a href="index.html" class="logo">
+                              <img src="assets/images/fr joseph logo_page-0001.jpg" alt="Fr. Joseph Richetti Catholic School Logo" class="logo-img">
+                              <span class="logo-text">Fr. Joseph Richetti Catholic School</span>
+                          </a>
+                          <!-- ***** Menu Start ***** -->
+                          <ul class="nav">
+                              <li><a href="index.html" class="active">Home</a></li>
+                              <li><a href="about-academy.html">About</a></li>
+                              <li><a href="#admissions" class="scroll-to-section">Admissions</a></li>
+                              <li class="has-sub">
+                                  <a href="javascript:void(0)">Academics</a>
+                                  <ul class="sub-menu">
+                                      <li><a href="#programs" class="scroll-to-section">Programs</a></li>
+                                      <li><a href="activities-clubs.html">Activities</a></li>
+                                  </ul>
+                              </li>
+                              <li><a href="#achievements" class="scroll-to-section">Achievements</a></li> 
+                              <li><a href="#newsletter" class="scroll-to-section">Newsletter</a></li>
+                              <li><a href="#contact" class="scroll-to-section">Contact</a></li> 
+                          </ul>        
+                          <a class='menu-trigger' id='mobile-menu-trigger'>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                          </a>
+                          <!-- ***** Menu End ***** -->
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- ***** Header Area End ***** -->
+
+  </div>
+  <!-- End header wrapper -->
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
@@ -298,21 +846,20 @@ https://templatemo.com/tm-569-edu-meeting
           <div class="carousel-slide" style="background-image: url('assets/images/carousel-5.jpg')"></div>
       </div>
 
-      <div class="video-overlay header-text">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="caption">
-              <!-- Clean hero section -->
+      <!-- Typewriter Hero Section -->
+      <div class="hero-typewriter-container">
+          <!-- School Name with Typewriter Effect -->
+          <h1 class="school-name-hero">
+              <span id="typewriter-text"></span><span class="blinking-cursor" id="cursor"></span>
+          </h1>
+          
+          <!-- Apply Now Button (fades in after typing) -->
+          <div id="cta-container" class="cta-button-hero">
+              <a href="#admissions" class="apply-now-hero">
+                  Apply Now
+                  <i class="fa fa-arrow-right"></i>
+              </a>
           </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      
-      <!-- Apply Now button - bottom right corner (outside container for fixed positioning) -->
-      <div class="hero-cta-button">
-          <a href="#admissions" class="apply-btn">Apply Now</a>
       </div>
   </section>
   <!-- ***** Main Banner Area End ***** -->
@@ -322,94 +869,78 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>About Our Academy</h2>
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="categories">
+          <div class="categories" data-aos="fade-right" data-aos-duration="800">
             <h4>Our Core Values</h4>
             <ul>
-              <li><a href="#">Respect</a></li>
-              <li><a href="#">Honesty/Integrity</a></li>
-              <li><a href="#">Self-Reliance</a></li>
-              <li><a href="#">Hard work</a></li>
-              <li><a href="#">Obedience</a></li>
-              <li><a href="#">Team Work</a></li>
-              <li><a href="#">Freedom with Responsibility</a></li>
+              <li>Respect</li>
+              <li>Honesty/Integrity</li>
+              <li>Self-Reliance</li>
+              <li>Hard Work</li>
             </ul>
-            <div class="main-button-red">
-              <a href="about-academy.html">Learn More</a>
-            </div>
+            
+            <a href="about-academy.html" class="cta-button">
+              Learn More About Us
+              <i class="fa fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="col-lg-8">
           <div class="row">
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Fade up with 0ms delay (first card) -->
+              <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
                 <div class="thumb">
-                  <div class="price">
-                    <span>Est.</span>
-                  </div>
-                  <a href="#"><img src="assets/images/OUR HERITAGE.jpg" alt="School History"></a>
+                  <div class="price"><span>Est. 2005</span></div>
+                  <img src="assets/images/OUR HERITAGE.jpg" alt="Heritage">
                 </div>
                 <div class="down-content">
-                  <div class="date">
-                    <h6><span></span></h6>
-                  </div>
-                  <a href="#"><h4>Our Heritage</h4></a>
-                  <p>Founded by Italian Consolata Priest<br>Fr. Joseph Richetti's vision.</p>
+                  <h4>Our Heritage</h4>
+                  <p>Founded by Italian Consolata Priest Fr. Joseph Richetti's vision.</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Fade up with 100ms delay (staggered) -->
+              <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <div class="thumb">
-                  <div class="price">
-                    <span>776</span>
-                  </div>
-                  <a href="#"><img src="assets/images/CURRENT STUDENTS.jpg" alt="Current Enrollment"></a>
+                  <div class="price"><span>776</span></div>
+                  <img src="assets/images/CURRENT STUDENTS.jpg" alt="Students">
                 </div>
                 <div class="down-content">
-                  <div class="date">
-                    <h6>Total <span>776</span></h6>
-                  </div>
-                  <a href="#"><h4>Current Students</h4></a>
-                  <p>Pre-School (135) &<br>Primary School (472)</p>
+                  <h4>Current Students</h4>
+                  <p>Pre-School (135) & Primary School (472)</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Fade up with 200ms delay (staggered) -->
+              <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="thumb">
-                  <div class="price">
-                    <span>15:1</span>
-                  </div>
-                  <a href="#"><img src="assets/images/SMALL CLASS SIZES.jpg" alt="Small Classes"></a>
+                  <div class="price"><span>15:1</span></div>
+                  <img src="assets/images/SMALL CLASS SIZES.jpg" alt="Classes">
                 </div>
                 <div class="down-content">
-                  <div class="date">
-                    <h6>Ratio <span>15:1</span></h6>
-                  </div>
-                  <a href="#"><h4>Small Class Sizes</h4></a>
-                  <p>Personalized attention for<br>every student's success.</p>
+                  <h4>Small Class Sizes</h4>
+                  <p>Personalized attention for every student's success.</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Fade up with 300ms delay (staggered) -->
+              <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="thumb">
-                  <div class="price">
-                    <span>100%</span>
-                  </div>
-                  <a href="#"><img src="assets/images/meeting-04.jpg" alt="Secondary Placement"></a>
+                  <div class="price"><span>100%</span></div>
+                  <img src="assets/images/meeting-04.jpg" alt="Success">
                 </div>
                 <div class="down-content">
-                  <div class="date">
-                    <h6>Rate <span>100%</span></h6>
-                  </div>
-                  <a href="#"><h4>Secondary Placement</h4></a>
-                  <p>Outstanding success in<br>secondary education placement.</p>
+                  <h4>Secondary Placement</h4>
+                  <p>Outstanding success in secondary education placement.</p>
                 </div>
               </div>
             </div>
@@ -422,10 +953,10 @@ https://templatemo.com/tm-569-edu-meeting
   <section class="apply-now" id="admissions">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 align-self-center">
+        <div class="col-lg-6 align-self-center" data-aos="fade-right" data-aos-duration="800">
           <div class="row">
             <div class="col-lg-12">
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <h3>ADMISSION REQUIREMENTS</h3>
                 <p>To join our academy, please prepare: ID copies of parents, previous result slip, 70% school fee payment, birth certificate, and clearance certificate from previous school.</p>
                 <div class="main-button-red">
@@ -434,7 +965,7 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="col-lg-12">
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3>ADMISSION PROCEDURE</h3>
                 <p>Step 1: Register your interest • Step 2: Attend interview (Ksh 1,000 fee) • Step 3: Receive reporting date and complete enrollment process.</p>
                 <div class="main-button-yellow">
@@ -444,7 +975,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
           <div class="accordions is-first-expanded">
             <article class="accordion">
                 <div class="accordion-head">
@@ -510,7 +1041,8 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>Academic Programs - CBE Curriculum</h2>
             <p>Comprehensive Competency-Based Education curriculum aligned with Kenya's education standards</p>
           </div>
@@ -1021,7 +1553,8 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>Activities & Clubs</h2>
           </div>
         </div>
@@ -1043,7 +1576,8 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-8">
           <div class="row">
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Zoom in effect with 0ms delay -->
+              <div class="meeting-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0">
                 <div class="thumb">
                   <div class="price">
                     <span>Active</span>
@@ -1060,7 +1594,8 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Zoom in effect with 100ms delay -->
+              <div class="meeting-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
                 <div class="thumb">
                   <div class="price">
                     <span>Active</span>
@@ -1077,7 +1612,8 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Zoom in effect with 200ms delay -->
+              <div class="meeting-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
                 <div class="thumb">
                   <div class="price">
                     <span>Active</span>
@@ -1094,7 +1630,8 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="meeting-item">
+              <!-- ANIMATION: Zoom in effect with 300ms delay -->
+              <div class="meeting-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
                 <div class="thumb">
                   <div class="price">
                     <span>Active</span>
@@ -1119,7 +1656,8 @@ https://templatemo.com/tm-569-edu-meeting
       <!-- Section Header -->
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>Our Achievements & Success Stories</h2>
             <p>Celebrating excellence in education, character development, and community impact</p>
           </div>
@@ -1130,7 +1668,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="stats-container">
         <div class="row">
           <div class="col-lg-3 col-md-6">
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0">
               <div class="stat-icon">
                 <i class="fa fa-graduation-cap"></i>
               </div>
@@ -1140,7 +1678,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
               <div class="stat-icon">
                 <i class="fa fa-users"></i>
               </div>
@@ -1150,7 +1688,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
               <div class="stat-icon">
                 <i class="fa fa-user-graduate"></i>
               </div>
@@ -1160,7 +1698,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
               <div class="stat-icon">
                 <i class="fa fa-trophy"></i>
               </div>
@@ -1174,10 +1712,10 @@ https://templatemo.com/tm-569-edu-meeting
       
       <!-- Events & Achievements Gallery -->
       <div class="events-gallery">
-        <h3>Recent Events & Achievements</h3>
+        <h3 data-aos="fade-up" data-aos-duration="800">Recent Events & Achievements</h3>
         <div class="row">
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
               <div class="event-image">
                 <img src="assets/images/meeting-01.jpg" alt="Science Fair 2024">
                 <div class="event-date">Mar 2024</div>
@@ -1190,7 +1728,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               <div class="event-image">
                 <img src="assets/images/meeting-02.jpg" alt="Sports Championship">
                 <div class="event-date">Feb 2024</div>
@@ -1203,7 +1741,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
               <div class="event-image">
                 <img src="assets/images/meeting-03.jpg" alt="Cultural Festival">
                 <div class="event-date">Jan 2024</div>
@@ -1216,7 +1754,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <div class="event-image">
                 <img src="assets/images/meeting-04.jpg" alt="Academic Awards">
                 <div class="event-date">Dec 2023</div>
@@ -1229,7 +1767,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               <div class="event-image">
                 <img src="assets/images/course-01.jpg" alt="Community Service">
                 <div class="event-date">Nov 2023</div>
@@ -1242,7 +1780,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="event-card">
+            <div class="event-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
               <div class="event-image">
                 <img src="assets/images/course-02.jpg" alt="Drama Performance">
                 <div class="event-date">Oct 2023</div>
@@ -1270,7 +1808,8 @@ https://templatemo.com/tm-569-edu-meeting
       <!-- Section Header -->
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>School Newsletter & Updates</h2>
             <p>Stay informed with the latest news, announcements, and updates from Fr. Joseph Richetti Catholic School</p>
           </div>
@@ -1349,7 +1888,8 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading">
+          <!-- ANIMATION: Fade down for heading -->
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
             <h2>Downloads</h2>
           </div>
         </div>
@@ -1619,6 +2159,51 @@ https://templatemo.com/tm-569-edu-meeting
         });
     </script>
     
+    <!-- TYPEWRITER ANIMATION SCRIPT -->
+    <script>
+        // Typewriter effect for school name
+        const schoolName = "FR. JOSEPH RICHETTI CATHOLIC SCHOOL";
+        const typewriterElement = document.getElementById('typewriter-text');
+        const cursor = document.getElementById('cursor');
+        const ctaContainer = document.getElementById('cta-container');
+        
+        let charIndex = 0;
+        
+        function typeWriter() {
+            if (charIndex < schoolName.length) {
+                typewriterElement.textContent += schoolName.charAt(charIndex);
+                charIndex++;
+                
+                // Variable typing speed for natural effect (60-100ms per character)
+                const typingSpeed = Math.random() * 40 + 60;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                // Typing complete!
+                console.log(' School name typewriter animation complete');
+                
+                // Wait a moment, then remove cursor and show button
+                setTimeout(() => {
+                    // Hide cursor
+                    cursor.style.display = 'none';
+                    
+                    // Show CTA button with slide-up animation
+                    setTimeout(() => {
+                        ctaContainer.classList.add('show');
+                        console.log(' Apply Now button animated in');
+                    }, 400);
+                    
+                }, 600);
+            }
+        }
+        
+        // Start typewriter effect after page loads
+        window.addEventListener('load', function() {
+            console.log(' Starting hero typewriter animation...');
+            // Small delay before starting
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+    
     <!-- Clean Navbar JavaScript -->
     <script>
         $(document).ready(function() {
@@ -1698,30 +2283,36 @@ https://templatemo.com/tm-569-edu-meeting
         });
         
         /* ===== SCROLL ANIMATIONS INITIALIZATION ===== */
-        // Initialize AOS (Animate On Scroll) library
+        // Initialize AOS (Animate On Scroll) library with optimized settings
         AOS.init({
-          // Global settings - adjust these to change all animations
-          duration: 800,           // Animation duration in milliseconds (600-1000ms recommended)
-          easing: 'ease-out-cubic', // Animation easing function
-          once: true,              // Animation happens only once when scrolling down
-          mirror: false,           // Don't animate elements when scrolling past them
-          offset: 120,             // Offset (in px) from original trigger point
-          delay: 0,                // Default delay before animation starts
-          anchorPlacement: 'top-bottom', // When animation triggers
+          // Global settings - Professional timing
+          duration: 800,           // Animation length (800ms = smooth & elegant)
+          easing: 'ease-out-cubic', // Natural deceleration
+          once: true,              // Animate only once (better performance)
+          mirror: false,           // Don't re-animate when scrolling up
+          offset: 100,             // Trigger 100px before element enters viewport
+          delay: 0,                // Base delay (individual elements override this)
+          anchorPlacement: 'top-bottom', // Trigger when element's top reaches viewport bottom
           
-          // Mobile settings
-          disable: function() {
-            // Disable on very small screens if needed
-            return window.innerWidth < 480 ? false : false;
-          },
+          // Mobile optimization - Keep animations on mobile
+          disable: false,          // Enable on all devices
           
-          // Performance
-          throttleDelay: 99,       // Delay on throttle used while scrolling
-          debounceDelay: 50        // Delay on debounce used while resizing window
+          // Performance optimization
+          throttleDelay: 99,       // Smooth scroll detection
+          debounceDelay: 50,       // Window resize handling
+          
+          // Custom settings
+          startEvent: 'DOMContentLoaded', // Initialize as soon as DOM is ready
         });
         
         // Refresh AOS when dynamic content is loaded
         $(window).on('load', function() {
+          AOS.refresh();
+          console.log('AOS animations initialized and refreshed');
+        });
+        
+        // Re-calculate on window resize for responsive behavior
+        $(window).on('resize', function() {
           AOS.refresh();
         });
         

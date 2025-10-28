@@ -177,7 +177,7 @@
 }
 
 .about-nav-link:hover {
-    color: #00BCD4 !important;
+    color: #78D1C5 !important;
 }
 
 /* ABOUT PAGE BUTTONS */
@@ -212,7 +212,7 @@
 /* ABOUT PAGE ACCESSIBILITY */
 .about-page a:focus,
 .about-page button:focus {
-    outline: 2px solid #00BCD4 !important;
+    outline: 2px solid #78D1C5 !important;
     outline-offset: 2px !important;
 }
 

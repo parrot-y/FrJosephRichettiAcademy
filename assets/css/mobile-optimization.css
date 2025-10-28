@@ -171,7 +171,7 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #00BCD4;
+  outline: 2px solid #78D1C5;
   outline-offset: 2px;
 }
 
@@ -256,9 +256,11 @@ img[src=""] {
 /* Optimize for slow connections */
 @media (prefers-reduced-data: reduce) {
   
-  /* Disable autoplay videos on slow connections */
+  /* Note: Autoplay is an HTML attribute, not a CSS property */
+  /* Control autoplay via JavaScript or HTML attribute instead */
   video[autoplay] {
-    autoplay: false;
+    /* autoplay cannot be controlled via CSS */
+    display: block;
   }
   
   /* Reduce animation complexity */
@@ -301,7 +303,7 @@ img[src=""] {
   /* Keep brand colors intact */
   .main-button-red a,
   .main-button-yellow a {
-    background-color: #00BCD4; /* Keep original brand color */
+    background-color: #78D1C5; /* Keep original brand color */
   }
 }
 
@@ -521,7 +523,7 @@ textarea:focus {
   content: '';
   width: 20px;
   height: 20px;
-  border: 2px solid #00BCD4;
+  border: 2px solid #78D1C5;
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;

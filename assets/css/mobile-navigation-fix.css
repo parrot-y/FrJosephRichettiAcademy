@@ -92,8 +92,8 @@
     
     .header-area .main-nav .nav.mobile-active li a:hover,
     .header-area .main-nav .nav.mobile-active li a.active {
-        background: rgba(0, 188, 212, 0.2) !important;
-        color: #00BCD4 !important;
+        background: rgba(120, 209, 197, 0.2) !important;
+        color: #78D1C5 !important;
         padding-left: 40px !important;
     }
     
@@ -143,8 +143,8 @@
 }
 
 .header-area .main-nav .nav.mobile-active li a:hover {
-    background: rgba(0, 188, 212, 0.2) !important;
-    color: #00BCD4 !important;
+    background: rgba(120, 209, 197, 0.2) !important;
+    color: #78D1C5 !important;
 }
 
 /* SUBMENU HANDLING ON MOBILE */

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Section - FINAL Version</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            padding: 40px 20px;
+        }
+        
+        .test-header {
+            background: linear-gradient(135deg, #78D1C5 0%, #0097A7 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .section-container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-heading h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        
+        /* SIDEBAR WITH CTA */
+        .categories {
+            background: linear-gradient(135deg, rgba(120, 209, 197, 0.1) 0%, rgba(0, 151, 167, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(120, 209, 197, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 8px 32px rgba(120, 209, 197, 0.15);
+        }
+        
+        .categories h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0097A7;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .categories h4::before {
+            content: '✨';
+            font-size: 1.8rem;
+        }
+        
+        .categories ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .categories ul li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(120, 209, 197, 0.2);
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .categories ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .categories ul li::before {
+            content: '✓';
+            color: #78D1C5;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .categories ul li:hover {
+            padding-left: 10px;
+            color: #0097A7;
+        }
+        
+        /* CTA BUTTON - NO COLOR, HOVER SHOWS COLOR */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: #2d3748;
+            border: 2px solid rgba(120, 209, 197, 0.5);
+            padding: 16px 25px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #78D1C5 0%, #0097A7 100%);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(120, 209, 197, 0.5);
+            text-decoration: none;
+        }
+        
+        .cta-button i {
+            margin-left: 8px;
+        }
+        
+        /* CARDS */
+        .meeting-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .meeting-item:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(120, 209, 197, 0.25);
+            border-color: #78D1C5;
+        }
+        
+        .thumb {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .meeting-item:hover .thumb img {
+            transform: scale(1.15) rotate(2deg);
+        }
+        
+        /* SMALLER BADGES - NO COLOR */
+        .price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: #2d3748;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .meeting-item:hover .price {
+            background: rgba(120, 209, 197, 0.95);
+            color: white;
+            transform: scale(1.05);
+            opacity: 1;
+            box-shadow: 0 4px 15px rgba(120, 209, 197, 0.4);
+        }
+        
+        .down-content {
+            padding: 25px;
+        }
+        
+        .down-content h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 12px;
+        }
+        
+        .down-content p {
+            font-size: 1rem;
+            color: #718096;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-header">
+    <h2>✅ FINAL About Section Design</h2>
+    <p>Option 1 with your requested modifications</p>
+</div>
+
+<div class="section-container">
+    <div class="container">
+        <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
+            <h2>About Our Academy</h2>
+        </div>
+        
+        <div class="row">
+            <!-- SIDEBAR: CTA + FEW VALUES -->
+            <div class="col-lg-4 mb-30" data-aos="fade-right" data-aos-duration="800">
+                <div class="categories">
+                    <h4>Our Core Values</h4>
+                    <ul>
+                        <li>Respect</li>
+                        <li>Honesty/Integrity</li>
+                        <li>Self-Reliance</li>
+                        <li>Hard Work</li>
+                    </ul>
+                    
+                    <a href="about-academy.html" class="cta-button">
+                        Learn More About Us
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- CARDS -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-6 mb-30" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                        <div class="meeting-item">
+                            <div class="thumb">
+                                <div class="price"><span>Est. 2005</span></div>
+                                <img src="assets/images/OUR HERITAGE.jpg" alt="Heritage">
+                            </div>
+                            <div class="down-content">
+                                <h4>Our Heritage</h4>
+                                <p>Founded by Italian Consolata Priest Fr. Joseph Richetti's vision.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-30" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="meeting-item">
+                            <div class="thumb">
+                                <div class="price"><span>776</span></div>
+                                <img src="assets/images/CURRENT STUDENTS.jpg" alt="Students">
+                            </div>
+                            <div class="down-content">
+                                <h4>Current Students</h4>
+                                <p>Pre-School (135) & Primary School (472)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-30" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="meeting-item">
+                            <div class="thumb">
+                                <div class="price"><span>15:1</span></div>
+                                <img src="assets/images/SMALL CLASS SIZES.jpg" alt="Classes">
+                            </div>
+                            <div class="down-content">
+                                <h4>Small Class Sizes</h4>
+                                <p>Personalized attention for every student's success.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-30" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div class="meeting-item">
+                            <div class="thumb">
+                                <div class="price"><span>100%</span></div>
+                                <img src="assets/images/meeting-04.jpg" alt="Success">
+                            </div>
+                            <div class="down-content">
+                                <h4>Secondary Placement</h4>
+                                <p>Outstanding success in secondary education placement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background:#2c3e50; color:white; padding:40px; text-align:center; border-radius:15px; margin-top:40px;">
+    <h3 style="margin-bottom:20px;">✅ Changes Made:</h3>
+    <ul style="list-style:none; padding:0; max-width:700px; margin:0 auto; text-align:left;">
+        <li style="padding:10px; background:rgba(255,255,255,0.1); margin-bottom:10px; border-radius:8px;">
+            ✓ <strong>Smaller badges</strong> - Reduced from 1.1rem to 0.85rem
+        </li>
+        <li style="padding:10px; background:rgba(255,255,255,0.1); margin-bottom:10px; border-radius:8px;">
+            ✓ <strong>No color on badges</strong> - White/transparent background
+        </li>
+        <li style="padding:10px; background:rgba(255,255,255,0.1); margin-bottom:10px; border-radius:8px;">
+            ✓ <strong>Hover effect on badges</strong> - Turns turquoise when card is hovered
+        </li>
+        <li style="padding:10px; background:rgba(255,255,255,0.1); margin-bottom:10px; border-radius:8px;">
+            ✓ <strong>CTA button no color</strong> - "Learn More" has border only, turquoise on hover
+        </li>
+        <li style="padding:10px; background:rgba(255,255,255,0.1); border-radius:8px;">
+            ✓ <strong>Only 4 core values</strong> - Respect, Honesty/Integrity, Self-Reliance, Hard Work
+        </li>
+    </ul>
+    <p style="margin-top:30px; font-size:18px; color:#78D1C5;">
+        <strong>Hover over cards and button to see color changes!</strong><br>
+        Cards badges turn turquoise • Button fills with gradient<br>
+        If you like this, I'll implement it on your homepage!
+    </p>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration: 800, once: true});
+</script>
+</body>
+</html>

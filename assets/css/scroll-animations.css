@@ -1,0 +1,210 @@
+/* ===== SCROLL-BASED ANIMATIONS CSS ===== */
+/* Modern, elegant animations for website sections and cards */
+/* Using AOS.js (Animate On Scroll) library */
+
+/* ===== CUSTOMIZATION GUIDE ===== */
+/*
+  AVAILABLE ANIMATION TYPES (use in data-aos attribute):
+  - fade-up: Fade in from bottom (recommended for cards)
+  - fade-down: Fade in from top (recommended for headings)
+  - fade-left: Fade in from right side
+  - fade-right: Fade in from left side
+  - zoom-in: Scale up from smaller size
+  - zoom-out: Scale down from larger size
+  - flip-left: 3D flip effect (use sparingly)
+  - slide-up: Slide from bottom (sharper than fade)
+
+  TIMING CONTROLS:
+  - data-aos-duration: Animation length (600-1000ms recommended)
+  - data-aos-delay: Delay before start (0-500ms for stagger)
+  - data-aos-easing: ease, linear, ease-in-out, etc.
+  
+  EXAMPLE USAGE:
+  <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    Your content here
+  </div>
+*/
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* Smooth animations on all devices */
+[data-aos] {
+  pointer-events: auto !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== CUSTOM ANIMATION ENHANCEMENTS ===== */
+/* Add subtle parallax effect to images */
+.meeting-item img,
+.stats-card img {
+  transition: transform 0.3s ease;
+}
+
+.meeting-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Smooth transitions for all animated elements */
+.meeting-item,
+.stats-card,
+.achievement-card,
+.newsletter-post {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects that complement scroll animations */
+.meeting-item:hover,
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SECTION BACKGROUND ANIMATIONS ===== */
+/* Subtle parallax effect for section backgrounds */
+.section {
+  background-attachment: scroll;
+  transition: background-position 0.5s ease-out;
+}
+
+/* Add subtle fade effect between sections */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+  pointer-events: none;
+}
+
+/* ===== STAGGERED ANIMATION DELAYS ===== */
+/* Pre-defined delays for common layouts */
+.stagger-1 { animation-delay: 0ms !important; }
+.stagger-2 { animation-delay: 100ms !important; }
+.stagger-3 { animation-delay: 200ms !important; }
+.stagger-4 { animation-delay: 300ms !important; }
+.stagger-5 { animation-delay: 400ms !important; }
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+  /* Faster animations on mobile */
+  [data-aos] {
+    transition-duration: 600ms !important;
+  }
+  
+  /* Reduce animation delays on mobile */
+  [data-aos-delay] {
+    transition-delay: 50ms !important;
+  }
+  
+  /* Simpler hover effects on mobile */
+  .meeting-item:hover,
+  .stats-card:hover {
+    transform: none;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions for scroll-triggered elements */
+.section {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ===== LOADING STATE ===== */
+/* Hide elements until AOS initializes */
+[data-aos]:not(.aos-animate) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Show elements after AOS triggers */
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ADVANCED EFFECTS ===== */
+/* Subtle background parallax on scroll */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition: background-position 0.5s ease-out;
+}
+
+/* Gradient fade between sections */
+.section-fade {
+  position: relative;
+}
+
+.section-fade::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.05));
+  pointer-events: none;
+}
+
+/* ===== CUSTOM TIMING FUNCTIONS ===== */
+/* Smoother easing for professional feel */
+.ease-bounce {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ease-smooth {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-swift {
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* ===== NOTES FOR DEVELOPERS ===== */
+/*
+  BEST PRACTICES:
+  1. Use fade-up for cards entering from bottom (most natural)
+  2. Use fade-down for section headings (establishes hierarchy)
+  3. Use zoom-in for important call-to-action elements
+  4. Keep delays under 500ms to avoid frustration
+  5. Use 800ms duration for most elements (not too fast, not too slow)
+  6. Stagger cards by 100ms increments for smooth sequence
+  7. Test on mobile devices - ensure smooth performance
+  8. Don't animate everything - be selective for impact
+  
+  COMMON PATTERNS:
+  - Section heading: data-aos="fade-down" data-aos-duration="800"
+  - First card: data-aos="fade-up" data-aos-duration="800" data-aos-delay="0"
+  - Second card: data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"
+  - CTA button: data-aos="zoom-in" data-aos-duration="600"
+  
+  TROUBLESHOOTING:
+  - Animation not showing? Check AOS.init() is called
+  - Too fast/slow? Adjust data-aos-duration
+  - Animations triggering too late? Adjust offset in AOS.init()
+  - Performance issues? Reduce number of animated elements
+*/

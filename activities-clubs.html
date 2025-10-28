@@ -16,41 +16,59 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css?v=20241014c">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css?v=20241028-turquoise">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <link rel="stylesheet" href="assets/css/contact-form.css?v=20241014">
     <link rel="stylesheet" href="assets/css/school-logo.css">
     <link rel="stylesheet" href="assets/css/cbc-programs.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/activities-clubs.css?v=20241028">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <link rel="stylesheet" href="assets/css/minimal-fix-only.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241028">
+    <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled">
+    <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/activities-page-fix.css?v=20241014">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/scroll-animations.css">
     
     <style>
       /* Taekwondo Carousel Dots Styling */
       .activity-images .owl-dots .owl-dot {
-        background-color: #00BCD4 !important;
+        background-color: #78D1C5 !important;
         opacity: 0.3;
         transition: all 0.3s ease;
       }
       .activity-images .owl-dots .owl-dot.active {
-        background-color: #00BCD4 !important;
+        background-color: #78D1C5 !important;
         opacity: 1;
       }
       .activity-images .owl-dots .owl-dot:hover {
-        background-color: #00BCD4 !important;
+        background-color: #78D1C5 !important;
         opacity: 0.7;
       }
       
       /* MOBILE MENU - COMPLETE MATCH HOMEPAGE */
       @media (max-width: 991px) {
+          /* DARK NAVY BLUE HEADER ON SCROLL */
+          body .header-area.background-header {
+              background: rgba(15, 32, 59, 0.85) !important;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          /* DEFAULT HEADER - SEMI-TRANSPARENT */
+          body .header-area {
+              background: rgba(0, 0, 0, 0.3) !important;
+              backdrop-filter: blur(10px) !important;
+              transition: all 0.3s ease !important;
+          }
+          
           /* HAMBURGER ICON - VISIBLE */
           body .header-area .main-nav .menu-trigger,
           body .header-area .main-nav a.menu-trigger {
@@ -547,6 +565,19 @@
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js?v=20241027"></script>
+  
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+      disable: false
+    });
+  </script>
   
   <!-- MOBILE MENU FIX - EXACT MATCH HOMEPAGE -->
   <script>

@@ -17,15 +17,15 @@
     will-change: auto !important;
 }
 
-/* DISABLE SMOOTH SCROLLING */
+/* SMOOTH SCROLLING - NOW ENABLED FOR BETTER UX */
 html {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth !important;
     scroll-snap-type: none !important;
 }
 
 body {
-    scroll-behavior: auto !important;
-    -webkit-overflow-scrolling: auto !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
 }
 
 /* DISABLE ONLY SCROLL-TRIGGERED ANIMATIONS */
@@ -98,15 +98,17 @@ body {
 }
 
 /* DISABLE ANY JAVASCRIPT-TRIGGERED SCROLL ANIMATIONS */
+/* NOTE: AOS animations are now ENABLED - removed .aos-animate from this rule */
 .js-scroll,
-.aos-animate,
-.wow,
-.animated {
+.wow {
     animation: none !important;
     transition: none !important;
     transform: none !important;
     -webkit-transform: none !important;
 }
+
+/* Allow AOS animations to work */
+/* .aos-animate is intentionally NOT disabled here */
 
 /* DISABLE WAYPOINT ANIMATIONS */
 .waypoint,

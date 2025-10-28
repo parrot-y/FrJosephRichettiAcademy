@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color & Animation Test - Fr. Joseph Richetti</title>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241028">
+    <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
+    <link rel="stylesheet" href="assets/css/scroll-animations.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .color-box {
+            width: 200px;
+            height: 100px;
+            background: #78D1C5;
+            margin: 20px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .old-color {
+            background: #00BCD4;
+        }
+        
+        .test-button {
+            background: #78D1C5;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .test-button:hover {
+            background: #5fb8a8;
+        }
+        
+        .test-link {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+        
+        .test-link:hover {
+            color: #78D1C5;
+        }
+        
+        .animated-box {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Color & Animation Test Page</h1>
+    <p>This page tests if the turquoise color (#78D1C5) and animations are working correctly.</p>
+    
+    <!-- COLOR TESTS -->
+    <div class="test-section">
+        <h2>1. Color Test</h2>
+        <p>New turquoise color from school poles:</p>
+        <div class="color-box">
+            #78D1C5 - NEW COLOR
+        </div>
+        
+        <p>Old cyan blue color:</p>
+        <div class="color-box old-color">
+            #00BCD4 - OLD COLOR
+        </div>
+        
+        <h3>Interactive Elements:</h3>
+        <button class="test-button">Test Button (Turquoise)</button>
+        
+        <div>
+            <a href="#" class="test-link">Hover over this link (should turn turquoise)</a>
+        </div>
+    </div>
+    
+    <!-- ANIMATION TESTS -->
+    <div class="test-section">
+        <h2>2. Scroll Animation Tests</h2>
+        <p>Scroll down to see animations trigger</p>
+        
+        <div class="animated-box" data-aos="fade-up" data-aos-duration="800">
+            <h3>Fade Up Animation</h3>
+            <p>This box should fade up from bottom when you scroll to it.</p>
+        </div>
+        
+        <div class="animated-box" data-aos="fade-down" data-aos-duration="800">
+            <h3>Fade Down Animation</h3>
+            <p>This box should fade down from top when you scroll to it.</p>
+        </div>
+        
+        <div class="animated-box" data-aos="zoom-in" data-aos-duration="800">
+            <h3>Zoom In Animation</h3>
+            <p>This box should zoom in when you scroll to it.</p>
+        </div>
+        
+        <div class="animated-box" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+            <h3>Card 1 - No Delay</h3>
+            <p>First card appears immediately</p>
+        </div>
+        
+        <div class="animated-box" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h3>Card 2 - 100ms Delay</h3>
+            <p>Second card appears 100ms later</p>
+        </div>
+        
+        <div class="animated-box" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <h3>Card 3 - 200ms Delay</h3>
+            <p>Third card appears 200ms later</p>
+        </div>
+        
+        <div class="animated-box" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <h3>Card 4 - 300ms Delay</h3>
+            <p>Fourth card appears 300ms later (staggered effect)</p>
+        </div>
+    </div>
+    
+    <!-- DIAGNOSTIC INFO -->
+    <div class="test-section">
+        <h2>3. Diagnostic Info</h2>
+        <div id="diagnostic"></div>
+    </div>
+    
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100,
+            disable: false
+        });
+        
+        console.log('✅ AOS Initialized');
+        console.log('✅ Turquoise Color: #78D1C5');
+        
+        // Diagnostic info
+        document.getElementById('diagnostic').innerHTML = `
+            <p><strong>Browser:</strong> ${navigator.userAgent}</p>
+            <p><strong>AOS Loaded:</strong> ${typeof AOS !== 'undefined' ? '✅ YES' : '❌ NO'}</p>
+            <p><strong>Animated Elements:</strong> ${document.querySelectorAll('[data-aos]').length}</p>
+            <p><strong>Turquoise Buttons:</strong> ${document.querySelectorAll('.test-button').length}</p>
+            <p><strong>CSS Files Loaded:</strong> ${document.styleSheets.length}</p>
+            <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+        `;
+        
+        // Test button click
+        document.querySelectorAll('.test-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('✅ Button works! Color: #78D1C5 (Turquoise)');
+            });
+        });
+    </script>
+</body>
+</html>
