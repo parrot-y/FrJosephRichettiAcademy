@@ -1,0 +1,402 @@
+/* ===== COMPREHENSIVE RESPONSIVE IMAGES FIX ===== */
+/* Makes ALL images fully responsive across all devices */
+/* No cropping, stretching, or distortion - perfect scaling */
+
+/* ===== HERO CAROUSEL IMAGES - FULL SCREEN COVERAGE ===== */
+.carousel-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    opacity: 0 !important;
+    transition: opacity 1.5s ease-in-out !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.carousel-slide.active {
+    opacity: 1 !important;
+}
+
+/* Desktop - Full cover for professional look */
+@media (min-width: 1200px) {
+    .carousel-slide {
+        background-size: cover !important;
+    }
+}
+
+/* Tablet - Maintain cover */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .carousel-slide {
+        background-size: cover !important;
+    }
+}
+
+/* Mobile - Cover for full screen experience */
+@media (max-width: 767px) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    
+    .main-banner {
+        min-height: 100vh !important;
+        height: 100vh !important;
+    }
+}
+
+/* ===== LOGO IMAGE - RESPONSIVE SCALING ===== */
+.logo-img {
+    width: auto !important;
+    height: 70px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 50px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 40px !important;
+    }
+}
+
+/* ===== ABOUT SECTION IMAGES (.meeting-item) ===== */
+.meeting-item img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 20px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.meeting-item:hover img {
+    transform: scale(1.05) !important;
+}
+
+@media (max-width: 768px) {
+    .meeting-item img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .meeting-item img {
+        height: 150px !important;
+    }
+}
+
+/* ===== ACTIVITIES BACKGROUND IMAGE ===== */
+#activities {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+}
+
+@media (max-width: 768px) {
+    #activities {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+    }
+}
+
+/* ===== CLUBS/ACTIVITIES SECTION IMAGES ===== */
+.item .thumb img,
+.activities-card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.item:hover .thumb img,
+.activities-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+@media (max-width: 768px) {
+    .item .thumb img,
+    .activities-card img {
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .item .thumb img,
+    .activities-card img {
+        height: 180px !important;
+    }
+}
+
+/* ===== ACHIEVEMENTS/EVENTS SECTION IMAGES ===== */
+.event-card .event-image img,
+.achievement-card img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px 10px 0 0 !important;
+    transition: transform 0.3s ease !important;
+}
+
+.event-card:hover .event-image img,
+.achievement-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+@media (max-width: 768px) {
+    .event-card .event-image img,
+    .achievement-card img {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card .event-image img,
+    .achievement-card img {
+        height: 180px !important;
+    }
+}
+
+/* ===== ALL IMG TAGS - GENERAL RESPONSIVE RULES ===== */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Specific containers with images */
+.thumb img,
+.down-content img,
+section img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+}
+
+/* ===== PREVENT IMAGE DISTORTION ===== */
+img {
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+    -ms-interpolation-mode: bicubic !important;
+}
+
+/* ===== RESPONSIVE CONTAINERS ===== */
+.meeting-item,
+.item,
+.event-card,
+.achievement-card,
+.activities-card {
+    overflow: hidden !important;
+    border-radius: 15px !important;
+}
+
+/* ===== HERO SECTION TEXT RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .school-name-hero {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+        padding: 0 20px !important;
+    }
+    
+    #typewriter-text {
+        font-size: 2.2rem !important;
+    }
+    
+    .main-button-red a {
+        padding: 12px 30px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .school-name-hero {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    #typewriter-text {
+        font-size: 1.8rem !important;
+    }
+    
+    .main-button-red a {
+        padding: 10px 25px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ===== GOOGLE MAPS RESPONSIVE ===== */
+.map-container-vertical iframe,
+iframe[src*="google.com/maps"] {
+    width: 100% !important;
+    height: 450px !important;
+    border-radius: 15px !important;
+}
+
+@media (max-width: 768px) {
+    .map-container-vertical iframe,
+    iframe[src*="google.com/maps"] {
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container-vertical iframe,
+    iframe[src*="google.com/maps"] {
+        height: 300px !important;
+    }
+}
+
+/* ===== PREVENT LAYOUT SHIFT ===== */
+.carousel-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+/* ===== SMOOTH IMAGE LOADING ===== */
+img {
+    transition: opacity 0.3s ease !important;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* ===== RETINA DISPLAY OPTIMIZATION ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast !important;
+    }
+}
+
+/* ===== TABLET PORTRAIT ===== */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    
+    .meeting-item img,
+    .event-card img,
+    .item img {
+        height: 200px !important;
+    }
+}
+
+/* ===== TABLET LANDSCAPE ===== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .carousel-slide {
+        background-size: cover !important;
+    }
+    
+    .main-banner {
+        height: 100vh !important;
+    }
+}
+
+/* ===== VERY SMALL MOBILE (320px) ===== */
+@media (max-width: 375px) {
+    .school-name-hero {
+        font-size: 1.5rem !important;
+    }
+    
+    #typewriter-text {
+        font-size: 1.5rem !important;
+    }
+    
+    .meeting-item img,
+    .event-card img,
+    .item img {
+        height: 140px !important;
+    }
+}
+
+/* ===== LARGE DESKTOP (1920px+) ===== */
+@media (min-width: 1920px) {
+    .carousel-slide {
+        background-size: cover !important;
+    }
+    
+    .meeting-item img {
+        height: 250px !important;
+    }
+    
+    .event-card img {
+        height: 280px !important;
+    }
+}
+
+/* ===== ULTRA-WIDE SCREENS (2560px+) ===== */
+@media (min-width: 2560px) {
+    .carousel-slide {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .carousel-slide {
+        background-size: contain !important;
+    }
+}
+
+/* ===== ACCESSIBILITY - REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide,
+    img,
+    .meeting-item img,
+    .event-card img {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ===== ENSURE NO OVERFLOW ===== */
+.container,
+.row,
+.col-lg-12,
+.col-lg-6,
+.col-lg-4,
+.col-md-6 {
+    overflow-x: hidden !important;
+}
+
+/* ===== FINAL CATCH-ALL ===== */
+* {
+    box-sizing: border-box !important;
+}
+
+img,
+video,
+iframe {
+    max-width: 100% !important;
+}

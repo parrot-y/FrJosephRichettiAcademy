@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads + Map + Form Layout Test</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .header { background: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .option { background: white; margin-bottom: 40px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .option-title { background: linear-gradient(135deg, #78D1C5, #0097A7); color: white; padding: 20px; font-size: 1.5rem; font-weight: bold; }
+        .views { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; }
+        .view { background: #f8f9fa; padding: 15px; border-radius: 10px; }
+        .view h3 { margin-bottom: 15px; text-align: center; color: #1a202c; }
+        .mockup { background: white; border-radius: 8px; padding: 20px; overflow-y: auto; max-height: 600px; }
+        .mobile-mockup { max-width: 375px; margin: 0 auto; }
+        
+        .section-title { color: #1a202c; font-size: 1.8rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #78D1C5; }
+        .download-item { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .download-item h4 { margin-bottom: 5px; color: #1a202c; }
+        .download-item p { font-size: 0.85rem; color: #666; }
+        .dl-btn { background: #78D1C5; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; }
+        
+        .map-placeholder { background: linear-gradient(135deg, #78D1C5, #0097A7); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        
+        .form-box { background: #f8f9fa; padding: 25px; border-radius: 10px; }
+        .form-box input, .form-box textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #e2e8f0; border-radius: 8px; }
+        .form-box button { background: #78D1C5; color: white; padding: 12px; border: none; border-radius: 8px; width: 100%; cursor: pointer; font-size: 1rem; }
+        
+        @media (max-width: 768px) { .views { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📄 Downloads + Map + Form Layout Options</h1>
+    <p>Choose the best layout for your Downloads, Map, and Contact Form sections</p>
+</div>
+
+<!-- OPTION 1: Vertical Stack -->
+<div class="option">
+    <div class="option-title">Option 1: Vertical Stack (Downloads → Map → Form)</div>
+    <div class="views">
+        <div class="view">
+            <h3>💻 Desktop View</h3>
+            <div class="mockup">
+                <!-- Downloads -->
+                <h2 class="section-title">Download Forms</h2>
+                <div class="download-item">
+                    <div>
+                        <h4>Application Form</h4>
+                        <p>PDF - 250KB | New student application</p>
+                    </div>
+                    <a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="download-item">
+                    <div>
+                        <h4>Fee Schedule 2025</h4>
+                        <p>PDF - 180KB | Complete fee structure</p>
+                    </div>
+                    <a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="download-item">
+                    <div>
+                        <h4>Immunization Consent</h4>
+                        <p>PDF - 120KB | Health consent form</p>
+                    </div>
+                    <a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a>
+                </div>
+                
+                <!-- Map -->
+                <h2 class="section-title" style="margin-top: 40px;">Visit Our Campus</h2>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt" style="font-size: 3rem;"></i>
+                </div>
+                
+                <!-- Form -->
+                <h2 class="section-title" style="margin-top: 40px;">Send Us a Message</h2>
+                <div class="form-box">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <input type="text" placeholder="Subject">
+                    <textarea rows="4" placeholder="Your Message"></textarea>
+                    <button>Send Message</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view">
+            <h3>📱 Mobile View</h3>
+            <div class="mockup mobile-mockup">
+                <h2 style="font-size: 1.4rem; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #78D1C5;">Downloads</h2>
+                <div class="download-item" style="flex-direction: column; text-align: center; padding: 12px;">
+                    <div style="margin-bottom: 10px;">
+                        <h4 style="font-size: 1rem;">Application Form</h4>
+                        <p style="font-size: 0.8rem;">PDF - 250KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.85rem; padding: 6px 15px;">Download</a>
+                </div>
+                <div class="download-item" style="flex-direction: column; text-align: center; padding: 12px;">
+                    <div style="margin-bottom: 10px;">
+                        <h4 style="font-size: 1rem;">Fee Schedule</h4>
+                        <p style="font-size: 0.8rem;">PDF - 180KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.85rem; padding: 6px 15px;">Download</a>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin: 25px 0 15px; padding-bottom: 10px; border-bottom: 2px solid #78D1C5;">Location</h2>
+                <div class="map-placeholder" style="height: 200px; font-size: 1rem;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 2rem;"></i>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin: 25px 0 15px; padding-bottom: 10px; border-bottom: 2px solid #78D1C5;">Contact</h2>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <textarea rows="3" placeholder="Message" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+                    <button style="width: 100%; padding: 10px; background: #78D1C5; color: white; border: none; border-radius: 6px;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION 2: Side by Side (Map + Form) -->
+<div class="option">
+    <div class="option-title">Option 2: Downloads Full Width, Then Map + Form Side by Side</div>
+    <div class="views">
+        <div class="view">
+            <h3>💻 Desktop View</h3>
+            <div class="mockup">
+                <h2 class="section-title">Download Forms</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-file-pdf" style="font-size: 2.5rem; color: #78D1C5; margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px;">Application</h4>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">250KB</p>
+                        <a href="#" class="dl-btn" style="font-size: 0.85rem;">Download</a>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-file-alt" style="font-size: 2.5rem; color: #78D1C5; margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px;">Fee Schedule</h4>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">180KB</p>
+                        <a href="#" class="dl-btn" style="font-size: 0.85rem;">Download</a>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-file-contract" style="font-size: 2.5rem; color: #78D1C5; margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px;">Consent Form</h4>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">120KB</p>
+                        <a href="#" class="dl-btn" style="font-size: 0.85rem;">Download</a>
+                    </div>
+                </div>
+                
+                <h2 class="section-title" style="margin-top: 40px;">Contact & Location</h2>
+                <div style="display: grid; grid-template-columns: 60% 40%; gap: 20px;">
+                    <div class="map-placeholder" style="height: 400px;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="form-box">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea rows="5" placeholder="Message"></textarea>
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view">
+            <h3>📱 Mobile View</h3>
+            <div class="mockup mobile-mockup">
+                <h2 style="font-size: 1.4rem; margin-bottom: 15px;">Downloads</h2>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 10px;">
+                    <i class="fas fa-file-pdf" style="font-size: 2rem; color: #78D1C5;"></i>
+                    <h4 style="margin: 8px 0 5px;">Application</h4>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">250KB</p>
+                    <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 15px;">Download</a>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 10px;">
+                    <i class="fas fa-file-alt" style="font-size: 2rem; color: #78D1C5;"></i>
+                    <h4 style="margin: 8px 0 5px;">Fee Schedule</h4>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">180KB</p>
+                    <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 15px;">Download</a>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin: 25px 0 15px;">Map</h2>
+                <div class="map-placeholder" style="height: 200px;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 2rem;"></i>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin: 25px 0 15px;">Contact</h2>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <textarea rows="3" placeholder="Message" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+                    <button style="width: 100%; padding: 10px; background: #78D1C5; color: white; border: none; border-radius: 6px;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION 3: Form Left, Map Right -->
+<div class="option">
+    <div class="option-title">Option 3: Downloads Top, Then Form Left + Map Right</div>
+    <div class="views">
+        <div class="view">
+            <h3>💻 Desktop View</h3>
+            <div class="mockup">
+                <h2 class="section-title">Available Documents</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                    <div class="download-item">
+                        <div>
+                            <h4>Application Form</h4>
+                            <p>Complete student application - PDF 250KB</p>
+                        </div>
+                        <a href="#" class="dl-btn">Download</a>
+                    </div>
+                    <div class="download-item">
+                        <div>
+                            <h4>Fee Schedule 2025</h4>
+                            <p>Full fee structure - PDF 180KB</p>
+                        </div>
+                        <a href="#" class="dl-btn">Download</a>
+                    </div>
+                </div>
+                
+                <h2 class="section-title" style="margin-top: 40px;">Get In Touch</h2>
+                <div style="display: grid; grid-template-columns: 40% 60%; gap: 25px;">
+                    <div class="form-box">
+                        <h3 style="margin-bottom: 15px; color: #1a202c;">Send Message</h3>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea rows="4" placeholder="Your message"></textarea>
+                        <button>Send Message</button>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 15px; color: #1a202c;">Find Us</h3>
+                        <div class="map-placeholder" style="height: 350px;">
+                            <i class="fas fa-map-marked-alt" style="font-size: 3rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view">
+            <h3>📱 Mobile View</h3>
+            <div class="mockup mobile-mockup">
+                <h2 style="font-size: 1.4rem; margin-bottom: 15px;">Documents</h2>
+                <div class="download-item" style="padding: 12px;">
+                    <div style="flex: 1;">
+                        <h4 style="font-size: 1rem;">Application</h4>
+                        <p style="font-size: 0.8rem;">PDF - 250KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 12px;">DL</a>
+                </div>
+                <div class="download-item" style="padding: 12px;">
+                    <div style="flex: 1;">
+                        <h4 style="font-size: 1rem;">Fee Schedule</h4>
+                        <p style="font-size: 0.8rem;">PDF - 180KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 12px;">DL</a>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin: 25px 0 15px;">Contact</h2>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <textarea rows="3" placeholder="Message" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+                    <button style="width: 100%; padding: 10px; background: #78D1C5; color: white; border: none; border-radius: 6px;">Send</button>
+                </div>
+                
+                <h2 style="font-size: 1.4rem; margin-bottom: 15px;">Location</h2>
+                <div class="map-placeholder" style="height: 200px;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION 4: Compact All in One -->
+<div class="option">
+    <div class="option-title">Option 4: Compact All-in-One Layout</div>
+    <div class="views">
+        <div class="view">
+            <h3>💻 Desktop View</h3>
+            <div class="mockup">
+                <div style="display: grid; grid-template-columns: 30% 70%; gap: 25px;">
+                    <!-- Left Sidebar -->
+                    <div>
+                        <h3 style="color: #1a202c; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #78D1C5;">Downloads</h3>
+                        <div style="background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 8px;">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 5px;">Application</h4>
+                            <p style="font-size: 0.75rem; color: #666; margin-bottom: 8px;">250KB PDF</p>
+                            <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 15px; display: block; text-align: center;">Download</a>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 8px;">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 5px;">Fee Schedule</h4>
+                            <p style="font-size: 0.75rem; color: #666; margin-bottom: 8px;">180KB PDF</p>
+                            <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 15px; display: block; text-align: center;">Download</a>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 12px; border-radius: 8px;">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 5px;">Consent</h4>
+                            <p style="font-size: 0.75rem; color: #666; margin-bottom: 8px;">120KB PDF</p>
+                            <a href="#" class="dl-btn" style="font-size: 0.8rem; padding: 6px 15px; display: block; text-align: center;">Download</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content -->
+                    <div>
+                        <h3 style="color: #1a202c; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #78D1C5;">Contact & Location</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="map-placeholder" style="height: 300px;">
+                                <i class="fas fa-map-marked-alt" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <div class="form-box" style="padding: 20px;">
+                                <input type="text" placeholder="Name" style="padding: 10px; margin-bottom: 12px;">
+                                <input type="email" placeholder="Email" style="padding: 10px; margin-bottom: 12px;">
+                                <textarea rows="4" placeholder="Message" style="padding: 10px; margin-bottom: 12px;"></textarea>
+                                <button style="padding: 10px;">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view">
+            <h3>📱 Mobile View</h3>
+            <div class="mockup mobile-mockup">
+                <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: #1a202c;">Downloads</h3>
+                <div style="background: #f8f9fa; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="font-size: 0.9rem; margin-bottom: 3px;">Application</h4>
+                        <p style="font-size: 0.75rem; color: #666;">250KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.75rem; padding: 5px 12px;">DL</a>
+                </div>
+                <div style="background: #f8f9fa; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="font-size: 0.9rem; margin-bottom: 3px;">Fee Schedule</h4>
+                        <p style="font-size: 0.75rem; color: #666;">180KB</p>
+                    </div>
+                    <a href="#" class="dl-btn" style="font-size: 0.75rem; padding: 5px 12px;">DL</a>
+                </div>
+                
+                <h3 style="font-size: 1.3rem; margin: 20px 0 12px; color: #1a202c;">Map</h3>
+                <div class="map-placeholder" style="height: 180px; font-size: 1rem;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 1.8rem;"></i>
+                </div>
+                
+                <h3 style="font-size: 1.3rem; margin: 20px 0 12px; color: #1a202c;">Message</h3>
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 6px;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="email" placeholder="Email" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                    <textarea rows="3" placeholder="Message" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                    <button style="width: 100%; padding: 8px; background: #78D1C5; color: white; border: none; border-radius: 5px;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header" style="margin-top: 30px;">
+    <h2 style="color: #78D1C5; margin-bottom: 20px;">📝 Choose Your Layout!</h2>
+    <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+        <p style="margin: 10px 0;"><strong>Option 1:</strong> Simple vertical stack - Downloads → Map → Form (Easy to scroll)</p>
+        <p style="margin: 10px 0;"><strong>Option 2:</strong> Downloads full width, Map + Form side by side (Map gets more space)</p>
+        <p style="margin: 10px 0;"><strong>Option 3:</strong> Downloads in 2 columns, Form left + Map right (Form first focus)</p>
+        <p style="margin: 10px 0;"><strong>Option 4:</strong> Compact sidebar downloads, Map + Form side by side (Space efficient)</p>
+    </div>
+</div>
+
+</body>
+</html>

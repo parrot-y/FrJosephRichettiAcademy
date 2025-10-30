@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/contact-form.css?v=20241014">
     <link rel="stylesheet" href="assets/css/school-logo.css">
     <link rel="stylesheet" href="assets/css/cbc-programs.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241030b">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <link rel="stylesheet" href="assets/css/minimal-fix-only.css?v=20241014">
     <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241028">
@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
     <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241028">
+    <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241030">
     <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241027p">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
     
@@ -496,110 +497,195 @@
         width: 20px !important;
       }
       
-      /* ===== GOOGLE MAPS CONTAINER - LARGE ===== */
-      .map-container-large {
-        width: 100% !important;
+      /* ===== DOWNLOADS SECTION - VERTICAL LIST ===== */
+      .download-items-container {
+        max-width: 900px !important;
+        margin: 0 auto !important;
       }
       
-      .map-container-large h2 {
-        color: #1a202c !important;
-        font-size: 2.2rem !important;
-        font-weight: 700 !important;
-      }
-      
-      .map-container-large iframe {
-        box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+      .download-item-card {
+        background: #f8f9fa !important;
+        padding: 25px !important;
+        margin-bottom: 20px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
         transition: all 0.3s ease !important;
       }
       
-      .map-container-large iframe:hover {
-        box-shadow: 0 12px 40px rgba(0,0,0,0.2) !important;
+      .download-item-card:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.12) !important;
       }
       
-      /* ===== CONTACT FORM SIDE PANEL ===== */
-      .contact-form-side {
-        background: #f8f9fa !important;
-        padding: 35px 30px !important;
-        border-radius: 15px !important;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
-        height: 100% !important;
+      .download-content {
+        flex: 1 !important;
       }
       
-      .contact-form-side h2 {
+      .download-content h4 {
         color: #1a202c !important;
-        font-size: 2rem !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+      }
+      
+      .download-content p {
+        color: #718096 !important;
+        font-size: 0.95rem !important;
+        margin: 0 !important;
+      }
+      
+      .download-btn {
+        background: #78D1C5 !important;
+        color: white !important;
+        padding: 12px 30px !important;
+        border-radius: 25px !important;
+        text-decoration: none !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        white-space: nowrap !important;
+        margin-left: 20px !important;
+      }
+      
+      .download-btn:hover {
+        background: #5fb8a8 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(120, 209, 197, 0.3) !important;
+        color: white !important;
+      }
+      
+      /* ===== MAP & FORM VERTICAL LAYOUT ===== */
+      .map-container-vertical {
+        margin-bottom: 50px !important;
+      }
+      
+      .map-container-vertical h2 {
+        color: #1a202c !important;
+        font-size: 2.2rem !important;
         font-weight: 700 !important;
         margin-bottom: 25px !important;
         padding-bottom: 15px !important;
         border-bottom: 3px solid #78D1C5 !important;
+        text-align: center !important;
       }
       
-      .contact-form-side .form-group {
+      .map-container-vertical iframe {
+        box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .contact-form-vertical {
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        background: #f8f9fa !important;
+        padding: 40px !important;
+        border-radius: 15px !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+      }
+      
+      .contact-form-vertical h2 {
+        color: #1a202c !important;
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 30px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 3px solid #78D1C5 !important;
+        text-align: center !important;
+      }
+      
+      .form-row-group {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
         margin-bottom: 20px !important;
       }
       
-      .contact-form-side input,
-      .contact-form-side textarea {
+      .contact-form-vertical .form-group {
+        margin-bottom: 20px !important;
+      }
+      
+      .contact-form-vertical input,
+      .contact-form-vertical textarea {
         width: 100% !important;
         padding: 15px !important;
         border: 2px solid #e2e8f0 !important;
         border-radius: 8px !important;
-        font-size: 0.95rem !important;
+        font-size: 1rem !important;
         transition: all 0.3s ease !important;
         background: white !important;
       }
       
-      .contact-form-side input:focus,
-      .contact-form-side textarea:focus {
+      .contact-form-vertical input:focus,
+      .contact-form-vertical textarea:focus {
         border-color: #78D1C5 !important;
         outline: none !important;
         box-shadow: 0 0 0 3px rgba(120, 209, 197, 0.1) !important;
       }
       
-      .contact-form-side .button {
+      .contact-form-vertical .button {
         width: 100% !important;
         padding: 15px !important;
         background: linear-gradient(135deg, #78D1C5 0%, #0097A7 100%) !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
-        font-size: 1rem !important;
+        font-size: 1.1rem !important;
         font-weight: 600 !important;
         cursor: pointer !important;
         transition: all 0.3s ease !important;
       }
       
-      .contact-form-side .button:hover {
+      .contact-form-vertical .button:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 8px 20px rgba(120, 209, 197, 0.3) !important;
       }
       
-      /* CONTACT SECTION MOBILE RESPONSIVE */
-      @media (max-width: 991px) {
-        .map-container-large {
-          margin-bottom: 30px !important;
-        }
-        
-        .map-container-large iframe {
-          height: 400px !important;
-        }
-        
-        .contact-form-side {
-          margin-bottom: 30px !important;
-        }
-      }
-      
+      /* MOBILE RESPONSIVE */
       @media (max-width: 768px) {
-        .map-container-large h2 {
-          font-size: 1.8rem !important;
+        .download-item-card {
+          flex-direction: column !important;
+          text-align: center !important;
+          padding: 20px !important;
         }
         
-        .contact-form-side h2 {
+        .download-content h4 {
+          font-size: 1.1rem !important;
+        }
+        
+        .download-content p {
+          font-size: 0.85rem !important;
+          margin-bottom: 15px !important;
+        }
+        
+        .download-btn {
+          margin-left: 0 !important;
+          margin-top: 10px !important;
+          padding: 10px 25px !important;
+          font-size: 0.9rem !important;
+        }
+        
+        .map-container-vertical h2 {
           font-size: 1.6rem !important;
         }
         
-        .map-container-large iframe {
-          height: 350px !important;
+        .map-container-vertical iframe {
+          height: 300px !important;
+        }
+        
+        .contact-form-vertical {
+          padding: 25px !important;
+        }
+        
+        .contact-form-vertical h2 {
+          font-size: 1.5rem !important;
+        }
+        
+        .form-row-group {
+          grid-template-columns: 1fr !important;
+          gap: 0 !important;
         }
       }
       
@@ -667,6 +753,31 @@
         font-size: 2.8rem !important;
         font-weight: 700 !important;
         color: #fff !important;
+      }
+      
+      /* ===== NEWSLETTER SECTION HEADING - FORCE BLACK ===== */
+      .newsletter-section .section-heading h2,
+      #newsletter .section-heading h2,
+      section.newsletter-section .section-heading h2 {
+        color: #000000 !important;
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        background: white !important;
+        padding: 15px 30px !important;
+        border-bottom: 4px solid #78D1C5 !important;
+        display: inline-block !important;
+        margin-bottom: 20px !important;
+        text-shadow: none !important;
+      }
+      
+      .newsletter-section .section-heading p,
+      #newsletter .section-heading p {
+        color: #4a5568 !important;
+        font-size: 1.1rem !important;
+      }
+      
+      .newsletter-section .section-heading {
+        text-align: center !important;
       }
       
       #about .categories {
@@ -2325,126 +2436,87 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <!-- ANIMATION: Fade down for heading -->
           <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-            <h2>Downloads</h2>
+            <h2>Download Forms</h2>
           </div>
         </div>
+      </div>
+      
+      <!-- Downloads List -->
+      <div class="row" data-aos="fade-up" data-aos-duration="800">
         <div class="col-lg-12">
-          <div class="owl-courses-item owl-carousel">
-            <div class="item">
-              <img src="assets/images/course-01.jpg" alt="Admission Form">
-              <div class="down-content">
-                <h4>Admission Form</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-    <script src="assets/js/cbc-programs.js"></script>
-                        <li><i class="fa fa-file-pdf-o"></i></li>
-                        <li><i class="fa fa-download"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>PDF</span>
-                    </div>
-                  </div>
-                </div>
+          <div class="download-items-container">
+            
+            <div class="download-item-card">
+              <div class="download-content">
+                <h4>Application Form</h4>
+                <p>Complete student application form for new admissions - PDF 250KB</p>
               </div>
+              <a href="#" class="download-btn"><i class="fa fa-download"></i> Download</a>
             </div>
-            <div class="item">
-              <img src="assets/images/course-02.jpg" alt="School Regulations">
-              <div class="down-content">
-                <h4>School Regulations</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-file-text-o"></i></li>
-                        <li><i class="fa fa-download"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>PDF</span>
-                    </div>
-                  </div>
-                </div>
+            
+            <div class="download-item-card">
+              <div class="download-content">
+                <h4>Fee Schedule 2025</h4>
+                <p>Comprehensive fee structure and payment terms - PDF 180KB</p>
               </div>
+              <a href="#" class="download-btn"><i class="fa fa-download"></i> Download</a>
             </div>
-            <div class="item">
-              <img src="assets/images/course-03.jpg" alt="Consent Forms">
-              <div class="down-content">
+            
+            <div class="download-item-card">
+              <div class="download-content">
                 <h4>Immunization Consent Form</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-file-o"></i></li>
-                        <li><a href="PDF/consent forms forimmunizatuion.pdf" target="_blank"><i class="fa fa-download"></i></a></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>PDF</span>
-                    </div>
-                  </div>
-                </div>
+                <p>Health and immunization consent form - PDF 120KB</p>
               </div>
+              <a href="PDF/consent forms forimmunizatuion.pdf" target="_blank" class="download-btn"><i class="fa fa-download"></i> Download</a>
             </div>
-            <div class="item">
-              <img src="assets/images/course-04.jpg" alt="Fee Schedule">
-              <div class="down-content">
-                <h4>Fee Schedule</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-calculator"></i></li>
-                        <li><i class="fa fa-download"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>PDF</span>
-                    </div>
-                  </div>
-                </div>
+            
+            <div class="download-item-card">
+              <div class="download-content">
+                <h4>School Regulations</h4>
+                <p>School rules, policies, and procedures - PDF 200KB</p>
               </div>
+              <a href="#" class="download-btn"><i class="fa fa-download"></i> Download</a>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+  <script src="assets/js/cbc-programs.js"></script>
   <section class="contact-us" id="contact">
     <div class="container">
+      <!-- GOOGLE MAPS - FULL WIDTH -->
       <div class="row">
-        <!-- GOOGLE MAPS - LARGER SPACE -->
-        <div class="col-lg-7 col-md-6 mb-4">
-          <div class="map-container-large">
-            <h2 style="margin-bottom: 25px; color: #1a202c; font-weight: 700;">Visit Our Campus</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2446386147166!2d36.75629282295066!3d-1.1755681241147191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f231424294209%3A0xd5d5fb26d3bcd72e!2sFather%20Joseph%20Richetti%20Academy!5e0!3m2!1sen!2ske!4v1761656928226!5m2!1sen!2ske" width="100%" height="500" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="col-lg-12">
+          <div class="map-container-vertical" data-aos="fade-up" data-aos-duration="800">
+            <h2>Visit Our Campus</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2446386147166!2d36.75629282295066!3d-1.1755681241147191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f231424294209%3A0xd5d5fb26d3bcd72e!2sFather%20Joseph%20Richetti%20Academy!5e0!3m2!1sen!2ske!4v1761656928226!5m2!1sen!2ske" width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        
-        <!-- CONTACT FORM - SIDE PANEL -->
-        <div class="col-lg-5 col-md-6">
-          <div class="contact-form-side">
-            <h2>Get In Touch</h2>
+      </div>
+      
+      <!-- CONTACT FORM - FULL WIDTH BELOW MAP -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-form-vertical" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <h2>Send Us a Message</h2>
             <form id="contact" action="contact_handler.php" method="post">
-              <div class="form-group">
-                <input name="name" type="text" id="name" placeholder="Your Full Name*" required="">
+              <div class="form-row-group">
+                <div class="form-group">
+                  <input name="name" type="text" id="name" placeholder="Your Full Name*" required="">
+                </div>
+                <div class="form-group">
+                  <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address*" required="">
+                </div>
+                <div class="form-group">
+                  <input name="subject" type="text" id="subject" placeholder="Subject*" required="">
+                </div>
               </div>
               <div class="form-group">
-                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address*" required="">
-              </div>
-              <div class="form-group">
-                <input name="subject" type="text" id="subject" placeholder="Subject*" required="">
-              </div>
-              <div class="form-group">
-                <textarea name="message" type="text" class="form-control" id="message" placeholder="Your message..." required="" rows="5"></textarea>
+                <textarea name="message" type="text" class="form-control" id="message" placeholder="Your message..." required="" rows="6"></textarea>
               </div>
               <div class="form-group">
                 <button type="submit" id="form-submit" class="button">SEND MESSAGE</button>

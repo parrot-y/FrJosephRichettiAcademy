@@ -179,9 +179,8 @@
 
 /* Newsletter Section */
 .newsletter-section {
-    background: #f8f8f8;
+    background: #ffffff;
     padding: 100px 0;
-    color: #fff;
 }
 
 .newsletter-section .section-heading {
@@ -190,11 +189,17 @@
 }
 
 .newsletter-section .section-heading h2 {
-    color: #1f272b;
+    color: #000000 !important;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
+    border-bottom: 3px solid #78D1C5;
+    padding-bottom: 15px;
+    display: inline-block;
+    background: white !important;
+    padding: 15px 30px !important;
+    text-shadow: none !important;
 }
 
 .newsletter-section .section-heading p {
@@ -222,7 +227,8 @@
 .newsletter-card:hover {
     background: #fff;
     transform: translateY(-5px);
-    border-color: #1B8A8A;
+    border-color: #78D1C5;
+    box-shadow: 0 5px 20px rgba(120, 209, 197, 0.2);
 }
 
 .newsletter-card .post-meta {
@@ -233,7 +239,7 @@
 }
 
 .newsletter-card .post-date {
-    background: #1B8A8A;
+    background: #78D1C5;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -247,7 +253,7 @@
 }
 
 .newsletter-card .post-title {
-    color: #fff;
+    color: #1a202c;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -262,17 +268,17 @@
 }
 
 .newsletter-card .read-more {
-    color: #1B8A8A;
+    color: #78D1C5;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 15px;
     transition: color 0.3s ease;
 }
 
 .newsletter-card .read-more:hover {
-    color: #fff;
+    color: #5fb8a8;
 }
 
 /* Newsletter Subscription */
@@ -285,7 +291,7 @@
 }
 
 .newsletter-subscribe h3 {
-    color: #fff;
+    color: #1a202c;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -325,7 +331,7 @@
 
 .newsletter-form button {
     padding: 15px 25px;
-    background: #1B8A8A;
+    background: #78D1C5;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -337,7 +343,7 @@
 }
 
 .newsletter-form button:hover {
-    background: #fff;
+    background: #5fb8a8;
     transform: translateY(-2px);
 }
 
@@ -349,7 +355,7 @@
 
 .view-more-btn {
     display: inline-block;
-    background: #1B8A8A;
+    background: #78D1C5;
     color: #fff;
     padding: 15px 30px;
     border-radius: 25px;
@@ -362,7 +368,7 @@
 }
 
 .view-more-btn:hover {
-    background: #1B8A8A;
+    background: #5fb8a8;
     color: #fff;
     transform: translateY(-2px);
 }
