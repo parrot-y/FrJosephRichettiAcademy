@@ -209,10 +209,11 @@ body.homepage .section:first-of-type {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important;
+    background-color: #000000 !important;
     opacity: 0 !important;
     transition: opacity 1.5s ease-in-out !important;
     /* Crystal clear images like Durham example */
@@ -224,17 +225,17 @@ body.homepage .section:first-of-type {
     opacity: 1 !important;
 }
 
-/* Ensure carousel covers full screen on all sizes */
+/* Ensure carousel shows full images on all sizes */
 @media (max-width: 1200px) {
     .carousel-slide {
-        background-size: cover !important;
+        background-size: contain !important;
         background-position: center center !important;
     }
 }
 
 @media (max-width: 768px) {
     .carousel-slide {
-        background-size: cover !important;
+        background-size: contain !important;
         background-position: center center !important;
     }
     
@@ -246,7 +247,7 @@ body.homepage .section:first-of-type {
 
 @media (max-width: 480px) {
     .carousel-slide {
-        background-size: cover !important;
+        background-size: contain !important;
         background-position: center center !important;
     }
     

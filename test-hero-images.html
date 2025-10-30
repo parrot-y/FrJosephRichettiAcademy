@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Images Test</title>
+    <style>
+        body { font-family: Arial; background: #f5f5f5; padding: 20px; margin: 0; }
+        .header { background: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 30px; }
+        .section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 10px; }
+        .section h2 { color: #78D1C5; margin-bottom: 20px; }
+        
+        /* Desktop mockup */
+        .desktop-view { 
+            width: 100%; 
+            height: 500px; 
+            position: relative; 
+            background: #000; 
+            border-radius: 10px; 
+            overflow: hidden; 
+        }
+        
+        /* Mobile mockup */
+        .mobile-view { 
+            width: 375px; 
+            height: 667px; 
+            margin: 0 auto; 
+            background: #000; 
+            border-radius: 30px; 
+            padding: 15px; 
+            position: relative; 
+        }
+        
+        .hero-img { 
+            width: 100%; 
+            height: 100%; 
+            background-size: contain !important; 
+            background-position: center !important; 
+            background-repeat: no-repeat !important; 
+            background-color: #000 !important; 
+        }
+        
+        .hero-text { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            text-align: center; 
+            color: white; 
+            z-index: 10; 
+        }
+        
+        .hero-text h1 { 
+            font-family: 'Lora', serif; 
+            font-size: 2.5rem; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8); 
+            margin-bottom: 20px; 
+        }
+        
+        .mobile-view .hero-text h1 { font-size: 1.2rem; }
+        
+        .btn { 
+            background: #78D1C5; 
+            color: white; 
+            padding: 12px 30px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            display: inline-block; 
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-view { width: 100%; height: 500px; }
+            .desktop-view { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Hero Images - Mobile & Desktop Test</h1>
+    <p>Your images shown on different screen sizes</p>
+</div>
+
+<div class="section">
+    <h2>💻 Desktop View</h2>
+    <div class="desktop-view">
+        <div class="hero-img" style="background-image: url('assets/images/hero1.jpeg')"></div>
+        <div class="hero-text">
+            <h1>FR. JOSEPH RICHETTI<br>CATHOLIC SCHOOL</h1>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+    </div>
+    <p style="margin-top: 15px; color: #666;">✅ Full image visible | No zoom | No crop</p>
+</div>
+
+<div class="section">
+    <h2>📱 Mobile View (iPhone Size)</h2>
+    <div class="mobile-view">
+        <div class="hero-img" style="background-image: url('assets/images/hero1.jpeg')"></div>
+        <div class="hero-text">
+            <h1>FR. JOSEPH RICHETTI<br>CATHOLIC SCHOOL</h1>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+    </div>
+    <p style="margin-top: 15px; color: #666; text-align: center;">✅ Full image visible | Responsive text</p>
+</div>
+
+<div class="header">
+    <h3 style="color: #78D1C5;">Image Order:</h3>
+    <ol style="text-align: left; max-width: 500px; margin: 15px auto;">
+        <li>hero1.jpeg (NEW)</li>
+        <li>carousel-2.jpg (KEPT)</li>
+        <li>hero2.jpeg (NEW)</li>
+        <li>carousel-4.jpg (KEPT)</li>
+        <li>hero3.jpeg (NEW)</li>
+    </ol>
+</div>
+
+</body>
+</html>
