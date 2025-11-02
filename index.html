@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
     <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241030">
+    <link rel="stylesheet" href="assets/css/remove-scrollbars.css?v=20241102c">
     <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241027p">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
     
@@ -747,12 +748,51 @@
         color: #2d3748 !important;
       }
       
-      /* ===== ABOUT SECTION PREMIUM STYLING ===== */
+      /* ===== ABOUT SECTION WITH BACKGROUND IMAGE ===== */
+      #about {
+        background-image: url('assets/images/CURRENT STUDENTS.jpg') !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        padding: 80px 0 !important;
+      }
+      
+      /* Dark overlay for readability */
+      #about::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        z-index: 1 !important;
+      }
+      
+      #about .container {
+        position: relative !important;
+        z-index: 2 !important;
+      }
+      
+      #about .row {
+        position: relative !important;
+        z-index: 2 !important;
+      }
+      
       #about .section-heading h2 {
         font-family: 'Poppins', sans-serif !important;
         font-size: 2.8rem !important;
         font-weight: 700 !important;
         color: #fff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+      }
+      
+      #about .section-heading p {
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
       }
       
       /* ===== NEWSLETTER SECTION HEADING - FORCE BLACK ===== */
@@ -872,18 +912,20 @@
       }
       
       #about .meeting-item {
-        background: white !important;
+        background: transparent !important;
         border-radius: 20px !important;
         overflow: hidden !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.4s cubic-bezier(0, 0, 0.2, 1) !important;
         border: 2px solid transparent !important;
-        height: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
       }
       
       #about .meeting-item:hover {
-        transform: translateY(-12px) scale(1.02) !important;
-        box-shadow: 0 20px 60px rgba(120, 209, 197, 0.25) !important;
+        transform: translateY(-12px) !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
         border-color: #78D1C5 !important;
       }
       
@@ -891,6 +933,7 @@
         position: relative !important;
         height: 220px !important;
         overflow: hidden !important;
+        flex-shrink: 0 !important;
       }
       
       #about .meeting-item .thumb img {
@@ -940,21 +983,29 @@
       
       #about .meeting-item .down-content {
         padding: 25px !important;
+        background: rgba(31, 41, 55, 0.55) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        overflow: visible !important;
+        height: auto !important;
       }
       
       #about .meeting-item .down-content h4 {
         font-family: 'Poppins', sans-serif !important;
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        color: #1a202c !important;
+        color: #ffffff !important;
         margin-bottom: 12px !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
       }
       
       #about .meeting-item .down-content p {
         font-size: 1rem !important;
-        color: #718096 !important;
+        color: #ffffff !important;
         line-height: 1.7 !important;
         margin: 0 !important;
+        overflow: visible !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
       }
       
       /* ABSOLUTE STRONGEST MOBILE MENU OVERRIDE - KILLS TEMPLATEMO CSS */

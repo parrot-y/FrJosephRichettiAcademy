@@ -1,0 +1,275 @@
+/* ===== REMOVE ALL SCROLLBARS SITE-WIDE ===== */
+/* Keeps main page scroll functional but hides all scrollbars */
+
+/* Remove scrollbars from all containers while keeping scroll functionality */
+* {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Ensure body and html can scroll but without visible scrollbar */
+html, body {
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Remove scrollbars from main containers but NOT admissions section */
+section:not(#admissions):not(.apply-now),
+.section:not(#admissions),
+.container:not(#admissions .container),
+.row:not(#admissions .row) {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+section:not(#admissions):not(.apply-now)::-webkit-scrollbar,
+.section:not(#admissions)::-webkit-scrollbar,
+.container:not(#admissions .container)::-webkit-scrollbar,
+.row:not(#admissions .row)::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Only hide scrollbars on specific divs, not all */
+.meeting-item,
+.card,
+.item:not(#admissions .item) {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+/* Remove scrollbars from cards and content areas (but not admission items) */
+.meeting-item,
+.down-content,
+.card,
+.card-content,
+.event-card,
+.achievement-card,
+.newsletter-card {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.meeting-item::-webkit-scrollbar,
+.down-content::-webkit-scrollbar,
+.card::-webkit-scrollbar,
+.card-content::-webkit-scrollbar,
+.event-card::-webkit-scrollbar,
+.achievement-card::-webkit-scrollbar,
+.newsletter-card::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Fix for About section cards specifically */
+#about .meeting-item,
+#about .meeting-item .down-content,
+#about .meeting-item .down-content p,
+#about .meeting-item .down-content h4 {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#about .meeting-item::-webkit-scrollbar,
+#about .meeting-item .down-content::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Activities section */
+#activities .meeting-item,
+#activities .meeting-item .down-content {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#activities .meeting-item::-webkit-scrollbar,
+#activities .meeting-item .down-content::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Achievements section */
+#achievements .event-card,
+#achievements .event-content {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#achievements .event-card::-webkit-scrollbar,
+#achievements .event-content::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Newsletter section */
+#newsletter .newsletter-card,
+#newsletter .post-excerpt {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#newsletter .newsletter-card::-webkit-scrollbar,
+#newsletter .post-excerpt::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Admissions section - DON'T TOUCH IT - Leave it exactly as it was */
+/* No scrollbar removal or overflow changes for admissions section */
+
+/* Programs section */
+#programs .item,
+#programs .course-card {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#programs .item::-webkit-scrollbar,
+#programs .course-card::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Contact section */
+#contact .contact-form,
+#contact .map-container-vertical {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#contact .contact-form::-webkit-scrollbar,
+#contact .map-container-vertical::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Downloads section */
+#downloads .download-item-card {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+#downloads .download-item-card::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Navigation menu */
+.main-nav,
+.nav,
+ul.nav,
+.sub-menu {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.main-nav::-webkit-scrollbar,
+.nav::-webkit-scrollbar,
+ul.nav::-webkit-scrollbar,
+.sub-menu::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Modal and popups */
+.modal,
+.modal-content,
+.modal-body {
+    scrollbar-width: none !important;
+}
+
+.modal::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Tables */
+table,
+.table,
+.table-responsive {
+    scrollbar-width: none !important;
+}
+
+table::-webkit-scrollbar,
+.table::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Text areas and inputs */
+textarea,
+input {
+    scrollbar-width: none !important;
+}
+
+textarea::-webkit-scrollbar,
+input::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Ensure content is not cut off */
+.meeting-item .down-content,
+.card-content,
+.event-content,
+.item {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+}
+
+/* Fix any truncated text */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+}
+
+/* Ensure horizontal scroll is truly hidden */
+.container-fluid,
+.row {
+    overflow-x: hidden !important;
+}
+
+/* Footer */
+footer,
+.footer-section {
+    overflow: visible !important;
+    scrollbar-width: none !important;
+}
+
+footer::-webkit-scrollbar,
+.footer-section::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Make sure nothing is hidden due to overflow */
+.col-lg-12,
+.col-lg-6,
+.col-lg-4,
+.col-md-6 {
+    overflow: visible !important;
+}
+
+/* Ensure smooth scrolling still works */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Remove any potential scrollbars from owl carousel */
+.owl-carousel,
+.owl-stage-outer,
+.owl-stage {
+    scrollbar-width: none !important;
+}
+
+.owl-carousel::-webkit-scrollbar,
+.owl-stage-outer::-webkit-scrollbar,
+.owl-stage::-webkit-scrollbar {
+    display: none !important;
+}
