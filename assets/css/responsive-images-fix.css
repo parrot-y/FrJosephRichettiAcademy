@@ -37,16 +37,19 @@
     }
 }
 
-/* Mobile - Cover for full screen experience */
+/* Mobile - NO STRETCHING OR ZOOM - Perfect fit */
 @media (max-width: 767px) {
     .carousel-slide {
         background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+        height: 100% !important;
     }
     
     .main-banner {
         min-height: 100vh !important;
-        height: 100vh !important;
+        height: auto !important;
     }
 }
 

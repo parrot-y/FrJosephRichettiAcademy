@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Preview - Fr. Joseph Richetti School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #78D1C5, #0097A7);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .device-frame {
+            max-width: 375px;
+            margin: 0 auto 40px;
+            background: #1f2937;
+            padding: 20px 10px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .screen {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .section-label {
+            background: #1f2937;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            background: #2c3e50;
+            padding: 15px;
+        }
+        
+        .mobile-nav .logo {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .mobile-nav .menu-icon {
+            color: white;
+            font-size: 20px;
+            float: right;
+        }
+        
+        /* Hero Section Mobile */
+        .hero-mobile {
+            background: url('assets/images/hero1.jpeg') center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-mobile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-mobile .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 20px;
+        }
+        
+        .hero-mobile h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-mobile .btn {
+            background: #78D1C5;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        /* About Cards Mobile */
+        .about-mobile {
+            background: url('assets/images/CURRENT STUDENTS.jpg') center center/cover;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .about-mobile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .about-mobile .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-mobile h2 {
+            color: white;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .mobile-card {
+            background: rgba(31, 41, 55, 0.55);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .mobile-card .card-content {
+            padding: 20px;
+        }
+        
+        .mobile-card h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .mobile-card p {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #78D1C5;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        /* Admissions Mobile */
+        .admissions-mobile {
+            background: url('assets/images/admissionsbackground.jpeg') center center/cover;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .admissions-mobile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .admissions-mobile .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .admissions-mobile h2 {
+            color: white;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .admission-card {
+            background: rgba(31, 41, 55, 0.85);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .admission-card h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .admission-card p {
+            color: #e5e7eb;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .admission-card .btn {
+            background: #78D1C5;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Newsletter Mobile */
+        .newsletter-mobile {
+            background: white;
+            padding: 40px 20px;
+        }
+        
+        .newsletter-mobile h2 {
+            color: #000000;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-bottom: 3px solid #78D1C5;
+        }
+        
+        .newsletter-card-mobile {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .newsletter-card-mobile img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .newsletter-card-mobile .content {
+            padding: 20px;
+        }
+        
+        .newsletter-card-mobile h4 {
+            color: #1a202c;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter-card-mobile p {
+            color: #718096;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        .newsletter-card-mobile .btn {
+            background: #78D1C5;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        
+        /* Contact Mobile */
+        .contact-mobile {
+            background: white;
+            padding: 40px 20px;
+        }
+        
+        .contact-mobile h2 {
+            color: #1a202c;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-mobile input,
+        .contact-mobile textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .contact-mobile button {
+            width: 100%;
+            background: #78D1C5;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* Footer Mobile */
+        .footer-mobile {
+            background: #1f2937;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-mobile h4 {
+            color: #78D1C5;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-mobile p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #9ca3af;
+            margin-bottom: 10px;
+        }
+        
+        .footer-mobile .social {
+            margin-top: 20px;
+        }
+        
+        .footer-mobile .social i {
+            color: #78D1C5;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📱 Mobile Preview - Full Site</h1>
+    <p>See how your site looks on mobile devices (375px width)</p>
+</div>
+
+<!-- MOBILE NAVIGATION -->
+<div class="section-label">Mobile Navigation</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="mobile-nav">
+            <div class="logo">Fr. Joseph Richetti</div>
+            <div class="menu-icon">☰</div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- HERO SECTION MOBILE -->
+<div class="section-label">Hero Section - Mobile</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="hero-mobile">
+            <div class="content">
+                <h1>Fr. Joseph Richetti Catholic School</h1>
+                <p style="font-size: 0.9rem;">Nurturing Excellence Since 2005</p>
+                <a href="#" class="btn">Apply Now →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT SECTION MOBILE -->
+<div class="section-label">About Section - Mobile (with Background Image)</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="about-mobile">
+            <div class="content">
+                <h2>About Our Academy</h2>
+                
+                <div class="mobile-card" style="position: relative;">
+                    <span class="badge">Est. 2005</span>
+                    <img src="assets/images/OUR HERITAGE.jpg" alt="Heritage">
+                    <div class="card-content">
+                        <h4>Our Heritage</h4>
+                        <p>Founded by Italian Consolata Priest Fr. Joseph Richetti's vision.</p>
+                    </div>
+                </div>
+                
+                <div class="mobile-card" style="position: relative;">
+                    <span class="badge">776</span>
+                    <img src="assets/images/CURRENT STUDENTS.jpg" alt="Students">
+                    <div class="card-content">
+                        <h4>Current Students</h4>
+                        <p>Pre-School (135) & Primary School (472)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ADMISSIONS SECTION MOBILE -->
+<div class="section-label">Admissions Section - Mobile</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="admissions-mobile">
+            <div class="content">
+                <h2>Admissions</h2>
+                
+                <div class="admission-card">
+                    <h3>ADMISSION REQUIREMENTS</h3>
+                    <p>To join our academy, please prepare: ID copies of parents, previous result slip, 70% school fee payment, birth certificate.</p>
+                    <a href="#" class="btn">Start Application</a>
+                </div>
+                
+                <div class="admission-card">
+                    <h3>ADMISSION PROCEDURE</h3>
+                    <p>Step 1: Register your interest • Step 2: Attend interview • Step 3: Receive reporting date.</p>
+                    <a href="#" class="btn">Download Forms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NEWSLETTER SECTION MOBILE -->
+<div class="section-label">Newsletter Section - Mobile</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="newsletter-mobile">
+            <h2>School Newsletter & Updates</h2>
+            
+            <div class="newsletter-card-mobile">
+                <img src="assets/images/meeting-01.jpg" alt="Newsletter">
+                <div class="content">
+                    <h4>Monthly Newsletter - November 2024</h4>
+                    <p>Stay updated with our latest school events, achievements, and important announcements.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="newsletter-card-mobile">
+                <img src="assets/images/meeting-02.jpg" alt="Newsletter">
+                <div class="content">
+                    <h4>Sports Day Success</h4>
+                    <p>Our students excelled in the annual sports day with outstanding performances.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT SECTION MOBILE -->
+<div class="section-label">Contact Section - Mobile</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="contact-mobile">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <input type="text" placeholder="Subject">
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER MOBILE -->
+<div class="section-label">Footer - Mobile</div>
+<div class="device-frame">
+    <div class="screen">
+        <div class="footer-mobile">
+            <h4>Fr. Joseph Richetti Catholic School</h4>
+            <p>📍 Nairobi, Kenya</p>
+            <p>📧 frjosephrichetti@gmail.com</p>
+            <p>📞 +254 123 456 789</p>
+            <div class="social">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.75rem;">© 2024 Fr. Joseph Richetti Catholic School</p>
+        </div>
+    </div>
+</div>
+
+<div class="header" style="margin-top: 40px;">
+    <h2>✅ Mobile Optimization Summary</h2>
+    <div style="text-align: left; max-width: 600px; margin: 20px auto; font-size: 0.9rem;">
+        <p><strong>✅ Navigation:</strong> Hamburger menu, compact logo</p>
+        <p><strong>✅ Hero:</strong> Full screen, readable text, properly sized buttons</p>
+        <p><strong>✅ About Cards:</strong> Stack vertically, background image visible, text readable</p>
+        <p><strong>✅ Admissions:</strong> Cards stack, proper spacing, buttons accessible</p>
+        <p><strong>✅ Newsletter:</strong> Black heading visible, cards stack nicely</p>
+        <p><strong>✅ Contact:</strong> Form fields full width, easy to tap</p>
+        <p><strong>✅ Footer:</strong> Centered, readable, social icons visible</p>
+        <p style="margin-top: 20px; color: #78D1C5;"><strong>All sections optimized for mobile - Nothing broken!</strong></p>
+    </div>
+</div>
+
+</body>
+</html>

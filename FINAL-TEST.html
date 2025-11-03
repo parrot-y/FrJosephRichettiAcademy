@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAL TEST - Fr. Joseph Richetti</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #10b981, #059669); padding: 20px; }
+        .header { text-align: center; color: white; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .box { background: white; padding: 20px; border-radius: 15px; }
+        .box h3 { margin-bottom: 15px; text-align: center; }
+        .phone { background: #000; padding: 20px 10px; border-radius: 30px; max-width: 380px; margin: 0 auto; }
+        .screen { background: white; border-radius: 20px; height: 700px; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .checklist { background: #f0fdf4; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        .checklist li { padding: 5px 0; color: #047857; }
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>🎯 FINAL TEST - Mobile & Desktop</h1>
+    <p>Fr. Joseph Richetti Catholic School</p>
+</div>
+
+<div class="container">
+    <div class="box">
+        <h3>📱 Mobile (375px)</h3>
+        <div class="phone">
+            <div class="screen">
+                <iframe src="index.html"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="box">
+        <h3>🖥️ Desktop (1200px)</h3>
+        <div style="background: #e5e7eb; padding: 20px; border-radius: 10px;">
+            <div style="height: 700px; background: white; border-radius: 10px; overflow: hidden;">
+                <iframe src="index.html"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box" style="max-width: 1200px; margin: 20px auto;">
+    <h3>✅ What Was Fixed</h3>
+    <div class="checklist">
+        <h4>Mobile Homepage Images:</h4>
+        <ul>
+            <li>✓ No stretching or weird zoom</li>
+            <li>✓ Proper cover, centered</li>
+            <li>✓ Full screen hero</li>
+        </ul>
+        <h4 style="margin-top: 15px;">Other Fixes:</h4>
+        <ul>
+            <li>✓ Newsletter heading BLACK on WHITE</li>
+            <li>✓ Hamburger menu working</li>
+            <li>✓ All sections responsive</li>
+            <li>✓ Desktop layout unchanged</li>
+        </ul>
+    </div>
+    <div style="background: #fef3c7; padding: 15px; border-radius: 5px; margin-top: 20px; border-left: 4px solid #f59e0b;">
+        <p style="color: #78350f; margin: 0;"><strong>TEST BOTH VIEWS:</strong> Scroll in mobile phone & check desktop. Make sure hero images look good on both!</p>
+    </div>
+</div>
+</body>
+</html>

@@ -225,35 +225,40 @@ body.homepage .section:first-of-type {
     opacity: 1 !important;
 }
 
-/* Ensure carousel shows full images on all sizes */
+/* Ensure carousel shows COVER - No stretching or letterboxing */
 @media (max-width: 1200px) {
     .carousel-slide {
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 }
 
 @media (max-width: 768px) {
     .carousel-slide {
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
     
     .main-banner {
         min-height: 100vh !important;
-        height: 100vh !important;
+        height: auto !important;
+        overflow: hidden !important;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-slide {
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
     
     .main-banner {
         min-height: 100vh !important;
-        height: 100vh !important;
+        height: auto !important;
+        overflow: hidden !important;
     }
 }
 

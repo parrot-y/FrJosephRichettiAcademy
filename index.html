@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/contact-form.css?v=20241014">
     <link rel="stylesheet" href="assets/css/school-logo.css">
     <link rel="stylesheet" href="assets/css/cbc-programs.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241030b">
+    <link rel="stylesheet" href="assets/css/achievements-newsletter.css?v=20241102fix">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <link rel="stylesheet" href="assets/css/minimal-fix-only.css?v=20241014">
     <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241028">
@@ -39,13 +39,13 @@
     <!-- <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled"> -->
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
+    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241103fix">
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
-    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241028">
-    <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241030">
+    <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241103mobile">
+    <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/remove-scrollbars.css?v=20241102c">
-    <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241027p">
-    <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
+    <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241103fix">
+    <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=20241103fix">
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -750,7 +750,7 @@
       
       /* ===== ABOUT SECTION WITH BACKGROUND IMAGE ===== */
       #about {
-        background-image: url('assets/images/CURRENT STUDENTS.jpg') !important;
+        background-image: url('assets/images/aboutacademybackground.jpeg') !important;
         background-position: center center !important;
         background-size: cover !important;
         background-attachment: scroll !important;
@@ -795,10 +795,12 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
       }
       
-      /* ===== NEWSLETTER SECTION HEADING - FORCE BLACK ===== */
-      .newsletter-section .section-heading h2,
-      #newsletter .section-heading h2,
-      section.newsletter-section .section-heading h2 {
+      /* ===== NEWSLETTER SECTION HEADING - FORCE BLACK WITH MAXIMUM SPECIFICITY ===== */
+      body .newsletter-section .section-heading h2,
+      body #newsletter .section-heading h2,
+      body section.newsletter-section .section-heading h2,
+      html body .newsletter-section .section-heading h2,
+      html body section#newsletter .section-heading h2 {
         color: #000000 !important;
         font-size: 2.5rem !important;
         font-weight: 800 !important;
@@ -808,16 +810,22 @@
         display: inline-block !important;
         margin-bottom: 20px !important;
         text-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
       }
       
-      .newsletter-section .section-heading p,
-      #newsletter .section-heading p {
+      body .newsletter-section .section-heading p,
+      body #newsletter .section-heading p {
         color: #4a5568 !important;
         font-size: 1.1rem !important;
       }
       
-      .newsletter-section .section-heading {
+      body .newsletter-section .section-heading,
+      body #newsletter .section-heading {
         text-align: center !important;
+        background: white !important;
+        padding: 30px !important;
+        border-radius: 10px !important;
       }
       
       #about .categories {
@@ -949,20 +957,25 @@
       
       #about .meeting-item .price {
         position: absolute !important;
-        top: 12px !important;
-        right: 12px !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        backdrop-filter: blur(10px) !important;
-        color: #2d3748 !important;
-        padding: 4px 10px !important;
-        border-radius: 6px !important;
+        top: 8px !important;
+        right: 8px !important;
+        background: rgba(120, 209, 197, 0.9) !important;
+        backdrop-filter: blur(8px) !important;
+        color: #ffffff !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
         font-weight: 600 !important;
-        font-size: 0.75rem !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-        border: none !important;
+        font-size: 0.6rem !important;
+        box-shadow: 0 2px 6px rgba(120, 209, 197, 0.3) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
         transition: all 0.3s ease !important;
-        opacity: 0.8 !important;
+        opacity: 0.95 !important;
         line-height: 1 !important;
+        letter-spacing: 0.2px !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        width: auto !important;
+        min-width: auto !important;
       }
       
       #about .meeting-item .price span {
@@ -971,14 +984,16 @@
         padding: 0 !important;
         margin: 0 !important;
         display: inline !important;
+        color: #ffffff !important;
       }
       
       #about .meeting-item:hover .price {
-        background: rgba(120, 209, 197, 0.95) !important;
+        background: rgba(120, 209, 197, 1) !important;
         color: white !important;
-        transform: scale(1.05) !important;
+        transform: scale(1.08) !important;
         opacity: 1 !important;
-        box-shadow: 0 4px 15px rgba(120, 209, 197, 0.4) !important;
+        box-shadow: 0 4px 15px rgba(120, 209, 197, 0.5) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
       }
       
       #about .meeting-item .down-content {
@@ -1010,37 +1025,67 @@
       
       /* ABSOLUTE STRONGEST MOBILE MENU OVERRIDE - KILLS TEMPLATEMO CSS */
       @media (max-width: 991px) {
-          /* LIGHTER MENU BACKGROUND - NOT TOO DARK */
+          /* MENU HIDDEN BY DEFAULT - OFF SCREEN */
           body .header-area .main-nav .nav,
           body .header-area .main-nav ul.nav,
-          body .header-area .main-nav .nav.mobile-active,
-          html body .header-area .main-nav .nav.mobile-active {
+          html body .header-area .main-nav .nav {
+              position: fixed !important;
+              top: 0 !important;
+              right: -350px !important;
+              bottom: 0 !important;
+              width: 300px !important;
+              height: 100vh !important;
               background: #2c3e50 !important;
               background-color: #2c3e50 !important;
               background-image: none !important;
+              display: flex !important;
+              flex-direction: column !important;
+              padding: 100px 0 20px 0 !important;
+              transition: right 0.3s ease !important;
+              z-index: 999998 !important;
+              overflow-y: auto !important;
+              box-shadow: -5px 0 20px rgba(0,0,0,0.5) !important;
+          }
+          
+          /* MENU VISIBLE WHEN ACTIVE - SLIDES IN */
+          body .header-area .main-nav .nav.mobile-active,
+          html body .header-area .main-nav .nav.mobile-active {
+              right: 0 !important;
           }
           
           /* FORCE DARK MENU ITEMS - OVERRIDE TEMPLATEMO WHITE */
           body .header-area .main-nav .nav li,
           html body .header-area .main-nav .nav li,
           body .header-area .main-nav .nav.mobile-active li {
+              display: block !important;
+              width: 100% !important;
               background: transparent !important;
               background-color: transparent !important;
               border-bottom: 1px solid rgba(255,255,255,0.1) !important;
               pointer-events: auto !important;
+              margin: 0 !important;
+              padding: 0 !important;
           }
           
           /* FORCE WHITE TEXT - OVERRIDE TEMPLATEMO DARK - CLICKABLE */
           body .header-area .main-nav .nav li a,
           html body .header-area .main-nav .nav li a,
           body .header-area .main-nav .nav.mobile-active li a {
+              display: block !important;
+              width: 100% !important;
+              padding: 18px 30px !important;
               color: #ffffff !important;
+              font-size: 16px !important;
+              font-weight: 500 !important;
+              text-align: left !important;
               background: transparent !important;
               background-color: transparent !important;
               pointer-events: auto !important;
               cursor: pointer !important;
               position: relative !important;
               z-index: 999999 !important;
+              text-decoration: none !important;
+              transition: all 0.3s ease !important;
           }
           
           /* DARK NAVY BLUE HEADER ON SCROLL */
@@ -1066,10 +1111,54 @@
               right: 10px !important;
               width: 50px !important;
               height: 50px !important;
-              padding: 12px 8px !important;
-              background: transparent !important;
+              padding: 10px !important;
+              background: rgba(0, 0, 0, 0.3) !important;
+              border-radius: 8px !important;
+              border: 2px solid rgba(255, 255, 255, 0.3) !important;
               z-index: 999999 !important;
               cursor: pointer !important;
+              transition: all 0.3s ease !important;
+              display: flex !important;
+              flex-direction: column !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 6px !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger:hover {
+              background: rgba(120, 209, 197, 0.3) !important;
+              border-color: #78D1C5 !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger.active {
+              background: rgba(120, 209, 197, 0.4) !important;
+              border-color: #78D1C5 !important;
+          }
+          
+          /* HAMBURGER LINES - MUST BE VISIBLE */
+          body .header-area .main-nav .menu-trigger span,
+          body .header-area .main-nav a.menu-trigger span {
+              display: block !important;
+              width: 28px !important;
+              height: 3px !important;
+              background: #ffffff !important;
+              margin: 0 !important;
+              border-radius: 2px !important;
+              transition: all 0.3s ease !important;
+              box-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+          }
+          
+          /* HAMBURGER ACTIVE STATE - TURNS TO X */
+          body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
+              transform: rotate(45deg) translate(8px, 8px) !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
+              opacity: 0 !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
+              transform: rotate(-45deg) translate(7px, -7px) !important;
           }
           
           /* MENU MUST BE ON TOP */
@@ -1078,9 +1167,39 @@
               pointer-events: auto !important;
           }
           
-          body .header-area .main-nav .nav li a:hover {
-              background: rgba(255,255,255,0.1) !important;
-              color: #ffffff !important;
+          body .header-area .main-nav .nav li a:hover,
+          body .header-area .main-nav .nav li a:active {
+              background: rgba(120, 209, 197, 0.2) !important;
+              color: #78D1C5 !important;
+              padding-left: 40px !important;
+          }
+          
+          body .header-area .main-nav .nav li a.active {
+              background: rgba(120, 209, 197, 0.15) !important;
+              color: #78D1C5 !important;
+          }
+          
+          /* DARK OVERLAY WHEN MENU IS OPEN */
+          body.menu-open::after {
+              content: '' !important;
+              position: fixed !important;
+              top: 0 !important;
+              left: 0 !important;
+              right: 0 !important;
+              bottom: 0 !important;
+              background: rgba(0, 0, 0, 0.6) !important;
+              z-index: 999997 !important;
+              animation: fadeIn 0.3s ease !important;
+          }
+          
+          @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+          }
+          
+          /* PREVENT BODY SCROLL WHEN MENU OPEN */
+          body.menu-open {
+              overflow: hidden !important;
           }
       }
       @media (max-width: 768px) {
@@ -1491,7 +1610,7 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
                 <div class="thumb">
                   <div class="price"><span>Est. 2005</span></div>
-                  <img src="assets/images/OUR HERITAGE.jpg" alt="Heritage">
+                  <img src="assets/images/our_heritage.jpeg" alt="Heritage">
                 </div>
                 <div class="down-content">
                   <h4>Our Heritage</h4>
@@ -1504,7 +1623,7 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <div class="thumb">
                   <div class="price"><span>776</span></div>
-                  <img src="assets/images/CURRENT STUDENTS.jpg" alt="Students">
+                  <img src="assets/images/small_class_sizes.jpeg" alt="Students">
                 </div>
                 <div class="down-content">
                   <h4>Current Students</h4>
@@ -1517,7 +1636,7 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="thumb">
                   <div class="price"><span>15:1</span></div>
-                  <img src="assets/images/SMALL CLASS SIZES.jpg" alt="Classes">
+                  <img src="assets/images/our_current_students.jpeg" alt="Classes">
                 </div>
                 <div class="down-content">
                   <h4>Small Class Sizes</h4>
@@ -2408,9 +2527,9 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <!-- ANIMATION: Fade down for heading -->
-          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-            <h2>School Newsletter & Updates</h2>
-            <p>Stay informed with the latest news, announcements, and updates from Fr. Joseph Richetti Catholic School</p>
+          <div class="section-heading" data-aos="fade-down" data-aos-duration="800" style="background: white !important; padding: 30px !important; border-radius: 10px !important; margin-bottom: 50px !important;">
+            <h2 style="color: #000000 !important; text-shadow: none !important; opacity: 1 !important; background: white !important;">School Newsletter & Updates</h2>
+            <p style="color: #4a5568 !important;">Stay informed with the latest news, announcements, and updates from Fr. Joseph Richetti Catholic School</p>
           </div>
         </div>
       </div>
