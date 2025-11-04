@@ -196,208 +196,143 @@
     left: -10px;
 }
 
-/* Modern Cards Section - Enhanced Visual Design */
+/* Minimal Left Border Section - Option 3 */
 .cards-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    padding: 80px 0;
+    background: #f7fafc;
 }
 
-.modern-card {
-    background: #ffffff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
-    transition: all 0.4s ease;
-    height: 100%;
-    border: 2px solid transparent;
-    position: relative;
+.minimal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.modern-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 60px rgba(120, 209, 197, 0.2);
-    border-color: #78D1C5;
+.minimal-item {
+    border-left: 5px solid #4caf50;
+    padding: 30px 35px;
+    background: #f1f8e9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.modern-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #78D1C5 0%, #0097A7 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.minimal-item:hover {
+    border-left-width: 8px;
+    background: #dcedc8;
+    transform: translateX(5px);
 }
 
-.modern-card:hover::before {
-    opacity: 1;
+.minimal-item:nth-child(2) {
+    border-left-color: #ff9800;
+    background: #fff3e0;
 }
 
-.card-header {
-    background: #1e3a8a;
-    padding: 50px 30px;
-    text-align: center;
-    position: relative;
+.minimal-item:nth-child(2):hover {
+    background: #ffe0b2;
 }
 
-.card-header::before {
-    display: none;
+.minimal-item:nth-child(3) {
+    border-left-color: #e91e63;
+    background: #fce4ec;
 }
 
-.card-icon {
-    width: 80px;
-    height: 80px;
-    background: #ffffff;
-    border-radius: 50%;
+.minimal-item:nth-child(3):hover {
+    background: #f8bbd0;
+}
+
+.minimal-item h3 {
+    color: #1a237e;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    border: none;
-    transition: all 0.4s ease;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.modern-card:hover .card-icon {
-    transform: scale(1.05);
-}
-
-.card-icon i {
-    font-size: 36px;
-    color: #78D1C5;
-}
-
-.card-header h3 {
-    color: #ffffff;
-    font-size: 1.75rem;
+    gap: 12px;
     font-weight: 700;
-    margin: 0;
-    position: relative;
 }
 
-.card-body {
-    padding: 40px 35px;
-    min-height: 200px;
+.minimal-item i {
+    font-size: 1.5rem;
 }
 
-.card-body p {
-    color: #4a5568;
-    line-height: 1.8;
-    margin-bottom: 0;
+.minimal-item p {
+    color: #424242;
+    line-height: 1.7;
     font-size: 1.05rem;
+    margin: 0;
 }
 
-.card-body strong {
-    color: #78D1C5;
+.minimal-item strong {
+    color: #1a237e;
     font-weight: 600;
 }
 
-.card-body ul {
+.minimal-item ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.card-body ul li {
-    color: #4a5568;
-    line-height: 1.9;
-    padding-left: 30px;
-    position: relative;
-    margin-bottom: 12px;
+.minimal-item ul li {
+    padding: 8px 0;
+    color: #424242;
     font-size: 1.05rem;
+    line-height: 1.7;
 }
 
-.card-body ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #78D1C5;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.card-body ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.card-body ul li {
-    padding: 10px 0;
-    color: #4a5568;
-    border-bottom: 1px solid #e2e8f0;
-    position: relative;
-    padding-left: 30px;
-}
-
-.card-body ul li:last-child {
-    border-bottom: none;
-}
-
-.card-body ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #1e3a5f;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-/* Leadership Section */
+/* Leadership Section - Compact Grid */
 .leadership-section {
     padding: 80px 0;
     background: #f7fafc;
 }
 
-.leadership-card {
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-card {
+    background: linear-gradient(135deg, #f7fafc, #ffffff);
+    border-left: 5px solid #78D1C5;
+    border-radius: 10px;
+    padding: 25px;
     transition: all 0.3s ease;
 }
 
-.leadership-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+.grid-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-left-width: 7px;
 }
 
-.leader-avatar {
-    width: 120px;
-    height: 120px;
-    background: #1e3a5f;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: #ffffff;
+.grid-card h4 {
+    color: #1e3a8a;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.director-star {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.grid-card .role {
+    color: #0097A7;
     font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: block;
 }
 
-.leadership-card h4 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1a202c;
-    margin-bottom: 10px;
-}
-
-.leadership-card .role {
-    color: #1e3a5f;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.leadership-card p {
+.grid-card p {
     color: #718096;
+    font-size: 0.9rem;
     line-height: 1.6;
     margin: 0;
 }
@@ -486,5 +421,31 @@
     
     .achievements-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .grid-card {
+        padding: 20px;
+    }
+    
+    .minimal-list {
+        gap: 20px;
+    }
+    
+    .minimal-item {
+        padding: 25px 25px;
+    }
+    
+    .minimal-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    .minimal-item p,
+    .minimal-item ul li {
+        font-size: 1rem;
     }
 }

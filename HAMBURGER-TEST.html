@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu Test - Fr. Joseph Richetti</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f4f8; }
+        
+        .test-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .test-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .instruction-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .instruction-box h2 {
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .steps li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .steps li:last-child {
+            border-bottom: none;
+        }
+        
+        .steps li strong {
+            color: #10b981;
+            margin-right: 8px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .test-panel {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .panel-header {
+            background: #1a202c;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .panel-header span {
+            background: #10b981;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+        
+        .device-frame {
+            padding: 20px;
+            background: #f9fafb;
+        }
+        
+        .phone-frame {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 15px 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .phone-notch {
+            width: 140px;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 15px 15px;
+            margin: -15px auto 10px;
+        }
+        
+        .phone-screen {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 700px;
+        }
+        
+        .phone-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .desktop-frame {
+            padding: 20px;
+            background: #f9fafb;
+        }
+        
+        .browser-chrome {
+            background: #e5e7eb;
+            padding: 10px 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .browser-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+        
+        .browser-url {
+            flex: 1;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        
+        .browser-screen {
+            background: white;
+            height: 600px;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .browser-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .checklist-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .checklist-box h2 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .check-section h3 {
+            color: #059669;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .check-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .check-section li {
+            padding: 8px 0;
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+        
+        .check-section li::before {
+            content: '☐ ';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .status-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            border-left: 5px solid #10b981;
+        }
+        
+        .status-indicator h4 {
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .status-indicator p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .checklist {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-header">
+    <h1>☰ Hamburger Menu Test</h1>
+    <p>Fr. Joseph Richetti Catholic School - Mobile Navigation</p>
+</div>
+
+<div class="container">
+    <div class="instruction-box">
+        <h2>📋 How to Test</h2>
+        <ul class="steps">
+            <li><strong>Step 1:</strong> Look at the MOBILE view (left panel) - You should see a hamburger icon (☰) in the top right</li>
+            <li><strong>Step 2:</strong> Click the hamburger icon - A dark sidebar should slide in from the right</li>
+            <li><strong>Step 3:</strong> Click any menu link - Menu should close and navigate to that section</li>
+            <li><strong>Step 4:</strong> Click outside the menu (dark overlay) - Menu should close</li>
+            <li><strong>Step 5:</strong> Check DESKTOP view (right panel) - Hamburger should be hidden, normal menu visible</li>
+        </ul>
+    </div>
+    
+    <div class="test-grid">
+        <!-- MOBILE VIEW -->
+        <div class="test-panel">
+            <div class="panel-header">
+                📱 Mobile View
+                <span>&lt; 991px</span>
+            </div>
+            <div class="device-frame">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <iframe src="index.html" title="Mobile Preview"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DESKTOP VIEW -->
+        <div class="test-panel">
+            <div class="panel-header">
+                🖥️ Desktop View
+                <span>&gt; 991px</span>
+            </div>
+            <div class="desktop-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <div class="browser-url">localhost:8001/index.html</div>
+                </div>
+                <div class="browser-screen">
+                    <iframe src="index.html" title="Desktop Preview"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="checklist-box">
+        <h2>✅ Verification Checklist</h2>
+        <div class="checklist">
+            <div class="check-section">
+                <h3>Mobile (< 991px)</h3>
+                <ul>
+                    <li>Hamburger icon visible (☰)</li>
+                    <li>Icon has dark background + border</li>
+                    <li>Icon is in top right corner</li>
+                    <li>Clicking opens sidebar from right</li>
+                    <li>Sidebar is dark (#2c3e50)</li>
+                    <li>Menu items are white text</li>
+                    <li>Clicking link closes menu</li>
+                    <li>Clicking overlay closes menu</li>
+                    <li>Hamburger turns to X when open</li>
+                    <li>Smooth slide animation</li>
+                </ul>
+            </div>
+            
+            <div class="check-section">
+                <h3>Desktop (> 991px)</h3>
+                <ul>
+                    <li>Hamburger icon hidden</li>
+                    <li>Regular menu visible</li>
+                    <li>Menu items horizontal</li>
+                    <li>Hover effects work</li>
+                    <li>Logo visible on left</li>
+                    <li>Navigation functional</li>
+                    <li>No mobile styles applied</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="status-indicator">
+    <h4>✓ Test Status</h4>
+    <p>Check both views and mark items above</p>
+</div>
+
+</body>
+</html>

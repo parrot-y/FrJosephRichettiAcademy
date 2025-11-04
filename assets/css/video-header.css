@@ -1,0 +1,122 @@
+/* Video Header Background - Smooth Playback */
+
+.heading-page {
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 400px !important;
+}
+
+/* Video Background */
+.header-video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 0 !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+    object-fit: cover !important;
+    /* Optimize playback */
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    display: block !important;
+}
+
+/* Reduce video size for performance */
+@media (max-width: 768px) {
+    .header-video {
+        /* Smaller video on mobile for better performance */
+        min-height: 100%;
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* Dark overlay for text readability */
+.video-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Override the about-page-fix.css ::before overlay */
+.heading-page.header-text::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure content is above video */
+.heading-page .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Make sure text is readable over video */
+.heading-page h6,
+.heading-page h2 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7) !important;
+    position: relative !important;
+    z-index: 3 !important;
+    color: #fff !important;
+}
+
+/* Fallback: If video fails to load, show poster */
+.header-video:not([src]) {
+    display: none;
+}
+
+/* Remove default background styles when video is present */
+.heading-page.header-text {
+    background-image: none !important;
+    background: transparent !important;
+}
+
+/* Smooth video loading */
+.header-video {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in !important;
+}
+
+.header-video.loaded {
+    opacity: 1 !important;
+}
+
+/* Optimize for different screen sizes */
+@media (max-width: 991px) {
+    .heading-page {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .heading-page {
+        min-height: 300px;
+    }
+    
+    /* On very small screens, prefer image fallback */
+    .header-video {
+        display: none;
+    }
+}
+
+/* Prevent video flickering on mobile */
+@media (prefers-reduced-motion: reduce) {
+    .header-video {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* GPU acceleration for smooth playback */
+.header-video {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}

@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/about-page-redesign.css?v=20241028b">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
+    <link rel="stylesheet" href="assets/css/transport-services.css">
+    <link rel="stylesheet" href="assets/css/video-header.css?v=2024110401">
+    <link rel="stylesheet" href="assets/css/footer-styles.css">
+    <link rel="stylesheet" href="assets/css/sliding-sidebar-nav.css?v=hamburger2024">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -147,6 +151,9 @@
 
 <body class="about-page about-page-wrapper">
 
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay"></div>
+
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
@@ -197,7 +204,9 @@
                           <li><a href="index.html#contact">Contact</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
-                          <span>0717142643</span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
                       </a>
                       <!-- ***** Menu End ***** -->
                   </nav>
@@ -209,6 +218,14 @@
 
   <!-- ***** Page Banner Start ***** -->
   <section class="heading-page header-text" id="top">
+    <!-- Video Background -->
+    <video class="header-video" autoplay muted loop playsinline poster="assets/images/aboutacademybackground.jpeg">
+      <source src="assets/images/aboutpagevid.mp4" type="video/mp4">
+      <source src="assets/images/aboutpagevid.webm" type="video/webm">
+      <!-- Fallback for browsers that don't support video -->
+    </video>
+    <div class="video-overlay"></div>
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -353,61 +370,34 @@
         <p>The pillars that guide our educational excellence</p>
       </div>
       
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="modern-card">
-            <div class="card-header">
-              <div class="card-icon">
-                <i class="fa fa-bullseye"></i>
-              </div>
-              <h3>Our Mission</h3>
-            </div>
-            <div class="card-body">
-              <p>To provide quality education to pupils founded on Christian Faith. Create a sustainable environment for the realization and exploitation of talents and abilities embedded in our motto <strong>"Right is Light"</strong> so as to produce responsible, hardworking citizens.</p>
-            </div>
-          </div>
+      <div class="minimal-list">
+        <div class="minimal-item">
+          <h3><i class="fa fa-bullseye"></i> Our Mission</h3>
+          <p>To provide quality education to pupils founded on Christian Faith. Create a sustainable environment for the realization and exploitation of talents and abilities embedded in our motto <strong>"Right is Light"</strong> so as to produce responsible, hardworking citizens.</p>
         </div>
         
-        <div class="col-lg-4 col-md-6">
-          <div class="modern-card">
-            <div class="card-header">
-              <div class="card-icon">
-                <i class="fa fa-eye"></i>
-              </div>
-              <h3>Our Vision</h3>
-            </div>
-            <div class="card-body">
-              <p>To bring light to society through offering quality and integrated education that develops the whole child - academically, spiritually, morally, and socially.</p>
-            </div>
-          </div>
+        <div class="minimal-item">
+          <h3><i class="fa fa-eye"></i> Our Vision</h3>
+          <p>To bring light to society through offering quality and integrated education that develops the whole child - academically, spiritually, morally, and socially.</p>
         </div>
         
-        <div class="col-lg-4 col-md-6">
-          <div class="modern-card">
-            <div class="card-header">
-              <div class="card-icon">
-                <i class="fa fa-heart"></i>
-              </div>
-              <h3>Core Values</h3>
-            </div>
-            <div class="card-body">
-              <ul>
-                <li>Respect for every individual</li>
-                <li>Honesty and Integrity</li>
-                <li>Self-Reliance and Independence</li>
-                <li>Hard Work and Dedication</li>
-                <li>Obedience and Discipline</li>
-                <li>Team Work and Unity</li>
-                <li>Freedom with Responsibility</li>
-              </ul>
-            </div>
-          </div>
+        <div class="minimal-item">
+          <h3><i class="fa fa-heart"></i> Core Values</h3>
+          <ul>
+            <li>Respect for every individual</li>
+            <li>Honesty and Integrity</li>
+            <li>Self-Reliance and Independence</li>
+            <li>Hard Work and Dedication</li>
+            <li>Obedience and Discipline</li>
+            <li>Team Work and Unity</li>
+            <li>Freedom with Responsibility</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Leadership Section -->
+  <!-- Leadership Section - Compact Grid -->
   <section class="leadership-section">
     <div class="container">
       <div class="section-title">
@@ -415,41 +405,29 @@
         <p>Dedicated leaders guiding our school to excellence</p>
       </div>
       
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-6">
-          <div class="leadership-card">
-            <div class="leader-avatar">JK</div>
-            <h4>Fr. John Kung'u</h4>
-            <div class="role">School Director</div>
-            <p>Leading the school with dedication and passion for excellence in education and spiritual development.</p>
-          </div>
+      <div class="leadership-grid">
+        <div class="grid-card">
+          <h4><span class="director-star">⭐</span>Fr. John Kung'u</h4>
+          <div class="role">School Director</div>
+          <p>Leading the school with dedication and passion for excellence in education and spiritual development.</p>
         </div>
         
-        <div class="col-lg-3 col-md-6">
-          <div class="leadership-card">
-            <div class="leader-avatar">MK</div>
-            <h4>Monica Karanja</h4>
-            <div class="role">Head Teacher</div>
-            <p>Overseeing academic excellence and ensuring high standards of education for all students.</p>
-          </div>
+        <div class="grid-card">
+          <h4>Monica Karanja</h4>
+          <div class="role">Head Teacher</div>
+          <p>Overseeing academic excellence and ensuring high standards of education for all students.</p>
         </div>
         
-        <div class="col-lg-3 col-md-6">
-          <div class="leadership-card">
-            <div class="leader-avatar">P</div>
-            <h4>Pauline</h4>
-            <div class="role">Deputy Head Teacher</div>
-            <p>Supporting the management team in day-to-day operations and student welfare.</p>
-          </div>
+        <div class="grid-card">
+          <h4>Pauline</h4>
+          <div class="role">Deputy Head Teacher</div>
+          <p>Supporting the management team in day-to-day operations and student welfare.</p>
         </div>
         
-        <div class="col-lg-3 col-md-6">
-          <div class="leadership-card">
-            <div class="leader-avatar">VW</div>
-            <h4>Violet Wambui</h4>
-            <div class="role">Senior Teacher</div>
-            <p>Bringing years of experience to guide and mentor both students and staff members.</p>
-          </div>
+        <div class="grid-card">
+          <h4>Violet Wambui</h4>
+          <div class="role">Senior Teacher</div>
+          <p>Bringing years of experience to guide and mentor both students and staff members.</p>
         </div>
       </div>
     </div>
@@ -498,6 +476,84 @@
           <div class="achievement-icon">💡</div>
           <h5>Digital Learning</h5>
           <p>Adapted to online learning during COVID-19</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transport Services Section -->
+  <section class="transport-services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>🚌 Transport Services</h2>
+        <p>Safe, reliable, and comfortable transportation for our students</p>
+      </div>
+      
+      <!-- Transport Features - Admission Card Style -->
+      <div class="transport-features">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="transport-feature-card">
+              <span class="feature-icon">🛡️</span>
+              <h3>Safe & Secure</h3>
+              <p>Trained drivers with excellent safety records and GPS tracking on all buses. Your child's safety is our top priority.</p>
+              <a href="#contact" class="btn-transport">Contact Us</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="transport-feature-card">
+              <span class="feature-icon">📍</span>
+              <h3>Multiple Routes</h3>
+              <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas. We cover all major residential zones.</p>
+              <a href="#contact" class="btn-transport">View Routes</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="transport-feature-card">
+              <span class="feature-icon">⏰</span>
+              <h3>Punctual Service</h3>
+              <p>Reliable schedules ensuring students arrive and depart on time. Consistent timing you can depend on every day.</p>
+              <a href="#contact" class="btn-transport">See Schedule</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bus Images Gallery -->
+      <div class="bus-gallery">
+        <div class="section-subtitle">
+          <h4>Our Fleet</h4>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="bus-image-card">
+              <img src="assets/images/schoolbus1.jpeg" alt="School Bus 1" class="bus-img">
+              <div class="bus-caption">
+                <p>Modern school bus - Route 1</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="bus-image-card">
+              <img src="assets/images/schoolbus2.jpeg" alt="School Bus 2" class="bus-img">
+              <div class="bus-caption">
+                <p>Comfortable seating - Route 2</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="bus-image-card">
+              <img src="assets/images/schoolbus3.jpeg" alt="School Bus 3" class="bus-img">
+              <div class="bus-caption">
+                <p>Safety first - Route 3</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -699,54 +755,88 @@
   </section>
   <!-- ***** About Academy Content End ***** -->
 
-  <!-- ***** Footer Start ***** -->
+  <!-- ***** Contact & Footer Start ***** -->
   <section class="contact-us" id="contact">
     <div class="container">
+      <!-- GOOGLE MAPS - FULL WIDTH -->
       <div class="row">
-        <div class="col-lg-9 align-self-center">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="contact-us-content">
-                <div class="contact-info">
-                  <h4>Contact Information</h4>
-                  <ul>
-                    <li><i class="fa fa-map-marker"></i> P.O Box 78-00219, Kiambu</li>
-                    <li><i class="fa fa-phone"></i> 0717142643</li>
-                    <li><i class="fa fa-envelope"></i> frjosephrichetti@gmail.com</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+        <div class="col-lg-12">
+          <div class="map-container-vertical" data-aos="fade-up" data-aos-duration="800">
+            <h2>Visit Our Campus</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2446386147166!2d36.75629282295066!3d-1.1755681241147191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f231424294209%3A0xd5d5fb26d3bcd72e!2sFather%20Joseph%20Richetti%20Academy!5e0!3m2!1sen!2ske!4v1761656928226!5m2!1sen!2ske" width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="right-info">
-            <ul>
-              <li>
-                <h6>Phone Number</h6>
-                <span>0717142643</span>
-              </li>
-              <li>
-                <h6>Email Address</h6>
-                <span>frjosephrichetti@gmail.com</span>
-              </li>
-              <li>
-                <h6>Street Address</h6>
-                <span>P.O Box 78-00219, Kiambu</span>
-              </li>
-              <li>
-                <h6>Website URL</h6>
-                <span>www.fjrichetti.ac.ke</span>
-              </li>
+      </div>
+      
+      <!-- CONTACT FORM - FULL WIDTH BELOW MAP -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-form-vertical" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <h2>Send Us a Message</h2>
+            <form id="contact" action="contact_handler.php" method="post">
+              <div class="form-row-group">
+                <div class="form-group">
+                  <input name="name" type="text" id="name" placeholder="Your Full Name*" required="">
+                </div>
+                <div class="form-group">
+                  <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address*" required="">
+                </div>
+                <div class="form-group">
+                  <input name="subject" type="text" id="subject" placeholder="Subject*" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea name="message" type="text" class="form-control" id="message" placeholder="Your message..." required="" rows="6"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="form-submit" class="button">SEND MESSAGE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FOOTER SECTION -->
+  <footer class="footer-horizontal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>About Our School</h4>
+            <p>Fr. Joseph Richetti Catholic School provides quality education grounded in faith, excellence, and community values.</p>
+            <p><strong>Est. 2005</strong></p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#admissions">Admissions</a></li>
+              <li><a href="index.html#programs">Programs</a></li>
+              <li><a href="activities-clubs.html">Activities</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>Contact Information</h4>
+            <ul class="footer-contact">
+              <li><i class="fa fa-phone"></i> 0717142643</li>
+              <li><i class="fa fa-envelope"></i> frjosephrichetti@gmail.com</li>
+              <li><i class="fa fa-map-marker"></i> P.O Box 78-00219, Kiambu</li>
+              <li><i class="fa fa-globe"></i> www.fjrichetti.ac.ke</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <p>Copyright © 2024 Fr. Joseph Richetti Catholic School. All Rights Reserved.</p>
-    </div>
-  </section>
+  </footer>
   <!-- ***** Footer End ***** -->
 
   <!-- Scripts -->
@@ -761,6 +851,8 @@
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js?v=20241027"></script>
+  <script src="assets/js/contact-form.js"></script>
+  <script src="assets/js/newsletter.js"></script>
   
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -775,90 +867,76 @@
     });
   </script>
   
-  <!-- MOBILE MENU FIX - EXACT MATCH HOMEPAGE -->
+  <!-- SLIDING SIDEBAR NAVIGATION SCRIPT -->
   <script>
-    console.log('INLINE SCRIPT LOADED - ABOUT PAGE');
-    
-    window.addEventListener('load', function() {
-        console.log('PAGE FULLY LOADED - Overriding menu handlers...');
+    (function() {
+        'use strict';
         
-        const hamburger = document.querySelector('.menu-trigger');
-        const nav = document.querySelector('.main-nav .nav');
-        
-        console.log('Hamburger found:', hamburger);
-        console.log('Nav found:', nav);
-        
-        if (hamburger && nav) {
-            // CLONE hamburger to remove ALL old event listeners
+        // Wait for DOM to be ready
+        window.addEventListener('load', function() {
+            const hamburger = document.querySelector('.menu-trigger');
+            const nav = document.querySelector('.main-nav .nav');
+            const overlay = document.querySelector('.nav-overlay');
+            
+            if (!hamburger || !nav || !overlay) {
+                console.error('Required elements not found');
+                return;
+            }
+            
+            // Clone hamburger to remove any existing listeners
             const newHamburger = hamburger.cloneNode(true);
             hamburger.parentNode.replaceChild(newHamburger, hamburger);
+            const hamburgerBtn = document.querySelector('.menu-trigger');
             
-            const hamburgerFinal = document.querySelector('.menu-trigger');
-            console.log('Old handlers removed, setting up new handler...');
+            // Function to open menu
+            function openMenu() {
+                nav.classList.add('mobile-active');
+                hamburgerBtn.classList.add('active');
+                overlay.classList.add('active');
+                document.body.classList.add('menu-open');
+            }
             
-            // NEW HAMBURGER HANDLER
-            hamburgerFinal.addEventListener('click', function(e) {
+            // Function to close menu
+            function closeMenu() {
+                nav.classList.remove('mobile-active');
+                hamburgerBtn.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+            
+            // Toggle menu on hamburger click
+            hamburgerBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                e.stopImmediatePropagation();
-                
-                console.log('*** HAMBURGER CLICKED ***');
                 
                 if (nav.classList.contains('mobile-active')) {
-                    console.log('CLOSING menu');
-                    nav.classList.remove('mobile-active');
-                    hamburgerFinal.classList.remove('active');
-                    document.body.classList.remove('menu-open');
+                    closeMenu();
                 } else {
-                    console.log('OPENING menu');
-                    nav.classList.add('mobile-active');
-                    hamburgerFinal.classList.add('active');
-                    document.body.classList.add('menu-open');
+                    openMenu();
                 }
-                
-                return false;
             });
             
-            // HANDLE ALL CLICKS - LINKS AND OVERLAY
-            document.addEventListener('click', function(e) {
-                if (!document.body.classList.contains('menu-open')) return;
-                
-                console.log('=== CLICK DEBUG ===');
-                console.log('Clicked element:', e.target);
-                console.log('Nav contains target?', nav.contains(e.target));
-                console.log('Hamburger contains target?', hamburgerFinal.contains(e.target));
-                
-                // Check if clicking inside nav
-                if (nav.contains(e.target)) {
-                    console.log('Click is INSIDE nav');
-                    const link = e.target.closest('a');
-                    console.log('Closest link:', link);
-                    if (link && link.tagName === 'A') {
-                        const href = link.getAttribute('href');
-                        console.log('*** LINK CLICKED, href:', href);
-                        
-                        // Close menu INSTANTLY
-                        nav.classList.remove('mobile-active');
-                        hamburgerFinal.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        
-                        console.log('Menu closed, link will navigate');
-                    } else {
-                        console.log('Click inside nav but not on a link');
-                    }
-                } else if (!hamburgerFinal.contains(e.target)) {
-                    console.log('Clicked OUTSIDE menu, closing');
-                    nav.classList.remove('mobile-active');
-                    hamburgerFinal.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                } else {
-                    console.log('Click on hamburger - ignored');
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', function() {
+                closeMenu();
+            });
+            
+            // Close menu when clicking a link
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+            
+            // Close menu on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && nav.classList.contains('mobile-active')) {
+                    closeMenu();
                 }
-            }, false);
-        } else {
-            console.error('Hamburger or Nav not found!');
-        }
-    });
+            });
+        });
+    })();
   </script>
   
   <script>
@@ -970,6 +1048,45 @@
             hasAnimated = true;
         }
     });
+    </script>
+    
+    <!-- Video Header Smooth Loading Script -->
+    <script>
+    (function() {
+        var video = document.querySelector('.header-video');
+        
+        if (video) {
+            // Add loaded class when video is ready
+            video.addEventListener('loadeddata', function() {
+                video.classList.add('loaded');
+                video.style.opacity = '1';
+            });
+            
+            // Reduce video quality on slower connections
+            if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
+                video.remove(); // Use fallback image instead
+            }
+            
+            // Pause video when not visible to save resources
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.25 });
+            
+            observer.observe(video);
+            
+            // Ensure video plays on mobile
+            video.play().catch(function(error) {
+                console.log('Video autoplay failed:', error);
+                // Fallback: show poster image
+            });
+        }
+    })();
     </script>
     
     <!-- Keep original functionality only -->

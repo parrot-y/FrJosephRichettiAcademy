@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST 1 - Simple Hamburger</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #1a202c; padding: 20px; }
+        
+        .test-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        
+        .test-info h1 { color: #10b981; margin-bottom: 10px; }
+        .test-info p { color: #666; line-height: 1.6; }
+        
+        /* HEADER */
+        .header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 20px;
+            position: relative;
+        }
+        
+        /* LOGO */
+        .logo {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* HAMBURGER ICON */
+        .menu-trigger {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(120, 209, 197, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-trigger:hover {
+            background: rgba(120, 209, 197, 1);
+            transform: scale(1.05);
+        }
+        
+        .menu-trigger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        /* ACTIVE STATE - X */
+        .menu-trigger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .menu-trigger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-trigger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        /* MENU - HIDDEN BY DEFAULT */
+        .nav {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 300px;
+            height: 100vh;
+            background: #2c3e50;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 80px 0 20px 0;
+        }
+        
+        /* MENU ACTIVE - SLIDES IN */
+        .nav.mobile-active {
+            right: 0;
+        }
+        
+        /* MENU ITEMS */
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav li {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav a {
+            display: block;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: rgba(120, 209, 197, 0.2);
+            color: #78D1C5;
+            padding-left: 40px;
+        }
+        
+        /* OVERLAY */
+        body.menu-open::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+        }
+        
+        /* CONTENT */
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px 0;
+            max-width: 800px;
+        }
+        
+        .content h2 { color: #1a202c; margin-bottom: 15px; }
+        .content p { color: #666; line-height: 1.8; margin-bottom: 15px; }
+        
+        .status {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #10b981;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-info">
+    <h1>✅ TEST 1: Simple Hamburger Menu</h1>
+    <p><strong>Instructions:</strong> Click the teal box with three white lines (☰) in the top right. A dark menu should slide from the right. Click anywhere outside to close.</p>
+    <p><strong>Look for:</strong> Teal button top-right → Click → Dark sidebar slides in → Click outside → Closes</p>
+</div>
+
+<div class="header">
+    <div class="logo">Fr. Joseph Richetti</div>
+    
+    <div class="menu-trigger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<nav class="nav" id="menu">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Test Content</h2>
+    <p>This is a simple test page with a working hamburger menu.</p>
+    <p>The hamburger icon should be visible in the top right corner with a teal background.</p>
+    <p>Try clicking it now!</p>
+</div>
+
+<div class="status" id="status">Ready to test</div>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+const status = document.getElementById('status');
+const body = document.body;
+
+console.log('Hamburger element:', hamburger);
+console.log('Menu element:', menu);
+
+hamburger.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('🍔 HAMBURGER CLICKED!');
+    
+    if (menu.classList.contains('mobile-active')) {
+        console.log('Closing menu');
+        menu.classList.remove('mobile-active');
+        hamburger.classList.remove('active');
+        body.classList.remove('menu-open');
+        status.textContent = 'Menu closed ✓';
+        status.style.background = '#ef4444';
+    } else {
+        console.log('Opening menu');
+        menu.classList.add('mobile-active');
+        hamburger.classList.add('active');
+        body.classList.add('menu-open');
+        status.textContent = 'Menu open ✓';
+        status.style.background = '#10b981';
+    }
+});
+
+// Close on outside click
+document.addEventListener('click', function(e) {
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        if (menu.classList.contains('mobile-active')) {
+            console.log('Clicked outside, closing menu');
+            menu.classList.remove('mobile-active');
+            hamburger.classList.remove('active');
+            body.classList.remove('menu-open');
+            status.textContent = 'Menu closed (outside click) ✓';
+            status.style.background = '#ef4444';
+        }
+    }
+});
+
+// Close on link click
+menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+        console.log('Link clicked, closing menu');
+        menu.classList.remove('mobile-active');
+        hamburger.classList.remove('active');
+        body.classList.remove('menu-open');
+        status.textContent = 'Menu closed (link clicked) ✓';
+        status.style.background = '#ef4444';
+    });
+});
+
+console.log('✅ Hamburger menu initialized');
+status.textContent = 'Script loaded ✓';
+</script>
+
+</body>
+</html>

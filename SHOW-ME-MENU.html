@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👀 Show Me The Menu!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #1a202c;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .emoji { font-size: 4rem; margin: 20px 0; }
+        
+        .instructions {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .instructions h2 {
+            color: #059669;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 2;
+            color: #1a202c;
+            font-size: 1.1rem;
+        }
+        
+        .instructions li strong {
+            color: #10b981;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .button.secondary {
+            background: #3b82f6;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .button.secondary:hover {
+            background: #2563eb;
+        }
+        
+        .visual-guide {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fef3c7;
+            border-radius: 10px;
+            border: 2px solid #f59e0b;
+        }
+        
+        .visual-guide h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        
+        .visual-guide p {
+            color: #78350f;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+        
+        .what-to-see {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .see-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .see-box.yes {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        
+        .see-box h4 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .see-box.yes h4 { color: #059669; }
+        .see-box.no h4 { color: #dc2626; }
+        
+        .see-box ul {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="emoji">👀</div>
+    <h1>Can You See The Menu?</h1>
+    <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 20px;">
+        Your console says the menu IS working!<br>
+        Let's verify you can actually SEE it.
+    </p>
+    
+    <div class="instructions">
+        <h2>🎯 Follow These Steps Carefully:</h2>
+        <ol>
+            <li><strong>Click the button below</strong> to open your site</li>
+            <li><strong>Resize browser</strong> to mobile width (< 991px wide)</li>
+            <li><strong>Look in TOP-RIGHT</strong> for teal hamburger icon (☰)</li>
+            <li><strong>Click the hamburger</strong> - it should turn to X</li>
+            <li><strong>Look for DARK SIDEBAR</strong> sliding from right side</li>
+            <li><strong>Tell me</strong> what you see below</li>
+        </ol>
+    </div>
+    
+    <div class="button-group">
+        <button class="button" onclick="window.open('index.html', '_blank')">
+            🚀 Open My Site
+        </button>
+        <button class="button secondary" onclick="window.open('WORKING-MOBILE-DEMO.html', '_blank')">
+            ✅ Compare With Working Demo
+        </button>
+    </div>
+    
+    <div class="visual-guide">
+        <h3>📱 What Should You See?</h3>
+        <p><strong>When you click the hamburger (☰), you should see:</strong></p>
+        
+        <div class="what-to-see">
+            <div class="see-box yes">
+                <h4>✅ YES - You Should See:</h4>
+                <ul>
+                    <li>Dark navy/blue sidebar (from right)</li>
+                    <li>White text menu items</li>
+                    <li>Teal left border on sidebar</li>
+                    <li>Menu items: Home, About, etc.</li>
+                    <li>Hamburger turns to X</li>
+                    <li>Smooth sliding animation</li>
+                </ul>
+            </div>
+            
+            <div class="see-box no">
+                <h4>❌ NO - You Should NOT See:</h4>
+                <ul>
+                    <li>Nothing happening</li>
+                    <li>Menu staying hidden</li>
+                    <li>White background sidebar</li>
+                    <li>Invisible text</li>
+                    <li>Menu appearing under page</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 20px; background: #eff6ff; border-radius: 10px; border: 2px solid #3b82f6;">
+        <h3 style="color: #1e40af; margin-bottom: 10px;">💬 Tell Me What Happens:</h3>
+        <p style="color: #1e3a8a; line-height: 1.8;">
+            <strong>Option 1:</strong> "I see a dark sidebar with white menu items!" ✅<br>
+            <strong>Option 2:</strong> "Hamburger turns to X but no sidebar appears" ❌<br>
+            <strong>Option 3:</strong> "I see something but it's not right" ⚠️<br>
+            <strong>Option 4:</strong> "Nothing happens at all" ❌
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

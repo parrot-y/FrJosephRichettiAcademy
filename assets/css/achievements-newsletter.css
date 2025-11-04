@@ -2,7 +2,8 @@
 
 /* Enhanced Achievements Section */
 .achievements-enhanced {
-    background: #f8f8f8;
+    background: #f8f8f8 !important;
+    background-color: #f8f8f8 !important;
     padding: 100px 0;
 }
 
@@ -12,18 +13,20 @@
 }
 
 .achievements-enhanced .section-heading h2 {
-    color: #1f272b;
+    color: #1f272b !important;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
+    text-shadow: none !important;
 }
 
 .achievements-enhanced .section-heading p {
-    color: #666;
+    color: #666 !important;
     font-size: 16px;
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: none !important;
 }
 
 /* Statistics Cards */

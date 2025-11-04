@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚌 Transport Cards - Admission Card Style</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Background section with image */
+        .transport-section {
+            background-image: url('assets/images/meeting-04.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 20px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        /* Dark overlay on background */
+        .transport-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .transport-section .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+        }
+        
+        .cards-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        /* EXACT ADMISSION CARD STYLE */
+        .transport-card {
+            background: rgba(31, 41, 55, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px 35px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: rgba(31, 41, 55, 0.85);
+        }
+        
+        .feature-icon {
+            font-size: 56px;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .transport-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .transport-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        /* Teal button like admission card */
+        .transport-card .btn {
+            display: inline-block;
+            background: #78D1C5;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .transport-card .btn:hover {
+            background: #5ab8ad;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(120, 209, 197, 0.4);
+        }
+        
+        .note {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .note h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .note p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .section-title h2 { font-size: 2rem; }
+            .cards-row { grid-template-columns: 1fr; }
+            .transport-card { padding: 30px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🚌 Transport Cards - Admission Card Style</h1>
+        <p>Exact same styling as your ADMISSION REQUIREMENTS card!</p>
+    </div>
+</div>
+
+<!-- Transport Section with Background Image -->
+<section class="transport-section">
+    <div class="content">
+        <div class="section-title">
+            <h2>🚌 Transport Services</h2>
+            <p>Safe, reliable, and comfortable transportation for our students</p>
+        </div>
+        
+        <div class="cards-row">
+            <!-- Card 1 -->
+            <div class="transport-card">
+                <span class="feature-icon">🛡️</span>
+                <h3>Safe & Secure</h3>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses. Your child's safety is our top priority.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="transport-card">
+                <span class="feature-icon">📍</span>
+                <h3>Multiple Routes</h3>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas. We cover all major residential zones.</p>
+                <a href="#" class="btn">View Routes</a>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="transport-card">
+                <span class="feature-icon">⏰</span>
+                <h3>Punctual Service</h3>
+                <p>Reliable schedules ensuring students arrive and depart on time. Consistent timing you can depend on every day.</p>
+                <a href="#" class="btn">See Schedule</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="note">
+        <h3>✅ This Matches Your Admission Card Exactly!</h3>
+        <p><strong>Styling Details:</strong><br>
+        • Semi-transparent dark background: rgba(31, 41, 55, 0.75)<br>
+        • White uppercase headings<br>
+        • Light white/gray text<br>
+        • Teal buttons (#78D1C5)<br>
+        • Blur effect (frosted glass)<br>
+        • Background image shows through<br>
+        • Hover effect: lifts up and darkens slightly</p>
+        <p style="margin-top: 20px; color: #78D1C5; font-weight: bold;">Tell me if this is what you want! 🎯</p>
+    </div>
+</div>
+
+</body>
+</html>

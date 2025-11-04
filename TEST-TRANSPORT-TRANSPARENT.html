@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚌 Transport Cards - Transparency Levels</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .option {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        
+        .option-title {
+            background: linear-gradient(135deg, #78D1C5, #0097A7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cards-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .transport-card {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .feature-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        
+        .transport-card h5 {
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .transport-card p {
+            color: #e5e7eb;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        /* Transparency Level 1 - Very Transparent (15%) */
+        .level1 .transport-card {
+            background: rgba(31, 41, 55, 0.15);
+        }
+        
+        .level1 .transport-card:hover {
+            background: rgba(31, 41, 55, 0.25);
+        }
+        
+        /* Transparency Level 2 - Light Transparent (30%) */
+        .level2 .transport-card {
+            background: rgba(31, 41, 55, 0.30);
+        }
+        
+        .level2 .transport-card:hover {
+            background: rgba(31, 41, 55, 0.40);
+        }
+        
+        /* Transparency Level 3 - Medium Transparent (50%) */
+        .level3 .transport-card {
+            background: rgba(31, 41, 55, 0.50);
+        }
+        
+        .level3 .transport-card:hover {
+            background: rgba(31, 41, 55, 0.60);
+        }
+        
+        /* Transparency Level 4 - Less Transparent (70%) */
+        .level4 .transport-card {
+            background: rgba(31, 41, 55, 0.70);
+        }
+        
+        .level4 .transport-card:hover {
+            background: rgba(31, 41, 55, 0.80);
+        }
+        
+        /* Transparency Level 5 - Original Admission Card Style (85%) */
+        .level5 .transport-card {
+            background: rgba(31, 41, 55, 0.85);
+        }
+        
+        .level5 .transport-card:hover {
+            background: rgba(31, 41, 55, 0.95);
+        }
+        
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .description strong {
+            color: #1e3a8a;
+        }
+        
+        .recommended {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .footer-note {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .footer-note h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .footer-note p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .option { padding: 25px 20px; }
+            .cards-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🚌 Transport Cards - Transparency Levels</h1>
+        <p>Pick how transparent you want the card backgrounds (Option 1 Style)</p>
+    </div>
+    
+    <!-- LEVEL 1: Very Transparent (15%) -->
+    <div class="option level1">
+        <div class="option-title">Level 1: Very Transparent (15% opacity) - Lightest</div>
+        
+        <div class="cards-row">
+            <div class="transport-card">
+                <div class="feature-icon">🛡️</div>
+                <h5>Safe & Secure</h5>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">📍</div>
+                <h5>Multiple Routes</h5>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">⏰</div>
+                <h5>Punctual Service</h5>
+                <p>Reliable schedules ensuring students arrive and depart on time</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Opacity:</strong> rgba(31, 41, 55, 0.15)<br>
+            <strong>Look:</strong> Very see-through, background shows a lot<br>
+            <strong>Best for:</strong> Airy, light feel - background is main focus
+        </div>
+    </div>
+    
+    <!-- LEVEL 2: Light Transparent (30%) -->
+    <div class="option level2">
+        <div class="option-title">Level 2: Light Transparent (30% opacity)</div>
+        
+        <div class="cards-row">
+            <div class="transport-card">
+                <div class="feature-icon">🛡️</div>
+                <h5>Safe & Secure</h5>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">📍</div>
+                <h5>Multiple Routes</h5>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">⏰</div>
+                <h5>Punctual Service</h5>
+                <p>Reliable schedules ensuring students arrive and depart on time</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Opacity:</strong> rgba(31, 41, 55, 0.30)<br>
+            <strong>Look:</strong> Transparent but starting to show card definition<br>
+            <strong>Best for:</strong> Modern glass effect with some structure
+            <div class="recommended">⭐ RECOMMENDED - Good balance!</div>
+        </div>
+    </div>
+    
+    <!-- LEVEL 3: Medium Transparent (50%) -->
+    <div class="option level3">
+        <div class="option-title">Level 3: Medium Transparent (50% opacity) - Balanced</div>
+        
+        <div class="cards-row">
+            <div class="transport-card">
+                <div class="feature-icon">🛡️</div>
+                <h5>Safe & Secure</h5>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">📍</div>
+                <h5>Multiple Routes</h5>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">⏰</div>
+                <h5>Punctual Service</h5>
+                <p>Reliable schedules ensuring students arrive and depart on time</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Opacity:</strong> rgba(31, 41, 55, 0.50)<br>
+            <strong>Look:</strong> Half transparent, good card presence<br>
+            <strong>Best for:</strong> Balance between transparency and readability
+        </div>
+    </div>
+    
+    <!-- LEVEL 4: Less Transparent (70%) -->
+    <div class="option level4">
+        <div class="option-title">Level 4: Less Transparent (70% opacity) - More Solid</div>
+        
+        <div class="cards-row">
+            <div class="transport-card">
+                <div class="feature-icon">🛡️</div>
+                <h5>Safe & Secure</h5>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">📍</div>
+                <h5>Multiple Routes</h5>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">⏰</div>
+                <h5>Punctual Service</h5>
+                <p>Reliable schedules ensuring students arrive and depart on time</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Opacity:</strong> rgba(31, 41, 55, 0.70)<br>
+            <strong>Look:</strong> Mostly solid with slight transparency<br>
+            <strong>Best for:</strong> More traditional card look with glass hint
+        </div>
+    </div>
+    
+    <!-- LEVEL 5: Original Admission Style (85%) -->
+    <div class="option level5">
+        <div class="option-title">Level 5: Original Admission Card (85% opacity) - Most Solid</div>
+        
+        <div class="cards-row">
+            <div class="transport-card">
+                <div class="feature-icon">🛡️</div>
+                <h5>Safe & Secure</h5>
+                <p>Trained drivers with excellent safety records and GPS tracking on all buses</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">📍</div>
+                <h5>Multiple Routes</h5>
+                <p>Convenient pick-up and drop-off points across Kiambu and neighboring areas</p>
+            </div>
+            
+            <div class="transport-card">
+                <div class="feature-icon">⏰</div>
+                <h5>Punctual Service</h5>
+                <p>Reliable schedules ensuring students arrive and depart on time</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Opacity:</strong> rgba(31, 41, 55, 0.85)<br>
+            <strong>Look:</strong> Almost solid, minimal transparency<br>
+            <strong>Best for:</strong> Exact match to admission cards - professional & solid
+        </div>
+    </div>
+    
+    <div class="footer-note">
+        <h2>📋 Which Transparency Level?</h2>
+        <p><strong>Level 1:</strong> 15% - Very transparent (lightest)<br>
+        <strong>Level 2:</strong> 30% - Light transparent ⭐ RECOMMENDED<br>
+        <strong>Level 3:</strong> 50% - Medium balanced<br>
+        <strong>Level 4:</strong> 70% - Less transparent<br>
+        <strong>Level 5:</strong> 85% - Original admission card style (most solid)</p>
+        <p style="margin-top: 20px; color: #78D1C5; font-weight: bold;">Tell me: Level 1, 2, 3, 4, or 5?</p>
+        <p style="margin-top: 10px; font-size: 0.95rem; color: #999;">💡 Level 2 (30%) gives nice modern glass effect while keeping text readable!</p>
+    </div>
+</div>
+
+</body>
+</html>

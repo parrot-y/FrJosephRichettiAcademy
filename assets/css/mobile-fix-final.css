@@ -3,6 +3,28 @@
 /* MOBILE ONLY */
 @media (max-width: 991px) {
     
+    /* FORCE PAGE SECTIONS BELOW MENU */
+    .main-banner,
+    .carousel-container,
+    .carousel-slide,
+    section:not(.header-area),
+    .section,
+    #top,
+    #about,
+    #apply,
+    #courses,
+    #testimonials,
+    #contact {
+        z-index: 1 !important;
+    }
+    
+    /* Header at high z-index for logo/hamburger, but menu will be higher */
+    .header-area {
+        z-index: 999999 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
     /* HEADER - AT TOP */
     body .header-area,
     body.homepage .header-area {
@@ -44,22 +66,40 @@
         text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
     }
     
-    /* HAMBURGER - TOP RIGHT CORNER */
+    /* HAMBURGER - TOP RIGHT CORNER - TEAL & VISIBLE */
     body .header-area .main-nav .menu-trigger,
     body .header-area .main-nav a.menu-trigger,
     .header-area .main-nav .menu-trigger,
     .menu-trigger {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 6px !important;
         position: absolute !important;
         top: 10px !important;
         right: 10px !important;
         width: 50px !important;
         height: 50px !important;
-        padding: 12px 8px !important;
-        background: transparent !important;
-        border: none !important;
-        z-index: 999999 !important;
+        padding: 10px !important;
+        background: rgba(120, 209, 197, 0.9) !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 8px !important;
+        z-index: 2147483647 !important;
         cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        pointer-events: auto !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger:hover {
+        background: rgba(120, 209, 197, 1) !important;
+        border-color: #ffffff !important;
+        transform: scale(1.05) !important;
+    }
+    
+    body .header-area .main-nav .menu-trigger.active {
+        background: rgba(120, 209, 197, 1) !important;
+        border-color: #ffffff !important;
     }
     
     body .header-area .main-nav .menu-trigger span,
@@ -104,32 +144,39 @@
         transform: rotate(-45deg) translate(7px, -7px) !important;
     }
     
-    /* MENU - DARK, SLIDES FROM RIGHT - STRONGEST OVERRIDE */
+    /* MENU - DARK, SLIDES FROM RIGHT - MAXIMUM Z-INDEX */
     body .header-area .main-nav .nav,
     body .header-area .main-nav ul.nav,
     .header-area .main-nav .nav,
     html body .header-area .main-nav .nav {
         position: fixed !important;
         top: 0 !important;
-        right: -400px !important;
+        right: -100% !important;
         left: auto !important;
         bottom: 0 !important;
-        width: 85% !important;
-        max-width: 350px !important;
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
         height: 100vh !important;
         max-height: 100vh !important;
-        background: #2c3e50 !important;
-        background-color: #2c3e50 !important;
-        z-index: 999998 !important;
-        padding: 100px 0 20px 0 !important;
+        background: rgb(44, 62, 80) !important;
+        background-color: rgb(44, 62, 80) !important;
+        z-index: 2147483647 !important;
+        padding: 100px 20px 20px 20px !important;
         margin: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        transition: right 0.4s ease !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         overflow-y: auto !important;
-        box-shadow: -10px 0 40px rgba(0,0,0,0.9) !important;
-        border: none !important;
+        overflow-x: visible !important;
+        box-shadow: -10px 0 50px rgba(0,0,0,0.95) !important;
+        border-left: 10px solid #78D1C5 !important;
         border-radius: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
     
     /* MENU ACTIVE - SLIDE IN FROM RIGHT */
@@ -137,7 +184,7 @@
     body .header-area .main-nav ul.nav.mobile-active,
     .header-area .main-nav .nav.mobile-active,
     html body .header-area .main-nav .nav.mobile-active {
-        right: 0 !important;
+        right: 0px !important;
         left: auto !important;
         display: flex !important;
     }
@@ -158,21 +205,29 @@
     body .header-area .main-nav .nav li a:link,
     body .header-area .main-nav .nav li a:visited {
         display: block !important;
-        padding: 20px 30px !important;
+        padding: 18px 30px !important;
         color: #ffffff !important;
-        font-size: 15px !important;
-        font-weight: 500 !important;
+        font-size: 17px !important;
+        font-weight: 600 !important;
         text-decoration: none !important;
-        text-transform: uppercase !important;
+        text-transform: none !important;
         background: transparent !important;
         background-color: transparent !important;
-        letter-spacing: 0.5px !important;
+        letter-spacing: 0.3px !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        z-index: 2147483647 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
     }
     
     body .header-area .main-nav .nav li a:hover,
     body .header-area .main-nav .nav li a:active {
-        background: rgba(255,255,255,0.1) !important;
-        color: #ffffff !important;
+        background: rgba(120, 209, 197, 0.2) !important;
+        color: #78D1C5 !important;
+        padding-left: 40px !important;
+        border-left: 4px solid #78D1C5 !important;
     }
     
     /* OVERLAY - BEHIND MENU */
@@ -183,8 +238,8 @@
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background: rgba(0, 0, 0, 0.5) !important;
-        z-index: 999997 !important;
-        pointer-events: none !important;
+        background: rgba(0, 0, 0, 0.75) !important;
+        z-index: 2147483646 !important;
+        pointer-events: auto !important;
     }
 }

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔴 LIVE DEBUG - Real-Time Menu Status</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a202c;
+            color: #10b981;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            background: #10b981;
+            color: #1a202c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .panel {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #374151;
+        }
+        
+        .panel h2 {
+            color: #f59e0b;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #374151;
+            padding-bottom: 10px;
+        }
+        
+        .status-line {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+        .warning { color: #f59e0b; }
+        
+        .iframe-container {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #374151;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: 3px solid #10b981;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .button {
+            background: #10b981;
+            color: #1a202c;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .button:hover {
+            background: #059669;
+        }
+        
+        #liveStatus {
+            background: #1a202c;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 2px solid #10b981;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🔴 LIVE DEBUG - Checking Your Menu Right Now...</h1>
+    </div>
+    
+    <div class="grid">
+        <div class="panel">
+            <h2>📊 Real-Time Status</h2>
+            <div id="liveStatus">Initializing...</div>
+        </div>
+        
+        <div class="panel">
+            <h2>🎮 Controls</h2>
+            <button class="button" onclick="runDiagnostic()">🔍 Check Menu Now</button>
+            <button class="button" onclick="forceOpen()">⚡ Force Menu Open</button>
+            <button class="button" onclick="checkWidth()">📏 Check Viewport</button>
+            <button class="button" onclick="clearLog()">🗑️ Clear Log</button>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #1a202c; border-radius: 5px;">
+                <h3 style="color: #f59e0b; margin-bottom: 10px;">📋 Instructions:</h3>
+                <div style="color: #10b981; line-height: 1.8;">
+                    1. Resize browser to < 991px<br>
+                    2. Click "Check Menu Now"<br>
+                    3. Watch the status updates<br>
+                    4. Click hamburger in iframe below
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="iframe-container">
+        <h2 style="color: #f59e0b; margin-bottom: 15px;">📱 Your Site (Click Hamburger Here)</h2>
+        <iframe src="index.html" id="siteFrame"></iframe>
+    </div>
+</div>
+
+<script>
+let logCount = 0;
+
+function log(message, type = 'info') {
+    const output = document.getElementById('liveStatus');
+    const timestamp = new Date().toLocaleTimeString();
+    const colors = {
+        'error': '#ef4444',
+        'success': '#10b981',
+        'warning': '#f59e0b',
+        'info': '#3b82f6'
+    };
+    
+    const color = colors[type] || colors.info;
+    logCount++;
+    
+    output.innerHTML += `<div style="color: ${color}; margin-bottom: 5px;">
+        [${timestamp}] ${message}
+    </div>`;
+    output.scrollTop = output.scrollHeight;
+}
+
+function clearLog() {
+    document.getElementById('liveStatus').innerHTML = '';
+    logCount = 0;
+    log('Log cleared', 'info');
+}
+
+function checkWidth() {
+    const width = window.innerWidth;
+    if (width < 991) {
+        log(`✅ Viewport: ${width}px (MOBILE MODE)`, 'success');
+    } else {
+        log(`❌ Viewport: ${width}px (TOO WIDE - need < 991px)`, 'error');
+    }
+}
+
+function runDiagnostic() {
+    log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'info');
+    log('🔍 STARTING DIAGNOSTIC...', 'warning');
+    log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'info');
+    
+    try {
+        const iframe = document.getElementById('siteFrame');
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        
+        // Check hamburger
+        const hamburger = iframeDoc.querySelector('.menu-trigger');
+        if (hamburger) {
+            log('✅ Hamburger found', 'success');
+            const hambStyles = window.getComputedStyle(hamburger);
+            log(`   Display: ${hambStyles.display}`, 'info');
+            log(`   Background: ${hambStyles.backgroundColor}`, 'info');
+            log(`   Z-index: ${hambStyles.zIndex}`, 'info');
+        } else {
+            log('❌ Hamburger NOT FOUND', 'error');
+        }
+        
+        // Check nav menu
+        const nav = iframeDoc.querySelector('.main-nav .nav');
+        if (nav) {
+            log('✅ Nav menu found', 'success');
+            log(`   Classes: ${nav.className}`, 'info');
+            log(`   Has mobile-active: ${nav.classList.contains('mobile-active')}`, nav.classList.contains('mobile-active') ? 'success' : 'warning');
+            
+            const navStyles = window.getComputedStyle(nav);
+            log(`   Position: ${navStyles.position}`, 'info');
+            
+            const isVisible = navStyles.right === '0px';
+            log(`   Right: ${navStyles.right} ${isVisible ? '✅ VISIBLE' : '❌ HIDDEN'}`, isVisible ? 'success' : 'error');
+            
+            log(`   Width: ${navStyles.width}`, 'info');
+            log(`   Background: ${navStyles.backgroundColor}`, 'info');
+            log(`   Z-index: ${navStyles.zIndex}`, 'info');
+            log(`   Display: ${navStyles.display}`, 'info');
+            log(`   Visibility: ${navStyles.visibility}`, 'info');
+            log(`   Opacity: ${navStyles.opacity}`, 'info');
+            
+            // Check menu items
+            const menuItems = nav.querySelectorAll('li');
+            log(`   Menu items found: ${menuItems.length}`, menuItems.length > 0 ? 'success' : 'error');
+            
+            if (menuItems.length > 0) {
+                menuItems.forEach((item, index) => {
+                    const link = item.querySelector('a');
+                    if (link) {
+                        const linkStyles = window.getComputedStyle(link);
+                        log(`      ${index + 1}. ${link.textContent.trim()}`, 'info');
+                        log(`         Color: ${linkStyles.color}`, 'info');
+                        log(`         Font-size: ${linkStyles.fontSize}`, 'info');
+                        log(`         Display: ${linkStyles.display}`, 'info');
+                    }
+                });
+            }
+        } else {
+            log('❌ Nav menu NOT FOUND', 'error');
+        }
+        
+        // Check body classes
+        const body = iframeDoc.body;
+        log(`   Body has menu-open: ${body.classList.contains('menu-open')}`, body.classList.contains('menu-open') ? 'success' : 'warning');
+        
+        // Check viewport
+        checkWidth();
+        
+        log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'info');
+        log('✅ DIAGNOSTIC COMPLETE', 'success');
+        log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'info');
+        
+        // Final verdict
+        if (nav && navStyles.right === '0px') {
+            log('🎉 MENU IS OPEN AND SHOULD BE VISIBLE!', 'success');
+        } else {
+            log('⚠️ Menu is hidden. Click hamburger to open it.', 'warning');
+        }
+        
+    } catch(e) {
+        log(`❌ ERROR: ${e.message}`, 'error');
+    }
+}
+
+function forceOpen() {
+    log('⚡ Forcing menu open...', 'warning');
+    
+    try {
+        const iframe = document.getElementById('siteFrame');
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const nav = iframeDoc.querySelector('.main-nav .nav');
+        const hamburger = iframeDoc.querySelector('.menu-trigger');
+        const body = iframeDoc.body;
+        
+        if (nav && hamburger) {
+            nav.classList.add('mobile-active');
+            hamburger.classList.add('active');
+            body.classList.add('menu-open');
+            
+            log('✅ Classes added', 'success');
+            
+            setTimeout(() => {
+                const styles = window.getComputedStyle(nav);
+                log(`Result: right = ${styles.right}`, styles.right === '0px' ? 'success' : 'error');
+                
+                if (styles.right === '0px') {
+                    log('🎉 Menu FORCED OPEN successfully!', 'success');
+                    log('If you still can\'t see it, it\'s a visibility/color issue', 'warning');
+                } else {
+                    log('❌ Force open failed - CSS not applying', 'error');
+                }
+            }, 500);
+        } else {
+            log('❌ Could not find menu elements', 'error');
+        }
+    } catch(e) {
+        log(`❌ ERROR: ${e.message}`, 'error');
+    }
+}
+
+// Auto-run on load
+window.addEventListener('load', () => {
+    log('🚀 Debug tool loaded', 'success');
+    log('Click "Check Menu Now" to start', 'info');
+    checkWidth();
+});
+</script>
+
+</body>
+</html>

@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="assets/css/remove-scrollbars.css?v=20241102c">
     <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241103fix">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=20241103fix">
+    <link rel="stylesheet" href="assets/css/footer-styles.css">
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1023,34 +1024,76 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
       }
       
-      /* ABSOLUTE STRONGEST MOBILE MENU OVERRIDE - KILLS TEMPLATEMO CSS */
+      /* FORCE PAGE SECTIONS BELOW MENU */
       @media (max-width: 991px) {
-          /* MENU HIDDEN BY DEFAULT - OFF SCREEN */
-          body .header-area .main-nav .nav,
-          body .header-area .main-nav ul.nav,
-          html body .header-area .main-nav .nav {
-              position: fixed !important;
-              top: 0 !important;
-              right: -350px !important;
-              bottom: 0 !important;
-              width: 300px !important;
-              height: 100vh !important;
-              background: #2c3e50 !important;
-              background-color: #2c3e50 !important;
-              background-image: none !important;
-              display: flex !important;
-              flex-direction: column !important;
-              padding: 100px 0 20px 0 !important;
-              transition: right 0.3s ease !important;
-              z-index: 999998 !important;
-              overflow-y: auto !important;
-              box-shadow: -5px 0 20px rgba(0,0,0,0.5) !important;
+          /* Force carousel and sections to low z-index */
+          .main-banner,
+          .carousel-container,
+          .carousel-slide,
+          section:not(.header-area),
+          .section,
+          #top,
+          #about,
+          #apply,
+          #courses,
+          #testimonials,
+          #contact {
+              z-index: 1 !important;
           }
           
-          /* MENU VISIBLE WHEN ACTIVE - SLIDES IN */
+          /* Header stays at higher z-index for logo/hamburger visibility */
+          .header-area {
+              z-index: 999999 !important;
+          }
+      }
+      
+      /* ABSOLUTE STRONGEST MOBILE MENU OVERRIDE - NUCLEAR OPTION */
+      @media (max-width: 991px) {
+          /* NAVIGATION MENU - HIDDEN BY DEFAULT - ULTRA HIGH SPECIFICITY */
+          html body.homepage .header-area .main-nav .nav,
+          html body .header-area.header-sticky .main-nav .nav,
+          html body .header-area .main-nav ul.nav,
+          body .header-area .main-nav .nav,
+          .header-area .main-nav .nav {
+              position: fixed !important;
+              top: 0 !important;
+              right: -100% !important;
+              left: auto !important;
+              bottom: 0 !important;
+              width: 320px !important;
+              max-width: 320px !important;
+              min-width: 320px !important;
+              height: 100vh !important;
+              max-height: 100vh !important;
+              background: rgb(44, 62, 80) !important;
+              background-color: rgb(44, 62, 80) !important;
+              z-index: 2147483647 !important;
+              padding: 100px 20px 20px 20px !important;
+              margin: 0 !important;
+              transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+              overflow-y: auto !important;
+              overflow-x: visible !important;
+              box-shadow: -10px 0 50px rgba(0,0,0,0.95) !important;
+              border-left: 10px solid #78D1C5 !important;
+              display: flex !important;
+              flex-direction: column !important;
+              justify-content: flex-start !important;
+              align-items: stretch !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+              transform: none !important;
+              pointer-events: auto !important;
+          }
+          
+          /* MENU ACTIVE - SLIDES IN FROM RIGHT - ULTRA HIGH SPECIFICITY */
+          html body.homepage .header-area .main-nav .nav.mobile-active,
+          html body .header-area.header-sticky .main-nav .nav.mobile-active,
+          html body .header-area .main-nav ul.nav.mobile-active,
           body .header-area .main-nav .nav.mobile-active,
-          html body .header-area .main-nav .nav.mobile-active {
-              right: 0 !important;
+          .header-area .main-nav .nav.mobile-active {
+              right: 0px !important;
+              left: auto !important;
+              display: flex !important;
           }
           
           /* FORCE DARK MENU ITEMS - OVERRIDE TEMPLATEMO WHITE */
@@ -1059,12 +1102,16 @@
           body .header-area .main-nav .nav.mobile-active li {
               display: block !important;
               width: 100% !important;
+              min-height: 60px !important;
               background: transparent !important;
               background-color: transparent !important;
-              border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+              border-bottom: 1px solid rgba(255,255,255,0.2) !important;
               pointer-events: auto !important;
               margin: 0 !important;
               padding: 0 !important;
+              list-style: none !important;
+              visibility: visible !important;
+              opacity: 1 !important;
           }
           
           /* FORCE WHITE TEXT - OVERRIDE TEMPLATEMO DARK - CLICKABLE */
@@ -1073,19 +1120,34 @@
           body .header-area .main-nav .nav.mobile-active li a {
               display: block !important;
               width: 100% !important;
-              padding: 18px 30px !important;
+              padding: 20px 25px !important;
               color: #ffffff !important;
-              font-size: 16px !important;
-              font-weight: 500 !important;
+              font-size: 18px !important;
+              font-weight: 700 !important;
               text-align: left !important;
               background: transparent !important;
               background-color: transparent !important;
               pointer-events: auto !important;
               cursor: pointer !important;
               position: relative !important;
-              z-index: 999999 !important;
+              z-index: 2147483647 !important;
               text-decoration: none !important;
               transition: all 0.3s ease !important;
+              letter-spacing: 0.5px !important;
+              text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+              line-height: 1.4 !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+              white-space: nowrap !important;
+          }
+          
+          /* HOVER STATE - TEAL HIGHLIGHT */
+          body .header-area .main-nav .nav li a:hover,
+          body .header-area .main-nav .nav.mobile-active li a:hover {
+              background: rgba(120, 209, 197, 0.2) !important;
+              color: #78D1C5 !important;
+              padding-left: 40px !important;
+              border-left: 4px solid #78D1C5 !important;
           }
           
           /* DARK NAVY BLUE HEADER ON SCROLL */
@@ -1098,7 +1160,8 @@
           /* DEFAULT HEADER - SEMI-TRANSPARENT */
           body .header-area {
               background: rgba(0, 0, 0, 0.3) !important;
-              backdrop-filter: blur(10px) !important;
+              backdrop-filter: none !important;
+              -webkit-backdrop-filter: none !important;
               transition: all 0.3s ease !important;
           }
           
@@ -1112,10 +1175,10 @@
               width: 50px !important;
               height: 50px !important;
               padding: 10px !important;
-              background: rgba(0, 0, 0, 0.3) !important;
+              background: rgba(120, 209, 197, 0.9) !important;
               border-radius: 8px !important;
-              border: 2px solid rgba(255, 255, 255, 0.3) !important;
-              z-index: 999999 !important;
+              border: 2px solid rgba(255, 255, 255, 0.5) !important;
+              z-index: 2147483647 !important;
               cursor: pointer !important;
               transition: all 0.3s ease !important;
               display: flex !important;
@@ -1123,16 +1186,18 @@
               justify-content: center !important;
               align-items: center !important;
               gap: 6px !important;
+              pointer-events: auto !important;
           }
           
           body .header-area .main-nav .menu-trigger:hover {
-              background: rgba(120, 209, 197, 0.3) !important;
-              border-color: #78D1C5 !important;
+              background: rgba(120, 209, 197, 1) !important;
+              border-color: #ffffff !important;
+              transform: scale(1.05) !important;
           }
           
           body .header-area .main-nav .menu-trigger.active {
-              background: rgba(120, 209, 197, 0.4) !important;
-              border-color: #78D1C5 !important;
+              background: rgba(120, 209, 197, 1) !important;
+              border-color: #ffffff !important;
           }
           
           /* HAMBURGER LINES - MUST BE VISIBLE */
@@ -1187,9 +1252,10 @@
               left: 0 !important;
               right: 0 !important;
               bottom: 0 !important;
-              background: rgba(0, 0, 0, 0.6) !important;
-              z-index: 999997 !important;
+              background: rgba(0, 0, 0, 0.7) !important;
+              z-index: 2147483646 !important;
               animation: fadeIn 0.3s ease !important;
+              pointer-events: auto !important;
           }
           
           @keyframes fadeIn {
@@ -1507,7 +1573,7 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
 
       <!-- ***** Header Area Start ***** -->
-      <header class="header-area header-sticky" style="position: relative; z-index: 10;">
+      <header class="header-area header-sticky">
           <div class="container">
               <div class="row">
                   <div class="col-12">
@@ -2369,15 +2435,15 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
       </div>
     </div>
-  <section class="achievements-enhanced" id="achievements">
+  <section class="achievements-enhanced" id="achievements" style="background: #ffffff !important; background-color: #ffffff !important;">
     <div class="container">
       <!-- Section Header -->
       <div class="row">
         <div class="col-lg-12">
           <!-- ANIMATION: Fade down for heading -->
-          <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-            <h2>Our Achievements & Success Stories</h2>
-            <p>Celebrating excellence in education, character development, and community impact</p>
+          <div class="section-heading" style="opacity: 1 !important; visibility: visible !important;">
+            <h2 style="color: #000000 !important; opacity: 1 !important; visibility: visible !important; display: block !important; font-size: 2.5rem !important; font-weight: 700 !important;">Our Achievements & Success Stories</h2>
+            <p style="color: #4a5568 !important; opacity: 1 !important; visibility: visible !important; display: block !important; font-size: 1.2rem !important;">Celebrating excellence in education, character development, and community impact</p>
           </div>
         </div>
       </div>
@@ -2764,13 +2830,14 @@ https://templatemo.com/tm-569-edu-meeting
         
         // WAIT FOR EVERYTHING TO LOAD, THEN OVERRIDE
         window.addEventListener('load', function() {
-            console.log('PAGE FULLY LOADED - Overriding menu handlers...');
+            console.log('✅ PAGE LOADED - Setting up hamburger menu...');
             
             const hamburger = document.querySelector('.menu-trigger');
             const nav = document.querySelector('.main-nav .nav');
+            const body = document.body;
             
-            console.log('Hamburger found:', hamburger);
-            console.log('Nav found:', nav);
+            console.log('Hamburger:', hamburger);
+            console.log('Menu:', nav);
             
             if (hamburger && nav) {
                 // REMOVE ALL EXISTING EVENT LISTENERS BY CLONING
@@ -2778,68 +2845,55 @@ https://templatemo.com/tm-569-edu-meeting
                 hamburger.parentNode.replaceChild(newHamburger, hamburger);
                 const hamburgerFinal = document.querySelector('.menu-trigger');
                 
-                console.log('Old handlers removed, setting up new handler...');
+                console.log('✅ Event listeners cleaned, setting up new ones...');
                 
+                // HAMBURGER CLICK HANDLER
                 hamburgerFinal.addEventListener('click', function(e) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-                    console.log('*** HAMBURGER CLICKED ***');
+                    console.log('🍔 HAMBURGER CLICKED!');
                     
                     if (nav.classList.contains('mobile-active')) {
-                        console.log('CLOSING menu');
+                        console.log('Closing menu');
                         nav.classList.remove('mobile-active');
                         hamburgerFinal.classList.remove('active');
-                        document.body.classList.remove('menu-open');
+                        body.classList.remove('menu-open');
                     } else {
-                        console.log('OPENING menu');
+                        console.log('Opening menu');
                         nav.classList.add('mobile-active');
                         hamburgerFinal.classList.add('active');
-                        document.body.classList.add('menu-open');
+                        body.classList.add('menu-open');
+                        
+                        // Debug
+                        setTimeout(() => {
+                            const styles = window.getComputedStyle(nav);
+                            console.log('Menu open - right:', styles.right, '| display:', styles.display);
+                        }, 100);
                     }
-                    
-                    return false;
                 });
                 
-                // HANDLE ALL CLICKS - LINKS AND OVERLAY - WITH DEBUG
+                // CLOSE ON OUTSIDE CLICK
                 document.addEventListener('click', function(e) {
-                    if (!document.body.classList.contains('menu-open')) return;
-                    
-                    console.log('=== CLICK DEBUG ===');
-                    console.log('Clicked element:', e.target);
-                    console.log('Nav contains target?', nav.contains(e.target));
-                    console.log('Hamburger contains target?', hamburgerFinal.contains(e.target));
-                    
-                    // Check if clicking inside nav
-                    if (nav.contains(e.target)) {
-                        console.log('Click is INSIDE nav');
-                        // Click is inside nav - check if it's a link
-                        const link = e.target.closest('a');
-                        console.log('Closest link:', link);
-                        if (link && link.tagName === 'A') {
-                            const href = link.getAttribute('href');
-                            console.log('*** LINK CLICKED, href:', href);
-                            
-                            // Close menu INSTANTLY
+                    if (!hamburgerFinal.contains(e.target) && !nav.contains(e.target)) {
+                        if (body.classList.contains('menu-open')) {
+                            console.log('Clicked outside, closing menu');
                             nav.classList.remove('mobile-active');
                             hamburgerFinal.classList.remove('active');
-                            document.body.classList.remove('menu-open');
-                            
-                            console.log('Menu closed, link will navigate');
-                            // Don't prevent default - let link work
-                        } else {
-                            console.log('Click inside nav but not on a link');
+                            body.classList.remove('menu-open');
                         }
-                    } else if (!hamburgerFinal.contains(e.target)) {
-                        // Click is outside nav and outside hamburger - close menu
-                        console.log('Clicked OUTSIDE menu, closing');
+                    }
+                });
+                
+                // CLOSE ON LINK CLICK
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        console.log('Link clicked, closing menu');
                         nav.classList.remove('mobile-active');
                         hamburgerFinal.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                    } else {
-                        console.log('Click on hamburger - ignored');
-                    }
-                }, false);
+                        body.classList.remove('menu-open');
+                    });
+                });
+                
+                console.log('✅ All event listeners attached successfully!');
             } else {
                 console.error('Hamburger or Nav not found!');
             }

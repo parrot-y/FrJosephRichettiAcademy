@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👁️ VISUAL TEST - See It Now!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a202c;
+            color: white;
+            padding: 20px;
+        }
+        
+        .header {
+            background: #10b981;
+            color: #1a202c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .instructions {
+            background: #2d3748;
+            border: 3px solid #10b981;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+        
+        .instructions h2 {
+            color: #10b981;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .instructions ol {
+            margin-left: 30px;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+        }
+        
+        .instructions strong {
+            color: #10b981;
+            font-size: 1.3rem;
+        }
+        
+        .test-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6);
+        }
+        
+        .checklist {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .checklist h3 {
+            color: #f59e0b;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .check-item {
+            background: #374151;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid #10b981;
+            font-size: 1.2rem;
+        }
+        
+        .check-item.important {
+            border-left-color: #ef4444;
+            background: #3f1f1f;
+        }
+        
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .visual-box {
+            background: #2d3748;
+            padding: 25px;
+            border-radius: 10px;
+            border: 3px solid #374151;
+        }
+        
+        .visual-box.yes {
+            border-color: #10b981;
+            background: #1f3d2f;
+        }
+        
+        .visual-box.no {
+            border-color: #ef4444;
+            background: #3f1f1f;
+        }
+        
+        .visual-box h4 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .visual-box.yes h4 { color: #10b981; }
+        .visual-box.no h4 { color: #ef4444; }
+        
+        .visual-box ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .visual-grid { grid-template-columns: 1fr; }
+        }
+        
+        .report-section {
+            background: #2d3748;
+            border: 3px solid #3b82f6;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .report-section h3 {
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .report-options {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .report-option {
+            background: #374151;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #374151;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .report-option:hover {
+            border-color: #10b981;
+            transform: scale(1.02);
+        }
+        
+        .report-option h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>👁️ VISUAL TEST</h1>
+    <p style="font-size: 1.3rem;">Follow these steps EXACTLY and tell me what you see</p>
+</div>
+
+<div class="instructions">
+    <h2>📋 DO THESE STEPS IN ORDER:</h2>
+    <ol>
+        <li><strong>Step 1:</strong> Click the button below to open your site</li>
+        <li><strong>Step 2:</strong> Press <code style="background: #1a202c; padding: 5px 10px; border-radius: 5px; color: #10b981;">Ctrl + Shift + R</code> to hard refresh</li>
+        <li><strong>Step 3:</strong> Make your browser window NARROW (less than 991px wide)</li>
+        <li><strong>Step 4:</strong> Look in the TOP-RIGHT corner for a TEAL box</li>
+        <li><strong>Step 5:</strong> Click that TEAL box (hamburger)</li>
+        <li><strong>Step 6:</strong> Read the checklist below and report back</li>
+    </ol>
+</div>
+
+<button class="test-button" onclick="window.open('index.html', '_blank')">
+    🚀 OPEN MY SITE NOW
+</button>
+
+<div class="checklist">
+    <h3>✅ AFTER CLICKING HAMBURGER - What Do You See?</h3>
+    
+    <div class="visual-grid">
+        <div class="visual-box yes">
+            <h4>✅ YOU SHOULD SEE:</h4>
+            <ul>
+                <li>🎨 <strong>Dark overlay</strong> covering entire page</li>
+                <li>📱 <strong>Dark navy sidebar</strong> on RIGHT side</li>
+                <li>💚 <strong>THICK TEAL LINE</strong> (10px) on left edge of sidebar</li>
+                <li>✏️ <strong>White text menu items:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Admissions</li>
+                        <li>Academics</li>
+                        <li>Achievements</li>
+                        <li>Newsletter</li>
+                        <li>Contact</li>
+                    </ul>
+                </li>
+                <li>☰➡️✕ <strong>Hamburger turns into X</strong></li>
+            </ul>
+        </div>
+        
+        <div class="visual-box no">
+            <h4>❌ YOU SHOULD NOT SEE:</h4>
+            <ul>
+                <li>Nothing happening at all</li>
+                <li>Menu appearing but invisible/hidden</li>
+                <li>Menu appearing UNDER the page</li>
+                <li>Just overlay with no sidebar</li>
+                <li>White sidebar (should be dark)</li>
+                <li>Invisible text on sidebar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="report-section">
+    <h3>💬 TELL ME WHICH ONE YOU SEE:</h3>
+    <div class="report-options">
+        <div class="report-option" style="border-color: #10b981; background: #1f3d2f;">
+            <h4 style="color: #10b981;">✅ OPTION 1: PERFECT!</h4>
+            <p>"I see the dark overlay, dark sidebar with THICK TEAL LINE, and white menu text. Everything works!"</p>
+        </div>
+        
+        <div class="report-option" style="border-color: #f59e0b; background: #3d2f1f;">
+            <h4 style="color: #f59e0b;">⚠️ OPTION 2: PARTIAL</h4>
+            <p>"I see the overlay and maybe a thin dark strip on the right, but no clear menu or text visible"</p>
+        </div>
+        
+        <div class="report-option" style="border-color: #3b82f6; background: #1f2d3d;">
+            <h4 style="color: #3b82f6;">🔵 OPTION 3: TEAL LINE ONLY</h4>
+            <p>"I see the thick TEAL line on the right edge but the sidebar/text is not visible"</p>
+        </div>
+        
+        <div class="report-option" style="border-color: #ef4444; background: #3f1f1f;">
+            <h4 style="color: #ef4444;">❌ OPTION 4: NOTHING</h4>
+            <p>"Nothing happens when I click the hamburger, or just overlay appears"</p>
+        </div>
+    </div>
+</div>
+
+<div style="background: #2d3748; border: 3px solid #10b981; border-radius: 10px; padding: 30px; margin-top: 30px; text-align: center;">
+    <h3 style="color: #10b981; margin-bottom: 15px; font-size: 1.8rem;">👇 AFTER TESTING:</h3>
+    <p style="font-size: 1.3rem; line-height: 2;">
+        Come back here and tell me:<br>
+        <strong style="color: #10b981; font-size: 1.5rem;">"I saw OPTION #___"</strong><br><br>
+        That's all I need to know!
+    </p>
+</div>
+
+</body>
+</html>

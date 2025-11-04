@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership - Organizational Tree</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        /* Organization Tree Wrapper */
+        .org-tree-section {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            color: #1e3a8a;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Organizational Tree Structure */
+        .org-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        /* Each level of the tree */
+        .tree-level {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        
+        /* Leadership Card */
+        .leader-node {
+            background: linear-gradient(135deg, #f7fafc 0%, #ffffff 100%);
+            border: 3px solid #78D1C5;
+            border-radius: 20px;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .leader-node:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            border-color: #0097A7;
+        }
+        
+        /* Avatar Circle - Hidden */
+        .leader-avatar {
+            display: none;
+        }
+        
+        .leader-node h4 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .role {
+            background: #78D1C5;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .leader-node p {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Connecting Lines */
+        .tree-connector {
+            width: 3px;
+            height: 40px;
+            background: linear-gradient(to bottom, #78D1C5, #0097A7);
+            margin: 0 auto;
+        }
+        
+        /* Horizontal connector for siblings */
+        .tree-level-2 {
+            position: relative;
+        }
+        
+        .tree-level-2::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #78D1C5, #0097A7);
+        }
+        
+        .tree-level-2 .leader-node::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 40px;
+            background: linear-gradient(to bottom, #78D1C5, #0097A7);
+        }
+        
+        /* Director Badge */
+        .director-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFD700;
+            color: #1e3a8a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .org-tree-section {
+                padding: 40px 20px;
+            }
+            
+            .leader-node {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .tree-level {
+                gap: 30px;
+            }
+            
+            .tree-level-2::before {
+                display: none;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🌳 Leadership Organizational Tree</h1>
+        <p>Hierarchical structure showing our leadership team</p>
+    </div>
+    
+    <div class="org-tree-section">
+        <div class="section-title">
+            <h2>Our Leadership</h2>
+            <p>Dedicated leaders guiding our school to excellence</p>
+        </div>
+        
+        <!-- Organizational Tree -->
+        <div class="org-tree">
+            
+            <!-- LEVEL 1: School Director (Top) -->
+            <div class="tree-level">
+                <div class="leader-node">
+                    <div class="director-badge">⭐ DIRECTOR</div>
+                    <div class="leader-avatar">JK</div>
+                    <h4>Fr. John Kung'u</h4>
+                    <div class="role">School Director</div>
+                    <p>Leading the school with dedication and passion for excellence in education and spiritual development.</p>
+                </div>
+            </div>
+            
+            <!-- Connector Line -->
+            <div class="tree-connector"></div>
+            
+            <!-- LEVEL 2: Head Teacher -->
+            <div class="tree-level">
+                <div class="leader-node">
+                    <div class="leader-avatar">MK</div>
+                    <h4>Monica Karanja</h4>
+                    <div class="role">Head Teacher</div>
+                    <p>Overseeing academic excellence and ensuring high standards of education for all students.</p>
+                </div>
+            </div>
+            
+            <!-- Connector Line -->
+            <div class="tree-connector"></div>
+            
+            <!-- LEVEL 3: Deputy Head & Senior Teacher (Bottom) -->
+            <div class="tree-level tree-level-2">
+                <div class="leader-node">
+                    <div class="leader-avatar">P</div>
+                    <h4>Pauline</h4>
+                    <div class="role">Deputy Head Teacher</div>
+                    <p>Supporting the management team in day-to-day operations and student welfare.</p>
+                </div>
+                
+                <div class="leader-node">
+                    <div class="leader-avatar">VW</div>
+                    <h4>Violet Wambui</h4>
+                    <div class="role">Senior Teacher</div>
+                    <p>Bringing years of experience to guide and mentor both students and staff members.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

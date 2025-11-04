@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST 3 - Main Site Debug</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #1a202c; color: white; padding: 20px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header {
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        
+        .panel {
+            background: white;
+            color: #1a202c;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .panel h2 {
+            color: #10b981;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .iframe-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .mobile-frame {
+            width: 100%;
+            max-width: 400px;
+            height: 700px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .mobile-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .diagnostic {
+            background: #1e293b;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+        
+        .diagnostic .error { color: #ef4444; }
+        .diagnostic .success { color: #10b981; }
+        .diagnostic .warning { color: #f59e0b; }
+        
+        .button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        
+        .button:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .checklist li::before {
+            content: '☐ ';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🔧 TEST 3: Main Site Diagnostic</h1>
+        <p>Testing your actual index.html file</p>
+    </div>
+    
+    <div class="panel">
+        <h2>📱 Your Actual Site (Mobile View)</h2>
+        <p style="margin-bottom: 15px; color: #666;">This is loading your actual index.html. Test the hamburger menu here:</p>
+        
+        <div class="iframe-container">
+            <div class="mobile-frame">
+                <div class="mobile-screen">
+                    <iframe src="index.html" id="siteFrame"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <button class="button" onclick="runDiagnostics()">🔍 Run Diagnostics</button>
+        <button class="button" onclick="openConsole()">📊 Open Browser Console (F12)</button>
+    </div>
+    
+    <div class="panel">
+        <h2>📋 Manual Checklist</h2>
+        <ul class="checklist">
+            <li>Resize browser to width < 991px OR use mobile device</li>
+            <li>Look in top-right corner of embedded site above</li>
+            <li>Do you see a hamburger icon (☰)?</li>
+            <li>Is it teal/blue colored?</li>
+            <li>Does it have a border?</li>
+            <li>Click it - does menu slide from right?</li>
+            <li>Is menu dark colored (#2c3e50)?</li>
+            <li>Are menu items white text?</li>
+            <li>Click outside - does menu close?</li>
+        </ul>
+    </div>
+    
+    <div class="panel">
+        <h2>🩺 Diagnostic Output</h2>
+        <div class="diagnostic" id="diagnosticOutput">
+Click "Run Diagnostics" button above to check your site...
+        </div>
+    </div>
+    
+    <div class="panel">
+        <h2>🛠️ Quick Fixes</h2>
+        
+        <h3 style="margin: 15px 0 10px;">If hamburger is NOT visible:</h3>
+        <div style="background: #fef2f2; padding: 15px; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 15px;">
+            <strong style="color: #991b1b;">Problem: Icon not showing</strong>
+            <ul style="margin: 10px 0; padding-left: 20px; color: #7f1d1d;">
+                <li>Check if width is actually < 991px</li>
+                <li>CSS might not be loading</li>
+                <li>Z-index conflict hiding it</li>
+                <li>Position might be off-screen</li>
+            </ul>
+        </div>
+        
+        <h3 style="margin: 15px 0 10px;">If hamburger visible but NOT clickable:</h3>
+        <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 15px;">
+            <strong style="color: #92400e;">Problem: Click not working</strong>
+            <ul style="margin: 10px 0; padding-left: 20px; color: #78350f;">
+                <li>JavaScript event listener not attached</li>
+                <li>Element covered by another element</li>
+                <li>Pointer-events disabled</li>
+            </ul>
+        </div>
+        
+        <h3 style="margin: 15px 0 10px;">If menu opens but doesn't slide:</h3>
+        <div style="background: #eff6ff; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+            <strong style="color: #1e40af;">Problem: Animation not working</strong>
+            <ul style="margin: 10px 0; padding-left: 20px; color: #1e3a8a;">
+                <li>Transition property missing</li>
+                <li>Position (right) not changing</li>
+                <li>Transform conflict</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+function runDiagnostics() {
+    const output = document.getElementById('diagnosticOutput');
+    let report = [];
+    
+    report.push('<span class="success">🔍 RUNNING DIAGNOSTICS...</span>\n');
+    report.push('='.repeat(60) + '\n\n');
+    
+    // Check viewport
+    const width = window.innerWidth;
+    report.push(`<span class="${width < 991 ? 'success' : 'warning'}">Viewport Width: ${width}px ${width < 991 ? '✓ MOBILE' : '⚠ DESKTOP (resize < 991px)'}</span>\n`);
+    
+    // Try to access iframe
+    try {
+        const iframe = document.getElementById('siteFrame');
+        report.push('<span class="success">✓ iFrame found</span>\n');
+        
+        // Check if we can access iframe content
+        try {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            report.push('<span class="success">✓ iFrame content accessible</span>\n\n');
+            
+            // Check for hamburger
+            const hamburger = iframeDoc.querySelector('.menu-trigger');
+            if (hamburger) {
+                report.push('<span class="success">✓ Hamburger element EXISTS</span>\n');
+                
+                // Check computed styles
+                const styles = window.getComputedStyle(hamburger);
+                report.push(`  Display: ${styles.display}\n`);
+                report.push(`  Position: ${styles.position}\n`);
+                report.push(`  Top: ${styles.top}\n`);
+                report.push(`  Right: ${styles.right}\n`);
+                report.push(`  Width: ${styles.width}\n`);
+                report.push(`  Height: ${styles.height}\n`);
+                report.push(`  Background: ${styles.backgroundColor}\n`);
+                report.push(`  Z-Index: ${styles.zIndex}\n`);
+                report.push(`  Visibility: ${styles.visibility}\n`);
+                report.push(`  Opacity: ${styles.opacity}\n\n`);
+                
+                // Check if visible
+                const rect = hamburger.getBoundingClientRect();
+                if (rect.width > 0 && rect.height > 0) {
+                    report.push('<span class="success">✓ Hamburger is VISIBLE (has dimensions)</span>\n');
+                } else {
+                    report.push('<span class="error">✗ Hamburger is HIDDEN (no dimensions)</span>\n');
+                }
+                
+                // Check for spans
+                const spans = hamburger.querySelectorAll('span');
+                report.push(`\n<span class="${spans.length === 3 ? 'success' : 'error'}">  Lines (spans): ${spans.length} ${spans.length === 3 ? '✓' : '✗ (should be 3)'}</span>\n`);
+                
+            } else {
+                report.push('<span class="error">✗ Hamburger element NOT FOUND</span>\n');
+                report.push('  Selector used: .menu-trigger\n');
+            }
+            
+            // Check for nav menu
+            const nav = iframeDoc.querySelector('.main-nav .nav');
+            if (nav) {
+                report.push('\n<span class="success">✓ Navigation menu EXISTS</span>\n');
+                const navStyles = window.getComputedStyle(nav);
+                report.push(`  Position: ${navStyles.position}\n`);
+                report.push(`  Right: ${navStyles.right}\n`);
+                report.push(`  Display: ${navStyles.display}\n`);
+            } else {
+                report.push('\n<span class="warning">⚠ Navigation menu not found</span>\n');
+            }
+            
+        } catch (e) {
+            report.push('<span class="error">✗ Cannot access iFrame content (same-origin policy)</span>\n');
+            report.push(`  Error: ${e.message}\n`);
+        }
+        
+    } catch (e) {
+        report.push(`<span class="error">✗ Error: ${e.message}</span>\n`);
+    }
+    
+    report.push('\n' + '='.repeat(60) + '\n');
+    report.push('<span class="success">DIAGNOSTICS COMPLETE</span>\n');
+    report.push('\n<strong>RECOMMENDATION:</strong>\n');
+    report.push('1. Open browser DevTools (F12)\n');
+    report.push('2. Click Console tab\n');
+    report.push('3. Look for "HAMBURGER CLICKED" when you click icon\n');
+    report.push('4. If you see it, JS works but CSS is the issue\n');
+    report.push('5. If you don\'t see it, event listener not attached\n');
+    
+    output.innerHTML = report.join('');
+}
+
+function openConsole() {
+    alert('Press F12 on your keyboard to open Developer Tools!\n\nThen:\n1. Click "Console" tab\n2. Try clicking hamburger in site above\n3. Look for messages like "HAMBURGER CLICKED"');
+}
+
+console.log('TEST 3 loaded');
+console.log('Click "Run Diagnostics" to analyze your site');
+</script>
+
+</body>
+</html>

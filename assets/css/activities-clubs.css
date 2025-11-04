@@ -357,6 +357,31 @@
     }
 }
 
+/* Fix for activity cards on mobile - ensure full width */
+@media (max-width: 991px) {
+    .meetings-page .col-lg-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .meeting-single-item {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .meeting-single-item .thumb {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .meeting-single-item .down-content {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 /* Owl Carousel Custom Styling for Activities */
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next {

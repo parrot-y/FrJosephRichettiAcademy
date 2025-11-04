@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ FINAL Mobile Test - Fr. Joseph Richetti</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f4f8; }
+        
+        .test-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+        }
+        
+        .test-banner h1 { font-size: 1.8rem; margin-bottom: 10px; }
+        .test-banner p { font-size: 1rem; opacity: 0.95; }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .panel-header {
+            background: #1a202c;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .status-badge {
+            background: #10b981;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .phone-mockup {
+            padding: 30px;
+            background: #f9fafb;
+        }
+        
+        .phone {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 35px;
+            padding: 12px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+        }
+        
+        .phone-notch {
+            width: 140px;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 15px 15px;
+            margin: -12px auto 8px;
+        }
+        
+        .phone-screen {
+            background: white;
+            border-radius: 25px;
+            height: 700px;
+            overflow: hidden;
+        }
+        
+        .phone-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .checklist {
+            padding: 25px;
+        }
+        
+        .checklist h3 {
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .check-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .check-item:last-child { border-bottom: none; }
+        
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #10b981;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .check-text { color: #4b5563; font-size: 0.95rem; }
+        
+        .page-tests {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .page-tests h3 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .page-link {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+        
+        .page-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .page-link.home { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .page-link.about { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .page-link.activities { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        
+        .instructions {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .instructions h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            color: #78350f;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 1024px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-banner">
+    <h1>✅ FINAL MOBILE TEST</h1>
+    <p>Fr. Joseph Richetti Catholic School - Complete Mobile Experience</p>
+</div>
+
+<div class="container">
+    <div class="instructions">
+        <h3>📋 How to Test</h3>
+        <ol>
+            <li><strong>Look at the mobile preview</strong> below (your actual site)</li>
+            <li><strong>Click the hamburger icon</strong> (☰) in top-right corner</li>
+            <li><strong>Dark sidebar should slide</strong> from right with menu items</li>
+            <li><strong>Click any link</strong> - menu should close and navigate</li>
+            <li><strong>Click outside menu</strong> - menu should close</li>
+            <li><strong>Test all pages</strong> using links below</li>
+        </ol>
+    </div>
+    
+    <div class="grid-2">
+        <!-- MOBILE PREVIEW -->
+        <div class="panel">
+            <div class="panel-header">
+                📱 Mobile Preview (Your Actual Site)
+                <span class="status-badge">LIVE</span>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <iframe src="index.html" title="Mobile Site Preview"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CHECKLIST -->
+        <div class="panel">
+            <div class="panel-header">
+                ✅ Verification Checklist
+                <span class="status-badge">CHECK THESE</span>
+            </div>
+            <div class="checklist">
+                <h3>Mobile Menu (< 991px)</h3>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Hamburger icon visible (teal box with ☰)</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Icon in top-right corner</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Clicking opens dark sidebar from right</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Sidebar background is dark (#2c3e50)</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Menu items are white text</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Hamburger turns to X when open</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Clicking link closes menu</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Clicking outside (overlay) closes menu</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Smooth slide animation (not instant)</div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-box">☐</div>
+                    <div class="check-text">Menu items hover effect works (teal highlight)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PAGE TESTS -->
+    <div class="page-tests">
+        <h3>🔗 Test All Pages (Click to open in new tab)</h3>
+        <p style="color: #6b7280; margin-bottom: 20px;">Test hamburger menu on each page to ensure it works everywhere</p>
+        
+        <div class="page-grid">
+            <a href="index.html" target="_blank" class="page-link home">
+                🏠 Homepage
+            </a>
+            <a href="about-academy.html" target="_blank" class="page-link about">
+                📖 About Academy
+            </a>
+            <a href="activities-clubs.html" target="_blank" class="page-link activities">
+                ⚽ Activities & Clubs
+            </a>
+        </div>
+    </div>
+    
+    <div style="background: white; padding: 25px; border-radius: 15px; margin-top: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1);">
+        <h3 style="color: #1a202c; margin-bottom: 15px;">🔍 Console Debug</h3>
+        <p style="color: #6b7280; margin-bottom: 15px;">Open browser console (F12) to see detailed logs:</p>
+        <ul style="color: #4b5563; line-height: 2; margin-left: 20px;">
+            <li>Look for: <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 3px;">🍔 HAMBURGER CLICKED!</code></li>
+            <li>Look for: <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 3px;">Opening menu</code></li>
+            <li>Look for: <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 3px;">Menu open - right: 0px</code></li>
+            <li>If you see <code style="background: #fef2f2; padding: 2px 6px; border-radius: 3px; color: #dc2626;">right: -100%</code> then menu is still hidden</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
