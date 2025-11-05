@@ -42,21 +42,52 @@ function setupMobileNav() {
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
                 menuTrigger.setAttribute('aria-expanded', 'false');
+                // Remove focus trap
+                if (nav.__focusTrap) {
+                    nav.__focusTrap.start.remove();
+                    nav.__focusTrap.end.remove();
+                    nav.__focusTrap = null;
+                }
             } else {
                 console.log('OPENING menu');
                 nav.classList.add('mobile-active');
                 menuTrigger.classList.add('active');
                 body.classList.add('menu-open');
                 menuTrigger.setAttribute('aria-expanded', 'true');
+                
+                // Focus trap: Create invisible focusable elements
+                if (!nav.__focusTrap) {
+                    const focusTrapStart = document.createElement('div');
+                    focusTrapStart.setAttribute('tabindex', '0');
+                    focusTrapStart.setAttribute('aria-hidden', 'true');
+                    focusTrapStart.style.cssText = 'position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;';
+                    focusTrapStart.addEventListener('focus', function() {
+                        const focusableElements = nav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+                        if (focusableElements.length > 0) {
+                            focusableElements[focusableElements.length - 1].focus();
+                        }
+                    });
+                    
+                    const focusTrapEnd = document.createElement('div');
+                    focusTrapEnd.setAttribute('tabindex', '0');
+                    focusTrapEnd.setAttribute('aria-hidden', 'true');
+                    focusTrapEnd.style.cssText = 'position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;';
+                    focusTrapEnd.addEventListener('focus', function() {
+                        const focusableElements = nav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+                        if (focusableElements.length > 0) {
+                            focusableElements[0].focus();
+                        }
+                    });
+                    
+                    nav.insertBefore(focusTrapStart, nav.firstChild);
+                    nav.appendChild(focusTrapEnd);
+                    nav.__focusTrap = { start: focusTrapStart, end: focusTrapEnd };
+                }
 
-                setTimeout(() => {
-                    const computed = window.getComputedStyle(nav);
-                    console.log('Menu open - right:', computed.right, '| display:', computed.display, '| visibility:', computed.visibility);
-                }, 100);
-
+                // Move focus to first link for accessibility
                 const firstLink = nav.querySelector('a');
                 if (firstLink) {
-                    firstLink.focus({ preventScroll: true });
+                    setTimeout(() => firstLink.focus({ preventScroll: true }), 100);
                 }
             }
             console.log('Nav classes after:', nav.className);
@@ -91,16 +122,48 @@ function setupMobileNav() {
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
                 menuTrigger.setAttribute('aria-expanded', 'false');
+                // Remove focus trap
+                if (nav.__focusTrap) {
+                    nav.__focusTrap.start.remove();
+                    nav.__focusTrap.end.remove();
+                    nav.__focusTrap = null;
+                }
             });
         });
         
+        // Close button handler
+        const closeBtn = nav.querySelector('.mobile-menu-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                nav.classList.remove('mobile-active');
+                menuTrigger.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'false');
+                // Remove focus trap
+                if (nav.__focusTrap) {
+                    nav.__focusTrap.start.remove();
+                    nav.__focusTrap.end.remove();
+                    nav.__focusTrap = null;
+                }
+                menuTrigger.focus({ preventScroll: true });
+            });
+        }
+        
         // Close menu when clicking outside (on overlay)
         document.addEventListener('click', function(e) {
+            // Don't close if clicking on the close button (handled separately)
+            if (e.target.closest('.mobile-menu-close')) return;
+            
             if (!nav.contains(e.target) && !menuTrigger.contains(e.target) && body.classList.contains('menu-open')) {
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
                 menuTrigger.setAttribute('aria-expanded', 'false');
+                // Remove focus trap
+                if (nav.__focusTrap) {
+                    nav.__focusTrap.remove();
+                    nav.__focusTrap = null;
+                }
             }
         });
 
@@ -111,6 +174,12 @@ function setupMobileNav() {
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
                 menuTrigger.setAttribute('aria-expanded', 'false');
+                // Remove focus trap
+                if (nav.__focusTrap) {
+                    nav.__focusTrap.start.remove();
+                    nav.__focusTrap.end.remove();
+                    nav.__focusTrap = null;
+                }
                 menuTrigger.focus({ preventScroll: true });
             }
         });

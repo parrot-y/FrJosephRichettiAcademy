@@ -237,66 +237,162 @@
         background: #fff !important;
     }
     
+    /* Close button for mobile menu */
+    .mobile-menu-close {
+        display: none !important;
+    }
+    
+    @media (max-width: 991px) {
+        .header-area .main-nav .nav .mobile-menu-close {
+            display: flex !important;
+            position: absolute !important;
+            top: 1.5rem !important;
+            right: 1.5rem !important;
+            width: 44px !important;
+            height: 44px !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            border-radius: 50% !important;
+            color: #fff !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            cursor: pointer !important;
+            z-index: 1000001 !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .header-area .main-nav .nav .mobile-menu-close:hover,
+        .header-area .main-nav .nav .mobile-menu-close:focus {
+            background: rgba(120, 209, 197, 1) !important;
+            border-color: #fff !important;
+            transform: rotate(90deg) scale(1.1) !important;
+            outline: 2px solid rgba(120, 209, 197, 0.3) !important;
+            outline-offset: 2px !important;
+        }
+        
+        .header-area .main-nav .nav .mobile-menu-close::before {
+            content: '×' !important;
+            font-size: 32px !important;
+            line-height: 1 !important;
+            display: block !important;
+        }
+    }
+    
+    /* Responsive adjustments for different screen sizes */
+    @media (max-width: 480px) {
+        .header-area .main-nav .nav {
+            width: 75vw !important;
+            padding: 1.5rem 1rem !important;
+        }
+        
+        .header-area .main-nav .nav li a {
+            font-size: 16px !important;
+            padding: 0.875rem 1rem !important;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+        .header-area .main-nav .nav {
+            width: 70vw !important;
+            max-width: 400px !important;
+        }
+    }
+
     /* MOBILE MENU - DARK BACKGROUND, SLIDES FROM RIGHT */
-    .header-area .main-nav .nav {
+    .header-area .main-nav .nav,
+    body.menu-open .header-area .main-nav .nav {
         position: fixed !important;
         top: 0 !important;
-        right: -350px !important;
-        left: auto !important;
-        width: 85vw !important;
-        max-width: 320px !important;
+        right: 0 !important;
+        width: 70vw !important;
         height: 100vh !important;
-        background: #1f272b !important;
-        background-color: #1f272b !important;
+        background: rgba(31, 39, 43, 0.98) !important;
+        background-color: rgba(31, 39, 43, 0.98) !important;
         z-index: 2147483647 !important;
-        padding: 80px 0 20px 0 !important;
+        padding: 2rem 1.5rem !important;
         margin: 0 !important;
         overflow-y: auto !important;
         box-shadow: -8px 0 30px rgba(0,0,0,0.8) !important;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: flex !important;
         flex-direction: column !important;
-        transform: none !important;
-        scale: 1 !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
+        transform: translateX(100%) !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         visibility: hidden !important;
         pointer-events: none !important;
+        list-style: none !important;
     }
     
     /* When active - slide in from RIGHT */
     .header-area .main-nav .nav.mobile-active {
-        right: 0 !important;
+        transform: translateX(0) !important;
         visibility: visible !important;
         pointer-events: auto !important;
     }
     
-    /* Menu items styling */
+    /* Menu items styling - Vertical stack with clear spacing - FORCE OVERRIDE */
+    body.menu-open .header-area .main-nav .nav.mobile-active li,
+    body.menu-open .header-area .main-nav .nav li,
+    .header-area .main-nav .nav.mobile-active li,
     .header-area .main-nav .nav li {
         display: block !important;
         width: 100% !important;
         margin: 0 !important;
+        margin-bottom: 0.5rem !important;
         padding: 0 !important;
-        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        list-style: none !important;
+        border-bottom: none !important;
+        float: none !important;
+        clear: both !important;
+        flex: none !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
     }
     
+    body.menu-open .header-area .main-nav .nav.mobile-active li a,
+    body.menu-open .header-area .main-nav .nav li a,
+    .header-area .main-nav .nav.mobile-active li a,
     .header-area .main-nav .nav li a {
         display: block !important;
-        padding: 20px 30px !important;
+        width: 100% !important;
+        padding: 1rem 1.5rem !important;
         color: #ffffff !important;
         background: transparent !important;
-        font-size: 15px !important;
+        font-size: 18px !important;
         font-weight: 500 !important;
         text-decoration: none !important;
         text-align: left !important;
         text-shadow: none !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
+        text-transform: capitalize !important;
+        letter-spacing: 0.3px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        line-height: 1.6 !important;
+        border-radius: 8px !important;
+        transition: all 0.2s ease !important;
+        min-height: 50px !important;
+        box-sizing: border-box !important;
+        margin: 0 0 0.5rem 0 !important;
+        flex: none !important;
     }
     
+    /* Hover/Tap highlight effect */
     .header-area .main-nav .nav li a:hover,
-    .header-area .main-nav .nav li a.active {
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: #ffffff !important;
+    .header-area .main-nav .nav li a:focus,
+    .header-area .main-nav .nav li a:active {
+        background: rgba(120, 209, 197, 0.2) !important;
+        color: #78D1C5 !important;
+        transform: translateX(5px) !important;
+        outline: 2px solid rgba(120, 209, 197, 0.3) !important;
+        outline-offset: -2px !important;
     }
+    
     
     /* Submenu styling */
     .header-area .main-nav .nav li.has-sub ul.sub-menu {
@@ -311,21 +407,28 @@
         font-size: 14px !important;
     }
     
-    /* Dark overlay - LOWER z-index than sidebar to ensure sidebar is on top */
-    body.menu-open::after {
+    /* Dark overlay with blur effect */
+    body.menu-open::before {
         content: '' !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background: rgba(0, 0, 0, 0.5) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
         z-index: 2147483646 !important;
-        pointer-events: none !important; /* Allow clicks to pass through to sidebar */
+        animation: fadeIn 0.3s ease !important;
     }
     
     body.menu-open {
         overflow: hidden !important;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 }
 

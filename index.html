@@ -44,7 +44,8 @@
     <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/remove-scrollbars.css?v=20241102c">
-    <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241103fix">
+    <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241104final">
+    <link rel="stylesheet" href="assets/css/mside.css?v=20241105">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=20241103fix">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
     
@@ -1583,9 +1584,10 @@ https://templatemo.com/tm-569-edu-meeting
                               <span class="logo-text">Fr. Joseph Richetti Catholic School</span>
                           </a>
                           <!-- ***** Menu Start ***** -->
-                          <ul class="nav">
+                          <ul class="nav" id="mobile-nav">
+                              <button class="mobile-menu-close" aria-label="Close menu"></button>
                               <li><a href="index.html" class="active">Home</a></li>
-                              <li><a href="about-academy.html">About</a></li>
+                              <li><a href="about-academy.html">About Our School</a></li>
                               <li><a href="#admissions" class="scroll-to-section">Admissions</a></li>
                               <li class="has-sub">
                                   <a href="javascript:void(0)">Academics</a>
@@ -2856,8 +2858,8 @@ https://templatemo.com/tm-569-edu-meeting
               btn.classList.remove('active');
                         body.classList.remove('menu-open');
               btn.setAttribute('aria-expanded', 'false');
-              // Force-close positioning and interactivity (override !important rules)
-              nav.style.setProperty('right', '-350px', 'important');
+              // Force-close positioning - slide out using transform
+              nav.style.setProperty('transform', 'translateX(100%)', 'important');
               nav.style.setProperty('visibility', 'hidden', 'important');
               nav.style.setProperty('pointer-events', 'none', 'important');
               // Move back to original parent if we had portaled it
@@ -2894,38 +2896,33 @@ https://templatemo.com/tm-569-edu-meeting
                         body.classList.add('menu-open');
               btn.setAttribute('aria-expanded', 'true');
               
-              // Force-open positioning - MULTIPLE ATTEMPTS to override any calculations
-              // CRITICAL: Remove left entirely, only use right for fixed positioning
-              // CRITICAL: Force top: 0 for viewport positioning
-              // CRITICAL: Ensure position is truly fixed and not affected by any transforms
+              // Force-open positioning - Use transform for smooth slide-in
               nav.style.removeProperty('left');
               nav.style.removeProperty('top');
               nav.style.removeProperty('bottom');
+              nav.style.removeProperty('inset');
               nav.style.setProperty('position', 'fixed', 'important');
               nav.style.setProperty('top', '0px', 'important');
               nav.style.setProperty('right', '0px', 'important');
               nav.style.setProperty('left', 'auto', 'important');
               nav.style.setProperty('bottom', 'auto', 'important');
               nav.style.setProperty('margin', '0', 'important');
-              nav.style.setProperty('padding-top', '80px', 'important');
+              nav.style.setProperty('padding', '2rem 1.5rem', 'important');
               nav.style.setProperty('visibility', 'visible', 'important');
               nav.style.setProperty('opacity', '1', 'important');
               nav.style.setProperty('pointer-events', 'auto', 'important');
-              nav.style.setProperty('transform', 'none', 'important');
-              nav.style.setProperty('translate', 'none', 'important');
+              // CRITICAL: Use transform for slide-in, don't override with 'none'
+              nav.style.setProperty('transform', 'translateX(0)', 'important');
+              nav.style.removeProperty('translate');
               
-              // Force remove any parent transforms that might affect fixed positioning
-              var parent = nav.parentElement;
-              while (parent && parent !== document.body) {
-                var parentStyle = window.getComputedStyle(parent);
-                if (parentStyle.transform !== 'none' || parentStyle.position !== 'static') {
-                  console.warn('Found transformed/positioned parent:', parent, 'moving nav to body');
-                  try {
-                    document.body.appendChild(nav);
-                    break;
-                  } catch(e) {}
+              // Ensure nav is on body for proper fixed positioning
+              if (nav.parentElement !== document.body) {
+                try {
+                  document.body.appendChild(nav);
+                  nav.dataset.portaled = 'true';
+                } catch(e) {
+                  console.warn('Failed to move nav to body:', e);
                 }
-                parent = parent.parentElement;
               }
               
               // Force again after a tiny delay (in case something resets it)
@@ -2939,16 +2936,20 @@ https://templatemo.com/tm-569-edu-meeting
                 nav.style.removeProperty('left');
                 nav.style.removeProperty('top');
                 nav.style.removeProperty('bottom');
+                nav.style.removeProperty('inset');
                 nav.style.setProperty('position', 'fixed', 'important');
                 nav.style.setProperty('top', '0px', 'important');
                 nav.style.setProperty('right', '0px', 'important');
                 nav.style.setProperty('left', 'auto', 'important');
                 nav.style.setProperty('bottom', 'auto', 'important');
                 nav.style.setProperty('margin', '0', 'important');
+                nav.style.setProperty('padding', '2rem 1.5rem', 'important');
                 nav.style.setProperty('visibility', 'visible', 'important');
                 nav.style.setProperty('opacity', '1', 'important');
+                nav.style.setProperty('transform', 'translateX(0)', 'important');
+                nav.style.removeProperty('translate');
                 // Re-enable transition
-                nav.style.setProperty('transition', originalTransition || 'right 0.4s cubic-bezier(0.4, 0, 0.2, 1)', 'important');
+                nav.style.setProperty('transition', originalTransition || 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 'important');
               }, 10);
               
               // Diagnostic: Check computed styles
@@ -2968,17 +2969,20 @@ https://templatemo.com/tm-569-edu-meeting
                 });
                 
                 // If still not at 0 or left is set, force it one more time
-                if ((computed.right !== '0px' && computed.right !== '0') || computed.left !== 'auto' || computed.top !== '0px') {
-                  console.warn('Menu positioning issue detected, forcing again...', {right: computed.right, left: computed.left, top: computed.top});
+                if ((computed.right !== '0px' && computed.right !== '0') || (computed.left !== 'auto' && computed.left !== '0px') || computed.top !== '0px' || computed.transform === 'none') {
+                  console.warn('Menu positioning issue detected, forcing again...', {right: computed.right, left: computed.left, top: computed.top, transform: computed.transform});
                   nav.style.removeProperty('left');
                   nav.style.removeProperty('top');
                   nav.style.removeProperty('bottom');
+                  nav.style.removeProperty('inset');
                   nav.style.setProperty('top', '0px', 'important');
                   nav.style.setProperty('right', '0px', 'important');
                   nav.style.setProperty('left', 'auto', 'important');
                   nav.style.setProperty('bottom', 'auto', 'important');
                   nav.style.setProperty('visibility', 'visible', 'important');
                   nav.style.setProperty('opacity', '1', 'important');
+                  nav.style.setProperty('transform', 'translateX(0)', 'important');
+                  nav.style.removeProperty('translate');
                 }
                 
                 // Visual test: Make it VERY visible for debugging
@@ -3035,8 +3039,23 @@ https://templatemo.com/tm-569-edu-meeting
             btn.addEventListener('touchend', handler, true);
             btn.addEventListener('click', handler, true);
             console.log('Homepage: inline hamburger binding attached to:', btn);
-            } else {
+          } else {
             console.error('Homepage: hamburger not found for inline binding');
+          }
+          
+          // Add close button functionality
+          var closeBtn = document.querySelector('.mobile-menu-close');
+          if (closeBtn) {
+            var closeHandler = function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('CLOSE BUTTON CLICKED');
+              window.__toggleMenu();
+            };
+            closeBtn.onclick = closeHandler;
+            closeBtn.addEventListener('click', closeHandler, true);
+            closeBtn.addEventListener('touchend', closeHandler, true);
+            console.log('Homepage: close button binding attached');
           }
         } catch (e) {
           console.error('Homepage: inline fallback error', e);
@@ -3044,6 +3063,7 @@ https://templatemo.com/tm-569-edu-meeting
         });
     </script>
     <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/mside.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
