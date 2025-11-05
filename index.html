@@ -39,15 +39,18 @@
     <!-- <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled"> -->
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <!-- mobile-navigation-fix.css removed to avoid conflicts; using mobile-menu-simple.css as single source -->
+    <!-- Old mobile menu CSS removed - now using mside.css only -->
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
     <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/remove-scrollbars.css?v=20241102c">
-    <link rel="stylesheet" href="assets/css/mobile-menu-simple.css?v=20241104final">
+    <!-- mobile-menu-simple.css removed - now using mside.css only -->
     <link rel="stylesheet" href="assets/css/mside.css?v=20241105">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=20241103fix">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
+    
+    <!-- 🧪 TEST FILE - Mobile Header Fix -->
+    <link rel="stylesheet" href="assets/css/MOBILE_HEADER_FIX_TEST.css">
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1166,108 +1169,7 @@
               transition: all 0.3s ease !important;
           }
           
-          /* HAMBURGER ICON - VISIBLE AND FUNCTIONAL */
-          body .header-area .main-nav .menu-trigger,
-          body .header-area .main-nav a.menu-trigger {
-              display: block !important;
-              position: absolute !important;
-              top: 10px !important;
-              right: 10px !important;
-              width: 50px !important;
-              height: 50px !important;
-              padding: 10px !important;
-              background: rgba(120, 209, 197, 0.9) !important;
-              border-radius: 8px !important;
-              border: 2px solid rgba(255, 255, 255, 0.5) !important;
-              z-index: 2147483647 !important;
-              cursor: pointer !important;
-              transition: all 0.3s ease !important;
-              display: flex !important;
-              flex-direction: column !important;
-              justify-content: center !important;
-              align-items: center !important;
-              gap: 6px !important;
-              pointer-events: auto !important;
-          }
-          
-          body .header-area .main-nav .menu-trigger:hover {
-              background: rgba(120, 209, 197, 1) !important;
-              border-color: #ffffff !important;
-              transform: scale(1.05) !important;
-          }
-          
-          body .header-area .main-nav .menu-trigger.active {
-              background: rgba(120, 209, 197, 1) !important;
-              border-color: #ffffff !important;
-          }
-          
-          /* HAMBURGER LINES - MUST BE VISIBLE */
-          body .header-area .main-nav .menu-trigger span,
-          body .header-area .main-nav a.menu-trigger span {
-              display: block !important;
-              width: 28px !important;
-              height: 3px !important;
-              background: #ffffff !important;
-              margin: 0 !important;
-              border-radius: 2px !important;
-              transition: all 0.3s ease !important;
-              box-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
-          }
-          
-          /* HAMBURGER ACTIVE STATE - TURNS TO X */
-          body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
-              transform: rotate(45deg) translate(8px, 8px) !important;
-          }
-          
-          body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
-              opacity: 0 !important;
-          }
-          
-          body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
-              transform: rotate(-45deg) translate(7px, -7px) !important;
-          }
-          
-          /* MENU MUST BE ON TOP */
-          body .header-area .main-nav .nav,
-          body .header-area .main-nav .nav.mobile-active {
-              pointer-events: auto !important;
-          }
-          
-          body .header-area .main-nav .nav li a:hover,
-          body .header-area .main-nav .nav li a:active {
-              background: rgba(120, 209, 197, 0.2) !important;
-              color: #78D1C5 !important;
-              padding-left: 40px !important;
-          }
-          
-          body .header-area .main-nav .nav li a.active {
-              background: rgba(120, 209, 197, 0.15) !important;
-              color: #78D1C5 !important;
-          }
-          
-          /* DARK OVERLAY WHEN MENU IS OPEN */
-          body.menu-open::after {
-              content: '' !important;
-              position: fixed !important;
-              top: 0 !important;
-              left: 0 !important;
-              right: 0 !important;
-              bottom: 0 !important;
-              background: rgba(0, 0, 0, 0.7) !important;
-              z-index: 2147483646 !important;
-              animation: fadeIn 0.3s ease !important;
-              pointer-events: auto !important;
-          }
-          
-          @keyframes fadeIn {
-              from { opacity: 0; }
-              to { opacity: 1; }
-          }
-          
-          /* PREVENT BODY SCROLL WHEN MENU OPEN */
-          body.menu-open {
-              overflow: hidden !important;
-          }
+          /* Old hamburger styling removed - now using mside.css only */
       }
       @media (max-width: 768px) {
         .container { padding: 0 15px; }
@@ -1600,11 +1502,7 @@ https://templatemo.com/tm-569-edu-meeting
                               <li><a href="#newsletter" class="scroll-to-section">Newsletter</a></li>
                               <li><a href="#contact" class="scroll-to-section">Contact</a></li> 
                           </ul>        
-                          <button class="menu-trigger" id="mobile-menu-trigger" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                          </button>
+                          <!-- Old menu-trigger button removed - using msideBtn instead -->
                           <!-- ***** Menu End ***** -->
                       </nav>
                   </div>
@@ -2820,255 +2718,14 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/custom.js?v=20241027"></script>
     <script src="assets/js/contact-form.js"></script>
     <script src="assets/js/newsletter.js"></script>
-    <script src="assets/js/mobile-navigation.js"></script>
-    <script>
-      // Homepage fallback initializer to guarantee hamburger binding
-        window.addEventListener('load', function() {
-        try {
-          if (typeof setupMobileNav === 'function') {
-            setupMobileNav();
-            console.log('Homepage: setupMobileNav invoked');
-          }
-        } catch (e) {
-          console.error('Homepage: setupMobileNav error', e);
-        }
-
-        // Absolute last-resort: inline toggle that does not rely on external listeners
-        try {
-          window.__toggleMenu = function() {
-            var btn = document.getElementById('mobile-menu-trigger') || document.querySelector('.menu-trigger');
-            var nav = document.querySelector('header.header-area .main-nav .nav') || document.querySelector('.main-nav .nav');
-            var body = document.body;
-            
-            console.log('=== TOGGLE MENU CALLED ===');
-            console.log('Button found:', !!btn);
-            console.log('Nav found:', !!nav);
-            
-            if (!btn || !nav) {
-              console.error('Missing button or nav:', {btn: !!btn, nav: !!nav});
-              return;
-            }
-            
-            // Force z-index to maximum
-            nav.style.zIndex = '2147483647';
-                    
-                    if (nav.classList.contains('mobile-active')) {
-              console.log('CLOSING menu');
-                        nav.classList.remove('mobile-active');
-              btn.classList.remove('active');
-                        body.classList.remove('menu-open');
-              btn.setAttribute('aria-expanded', 'false');
-              // Force-close positioning - slide out using transform
-              nav.style.setProperty('transform', 'translateX(100%)', 'important');
-              nav.style.setProperty('visibility', 'hidden', 'important');
-              nav.style.setProperty('pointer-events', 'none', 'important');
-              // Move back to original parent if we had portaled it
-              if (nav.dataset.portaled && nav.__origParent) {
-                try {
-                  nav.__origParent.insertBefore(nav, nav.__origNext || null);
-                } catch(_) {}
-                delete nav.dataset.portaled;
-                nav.__origParent = null;
-                nav.__origNext = null;
-              }
-                    } else {
-              console.log('OPENING menu');
-              
-              // Disable transition temporarily to force immediate positioning
-              var originalTransition = nav.style.transition;
-              nav.style.setProperty('transition', 'none', 'important');
-              
-              // Portal nav to body to avoid transformed ancestor affecting fixed positioning
-              if (!nav.dataset.portaled) {
-                try {
-                  nav.__origParent = nav.parentNode;
-                  nav.__origNext = nav.nextSibling;
-                  document.body.appendChild(nav);
-                  nav.dataset.portaled = 'true';
-                } catch(_) {}
-              }
-              
-              // Scroll to top to ensure viewport positioning works correctly
-              window.scrollTo(0, 0);
-              
-                        nav.classList.add('mobile-active');
-              btn.classList.add('active');
-                        body.classList.add('menu-open');
-              btn.setAttribute('aria-expanded', 'true');
-              
-              // Force-open positioning - Use transform for smooth slide-in
-              nav.style.removeProperty('left');
-              nav.style.removeProperty('top');
-              nav.style.removeProperty('bottom');
-              nav.style.removeProperty('inset');
-              nav.style.setProperty('position', 'fixed', 'important');
-              nav.style.setProperty('top', '0px', 'important');
-              nav.style.setProperty('right', '0px', 'important');
-              nav.style.setProperty('left', 'auto', 'important');
-              nav.style.setProperty('bottom', 'auto', 'important');
-              nav.style.setProperty('margin', '0', 'important');
-              nav.style.setProperty('padding', '2rem 1.5rem', 'important');
-              nav.style.setProperty('visibility', 'visible', 'important');
-              nav.style.setProperty('opacity', '1', 'important');
-              nav.style.setProperty('pointer-events', 'auto', 'important');
-              // CRITICAL: Use transform for slide-in, don't override with 'none'
-              nav.style.setProperty('transform', 'translateX(0)', 'important');
-              nav.style.removeProperty('translate');
-              
-              // Ensure nav is on body for proper fixed positioning
-              if (nav.parentElement !== document.body) {
-                try {
-                  document.body.appendChild(nav);
-                  nav.dataset.portaled = 'true';
-                } catch(e) {
-                  console.warn('Failed to move nav to body:', e);
-                }
-              }
-              
-              // Force again after a tiny delay (in case something resets it)
-              setTimeout(function() {
-                // Ensure it's still on body
-                if (nav.parentElement !== document.body) {
-                  try {
-                    document.body.appendChild(nav);
-                  } catch(e) {}
-                }
-                nav.style.removeProperty('left');
-                nav.style.removeProperty('top');
-                nav.style.removeProperty('bottom');
-                nav.style.removeProperty('inset');
-                nav.style.setProperty('position', 'fixed', 'important');
-                nav.style.setProperty('top', '0px', 'important');
-                nav.style.setProperty('right', '0px', 'important');
-                nav.style.setProperty('left', 'auto', 'important');
-                nav.style.setProperty('bottom', 'auto', 'important');
-                nav.style.setProperty('margin', '0', 'important');
-                nav.style.setProperty('padding', '2rem 1.5rem', 'important');
-                nav.style.setProperty('visibility', 'visible', 'important');
-                nav.style.setProperty('opacity', '1', 'important');
-                nav.style.setProperty('transform', 'translateX(0)', 'important');
-                nav.style.removeProperty('translate');
-                // Re-enable transition
-                nav.style.setProperty('transition', originalTransition || 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 'important');
-              }, 10);
-              
-              // Diagnostic: Check computed styles
-              setTimeout(function() {
-                var computed = window.getComputedStyle(nav);
-                console.log('Menu styles after open:', {
-                  top: computed.top,
-                  right: computed.right,
-                  left: computed.left,
-                  bottom: computed.bottom,
-                  display: computed.display,
-                  visibility: computed.visibility,
-                  zIndex: computed.zIndex,
-                  position: computed.position,
-                  transform: computed.transform,
-                  width: computed.width
-                });
-                
-                // If still not at 0 or left is set, force it one more time
-                if ((computed.right !== '0px' && computed.right !== '0') || (computed.left !== 'auto' && computed.left !== '0px') || computed.top !== '0px' || computed.transform === 'none') {
-                  console.warn('Menu positioning issue detected, forcing again...', {right: computed.right, left: computed.left, top: computed.top, transform: computed.transform});
-                  nav.style.removeProperty('left');
-                  nav.style.removeProperty('top');
-                  nav.style.removeProperty('bottom');
-                  nav.style.removeProperty('inset');
-                  nav.style.setProperty('top', '0px', 'important');
-                  nav.style.setProperty('right', '0px', 'important');
-                  nav.style.setProperty('left', 'auto', 'important');
-                  nav.style.setProperty('bottom', 'auto', 'important');
-                  nav.style.setProperty('visibility', 'visible', 'important');
-                  nav.style.setProperty('opacity', '1', 'important');
-                  nav.style.setProperty('transform', 'translateX(0)', 'important');
-                  nav.style.removeProperty('translate');
-                }
-                
-                // Visual test: Make it VERY visible for debugging
-                nav.style.backgroundColor = '#ff0000';
-                nav.style.border = '5px solid yellow';
-                nav.style.minHeight = '100vh';
-                nav.style.minWidth = '300px';
-                console.log('RED TEST: Sidebar should be bright red with yellow border. Can you see it?');
-                
-                // Check if overlay might be covering it
-                var overlay = document.querySelector('body.menu-open::after');
-                console.log('Overlay check:', overlay);
-                
-                // Force visibility one more time - ensure it's truly visible
-                nav.style.setProperty('visibility', 'visible', 'important');
-                nav.style.setProperty('opacity', '1', 'important');
-                nav.style.setProperty('display', 'flex', 'important');
-                nav.style.setProperty('height', '100vh', 'important');
-                nav.style.setProperty('width', '85vw', 'important');
-                nav.style.setProperty('max-width', '320px', 'important');
-                
-                // Check what's actually on top
-                var rect = nav.getBoundingClientRect();
-                console.log('Sidebar position:', {
-                  top: rect.top,
-                  left: rect.left,
-                  right: rect.right,
-                  bottom: rect.bottom,
-                  width: rect.width,
-                  height: rect.height
-                });
-                
-                // Check if any element is covering it
-                var elemAtPoint = document.elementFromPoint(window.innerWidth - 50, window.innerHeight / 2);
-                console.log('Element at sidebar center:', elemAtPoint, elemAtPoint === nav ? '✅ Sidebar is on top' : '❌ Something else is covering it');
-                
-                setTimeout(function() { 
-                  nav.style.backgroundColor = '#1f272b';
-                  nav.style.border = '';
-                }, 3000);
-              }, 100);
-            }
-          };
-
-          var btn = document.getElementById('mobile-menu-trigger') || document.querySelector('.menu-trigger');
-          if (btn) {
-            var handler = function(e){ 
-              e.preventDefault(); 
-              e.stopPropagation(); 
-              console.log('HAMBURGER CLICKED - handler fired');
-              window.__toggleMenu(); 
-            };
-            btn.onclick = handler;
-            btn.addEventListener('touchend', handler, true);
-            btn.addEventListener('click', handler, true);
-            console.log('Homepage: inline hamburger binding attached to:', btn);
-          } else {
-            console.error('Homepage: hamburger not found for inline binding');
-          }
-          
-          // Add close button functionality
-          var closeBtn = document.querySelector('.mobile-menu-close');
-          if (closeBtn) {
-            var closeHandler = function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              console.log('CLOSE BUTTON CLICKED');
-              window.__toggleMenu();
-            };
-            closeBtn.onclick = closeHandler;
-            closeBtn.addEventListener('click', closeHandler, true);
-            closeBtn.addEventListener('touchend', closeHandler, true);
-            console.log('Homepage: close button binding attached');
-          }
-        } catch (e) {
-          console.error('Homepage: inline fallback error', e);
-            }
-        });
-    </script>
+    <!-- mobile-navigation.js removed - now using mside.js only -->
     <script src="assets/js/carousel.js"></script>
     <script src="assets/js/mside.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- MOBILE MENU handled by assets/js/mobile-navigation.js -->
+    <!-- MOBILE MENU handled by assets/js/mside.js -->
     
     <!-- TYPEWRITER ANIMATION SCRIPT -->
     <script>

@@ -1,0 +1,123 @@
+/* ==========================================
+   MOBILE HEADER FIX - TEST VERSION
+   Review this before applying to the site
+   ========================================== */
+
+@media (max-width: 991px) {
+    
+    /* ===== 1. HIDE SUB-HEADER (Social Media & Contact) ===== */
+    .sub-header {
+        display: none !important;
+    }
+    
+    /* ===== 2. REMOVE BACKGROUND FROM HEADER WRAPPER ===== */
+    body .homepage > div[style*="background: white"],
+    body > div[style*="background: white"] {
+        background: transparent !important;
+    }
+    
+    /* ===== 3. HEADER WITH NAVY BLUE BACKGROUND ===== */
+    .header-area,
+    .header-area.header-sticky {
+        background: rgba(31, 39, 43, 0.85) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 9999 !important;
+        padding: 10px 0 !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.3) !important;
+    }
+    
+    /* ===== 4. LOGO ON LEFT - SINGLE LINE ===== */
+    .header-area .main-nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+    }
+    
+    .header-area .main-nav .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex: 0 1 auto !important;
+        max-width: calc(100% - 60px) !important;
+    }
+    
+    .header-area .main-nav .logo .logo-img {
+        height: 60px !important;
+        width: auto !important;
+    }
+    
+    .header-area .main-nav .logo .logo-text {
+        display: block !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+    }
+    
+    /* ===== 5. HAMBURGER ON RIGHT - SAME LINE AS LOGO ===== */
+    .mside-hamburger {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        z-index: 100002 !important;
+        display: flex !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+    }
+    
+    /* Header stays consistent when scrolling (already styled above) */
+    
+    /* Add space for fixed header */
+    body {
+        padding-top: 85px !important;
+    }
+    
+    /* ===== 6. HIDE DESKTOP NAV ON MOBILE ===== */
+    .header-area .main-nav .nav {
+        display: none !important;
+    }
+    
+    /* ===== 7. ENSURE HAMBURGER IS VISIBLE & STYLED ===== */
+    .mside-hamburger .mside-bar,
+    .mside-hamburger .mside-bar::before,
+    .mside-hamburger .mside-bar::after {
+        background: #fff !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+    }
+    
+    /* Hamburger hover effect */
+    .mside-hamburger:hover {
+        background: rgba(120, 209, 197, 0.6) !important;
+        transform: scale(1.05) !important;
+    }
+}
+
+/* ==========================================
+   WHAT THIS DOES:
+   ==========================================
+   
+   ✅ Hides social media & contact section on mobile
+   ✅ Removes white background from header
+   ✅ Logo on the LEFT side
+   ✅ Hamburger on the RIGHT side (VISIBLE)
+   ✅ Header STAYS STICKY when scrolling down
+   ✅ Semi-transparent blur effect on scroll
+   ✅ Clean minimal header
+   
+   ==========================================
+   TO TEST:
+   ==========================================
+   Add this line to your index.html <head>:
+   <link rel="stylesheet" href="assets/css/MOBILE_HEADER_FIX_TEST.css">
+   
+   Then refresh and check on mobile view!
+   ========================================== */
