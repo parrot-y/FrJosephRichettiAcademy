@@ -2,44 +2,87 @@
 
 console.log('Mobile navigation JS loaded');
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, setting up mobile menu');
-    
-    // Simple Mobile Menu Toggle - Works with existing jQuery system
-    const menuTrigger = document.querySelector('.menu-trigger');
-    const nav = document.querySelector('.main-nav .nav');
+function setupMobileNav() {
+    if (document.documentElement.dataset.mobileNavInitialized === 'true') {
+        return; // avoid duplicate init
+    }
+    document.documentElement.dataset.mobileNavInitialized = 'true';
+
+    console.log('Setting up mobile menu');
+
+    // Prefer explicit id, then class fallback
+    let menuTrigger = document.querySelector('#mobile-menu-trigger, .menu-trigger');
+    // Scope to the primary header nav on the page
+    let nav = document.querySelector('header.header-area .main-nav .nav') || document.querySelector('.main-nav .nav');
     const body = document.body;
-    
+
     console.log('Menu trigger found:', !!menuTrigger);
     console.log('Nav found:', !!nav);
-    
+
     if (menuTrigger && nav) {
+        // Force clickable
+        menuTrigger.style.pointerEvents = 'auto';
+        menuTrigger.style.cursor = 'pointer';
+        menuTrigger.style.zIndex = '999999';
+        
         // Remove any existing click handlers to avoid conflicts
         menuTrigger.onclick = null;
         
-        menuTrigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
+        // Core toggle logic
+        const toggleMenu = function() {
+            if (!menuTrigger || !nav) return;
             console.log('=== HAMBURGER CLICKED ===');
             console.log('Nav classes before:', nav.className);
-            
-            // Simple toggle - show/hide the navigation
+            console.log('Menu trigger:', menuTrigger);
+            console.log('Nav element:', nav);
+
             if (nav.classList.contains('mobile-active')) {
                 console.log('CLOSING menu');
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'false');
             } else {
                 console.log('OPENING menu');
                 nav.classList.add('mobile-active');
                 menuTrigger.classList.add('active');
                 body.classList.add('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'true');
+
+                setTimeout(() => {
+                    const computed = window.getComputedStyle(nav);
+                    console.log('Menu open - right:', computed.right, '| display:', computed.display, '| visibility:', computed.visibility);
+                }, 100);
+
+                const firstLink = nav.querySelector('a');
+                if (firstLink) {
+                    firstLink.focus({ preventScroll: true });
+                }
             }
-            
             console.log('Nav classes after:', nav.className);
-        });
+        };
+
+        // Add click handler with multiple event types for compatibility
+        const handleClick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        };
         
+        // Add multiple event listeners for maximum compatibility
+        menuTrigger.addEventListener('click', handleClick, true);
+        menuTrigger.addEventListener('touchend', handleClick, true);
+        
+        // Also add to onclick as fallback
+        menuTrigger.onclick = handleClick;
+        
+        // ARIA attributes
+        menuTrigger.setAttribute('aria-controls', 'mobile-nav');
+        menuTrigger.setAttribute('aria-expanded', 'false');
+        if (!nav.id) {
+            nav.id = 'mobile-nav';
+        }
+
         // Close menu when clicking on nav links
         const navLinks = nav.querySelectorAll('a');
         navLinks.forEach(link => {
@@ -47,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'false');
             });
         });
         
@@ -56,10 +100,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('mobile-active');
                 menuTrigger.classList.remove('active');
                 body.classList.remove('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'false');
             }
         });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && body.classList.contains('menu-open')) {
+                nav.classList.remove('mobile-active');
+                menuTrigger.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuTrigger.setAttribute('aria-expanded', 'false');
+                menuTrigger.focus({ preventScroll: true });
+            }
+        });
+        // Document-level delegation as a fallback (covers dynamic DOM or CSS overlays)
+        document.addEventListener('click', function(evt) {
+            const trigger = evt.target.closest('#mobile-menu-trigger, .menu-trigger');
+            if (!trigger) return;
+            // refresh references if DOM changed
+            menuTrigger = trigger;
+            nav = document.querySelector('header.header-area .main-nav .nav') || document.querySelector('.main-nav .nav');
+            if (!nav) return;
+            evt.preventDefault();
+            evt.stopPropagation();
+            // ensure attributes
+            menuTrigger.setAttribute('aria-controls', nav.id || 'mobile-nav');
+            if (!nav.id) nav.id = 'mobile-nav';
+            // force clickable
+            menuTrigger.style.pointerEvents = 'auto';
+            menuTrigger.style.cursor = 'pointer';
+            toggleMenu();
+        }, true);
     }
-    
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav a[href^="#"]');
     navLinks.forEach(link => {
@@ -219,7 +293,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}
+
+// Initialize ASAP even if DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileNav);
+} else {
+    setupMobileNav();
+}
 
 // Add CSS for mobile enhancements
 const mobileStyles = `

@@ -39,7 +39,7 @@
     <!-- <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled"> -->
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241103fix">
+    <!-- mobile-navigation-fix.css removed to avoid conflicts; using mobile-menu-simple.css as single source -->
     <link rel="stylesheet" href="assets/css/typography-enhancement.css?v=20241026">
     <link rel="stylesheet" href="assets/css/homepage-fix.css?v=20241103mobile">
     <link rel="stylesheet" href="assets/css/responsive-images-fix.css?v=20241103mobile">
@@ -1598,11 +1598,11 @@ https://templatemo.com/tm-569-edu-meeting
                               <li><a href="#newsletter" class="scroll-to-section">Newsletter</a></li>
                               <li><a href="#contact" class="scroll-to-section">Contact</a></li> 
                           </ul>        
-                          <a class='menu-trigger' id='mobile-menu-trigger'>
+                          <button class="menu-trigger" id="mobile-menu-trigger" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
                               <span></span>
                               <span></span>
                               <span></span>
-                          </a>
+                          </button>
                           <!-- ***** Menu End ***** -->
                       </nav>
                   </div>
@@ -2819,86 +2819,236 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/contact-form.js"></script>
     <script src="assets/js/newsletter.js"></script>
     <script src="assets/js/mobile-navigation.js"></script>
+    <script>
+      // Homepage fallback initializer to guarantee hamburger binding
+        window.addEventListener('load', function() {
+        try {
+          if (typeof setupMobileNav === 'function') {
+            setupMobileNav();
+            console.log('Homepage: setupMobileNav invoked');
+          }
+        } catch (e) {
+          console.error('Homepage: setupMobileNav error', e);
+        }
+
+        // Absolute last-resort: inline toggle that does not rely on external listeners
+        try {
+          window.__toggleMenu = function() {
+            var btn = document.getElementById('mobile-menu-trigger') || document.querySelector('.menu-trigger');
+            var nav = document.querySelector('header.header-area .main-nav .nav') || document.querySelector('.main-nav .nav');
+            var body = document.body;
+            
+            console.log('=== TOGGLE MENU CALLED ===');
+            console.log('Button found:', !!btn);
+            console.log('Nav found:', !!nav);
+            
+            if (!btn || !nav) {
+              console.error('Missing button or nav:', {btn: !!btn, nav: !!nav});
+              return;
+            }
+            
+            // Force z-index to maximum
+            nav.style.zIndex = '2147483647';
+                    
+                    if (nav.classList.contains('mobile-active')) {
+              console.log('CLOSING menu');
+                        nav.classList.remove('mobile-active');
+              btn.classList.remove('active');
+                        body.classList.remove('menu-open');
+              btn.setAttribute('aria-expanded', 'false');
+              // Force-close positioning and interactivity (override !important rules)
+              nav.style.setProperty('right', '-350px', 'important');
+              nav.style.setProperty('visibility', 'hidden', 'important');
+              nav.style.setProperty('pointer-events', 'none', 'important');
+              // Move back to original parent if we had portaled it
+              if (nav.dataset.portaled && nav.__origParent) {
+                try {
+                  nav.__origParent.insertBefore(nav, nav.__origNext || null);
+                } catch(_) {}
+                delete nav.dataset.portaled;
+                nav.__origParent = null;
+                nav.__origNext = null;
+              }
+                    } else {
+              console.log('OPENING menu');
+              
+              // Disable transition temporarily to force immediate positioning
+              var originalTransition = nav.style.transition;
+              nav.style.setProperty('transition', 'none', 'important');
+              
+              // Portal nav to body to avoid transformed ancestor affecting fixed positioning
+              if (!nav.dataset.portaled) {
+                try {
+                  nav.__origParent = nav.parentNode;
+                  nav.__origNext = nav.nextSibling;
+                  document.body.appendChild(nav);
+                  nav.dataset.portaled = 'true';
+                } catch(_) {}
+              }
+              
+              // Scroll to top to ensure viewport positioning works correctly
+              window.scrollTo(0, 0);
+              
+                        nav.classList.add('mobile-active');
+              btn.classList.add('active');
+                        body.classList.add('menu-open');
+              btn.setAttribute('aria-expanded', 'true');
+              
+              // Force-open positioning - MULTIPLE ATTEMPTS to override any calculations
+              // CRITICAL: Remove left entirely, only use right for fixed positioning
+              // CRITICAL: Force top: 0 for viewport positioning
+              // CRITICAL: Ensure position is truly fixed and not affected by any transforms
+              nav.style.removeProperty('left');
+              nav.style.removeProperty('top');
+              nav.style.removeProperty('bottom');
+              nav.style.setProperty('position', 'fixed', 'important');
+              nav.style.setProperty('top', '0px', 'important');
+              nav.style.setProperty('right', '0px', 'important');
+              nav.style.setProperty('left', 'auto', 'important');
+              nav.style.setProperty('bottom', 'auto', 'important');
+              nav.style.setProperty('margin', '0', 'important');
+              nav.style.setProperty('padding-top', '80px', 'important');
+              nav.style.setProperty('visibility', 'visible', 'important');
+              nav.style.setProperty('opacity', '1', 'important');
+              nav.style.setProperty('pointer-events', 'auto', 'important');
+              nav.style.setProperty('transform', 'none', 'important');
+              nav.style.setProperty('translate', 'none', 'important');
+              
+              // Force remove any parent transforms that might affect fixed positioning
+              var parent = nav.parentElement;
+              while (parent && parent !== document.body) {
+                var parentStyle = window.getComputedStyle(parent);
+                if (parentStyle.transform !== 'none' || parentStyle.position !== 'static') {
+                  console.warn('Found transformed/positioned parent:', parent, 'moving nav to body');
+                  try {
+                    document.body.appendChild(nav);
+                    break;
+                  } catch(e) {}
+                }
+                parent = parent.parentElement;
+              }
+              
+              // Force again after a tiny delay (in case something resets it)
+              setTimeout(function() {
+                // Ensure it's still on body
+                if (nav.parentElement !== document.body) {
+                  try {
+                    document.body.appendChild(nav);
+                  } catch(e) {}
+                }
+                nav.style.removeProperty('left');
+                nav.style.removeProperty('top');
+                nav.style.removeProperty('bottom');
+                nav.style.setProperty('position', 'fixed', 'important');
+                nav.style.setProperty('top', '0px', 'important');
+                nav.style.setProperty('right', '0px', 'important');
+                nav.style.setProperty('left', 'auto', 'important');
+                nav.style.setProperty('bottom', 'auto', 'important');
+                nav.style.setProperty('margin', '0', 'important');
+                nav.style.setProperty('visibility', 'visible', 'important');
+                nav.style.setProperty('opacity', '1', 'important');
+                // Re-enable transition
+                nav.style.setProperty('transition', originalTransition || 'right 0.4s cubic-bezier(0.4, 0, 0.2, 1)', 'important');
+              }, 10);
+              
+              // Diagnostic: Check computed styles
+              setTimeout(function() {
+                var computed = window.getComputedStyle(nav);
+                console.log('Menu styles after open:', {
+                  top: computed.top,
+                  right: computed.right,
+                  left: computed.left,
+                  bottom: computed.bottom,
+                  display: computed.display,
+                  visibility: computed.visibility,
+                  zIndex: computed.zIndex,
+                  position: computed.position,
+                  transform: computed.transform,
+                  width: computed.width
+                });
+                
+                // If still not at 0 or left is set, force it one more time
+                if ((computed.right !== '0px' && computed.right !== '0') || computed.left !== 'auto' || computed.top !== '0px') {
+                  console.warn('Menu positioning issue detected, forcing again...', {right: computed.right, left: computed.left, top: computed.top});
+                  nav.style.removeProperty('left');
+                  nav.style.removeProperty('top');
+                  nav.style.removeProperty('bottom');
+                  nav.style.setProperty('top', '0px', 'important');
+                  nav.style.setProperty('right', '0px', 'important');
+                  nav.style.setProperty('left', 'auto', 'important');
+                  nav.style.setProperty('bottom', 'auto', 'important');
+                  nav.style.setProperty('visibility', 'visible', 'important');
+                  nav.style.setProperty('opacity', '1', 'important');
+                }
+                
+                // Visual test: Make it VERY visible for debugging
+                nav.style.backgroundColor = '#ff0000';
+                nav.style.border = '5px solid yellow';
+                nav.style.minHeight = '100vh';
+                nav.style.minWidth = '300px';
+                console.log('RED TEST: Sidebar should be bright red with yellow border. Can you see it?');
+                
+                // Check if overlay might be covering it
+                var overlay = document.querySelector('body.menu-open::after');
+                console.log('Overlay check:', overlay);
+                
+                // Force visibility one more time - ensure it's truly visible
+                nav.style.setProperty('visibility', 'visible', 'important');
+                nav.style.setProperty('opacity', '1', 'important');
+                nav.style.setProperty('display', 'flex', 'important');
+                nav.style.setProperty('height', '100vh', 'important');
+                nav.style.setProperty('width', '85vw', 'important');
+                nav.style.setProperty('max-width', '320px', 'important');
+                
+                // Check what's actually on top
+                var rect = nav.getBoundingClientRect();
+                console.log('Sidebar position:', {
+                  top: rect.top,
+                  left: rect.left,
+                  right: rect.right,
+                  bottom: rect.bottom,
+                  width: rect.width,
+                  height: rect.height
+                });
+                
+                // Check if any element is covering it
+                var elemAtPoint = document.elementFromPoint(window.innerWidth - 50, window.innerHeight / 2);
+                console.log('Element at sidebar center:', elemAtPoint, elemAtPoint === nav ? '✅ Sidebar is on top' : '❌ Something else is covering it');
+                
+                setTimeout(function() { 
+                  nav.style.backgroundColor = '#1f272b';
+                  nav.style.border = '';
+                }, 3000);
+              }, 100);
+            }
+          };
+
+          var btn = document.getElementById('mobile-menu-trigger') || document.querySelector('.menu-trigger');
+          if (btn) {
+            var handler = function(e){ 
+              e.preventDefault(); 
+              e.stopPropagation(); 
+              console.log('HAMBURGER CLICKED - handler fired');
+              window.__toggleMenu(); 
+            };
+            btn.onclick = handler;
+            btn.addEventListener('touchend', handler, true);
+            btn.addEventListener('click', handler, true);
+            console.log('Homepage: inline hamburger binding attached to:', btn);
+            } else {
+            console.error('Homepage: hamburger not found for inline binding');
+          }
+        } catch (e) {
+          console.error('Homepage: inline fallback error', e);
+            }
+        });
+    </script>
     <script src="assets/js/carousel.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- MOBILE MENU FIX - DIRECT INLINE -->
-    <script>
-        console.log('INLINE SCRIPT LOADED');
-        
-        // WAIT FOR EVERYTHING TO LOAD, THEN OVERRIDE
-        window.addEventListener('load', function() {
-            console.log('✅ PAGE LOADED - Setting up hamburger menu...');
-            
-            const hamburger = document.querySelector('.menu-trigger');
-            const nav = document.querySelector('.main-nav .nav');
-            const body = document.body;
-            
-            console.log('Hamburger:', hamburger);
-            console.log('Menu:', nav);
-            
-            if (hamburger && nav) {
-                // REMOVE ALL EXISTING EVENT LISTENERS BY CLONING
-                const newHamburger = hamburger.cloneNode(true);
-                hamburger.parentNode.replaceChild(newHamburger, hamburger);
-                const hamburgerFinal = document.querySelector('.menu-trigger');
-                
-                console.log('✅ Event listeners cleaned, setting up new ones...');
-                
-                // HAMBURGER CLICK HANDLER
-                hamburgerFinal.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('🍔 HAMBURGER CLICKED!');
-                    
-                    if (nav.classList.contains('mobile-active')) {
-                        console.log('Closing menu');
-                        nav.classList.remove('mobile-active');
-                        hamburgerFinal.classList.remove('active');
-                        body.classList.remove('menu-open');
-                    } else {
-                        console.log('Opening menu');
-                        nav.classList.add('mobile-active');
-                        hamburgerFinal.classList.add('active');
-                        body.classList.add('menu-open');
-                        
-                        // Debug
-                        setTimeout(() => {
-                            const styles = window.getComputedStyle(nav);
-                            console.log('Menu open - right:', styles.right, '| display:', styles.display);
-                        }, 100);
-                    }
-                });
-                
-                // CLOSE ON OUTSIDE CLICK
-                document.addEventListener('click', function(e) {
-                    if (!hamburgerFinal.contains(e.target) && !nav.contains(e.target)) {
-                        if (body.classList.contains('menu-open')) {
-                            console.log('Clicked outside, closing menu');
-                            nav.classList.remove('mobile-active');
-                            hamburgerFinal.classList.remove('active');
-                            body.classList.remove('menu-open');
-                        }
-                    }
-                });
-                
-                // CLOSE ON LINK CLICK
-                nav.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        console.log('Link clicked, closing menu');
-                        nav.classList.remove('mobile-active');
-                        hamburgerFinal.classList.remove('active');
-                        body.classList.remove('menu-open');
-                    });
-                });
-                
-                console.log('✅ All event listeners attached successfully!');
-            } else {
-                console.error('Hamburger or Nav not found!');
-            }
-        });
-    </script>
+    <!-- MOBILE MENU handled by assets/js/mobile-navigation.js -->
     
     <!-- TYPEWRITER ANIMATION SCRIPT -->
     <script>

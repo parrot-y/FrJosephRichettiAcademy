@@ -127,7 +127,9 @@
 
 /* HAMBURGER ICON - SIMPLE AND VISIBLE */
 @media (max-width: 991px) {
-    .menu-trigger {
+    .menu-trigger,
+    button.menu-trigger,
+    #mobile-menu-trigger {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -137,10 +139,37 @@
         background: transparent !important;
         border: none !important;
         cursor: pointer !important;
-        z-index: 99999 !important;
+        z-index: 999999 !important;
         padding: 10px !important;
         margin: 0 !important;
         flex-shrink: 0 !important;
+        pointer-events: auto !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* Pin hamburger to the right side of the header on mobile */
+    .header-area .main-nav { position: relative !important; }
+    .header-area .main-nav .menu-trigger,
+    .header-area .main-nav button.menu-trigger,
+    .header-area .main-nav #mobile-menu-trigger {
+        position: absolute !important;
+        top: 10px !important;
+        right: 15px !important;
+        border: 1px solid rgba(255,255,255,0.35) !important;
+        border-radius: 8px !important;
+        background: rgba(120, 209, 197, 0) !important;
+    }
+
+    /* Teal accent on hover/active like before */
+    .header-area .main-nav .menu-trigger:hover,
+    .header-area .main-nav .menu-trigger.active,
+    .header-area .main-nav button.menu-trigger:hover,
+    .header-area .main-nav button.menu-trigger.active,
+    .header-area .main-nav #mobile-menu-trigger:hover,
+    .header-area .main-nav #mobile-menu-trigger.active {
+        background: rgba(120, 209, 197, 1) !important;
+        border-color: #ffffff !important;
+        transform: scale(0.98) !important;
     }
     
     /* Remove any pseudo elements that might be adding backgrounds */
@@ -181,17 +210,31 @@
         top: 0 !important;
     }
     
-    /* When menu is active */
-    .menu-trigger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px) !important;
+    /* When menu is active - X animation */
+    .menu-trigger.active,
+    button.menu-trigger.active,
+    #mobile-menu-trigger.active {
+        z-index: 1000000 !important;
     }
     
-    .menu-trigger.active span:nth-child(2) {
+    .menu-trigger.active span:nth-child(1),
+    button.menu-trigger.active span:nth-child(1),
+    #mobile-menu-trigger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px) !important;
+        background: #fff !important;
+    }
+    
+    .menu-trigger.active span:nth-child(2),
+    button.menu-trigger.active span:nth-child(2),
+    #mobile-menu-trigger.active span:nth-child(2) {
         opacity: 0 !important;
     }
     
-    .menu-trigger.active span:nth-child(3) {
+    .menu-trigger.active span:nth-child(3),
+    button.menu-trigger.active span:nth-child(3),
+    #mobile-menu-trigger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px) !important;
+        background: #fff !important;
     }
     
     /* MOBILE MENU - DARK BACKGROUND, SLIDES FROM RIGHT */
@@ -200,23 +243,30 @@
         top: 0 !important;
         right: -350px !important;
         left: auto !important;
-        width: 300px !important;
+        width: 85vw !important;
+        max-width: 320px !important;
         height: 100vh !important;
         background: #1f272b !important;
         background-color: #1f272b !important;
-        z-index: 999999 !important;
-        padding: 100px 0 20px 0 !important;
+        z-index: 2147483647 !important;
+        padding: 80px 0 20px 0 !important;
         margin: 0 !important;
         overflow-y: auto !important;
         box-shadow: -8px 0 30px rgba(0,0,0,0.8) !important;
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: flex !important;
         flex-direction: column !important;
+        transform: none !important;
+        scale: 1 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
     
     /* When active - slide in from RIGHT */
     .header-area .main-nav .nav.mobile-active {
         right: 0 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
     
     /* Menu items styling */
@@ -261,7 +311,7 @@
         font-size: 14px !important;
     }
     
-    /* Dark overlay */
+    /* Dark overlay - LOWER z-index than sidebar to ensure sidebar is on top */
     body.menu-open::after {
         content: '' !important;
         position: fixed !important;
@@ -270,7 +320,8 @@
         right: 0 !important;
         bottom: 0 !important;
         background: rgba(0, 0, 0, 0.5) !important;
-        z-index: 9997 !important;
+        z-index: 2147483646 !important;
+        pointer-events: none !important; /* Allow clicks to pass through to sidebar */
     }
     
     body.menu-open {

@@ -31,13 +31,13 @@
     <link rel="stylesheet" href="assets/css/about-page-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
-    <link rel="stylesheet" href="assets/css/mobile-navigation-fix.css?v=20241028">
+    <!-- mobile-navigation-fix.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
     <link rel="stylesheet" href="assets/css/about-page-redesign.css?v=20241028b">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
     <link rel="stylesheet" href="assets/css/transport-services.css">
     <link rel="stylesheet" href="assets/css/video-header.css?v=2024110401">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
-    <link rel="stylesheet" href="assets/css/sliding-sidebar-nav.css?v=hamburger2024">
+    <!-- sliding-sidebar-nav.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -203,11 +203,11 @@
                           <li><a href="index.html#newsletter">Newsletter</a></li>
                           <li><a href="index.html#contact">Contact</a></li> 
                       </ul>        
-                      <a class='menu-trigger'>
+                      <button class="menu-trigger" id="mobile-menu-trigger" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
                           <span></span>
                           <span></span>
                           <span></span>
-                      </a>
+                      </button>
                       <!-- ***** Menu End ***** -->
                   </nav>
               </div>
