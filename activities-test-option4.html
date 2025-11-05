@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTION 4: Split-Screen Magazine Style</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', Arial, sans-serif; 
+            background: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1f272b 0%, #78D1C5 100%);
+            color: white;
+        }
+        .header h1 { font-size: 42px; margin-bottom: 10px; font-weight: 800; }
+        .header p { font-size: 18px; opacity: 0.9; }
+        
+        .split-card {
+            display: flex;
+            align-items: stretch;
+            min-height: 500px;
+            margin: 0;
+        }
+        
+        .split-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .card-image {
+            flex: 0 0 60%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .split-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(120, 209, 197, 0.3), rgba(31, 39, 43, 0.5));
+        }
+        
+        .card-content {
+            flex: 0 0 40%;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f8f8f8;
+            position: relative;
+        }
+        
+        .split-card:nth-child(odd) .card-content {
+            background: linear-gradient(135deg, #78D1C5 0%, #5fb3a8 100%);
+            color: white;
+        }
+        
+        .split-card:nth-child(even) .card-content {
+            background: linear-gradient(135deg, #1f272b 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .card-number {
+            font-size: 120px;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 1;
+        }
+        
+        .card-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .why-join {
+            margin: 30px 0;
+        }
+        
+        .why-join h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .why-join ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-join li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .why-join li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .schedule-timeline {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .schedule-icon {
+            font-size: 30px;
+        }
+        
+        .schedule-details h5 {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .schedule-details p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: white;
+            color: #1f272b;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 30px;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+        
+        .cta-button:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 992px) {
+            .split-card, .split-card:nth-child(even) {
+                flex-direction: column;
+            }
+            .card-image, .card-content {
+                flex: 1 1 100%;
+            }
+            .card-image {
+                min-height: 300px;
+            }
+            .card-content {
+                padding: 40px 30px;
+            }
+            .card-content h2 {
+                font-size: 36px;
+            }
+            .card-number {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 OPTION 4: Split-Screen Magazine</h1>
+        <p>Bold, premium design with alternating layouts</p>
+    </div>
+    
+    <!-- Card 1 -->
+    <div class="split-card">
+        <div class="card-image">
+            <img src="assets/images/homescience.jpg" alt="Home Science">
+            <div class="image-overlay"></div>
+        </div>
+        <div class="card-content">
+            <div class="card-number">01</div>
+            <h2>🍳 Home Science</h2>
+            <p class="subtitle">Master the art of cooking and nutrition</p>
+            
+            <div class="schedule-timeline">
+                <div class="schedule-icon">📅</div>
+                <div class="schedule-details">
+                    <h5>When</h5>
+                    <p>Every Saturday | 9:00 AM - 12:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="why-join">
+                <h4>Why Join?</h4>
+                <ul>
+                    <li>Learn practical cooking skills</li>
+                    <li>Understand nutrition & health</li>
+                    <li>Hands-on experience</li>
+                    <li>35 active members</li>
+                </ul>
+            </div>
+            
+            <a href="#" class="cta-button">
+                Enroll Now 
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="split-card">
+        <div class="card-image">
+            <img src="assets/images/meeting-04.jpg" alt="Scouts">
+            <div class="image-overlay"></div>
+        </div>
+        <div class="card-content">
+            <div class="card-number">02</div>
+            <h2>🏕️ Scouts</h2>
+            <p class="subtitle">Adventure, leadership & character building</p>
+            
+            <div class="schedule-timeline">
+                <div class="schedule-icon">📅</div>
+                <div class="schedule-details">
+                    <h5>When</h5>
+                    <p>Every Saturday | 8:00 AM - 12:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="why-join">
+                <h4>Why Join?</h4>
+                <ul>
+                    <li>Outdoor survival skills</li>
+                    <li>Leadership development</li>
+                    <li>Community service</li>
+                    <li>45 active scouts</li>
+                </ul>
+            </div>
+            
+            <a href="#" class="cta-button">
+                Join Adventure 
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="split-card">
+        <div class="card-image">
+            <img src="assets/images/taekwondo.jpg" alt="Taekwondo">
+            <div class="image-overlay"></div>
+        </div>
+        <div class="card-content">
+            <div class="card-number">03</div>
+            <h2>🥋 Taekwondo</h2>
+            <p class="subtitle">Discipline, fitness & self-defense</p>
+            
+            <div class="schedule-timeline">
+                <div class="schedule-icon">📅</div>
+                <div class="schedule-details">
+                    <h5>When</h5>
+                    <p>Mon & Wed | 4:00 PM - 5:30 PM</p>
+                </div>
+            </div>
+            
+            <div class="why-join">
+                <h4>Why Join?</h4>
+                <ul>
+                    <li>Build physical fitness</li>
+                    <li>Learn self-defense</li>
+                    <li>Develop discipline</li>
+                    <li>32 martial artists</li>
+                </ul>
+            </div>
+            
+            <a href="#" class="cta-button">
+                Start Training 
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

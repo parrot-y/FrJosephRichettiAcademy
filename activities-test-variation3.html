@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities Test - Variation 3: Balanced Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    
+    <style>
+        /* VARIATION 3: BALANCED MEDIUM CARDS - Best of both worlds */
+        
+        .activities-section-v3 {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('assets/images/activity1.jpeg');
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+            min-height: 100vh;
+        }
+        
+        .section-header-v3 {
+            background: linear-gradient(135deg, #1f272b 0%, #78D1C5 100%);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+            margin-bottom: 35px;
+        }
+        
+        .section-header-v3 h6 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+        
+        .section-header-v3 h2 {
+            font-size: 44px;
+            font-weight: 850;
+            margin: 0;
+        }
+        
+        .split-card-v3 {
+            display: flex;
+            align-items: stretch;
+            min-height: 300px; /* Medium size */
+            margin: 25px auto;
+            max-width: 1300px;
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .split-card-v3:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+        }
+        
+        .split-card-v3:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .card-image-v3 {
+            flex: 0 0 58%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image-v3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: brightness(0.95);
+        }
+        
+        .split-card-v3:hover .card-image-v3 img {
+            transform: scale(1.07);
+            filter: brightness(1);
+        }
+        
+        .image-badge-v3 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(120, 209, 197, 0.95);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .card-content-v3 {
+            flex: 0 0 42%;
+            padding: 30px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(120, 209, 197, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: white;
+            position: relative;
+            border-left: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .split-card-v3:nth-child(even) .card-content-v3 {
+            background: rgba(31, 39, 43, 0.35);
+            border-right: 3px solid rgba(255,255,255,0.3);
+            border-left: none;
+        }
+        
+        .split-card-v3:nth-child(even) .image-badge-v3 {
+            background: rgba(31, 39, 43, 0.95);
+        }
+        
+        .card-number-v3 {
+            font-size: 70px;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            line-height: 1;
+        }
+        
+        .card-content-v3 h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            line-height: 1.2;
+        }
+        
+        .subtitle-v3 {
+            font-size: 14px;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .info-row-v3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 12px 0;
+            padding: 12px;
+            background: rgba(255,255,255,0.22);
+            border-radius: 10px;
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+        
+        .info-icon-v3 {
+            font-size: 24px;
+            width: 35px;
+            text-align: center;
+        }
+        
+        .info-text-v3 h5 {
+            font-size: 11px;
+            margin-bottom: 4px;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-text-v3 p {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .why-join-v3 {
+            margin: 15px 0 10px 0;
+        }
+        
+        .why-join-v3 h4 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .why-join-v3 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .why-join-v3 li {
+            padding: 5px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 13px;
+        }
+        
+        .why-join-v3 li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .cta-btn-v3 {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 13px 28px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1f272b;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            align-self: flex-start;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-btn-v3:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: #1f272b;
+            background: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .split-card-v3, .split-card-v3:nth-child(even) {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .card-image-v3, .card-content-v3 {
+                flex: 1 1 100%;
+            }
+            
+            .card-image-v3 {
+                min-height: 250px;
+            }
+            
+            .card-content-v3 {
+                border-left: none !important;
+                border-right: none !important;
+                border-top: 3px solid rgba(255,255,255,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="activities-section-v3">
+        <div class="section-header-v3">
+            <h6>Discover Excellence</h6>
+            <h2>VARIATION 3: Balanced Design</h2>
+            <p style="margin-top: 18px; font-size: 15px;">Medium-sized cards with refined styling - the sweet spot</p>
+        </div>
+        
+        <!-- Card 1 -->
+        <div class="split-card-v3">
+            <div class="card-image-v3">
+                <div class="image-badge-v3">
+                    <i class="fas fa-users"></i> 35 Students
+                </div>
+                <img src="assets/images/homescience.jpg" alt="Home Science">
+            </div>
+            <div class="card-content-v3">
+                <div class="card-number-v3">01</div>
+                <h2>🍳 Home Science Club</h2>
+                <p class="subtitle-v3">Master cooking, nutrition & life skills</p>
+                
+                <div class="info-row-v3">
+                    <div class="info-icon-v3">📅</div>
+                    <div class="info-text-v3">
+                        <h5>Weekly Schedule</h5>
+                        <p>Every Saturday | 9:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v3">
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Hands-on cooking experience</li>
+                        <li>Learn nutrition & health</li>
+                        <li>Instructor: Mrs. Sarah Wanjiku</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v3">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="split-card-v3">
+            <div class="card-image-v3">
+                <div class="image-badge-v3">
+                    <i class="fas fa-users"></i> 32 Students
+                </div>
+                <img src="assets/images/taekwondo.jpg" alt="Taekwondo">
+            </div>
+            <div class="card-content-v3">
+                <div class="card-number-v3">02</div>
+                <h2>🥋 Taekwondo</h2>
+                <p class="subtitle-v3">Discipline, fitness & self-defense</p>
+                
+                <div class="info-row-v3">
+                    <div class="info-icon-v3">📅</div>
+                    <div class="info-text-v3">
+                        <h5>Weekly Schedule</h5>
+                        <p>Mon & Wed | 4:00 PM - 5:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v3">
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Build physical fitness</li>
+                        <li>Learn self-defense techniques</li>
+                        <li>Master: Master Kim Lee</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v3">
+                    Start Training <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="split-card-v3">
+            <div class="card-image-v3">
+                <div class="image-badge-v3">
+                    <i class="fas fa-users"></i> 24 Students
+                </div>
+                <img src="assets/images/skating.jpg" alt="Skating">
+            </div>
+            <div class="card-content-v3">
+                <div class="card-number-v3">03</div>
+                <h2>🛼 Skating</h2>
+                <p class="subtitle-v3">Balance, agility & fun on wheels</p>
+                
+                <div class="info-row-v3">
+                    <div class="info-icon-v3">📅</div>
+                    <div class="info-text-v3">
+                        <h5>Weekly Schedule</h5>
+                        <p>Tue & Thu | 4:00 PM - 6:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v3">
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Develop balance & coordination</li>
+                        <li>Build confidence on wheels</li>
+                        <li>Coach: Coach Sarah Kimani</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v3">
+                    Roll With Us <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

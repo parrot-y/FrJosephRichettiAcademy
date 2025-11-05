@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Cards - Opacity Options</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle-text {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        
+        .opacity-option {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .option-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .option-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .card-preview {
+            display: flex;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/activity1.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .card-image-side {
+            flex: 0 0 58%;
+            background: url('assets/images/homescience.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content-side {
+            flex: 0 0 42%;
+            padding: 30px 25px;
+            backdrop-filter: blur(8px);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-left: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 70px;
+            font-weight: 900;
+            opacity: 0.1;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+        
+        .schedule {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 12px;
+            background: rgba(255,255,255,0.22);
+            border-radius: 10px;
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+        
+        .why-join {
+            margin: 15px 0 10px 0;
+        }
+        
+        .why-join h4 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .why-join ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-join li {
+            padding: 5px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 13px;
+        }
+        
+        .why-join li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .select-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .select-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Opacity levels */
+        .opacity-20 { background: rgba(251, 146, 60, 0.2) !important; }
+        .opacity-35 { background: rgba(251, 146, 60, 0.35) !important; }
+        .opacity-50 { background: rgba(251, 146, 60, 0.5) !important; }
+        .opacity-65 { background: rgba(251, 146, 60, 0.65) !important; }
+        .opacity-80 { background: rgba(251, 146, 60, 0.8) !important; }
+        .opacity-95 { background: rgba(251, 146, 60, 0.95) !important; }
+        
+        @media (max-width: 768px) {
+            .card-preview {
+                flex-direction: column;
+            }
+            .card-image-side, .card-content-side {
+                flex: 1 1 100%;
+            }
+            .card-image-side {
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Choose Card Opacity</h1>
+        <p class="subtitle-text">More transparency shows background | Less transparency = better text readability</p>
+        
+        <!-- Current: 35% Opacity -->
+        <div class="opacity-option">
+            <h2 class="option-title">CURRENT: 35% Opacity</h2>
+            <p class="option-description">Very transparent - Background highly visible, text might be harder to read</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-35">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px;">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4>Why Join?</h4>
+                        <ul>
+                            <li>Hands-on cooking experience</li>
+                            <li>Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="alert('This is the current opacity!')">CURRENT DESIGN</button>
+        </div>
+        
+        <!-- Option 1: 20% Very Light -->
+        <div class="opacity-option">
+            <h2 class="option-title">OPTION 1: 20% Opacity - Very Light</h2>
+            <p class="option-description">Maximum transparency - Background dominates, text needs strong shadows</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-20">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; text-shadow: 3px 3px 6px rgba(0,0,0,0.9);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Why Join?</h4>
+                        <ul>
+                            <li style="text-shadow: 1px 1px 3px rgba(0,0,0,0.9);">Hands-on cooking experience</li>
+                            <li style="text-shadow: 1px 1px 3px rgba(0,0,0,0.9);">Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectOpacity(1)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 2: 50% Medium -->
+        <div class="opacity-option">
+            <h2 class="option-title">OPTION 2: 50% Opacity - Medium Balance</h2>
+            <p class="option-description">Good balance - Background visible, text clearly readable</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-50">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4>Why Join?</h4>
+                        <ul>
+                            <li>Hands-on cooking experience</li>
+                            <li>Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectOpacity(2)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 3: 65% Strong -->
+        <div class="opacity-option">
+            <h2 class="option-title">OPTION 3: 65% Opacity - Strong Presence</h2>
+            <p class="option-description">More solid - Background subtle, excellent text readability</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-65">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px;">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4>Why Join?</h4>
+                        <ul>
+                            <li>Hands-on cooking experience</li>
+                            <li>Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectOpacity(3)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 4: 80% Very Strong -->
+        <div class="opacity-option">
+            <h2 class="option-title">OPTION 4: 80% Opacity - Very Strong</h2>
+            <p class="option-description">Almost solid - Maximum readability, background barely visible</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-80">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px;">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4>Why Join?</h4>
+                        <ul>
+                            <li>Hands-on cooking experience</li>
+                            <li>Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectOpacity(4)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 5: 95% Nearly Solid -->
+        <div class="opacity-option">
+            <h2 class="option-title">OPTION 5: 95% Opacity - Nearly Solid</h2>
+            <p class="option-description">Fully solid colors - Background not visible, perfect readability</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side opacity-95">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px;">Master cooking, nutrition & life skills</p>
+                    <div class="why-join">
+                        <h4>Why Join?</h4>
+                        <ul>
+                            <li>Hands-on cooking experience</li>
+                            <li>Learn nutrition & health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectOpacity(5)">SELECT THIS</button>
+        </div>
+    </div>
+    
+    <script>
+        function selectOpacity(option) {
+            const messages = {
+                1: "20% Opacity selected! Tell Cascade: 'opacity 1'",
+                2: "50% Opacity selected! Tell Cascade: 'opacity 2'",
+                3: "65% Opacity selected! Tell Cascade: 'opacity 3'",
+                4: "80% Opacity selected! Tell Cascade: 'opacity 4'",
+                5: "95% Opacity selected! Tell Cascade: 'opacity 5'"
+            };
+            
+            alert(messages[option]);
+        }
+    </script>
+</body>
+</html>

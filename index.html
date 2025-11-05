@@ -1218,6 +1218,34 @@
         }
       }
       
+      /* ===== ABOUT SECTION FIXES ===== */
+      /* Fix Our Heritage image to show whole image without zoom/crop */
+      #about .meeting-item .thumb img {
+        object-fit: contain !important;
+        background: #f7f7f7 !important;
+        width: 100% !important;
+        height: 250px !important;
+      }
+      
+      /* Make stat tags smaller and position in corner */
+      #about .meeting-item .thumb .price {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        left: auto !important;
+        background: rgba(120, 209, 197, 0.95) !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+      }
+      
+      #about .meeting-item .thumb .price span {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+      }
+      
       /* ===== CUSTOM SCROLL ANIMATIONS ===== */
       /* ===== TYPEWRITER HERO ANIMATION ===== */
       .hero-typewriter-container {
@@ -1518,7 +1546,8 @@ https://templatemo.com/tm-569-edu-meeting
   <section class="section main-banner" id="top" data-section="section1">
       <!-- Auto-rotating Image Carousel - Full Coverage -->
       <div class="carousel-container" id="bg-carousel">
-          <div class="carousel-slide active" style="background-image: url('assets/images/hero1.jpeg')"></div>
+          <div class="carousel-slide active" style="background-image: url('assets/images/hero11.jpeg')"></div>
+          <div class="carousel-slide" style="background-image: url('assets/images/carousel-1.jpg')"></div>
           <div class="carousel-slide" style="background-image: url('assets/images/carousel-2.jpg')"></div>
           <div class="carousel-slide" style="background-image: url('assets/images/hero2.jpeg')"></div>
           <div class="carousel-slide" style="background-image: url('assets/images/carousel-4.jpg')"></div>
@@ -1550,7 +1579,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-12">
           <!-- ANIMATION: Fade down for heading -->
           <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-            <h2>About Our Academy</h2>
+            <h2>About Our School</h2>
           </div>
         </div>
         <div class="col-lg-4">
@@ -1615,7 +1644,7 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="thumb">
                   <div class="price"><span>100%</span></div>
-                  <img src="assets/images/meeting-04.jpg" alt="Success">
+                  <img src="assets/images/graduation.jpeg" alt="Success">
                 </div>
                 <div class="down-content">
                   <h4>Secondary Placement</h4>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTION 3: Masonry Pinterest Style</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', Arial, sans-serif; 
+            background: #fafafa;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 { 
+            font-size: 36px; 
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #1f272b, #78D1C5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p { font-size: 16px; color: #666; }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #78D1C5;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            color: #1f272b;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #78D1C5;
+            color: white;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 25px;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 25px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .item-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .item-content {
+            padding: 20px;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #e8f8f5;
+            color: #78D1C5;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .item-content h3 {
+            font-size: 20px;
+            color: #1f272b;
+            margin-bottom: 10px;
+        }
+        
+        .item-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .student-count {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .avatar-stack {
+            display: flex;
+            margin-right: 5px;
+        }
+        
+        .avatar {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #78D1C5, #5fb3a8);
+            border: 2px solid white;
+            margin-left: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
+        .avatar:first-child {
+            margin-left: 0;
+        }
+        
+        .view-details {
+            background: #78D1C5;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+        
+        .view-details:hover {
+            background: #1f272b;
+        }
+        
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-preview img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 992px) {
+            .masonry-grid { column-count: 2; }
+        }
+        
+        @media (max-width: 576px) {
+            .masonry-grid { column-count: 1; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📌 OPTION 3: Masonry / Pinterest Style</h1>
+            <p>Dynamic grid layout - Visual-heavy presentation</p>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active">All Activities</button>
+            <button class="filter-btn">Sports</button>
+            <button class="filter-btn">Arts</button>
+            <button class="filter-btn">Outdoor</button>
+            <button class="filter-btn">Saturday</button>
+            <button class="filter-btn">Weekday</button>
+        </div>
+        
+        <div class="masonry-grid">
+            <!-- Item 1 - Tall -->
+            <div class="masonry-item">
+                <img src="assets/images/homescience.jpg" alt="Home Science" class="item-image">
+                <div class="item-content">
+                    <div class="tags">
+                        <span class="tag">Arts</span>
+                        <span class="tag">Life Skills</span>
+                        <span class="tag">Saturday</span>
+                    </div>
+                    <h3>🍳 Home Science Club</h3>
+                    <p>Learn cooking, nutrition, and practical life skills in our well-equipped kitchen.</p>
+                    <div class="meta-info">
+                        <div class="student-count">
+                            <div class="avatar-stack">
+                                <div class="avatar">MW</div>
+                                <div class="avatar">SK</div>
+                                <div class="avatar">+33</div>
+                            </div>
+                            <span>35 Students</span>
+                        </div>
+                        <a href="#" class="view-details">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 - Short -->
+            <div class="masonry-item">
+                <div class="item-content">
+                    <div class="tags">
+                        <span class="tag">Sports</span>
+                        <span class="tag">Self-Defense</span>
+                    </div>
+                    <h3>🥋 Taekwondo</h3>
+                    <p>Discipline, fitness, and self-defense techniques.</p>
+                    <div class="gallery-preview">
+                        <img src="assets/images/taekwondo.jpg" alt="TKD 1">
+                        <img src="assets/images/taekwondo1.jpg" alt="TKD 2">
+                        <img src="assets/images/taekwondo2.jpg" alt="TKD 3">
+                        <img src="assets/images/taekwondo3.jpg" alt="TKD 4">
+                    </div>
+                    <div class="meta-info">
+                        <div class="student-count">
+                            <i class="fas fa-users"></i>
+                            <span>32 Students</span>
+                        </div>
+                        <a href="#" class="view-details">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 - Medium -->
+            <div class="masonry-item">
+                <img src="assets/images/meeting-04.jpg" alt="Scouts" class="item-image">
+                <div class="item-content">
+                    <div class="tags">
+                        <span class="tag">Outdoor</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Adventure</span>
+                    </div>
+                    <h3>🏕️ Scouts</h3>
+                    <p>Build leadership skills, teamwork, and outdoor survival knowledge through exciting activities.</p>
+                    <div class="meta-info">
+                        <div class="student-count">
+                            <i class="fas fa-clock"></i>
+                            <span>Saturday 8AM</span>
+                        </div>
+                        <a href="#" class="view-details">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 4 - Short info card -->
+            <div class="masonry-item">
+                <div class="item-content" style="background: linear-gradient(135deg, #78D1C5, #5fb3a8); color: white;">
+                    <h3 style="color: white;">✨ Why Join Our Clubs?</h3>
+                    <ul style="padding-left: 20px; margin: 15px 0;">
+                        <li>Develop new skills</li>
+                        <li>Make friends</li>
+                        <li>Build confidence</li>
+                        <li>Expert instructors</li>
+                    </ul>
+                    <a href="#" class="view-details" style="background: white; color: #78D1C5;">Explore All</a>
+                </div>
+            </div>
+            
+            <!-- Item 5 - Tall with quote -->
+            <div class="masonry-item">
+                <div class="item-content">
+                    <div class="tags">
+                        <span class="tag">Music</span>
+                        <span class="tag">Performance</span>
+                    </div>
+                    <h3>🎵 Choir</h3>
+                    <p>Develop musical talents and perform at school events and competitions.</p>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; margin: 15px 0; font-style: italic; color: #666;">
+                        "Singing in choir has boosted my confidence!" - Grade 7 Student
+                    </div>
+                    <div class="meta-info">
+                        <div class="student-count">
+                            <i class="fas fa-users"></i>
+                            <span>28 Students</span>
+                        </div>
+                        <a href="#" class="view-details">Audition</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 6 - Medium -->
+            <div class="masonry-item">
+                <img src="assets/images/football.jpeg" alt="Football" class="item-image">
+                <div class="item-content">
+                    <div class="tags">
+                        <span class="tag">Sports</span>
+                        <span class="tag">Team Sport</span>
+                    </div>
+                    <h3>⚽ Football</h3>
+                    <p>Teamwork, strategy, and fitness on the field.</p>
+                    <div class="meta-info">
+                        <div class="student-count">
+                            <i class="fas fa-trophy"></i>
+                            <span>Regional Champs</span>
+                        </div>
+                        <a href="#" class="view-details">Join Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

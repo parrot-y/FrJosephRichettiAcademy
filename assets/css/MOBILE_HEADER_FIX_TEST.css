@@ -3,6 +3,33 @@
    Review this before applying to the site
    ========================================== */
 
+/* ===== DESKTOP FIX: Ensure dropdown works ===== */
+@media (min-width: 992px) {
+    /* Ensure submenu appears on hover */
+    .header-area .main-nav .nav li.has-sub:hover ul.sub-menu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 1000 !important;
+        display: block !important;
+    }
+    
+    /* Ensure submenu is positioned correctly */
+    .header-area .main-nav .nav li.has-sub ul.sub-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        background: #f7f7f7 !important;
+        min-width: 200px !important;
+        box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06) !important;
+    }
+    
+    /* Make submenu clickable */
+    .header-area .main-nav .nav li.has-sub ul.sub-menu li a {
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+}
+
 @media (max-width: 991px) {
     
     /* ===== 1. HIDE SUB-HEADER (Social Media & Contact) ===== */

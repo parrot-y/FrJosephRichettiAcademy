@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTION 2: Horizontal Scroll Timeline</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', Arial, sans-serif; 
+            background: linear-gradient(135deg, #1f272b 0%, #34495e 100%);
+            padding: 40px 0;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+            padding: 0 20px;
+        }
+        .header h1 { font-size: 36px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+        
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 20px;
+            gap: 30px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #78D1C5;
+            border-radius: 10px;
+        }
+        
+        .timeline-card {
+            min-width: 500px;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .card-left {
+            width: 45%;
+            position: relative;
+        }
+        
+        .card-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #78D1C5;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .card-right {
+            width: 55%;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-right h3 {
+            font-size: 20px;
+            color: #1f272b;
+            margin-bottom: 15px;
+        }
+        
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .detail-item i {
+            color: #78D1C5;
+            width: 15px;
+        }
+        
+        .progress-bar {
+            margin-top: 10px;
+        }
+        
+        .progress-label {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 6px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #78D1C5, #5fb3a8);
+            border-radius: 10px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #78D1C5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5fb3a8;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #78D1C5;
+            color: #78D1C5;
+        }
+        
+        .scroll-hint {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-card {
+                min-width: 90vw;
+                max-width: 90vw;
+                flex-direction: column;
+            }
+            .card-left, .card-right {
+                width: 100%;
+            }
+            .card-left {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📜 OPTION 2: Horizontal Scroll Timeline</h1>
+        <p>Swipe through activities - Interactive storytelling design</p>
+    </div>
+    
+    <div class="scroll-container">
+        <!-- Card 1 -->
+        <div class="timeline-card">
+            <div class="card-left">
+                <div class="card-number">01</div>
+                <img src="assets/images/homescience.jpg" alt="Home Science">
+            </div>
+            <div class="card-right">
+                <div>
+                    <h3>🍳 Home Science Club</h3>
+                    <div class="details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Every Saturday</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9:00 AM - 12:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user"></i>
+                            <span>Mrs. Sarah Wanjiku</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-label">35/40 Students Enrolled</div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width: 87.5%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Enroll Now</button>
+                    <button class="btn btn-outline">Details</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="timeline-card">
+            <div class="card-left">
+                <div class="card-number">02</div>
+                <img src="assets/images/meeting-04.jpg" alt="Scouts">
+            </div>
+            <div class="card-right">
+                <div>
+                    <h3>🏕️ Scouts</h3>
+                    <div class="details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Every Saturday</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8:00 AM - 12:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user"></i>
+                            <span>Mr. John Kamau</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-label">45/50 Students Enrolled</div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Enroll Now</button>
+                    <button class="btn btn-outline">Details</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="timeline-card">
+            <div class="card-left">
+                <div class="card-number">03</div>
+                <img src="assets/images/taekwondo.jpg" alt="Taekwondo">
+            </div>
+            <div class="card-right">
+                <div>
+                    <h3>🥋 Taekwondo</h3>
+                    <div class="details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Mon & Wed</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>4:00 PM - 5:30 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user"></i>
+                            <span>Coach Michael Omondi</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-label">32/35 Students Enrolled</div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width: 91%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Enroll Now</button>
+                    <button class="btn btn-outline">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-hint">
+        ← Scroll horizontally to see more activities →
+    </div>
+</body>
+</html>

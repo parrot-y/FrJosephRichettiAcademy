@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="assets/css/header-background-fix.css?v=20241028">
     <link rel="stylesheet" href="assets/css/disable-scroll-animations-fixed.css?v=20241028-animations-enabled">
     <link rel="stylesheet" href="assets/css/all-pages-ux-fix.css?v=20241028">
-    <link rel="stylesheet" href="assets/css/activities-page-fix.css?v=20241014">
+    <link rel="stylesheet" href="assets/css/activities-page-fix.css?v=20241105-banner">
     <link rel="stylesheet" href="assets/css/header-logo-fix.css?v=20241014">
     <!-- mobile-navigation-fix.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
@@ -36,6 +36,8 @@
     <!-- New Mobile Menu System - Same as Homepage -->
     <link rel="stylesheet" href="assets/css/mside.css?v=20241105">
     <link rel="stylesheet" href="assets/css/MOBILE_HEADER_FIX_TEST.css">
+    <link rel="stylesheet" href="assets/css/footer-styles.css">
+    <link rel="stylesheet" href="assets/css/activities-split-design.css?v=20241105-opacity75">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -137,338 +139,428 @@
 
 
   <!-- ***** Activities Showcase Start ***** -->
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <h2>Our Activities & Clubs</h2>
+  <section class="activities-split-section" id="meetings">
+    
+    <!-- Card 1: Home Science Club -->
+    <div class="split-card">
+      <div class="card-image">
+        <div class="owl-carousel owl-theme activity-carousel">
+          <div class="item">
+            <img src="assets/images/homescience.jpg" alt="Home Science Club">
+          </div>
+          <div class="item">
+            <img src="assets/images/homescience1.jpg" alt="Home Science Activities">
+          </div>
+          <div class="item">
+            <img src="assets/images/homescience2.jpg" alt="Home Science Practice">
+          </div>
+          <div class="item">
+            <img src="assets/images/homescience3.jpg" alt="Home Science Cooking">
           </div>
         </div>
+        <div class="image-overlay"></div>
       </div>
-      
-      <div class="row">
-        <!-- Home Science Club -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>35 Students</span>
-              </div>
-              <div class="date">
-                <h6>Every <span>Sat</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                <div class="item">
-                  <img src="assets/images/homescience.jpg" alt="Home Science Session">
-                </div>
-                <div class="item">
-                  <img src="assets/images/homescience1.jpg" alt="Home Science Practice">
-                </div>
-                <div class="item">
-                  <img src="assets/images/homescience2.jpg" alt="Home Science Activities">
-                </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🍳 Home Science Club</h4>
-              <p><strong>Time:</strong> 9:00 AM - 12:00 PM<br>
-              <strong>Instructor:</strong> Mrs. Sarah Wanjiku<br>
-              <strong>Students:</strong> 35 enrolled</p>
-            </div>
+      <div class="card-content">
+        <div class="card-number">01</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>35 Students</span>
+        </div>
+        <h2>🍳 Home Science Club</h2>
+        <p class="subtitle">Master cooking, nutrition & life skills</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Every Saturday | 9:00 AM - 12:00 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Hands-on cooking experience</li>
+            <li>Learn nutrition & health</li>
+            <li>Instructor: Mrs. Sarah Wanjiku</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Scouts -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>45 Students</span>
-              </div>
-              <div class="date">
-                <h6>Every <span>Sat</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                <div class="item">
-                  <img src="assets/images/meeting-04.jpg" alt="Scouts 1">
-                </div>
-                <div class="item">
-                  <img src="assets/images/course-01.jpg" alt="Scouts 2">
-                </div>
-                <div class="item">
-                  <img src="assets/images/course-02.jpg" alt="Scouts 3">
-                </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🏕️ Scouts</h4>
-              <p><strong>Time:</strong> 8:00 AM - 12:00 PM<br>
-              <strong>Coach:</strong> Mr. John Kamau<br>
-              <strong>Students:</strong> 45 enrolled</p>
-            </div>
+    <!-- Card 2: Scouts -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/meeting-04.jpg" alt="Scouts">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">02</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>45 Students</span>
+        </div>
+        <h2>🏕️ Scouts</h2>
+        <p class="subtitle">Adventure, leadership & teamwork</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Every Saturday | 8:00 AM - 12:00 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Outdoor survival skills</li>
+            <li>Leadership development</li>
+            <li>Coach: Mr. John Kamau</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Join Adventure <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Taekwondo -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>32 Students</span>
-              </div>
-              <div class="date">
-                <h6>Mon <span>Wed</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/taekwondo.jpg" alt="Taekwondo Training Session">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/taekwondo1.jpg" alt="Taekwondo Class in Action">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/taekwondo2.jpg" alt="Taekwondo Students Practicing">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🥋 Taekwondo</h4>
-              <p><strong>Time:</strong> 4:00 PM - 5:30 PM<br>
-              <strong>Instructor:</strong> Master Kim Lee<br>
-              <strong>Students:</strong> 32 enrolled</p>
-            </div>
+    <!-- Card 3: Taekwondo -->
+    <div class="split-card">
+      <div class="card-image">
+        <div class="owl-carousel owl-theme activity-carousel">
+          <div class="item">
+            <img src="assets/images/taekwondo.jpg" alt="Taekwondo Training">
+          </div>
+          <div class="item">
+            <img src="assets/images/taekwondo1.jpg" alt="Taekwondo Practice">
+          </div>
+          <div class="item">
+            <img src="assets/images/taekwondo2.jpg" alt="Taekwondo Class">
           </div>
         </div>
-
-        <!-- Skating -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>24 Students</span>
-              </div>
-              <div class="date">
-                <h6>Tue <span>Thu</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/skating.jpg" alt="Skating Session">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/skating1.jpg" alt="Skating Practice">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/skating2.jpg" alt="Skating Fun">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🛼 Skating</h4>
-              <p><strong>Time:</strong> 4:00 PM - 6:00 PM<br>
-              <strong>Instructor:</strong> Coach Sarah Kimani<br>
-              <strong>Students:</strong> 24 enrolled</p>
-            </div>
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">03</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>32 Students</span>
+        </div>
+        <h2>🥋 Taekwondo</h2>
+        <p class="subtitle">Discipline, fitness & self-defense</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Mon & Wed | 4:00 PM - 5:30 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Build physical fitness</li>
+            <li>Learn self-defense techniques</li>
+            <li>Master: Master Kim Lee</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Start Training <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Football -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>35 Students</span>
-              </div>
-              <div class="date">
-                <h6>Mon <span>Fri</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/course-01.jpg" alt="Football 1">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/course-02.jpg" alt="Football 2">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/course-03.jpg" alt="Football 3">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>⚽ Football</h4>
-              <p><strong>Time:</strong> 4:00 PM - 6:00 PM<br>
-              <strong>Coach:</strong> Coach Peter Mwangi<br>
-              <strong>Students:</strong> 35 enrolled</p>
-            </div>
+    <!-- Card 4: Skating -->
+    <div class="split-card">
+      <div class="card-image">
+        <div class="owl-carousel owl-theme activity-carousel">
+          <div class="item">
+            <img src="assets/images/skating.jpg" alt="Skating Fun">
+          </div>
+          <div class="item">
+            <img src="assets/images/skating1.jpg" alt="Skating Practice">
+          </div>
+          <div class="item">
+            <img src="assets/images/skating2.jpg" alt="Skating Skills">
+          </div>
+          <div class="item">
+            <img src="assets/images/skating3.jpg" alt="Skating Activity">
           </div>
         </div>
-
-        <!-- Drama Club -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>25 Students</span>
-              </div>
-              <div class="date">
-                <h6>Wed <span>Fri</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/course-04.jpg" alt="Drama 1">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/meeting-01.jpg" alt="Drama 2">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/meeting-02.jpg" alt="Drama 3">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🎭 Drama Club</h4>
-              <p><strong>Time:</strong> 3:00 PM - 5:00 PM<br>
-              <strong>Teacher:</strong> Ms. Grace Wanjiku<br>
-              <strong>Students:</strong> 25 enrolled</p>
-            </div>
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">04</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>24 Students</span>
+        </div>
+        <h2>🛼 Skating</h2>
+        <p class="subtitle">Balance, agility & fun on wheels</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Tue & Thu | 4:00 PM - 6:00 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Develop balance & coordination</li>
+            <li>Build confidence</li>
+            <li>Coach: Coach Sarah Kimani</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Roll With Us <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Music Club -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>60 Students</span>
-              </div>
-              <div class="date">
-                <h6>Mon-<span>Fri</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/meeting-03.jpg" alt="Music 1">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/meeting-04.jpg" alt="Music 2">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/course-01.jpg" alt="Music 3">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🎵 Music Club</h4>
-              <p><strong>Time:</strong> 7:30 AM - 8:00 AM<br>
-              <strong>Teacher:</strong> Mr. David Kiprotich<br>
-              <strong>Students:</strong> 60 enrolled</p>
-            </div>
+    <!-- Card 5: Football -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/football.jpeg" alt="Football">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">05</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>35 Students</span>
+        </div>
+        <h2>⚽ Football</h2>
+        <p class="subtitle">Teamwork, strategy & fitness</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Mon & Fri | 4:00 PM - 6:00 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Team sports & strategy</li>
+            <li>Physical fitness</li>
+            <li>Coach: Coach Peter Mwangi</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Join The Team <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Basketball -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>22 Students</span>
-              </div>
-              <div class="date">
-                <h6>Tue <span>Thu</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/course-02.jpg" alt="Basketball 1">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/course-03.jpg" alt="Basketball 2">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/course-04.jpg" alt="Basketball 3">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>🏀 Basketball</h4>
-              <p><strong>Time:</strong> 4:30 PM - 6:00 PM<br>
-              <strong>Coach:</strong> Coach James Ochieng<br>
-              <strong>Students:</strong> 22 enrolled</p>
-            </div>
+    <!-- Card 6: Drama Club -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/course-04.jpg" alt="Drama Club">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">06</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>25 Students</span>
+        </div>
+        <h2>🎭 Drama Club</h2>
+        <p class="subtitle">Express yourself through performance</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Wed & Fri | 3:00 PM - 5:00 PM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Build confidence & creativity</li>
+            <li>Performance opportunities</li>
+            <li>Teacher: Ms. Grace Wanjiku</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Take The Stage <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-        <!-- Catechism -->
-        <div class="col-lg-6">
-          <div class="meeting-single-item">
-            <div class="thumb">
-              <div class="price">
-                <span>85 Students</span>
-              </div>
-              <div class="date">
-                <h6>Wed <span>Fri</span></h6>
-              </div>
-              <div class="owl-carousel owl-theme activity-images">
-                  <div class="item">
-                    <img src="assets/images/meeting-01.jpg" alt="Catechism Class">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/meeting-02.jpg" alt="Catechism Prayer">
-                  </div>
-                  <div class="item">
-                    <img src="assets/images/meeting-03.jpg" alt="Catechism Study">
-                  </div>
-              </div>
-            </div>
-            <div class="down-content">
-              <h4>✝️ Catechism</h4>
-              <p><strong>Time:</strong> 2:30 PM - 3:30 PM<br>
-              <strong>Teacher:</strong> Fr. Peter Kiguru<br>
-              <strong>Students:</strong> 85 enrolled</p>
-            </div>
+    <!-- Card 7: Music Club -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/meeting-03.jpg" alt="Music Club">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">07</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>60 Students</span>
+        </div>
+        <h2>🎵 Music Club</h2>
+        <p class="subtitle">Discover your musical talents</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Mon-Fri | 7:30 AM - 8:00 AM</p>
           </div>
         </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Learn instruments & vocals</li>
+            <li>Perform at school events</li>
+            <li>Teacher: Mr. David Kiprotich</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Make Music <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
+    <!-- Card 8: Basketball -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/course-02.jpg" alt="Basketball">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">08</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>22 Students</span>
+        </div>
+        <h2>🏀 Basketball</h2>
+        <p class="subtitle">Speed, precision & team spirit</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Tue & Thu | 4:30 PM - 6:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Build speed & coordination</li>
+            <li>Competitive team sport</li>
+            <li>Coach: Coach James Ochieng</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Shoot Hoops <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 9: Catechism -->
+    <div class="split-card">
+      <div class="card-image">
+        <img src="assets/images/our_heritage.jpeg" alt="Catechism">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="card-number">09</div>
+        <div class="student-count-badge">
+          <i class="fas fa-users"></i>
+          <span>85 Students</span>
+        </div>
+        <h2>✝️ Catechism</h2>
+        <p class="subtitle">Deepen your faith & spiritual life</p>
+        
+        <div class="schedule-timeline">
+          <div class="schedule-icon">📅</div>
+          <div class="schedule-details">
+            <h5>Schedule</h5>
+            <p>Wed & Fri | 2:30 PM - 3:30 PM</p>
+          </div>
+        </div>
+        
+        <div class="why-join">
+          <h4>Why Join?</h4>
+          <ul>
+            <li>Learn Catholic teachings</li>
+            <li>Prepare for sacraments</li>
+            <li>Teacher: Fr. Peter Kiguru</li>
+          </ul>
+        </div>
+        
+        <a href="#" class="cta-button">
+          Grow In Faith <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
   <!-- ***** Activities Showcase End ***** -->
 
 
-  <!-- ***** Footer Start ***** -->
-  <section class="contact-us" id="contact">
+  <!-- ***** Footer Start - Matches Homepage ***** -->
+  <footer class="footer-horizontal">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 align-self-center">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="contact-us-content">
-                <div class="contact-info">
-                  <h4>Contact Information</h4>
-                  <ul>
-                    <li><i class="fa fa-map-marker"></i> P.O Box 78-00219, Kiambu</li>
-                    <li><i class="fa fa-phone"></i> 0717142643</li>
-                    <li><i class="fa fa-envelope"></i> frjosephrichetti@gmail.com</li>
-                  </ul>
-              </div>
-            </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>About Our School</h4>
+            <p>Fr. Joseph Richetti Catholic School provides quality education grounded in faith, excellence, and community values.</p>
+            <p><strong>Est. 2005</strong></p>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="right-info">
-            <ul>
-              <li>
-                <h6>School Hours</h6>
-                <span>Monday - Friday: 07:00 AM - 05:00 PM</span>
-              </li>
-              <li>
-                <h6>Phone</h6>
-                <span>0717142643</span>
-              </li>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#admissions">Admissions</a></li>
+              <li><a href="index.html#programs">Programs</a></li>
+              <li><a href="activities-clubs.html">Activities</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h4>Contact Information</h4>
+            <ul class="footer-contact">
+              <li><i class="fa fa-phone"></i> 0717142643</li>
+              <li><i class="fa fa-envelope"></i> frjosephrichetti@gmail.com</li>
+              <li><i class="fa fa-map-marker"></i> P.O Box 78-00219, Kiambu</li>
+              <li><i class="fa fa-globe"></i> www.fjrichetti.ac.ke</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </footer>
   <!-- ***** Footer End ***** -->
 
   <!-- Scripts -->
@@ -497,33 +589,29 @@
     });
   </script>
   
-  <!-- Old hamburger JavaScript removed - now using mside.js -->
-  
-  <!-- Activities Carousel Script -->
+  <!-- Activity Carousels Initialization -->
   <script>
     $(document).ready(function(){
-      // Initialize activity image carousels
-      $('.activity-images').owlCarousel({
+      // Force autoplay on activity carousels
+      $('.activity-carousel').owlCarousel({
         items: 1,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        autoplaySpeed: 800,
-        nav: false,
+        autoplayTimeout: 3500, // 3.5 seconds per slide
+        autoplayHoverPause: false, // Don't pause on hover
+        autoplaySpeed: 1000,
         dots: true,
-        dotsContainer: false,
+        nav: false,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
-        smartSpeed: 1000,
-        responsive: {
-          0: { items: 1 },
-          600: { items: 1 },
-          1000: { items: 1 }
-        }
+        smartSpeed: 800,
+        mouseDrag: true,
+        touchDrag: true
       });
     });
   </script>
+  
+  <!-- Old hamburger JavaScript removed - now using mside.js -->
   
   <!-- New Mobile Menu - Same as Homepage -->
   <script src="assets/js/mside.js"></script>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities Test - Variation 2: Compact Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    
+    <style>
+        /* VARIATION 2: COMPACT CARDS - Smaller, tighter layout */
+        
+        .activities-section-v2 {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('assets/images/activity1.jpeg');
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center;
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+        
+        .section-header-v2 {
+            background: linear-gradient(135deg, #1f272b 0%, #78D1C5 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section-header-v2 h6 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-header-v2 h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0;
+        }
+        
+        .split-card-v2 {
+            display: flex;
+            align-items: stretch;
+            min-height: 220px; /* Much smaller */
+            margin: 15px auto;
+            max-width: 1200px;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .split-card-v2:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .card-image-v2 {
+            flex: 0 0 65%; /* Larger image percentage */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image-v2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .split-card-v2:hover .card-image-v2 img {
+            transform: scale(1.05);
+        }
+        
+        .card-content-v2 {
+            flex: 0 0 35%; /* Smaller content area */
+            padding: 18px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(120, 209, 197, 0.3);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: white;
+            position: relative;
+        }
+        
+        .split-card-v2:nth-child(even) .card-content-v2 {
+            background: rgba(31, 39, 43, 0.3);
+        }
+        
+        .card-number-v2 {
+            font-size: 50px;
+            font-weight: 900;
+            opacity: 0.08;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            line-height: 1;
+        }
+        
+        .card-content-v2 h2 {
+            font-size: 20px; /* Smaller title */
+            font-weight: 800;
+            margin-bottom: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            line-height: 1.2;
+        }
+        
+        .subtitle-v2 {
+            font-size: 11px; /* Smaller subtitle */
+            opacity: 0.95;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        
+        .student-badge-v2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,255,255,0.35);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+        
+        .schedule-v2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+            padding: 8px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 8px;
+        }
+        
+        .schedule-v2 h5 {
+            font-size: 9px;
+            margin-bottom: 3px;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+        
+        .schedule-v2 p {
+            font-size: 11px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .why-join-v2 {
+            margin: 8px 0;
+        }
+        
+        .why-join-v2 h4 {
+            font-size: 10px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .why-join-v2 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .why-join-v2 li {
+            padding: 3px 0;
+            padding-left: 18px;
+            position: relative;
+            font-size: 10px;
+        }
+        
+        .why-join-v2 li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .cta-btn-v2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 18px; /* Smaller button */
+            background: rgba(255, 255, 255, 0.95);
+            color: #1f272b;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 11px;
+            margin-top: 8px;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+        
+        .cta-btn-v2:hover {
+            transform: translateX(6px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            color: #1f272b;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .split-card-v2, .split-card-v2:nth-child(even) {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .card-image-v2, .card-content-v2 {
+                flex: 1 1 100%;
+            }
+            
+            .card-image-v2 {
+                min-height: 200px;
+            }
+            
+            .card-content-v2 {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="activities-section-v2">
+        <div class="section-header-v2">
+            <h6>Discover Excellence</h6>
+            <h2>VARIATION 2: Compact Cards</h2>
+            <p style="margin-top: 15px; font-size: 14px;">Smaller, tighter layout - more cards visible at once</p>
+        </div>
+        
+        <!-- Card 1 -->
+        <div class="split-card-v2">
+            <div class="card-image-v2">
+                <img src="assets/images/homescience.jpg" alt="Home Science">
+            </div>
+            <div class="card-content-v2">
+                <div class="card-number-v2">01</div>
+                <div class="student-badge-v2">
+                    <i class="fas fa-users"></i>
+                    <span>35 Students</span>
+                </div>
+                <h2>🍳 Home Science</h2>
+                <p class="subtitle-v2">Cooking & nutrition skills</p>
+                
+                <div class="schedule-v2">
+                    <div style="font-size: 18px;">📅</div>
+                    <div>
+                        <h5>Schedule</h5>
+                        <p>Sat | 9:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v2">
+                    <h4>Why Join?</h4>
+                    <ul>
+                        <li>Cooking experience</li>
+                        <li>Nutrition & health</li>
+                        <li>Mrs. Sarah Wanjiku</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v2">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="split-card-v2">
+            <div class="card-image-v2">
+                <img src="assets/images/taekwondo.jpg" alt="Taekwondo">
+            </div>
+            <div class="card-content-v2">
+                <div class="card-number-v2">02</div>
+                <div class="student-badge-v2">
+                    <i class="fas fa-users"></i>
+                    <span>32 Students</span>
+                </div>
+                <h2>🥋 Taekwondo</h2>
+                <p class="subtitle-v2">Fitness & self-defense</p>
+                
+                <div class="schedule-v2">
+                    <div style="font-size: 18px;">📅</div>
+                    <div>
+                        <h5>Schedule</h5>
+                        <p>Mon & Wed | 4:00-5:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v2">
+                    <h4>Why Join?</h4>
+                    <ul>
+                        <li>Physical fitness</li>
+                        <li>Self-defense skills</li>
+                        <li>Master Kim Lee</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v2">
+                    Start Training <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="split-card-v2">
+            <div class="card-image-v2">
+                <img src="assets/images/skating.jpg" alt="Skating">
+            </div>
+            <div class="card-content-v2">
+                <div class="card-number-v2">03</div>
+                <div class="student-badge-v2">
+                    <i class="fas fa-users"></i>
+                    <span>24 Students</span>
+                </div>
+                <h2>🛼 Skating</h2>
+                <p class="subtitle-v2">Balance & agility</p>
+                
+                <div class="schedule-v2">
+                    <div style="font-size: 18px;">📅</div>
+                    <div>
+                        <h5>Schedule</h5>
+                        <p>Tue & Thu | 4:00-6:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="why-join-v2">
+                    <h4>Why Join?</h4>
+                    <ul>
+                        <li>Balance & coordination</li>
+                        <li>Build confidence</li>
+                        <li>Coach Sarah Kimani</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="cta-btn-v2">
+                    Roll With Us <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

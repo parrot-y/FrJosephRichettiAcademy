@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Cards - Font Options</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@300;400;600;700;800&family=Raleway:wght@300;400;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle-text {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        
+        .font-option {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .option-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .option-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .card-preview {
+            display: flex;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/activity1.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .card-image-side {
+            flex: 0 0 58%;
+            background: url('assets/images/homescience.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content-side {
+            flex: 0 0 42%;
+            padding: 30px 25px;
+            background: rgba(251, 146, 60, 0.35);
+            backdrop-filter: blur(8px);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-left: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 70px;
+            font-weight: 900;
+            opacity: 0.1;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+        
+        .schedule {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 12px;
+            background: rgba(255,255,255,0.22);
+            border-radius: 10px;
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+        
+        .schedule-icon {
+            font-size: 24px;
+            width: 35px;
+            text-align: center;
+        }
+        
+        .schedule h5 {
+            font-size: 11px;
+            margin-bottom: 4px;
+            opacity: 0.85;
+            text-transform: uppercase;
+        }
+        
+        .schedule p {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .why-join h4 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 15px 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .why-join ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-join li {
+            padding: 5px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 13px;
+        }
+        
+        .why-join li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 13px 28px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1f272b;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 15px;
+            align-self: flex-start;
+        }
+        
+        .select-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .select-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Font Options */
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-raleway { font-family: 'Raleway', sans-serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .font-opensans { font-family: 'Open Sans', sans-serif; }
+        
+        /* Text treatments */
+        .bold-style h2 { font-weight: 800; letter-spacing: -0.5px; }
+        .light-style h2 { font-weight: 600; }
+        .uppercase-style h2 { text-transform: uppercase; letter-spacing: 1px; }
+        .normal-style h2 { text-transform: none; }
+        
+        @media (max-width: 768px) {
+            .card-preview {
+                flex-direction: column;
+            }
+            .card-image-side, .card-content-side {
+                flex: 1 1 100%;
+            }
+            .card-image-side {
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔤 Choose Your Font Style</h1>
+        <p class="subtitle-text">Select the font and style that looks best for your activity cards</p>
+        
+        <!-- Current Font -->
+        <div class="font-option">
+            <h2 class="option-title">CURRENT: Default System Font</h2>
+            <p class="option-description">Current font with standard styling</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="alert('This is the current font!')">CURRENT DESIGN</button>
+        </div>
+        
+        <!-- Option 1: Poppins -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 1: Poppins Font</h2>
+            <p class="option-description">Modern, geometric, clean - Very popular for web design</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-poppins">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; font-weight: 400;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(1)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 2: Montserrat -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 2: Montserrat Font</h2>
+            <p class="option-description">Professional, elegant, strong presence</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-montserrat">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; font-weight: 400;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(2)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 3: Raleway -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 3: Raleway Font</h2>
+            <p class="option-description">Refined, sophisticated, excellent readability</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-raleway">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; font-weight: 400;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(3)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 4: Roboto -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 4: Roboto Font</h2>
+            <p class="option-description">Google's signature font - Clean, versatile, highly readable</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-roboto">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; font-weight: 400;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(4)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 5: Open Sans -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 5: Open Sans Font</h2>
+            <p class="option-description">Friendly, neutral, optimized for web and mobile</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-opensans">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 Students
+                    </div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">🍳 Home Science Club</h2>
+                    <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; font-weight: 400;">Master cooking, nutrition & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5>Schedule</h5>
+                            <p>Sat | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(5)">SELECT THIS</button>
+        </div>
+        
+        <!-- Option 6: Bold & Uppercase -->
+        <div class="font-option">
+            <h2 class="option-title">OPTION 6: Bold & Uppercase (Poppins)</h2>
+            <p class="option-description">Strong, impactful, attention-grabbing headlines</p>
+            <div class="card-preview">
+                <div class="card-image-side"></div>
+                <div class="card-content-side font-poppins">
+                    <div class="card-number">01</div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i> 35 STUDENTS
+                    </div>
+                    <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); text-transform: uppercase; letter-spacing: 1px;">🍳 HOME SCIENCE CLUB</h2>
+                    <p style="font-size: 13px; margin-bottom: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Master cooking & life skills</p>
+                    <div class="schedule">
+                        <div class="schedule-icon">📅</div>
+                        <div>
+                            <h5 style="letter-spacing: 1px;">SCHEDULE</h5>
+                            <p style="font-weight: 700;">SAT | 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="select-button" onclick="selectFont(6)">SELECT THIS</button>
+        </div>
+    </div>
+    
+    <script>
+        function selectFont(option) {
+            const messages = {
+                1: "Poppins font selected! Tell Cascade: 'font option 1'",
+                2: "Montserrat font selected! Tell Cascade: 'font option 2'",
+                3: "Raleway font selected! Tell Cascade: 'font option 3'",
+                4: "Roboto font selected! Tell Cascade: 'font option 4'",
+                5: "Open Sans font selected! Tell Cascade: 'font option 5'",
+                6: "Bold & Uppercase selected! Tell Cascade: 'font option 6'"
+            };
+            
+            alert(messages[option]);
+        }
+    </script>
+</body>
+</html>
