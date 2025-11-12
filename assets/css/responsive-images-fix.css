@@ -2,7 +2,7 @@
 /* Makes ALL images fully responsive across all devices */
 /* No cropping, stretching, or distortion - perfect scaling */
 
-/* ===== HERO CAROUSEL IMAGES - FULL SCREEN COVERAGE ===== */
+/* ===== HERO CAROUSEL IMAGES - FULL COVERAGE WITHOUT STRETCHING ===== */
 .carousel-slide {
     position: absolute !important;
     top: 0 !important;
@@ -23,21 +23,23 @@
     opacity: 1 !important;
 }
 
-/* Desktop - Full cover for professional look */
+/* Desktop - Full coverage, centered */
 @media (min-width: 1200px) {
     .carousel-slide {
         background-size: cover !important;
+        background-position: center center !important;
     }
 }
 
-/* Tablet - Maintain cover */
+/* Tablet - Full coverage, centered */
 @media (min-width: 768px) and (max-width: 1199px) {
     .carousel-slide {
         background-size: cover !important;
+        background-position: center center !important;
     }
 }
 
-/* Mobile - NO STRETCHING OR ZOOM - Perfect fit */
+/* Mobile - Full coverage, centered, no black spaces */
 @media (max-width: 767px) {
     .carousel-slide {
         background-size: cover !important;

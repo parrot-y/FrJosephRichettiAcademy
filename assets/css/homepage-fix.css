@@ -209,14 +209,13 @@ body.homepage .section:first-of-type {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-attachment: scroll !important;
-    background-color: #000000 !important;
     opacity: 0 !important;
     transition: opacity 1.5s ease-in-out !important;
-    /* Crystal clear images like Durham example */
+    /* Full coverage without black spaces, maintains aspect ratio */
     filter: none !important;
     -webkit-filter: none !important;
 }
@@ -225,7 +224,7 @@ body.homepage .section:first-of-type {
     opacity: 1 !important;
 }
 
-/* Ensure carousel shows COVER - No stretching or letterboxing */
+/* Full coverage - all screen sizes */
 @media (max-width: 1200px) {
     .carousel-slide {
         background-size: cover !important;
