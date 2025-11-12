@@ -4,7 +4,7 @@
 /* ACTIVITIES PAGE HEADER BANNER - LARGER SIZE */
 .heading-page {
     position: relative !important;
-    background-image: url('../images/activity2.jpeg') !important; /* Activity 2 image for banner */
+    background-image: url('../images/activitiesbackground.png') !important; /* Activities background image for banner */
     background-attachment: scroll !important;
     background-size: cover !important;
     background-position: center center !important;
