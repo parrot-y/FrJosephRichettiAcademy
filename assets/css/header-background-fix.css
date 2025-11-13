@@ -67,6 +67,11 @@
         text-shadow: none !important;
     }
     
+    .header-area .main-nav .logo .logo-text img {
+        max-width: 100% !important;
+        page-break-inside: avoid !important;
+    }
+    
     .background-header .main-nav .logo .logo-text {
         color: #1e1e1e !important;
     }
@@ -94,5 +99,12 @@
     .header-area .main-nav .nav li a:hover,
     .header-area .main-nav .nav li a.active {
         color: #78D1C5 !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-area {
+        position: sticky !important;
+        top: 0 !important;
     }
 }

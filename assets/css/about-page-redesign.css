@@ -2,13 +2,18 @@
 
 /* Hero Banner - Background Image */
 .heading-page {
-    background-image: url('../images/meeting-01.jpg') !important;
+    background-image: url('../images/aboutacademybackground.jpeg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     padding: 200px 0 !important;
     text-align: center !important;
     position: relative !important;
+}
+
+/* Hide the old video overlay layer on the about hero */
+.about-page .heading-page .video-overlay {
+    display: none !important;
 }
 
 .heading-page::before {
@@ -29,7 +34,7 @@
 
 .heading-page h6,
 .heading-page h2 {
-    display: none !important;
+    display: block !important;
 }
 
 /* Stats Bar - Like Durham Example */

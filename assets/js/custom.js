@@ -250,6 +250,12 @@
             var _this = $(this);
 
             _this.on('tap click', function (e) {
+                var href = _this.attr('href');
+                // If this link has a real destination, let the browser handle navigation
+                if (href && href !== '#' && href !== 'javascript:void(0)' && href !== 'javascript:void(0);') {
+                    return;
+                }
+
                 var thisItemParent = _this.parent('li'),
                     thisItemParentSiblingsWithDrop = thisItemParent.siblings('.has-sub');
 
