@@ -83,6 +83,30 @@
     font-size: 1.05rem;
 }
 
+/* Mobile accessibility improvements for category headers */
+@media (max-width: 768px) {
+    .activities-category-header {
+        padding: 0 16px;
+    }
+
+    .activities-category-header h3,
+    .activities-category-header p {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.78);
+        padding: 6px 14px;
+        border-radius: 12px;
+        margin-bottom: 8px;
+    }
+
+    .activities-category-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .activities-category-header p {
+        font-size: 0.95rem;
+    }
+}
+
 .category-label {
     display: inline-block;
     font-size: 0.85rem;
@@ -165,19 +189,21 @@
 }
 
 .split-card:nth-child(odd) .card-content {
-    background: rgba(251, 146, 60, 0.75) !important; /* Orange - 75% opacity */
+    /* Uniform navy background to match admission cards */
+    background: rgba(31, 41, 55, 0.9) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    color: white !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Lighter shadow for better readability */
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Stronger shadow for readability */
 }
 
 .split-card:nth-child(even) .card-content {
-    background: rgba(220, 38, 38, 0.75) !important; /* Deep Red - 75% opacity */
+    /* Uniform navy background to match admission cards */
+    background: rgba(31, 41, 55, 0.9) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    color: white !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Lighter shadow for better readability */
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Stronger shadow for readability */
 }
 
 .card-number {
