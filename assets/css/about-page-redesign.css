@@ -230,35 +230,33 @@
 }
 
 .cards-section .minimal-item {
-    background: rgba(255, 255, 255, 0.3) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-left: 5px solid rgba(255, 255, 255, 0.6) !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-.cards-section .minimal-item h3,
-.cards-section .minimal-item p,
-.cards-section .minimal-item ul li,
-.cards-section .minimal-item strong {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: rgba(241, 248, 233, 0.4) !important; /* Original green background with 40% opacity */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .cards-section .minimal-item:hover {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(220, 237, 200, 0.5) !important; /* Original hover green with 50% opacity */
     border-left-width: 8px !important;
     transform: translateX(5px);
 }
 
 .cards-section .minimal-item:nth-child(2) {
-    border-left-color: rgba(255, 255, 255, 0.6) !important;
+    background: rgba(255, 243, 224, 0.4) !important; /* Original orange background with 40% opacity */
+    border-left-color: #ff9800 !important; /* Keep original orange border */
+}
+
+.cards-section .minimal-item:nth-child(2):hover {
+    background: rgba(255, 224, 178, 0.5) !important; /* Original hover orange with 50% opacity */
 }
 
 .cards-section .minimal-item:nth-child(3) {
-    border-left-color: rgba(255, 255, 255, 0.6) !important;
+    background: rgba(252, 228, 236, 0.4) !important; /* Original pink background with 40% opacity */
+    border-left-color: #e91e63 !important; /* Keep original pink border */
+}
+
+.cards-section .minimal-item:nth-child(3):hover {
+    background: rgba(248, 187, 208, 0.5) !important; /* Original hover pink with 50% opacity */
 }
 
 .minimal-list {
