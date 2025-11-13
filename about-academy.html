@@ -9,7 +9,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>About Our Academy - Fr. Joseph Richetti Catholic School</title>
+    <title>About Our School - Fr. Joseph Richetti Catholic School</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,22 +37,122 @@
     <link rel="stylesheet" href="assets/css/transport-services.css">
     <link rel="stylesheet" href="assets/css/video-header.css?v=2024110401">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
-    
-    <!-- New Mobile Menu System - Same as Homepage -->
-    <link rel="stylesheet" href="assets/css/mside.css?v=20241105">
-    <link rel="stylesheet" href="assets/css/MOBILE_HEADER_FIX_TEST.css">
+    <!-- sliding-sidebar-nav.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/scroll-animations.css">
     
-    <!-- Old hamburger inline styles removed - now using mside.css and MOBILE_HEADER_FIX_TEST.css -->
+    <!-- Mobile Menu Inline Styles - COMPLETE MATCH HOMEPAGE -->
+    <style>
+      @media (max-width: 991px) {
+          /* DARK NAVY BLUE HEADER ON SCROLL */
+          body .header-area.background-header {
+              background: rgba(15, 32, 59, 0.85) !important;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          /* DEFAULT HEADER - SEMI-TRANSPARENT */
+          body .header-area {
+              background: rgba(0, 0, 0, 0.3) !important;
+              backdrop-filter: blur(10px) !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          /* HAMBURGER ICON - VISIBLE AND FUNCTIONAL */
+          body .header-area .main-nav .menu-trigger,
+          body .header-area .main-nav a.menu-trigger {
+              display: block !important;
+              position: absolute !important;
+              top: 10px !important;
+              right: 10px !important;
+              width: 50px !important;
+              height: 50px !important;
+              padding: 12px 8px !important;
+              background: transparent !important;
+              z-index: 999999 !important;
+              cursor: pointer !important;
+          }
+          
+          /* HAMBURGER 3 LINES - VISIBLE */
+          body .header-area .main-nav .menu-trigger span {
+              display: block !important;
+              width: 30px !important;
+              height: 4px !important;
+              background: #fff !important;
+              margin-bottom: 6px !important;
+              transition: all 0.3s ease !important;
+          }
+          
+          body .header-area .main-nav .menu-trigger span:last-child {
+              margin-bottom: 0 !important;
+          }
+          
+          /* X ANIMATION */
+          body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
+              transform: rotate(45deg) translate(7px, 7px) !important;
+          }
+          body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
+              opacity: 0 !important;
+          }
+          body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
+              transform: rotate(-45deg) translate(7px, -7px) !important;
+          }
+          
+          /* FORCE DARK MENU BACKGROUND */
+          body .header-area .main-nav .nav,
+          body .header-area .main-nav ul.nav,
+          body .header-area .main-nav .nav.mobile-active,
+          html body .header-area .main-nav .nav.mobile-active {
+              background: #2c3e50 !important;
+              background-color: #2c3e50 !important;
+              background-image: none !important;
+          }
+          
+          /* FORCE DARK MENU ITEMS */
+          body .header-area .main-nav .nav li,
+          html body .header-area .main-nav .nav li,
+          body .header-area .main-nav .nav.mobile-active li {
+              background: transparent !important;
+              background-color: transparent !important;
+              border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+              pointer-events: auto !important;
+          }
+          
+          /* FORCE WHITE TEXT - CLICKABLE */
+          body .header-area .main-nav .nav li a,
+          html body .header-area .main-nav .nav li a,
+          body .header-area .main-nav .nav.mobile-active li a,
+          body.about-page .header-area .main-nav .nav li a {
+              color: #ffffff !important;
+              background: transparent !important;
+              background-color: transparent !important;
+              pointer-events: auto !important;
+              cursor: pointer !important;
+              position: relative !important;
+              z-index: 999999 !important;
+          }
+          
+          /* MENU MUST BE ON TOP */
+          body .header-area .main-nav .nav,
+          body .header-area .main-nav .nav.mobile-active {
+              pointer-events: auto !important;
+          }
+          
+          body .header-area .main-nav .nav li a:hover {
+              background: rgba(255,255,255,0.1) !important;
+              color: #ffffff !important;
+          }
+      }
+    </style>
 
   </head>
 
 <body class="about-page about-page-wrapper">
 
-  <!-- Old nav-overlay removed - mside.js creates its own overlay -->
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay"></div>
 
   <!-- Sub Header -->
   <div class="sub-header">
@@ -103,7 +203,11 @@
                           <li><a href="index.html#newsletter">Newsletter</a></li>
                           <li><a href="index.html#contact">Contact</a></li> 
                       </ul>        
-                      <!-- Old menu-trigger button removed - using msideBtn instead -->
+                      <button class="menu-trigger" id="mobile-menu-trigger" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </button>
                       <!-- ***** Menu End ***** -->
                   </nav>
               </div>
@@ -132,38 +236,6 @@
     </div>
   </section>
   <!-- ***** Page Banner End ***** -->
-
-  <!-- Stats Bar -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="stat-item">
-            <div class="stat-number" data-count="795">0</div>
-            <div class="stat-label">students</div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="stat-item">
-            <div class="stat-number" data-count="19">0</div>
-            <div class="stat-label">years of excellence</div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="stat-item">
-            <div class="stat-number" data-count="45">0</div>
-            <div class="stat-label">staff members</div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="stat-item">
-            <div class="stat-number" data-count="100">0<span>%</span></div>
-            <div class="stat-label">CBE implementation</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Timeline Section -->
   <section class="timeline-section">
@@ -205,7 +277,7 @@
           <div class="timeline-content">
             <span class="timeline-year">2006</span>
             <h4>Opening Day</h4>
-            <p>In January, 68 pupils were admitted to Class One, marking the official beginning of Fr. Joseph Richetti Catholic School. Parents showed tremendous confidence in this new educational venture.</p>
+            <p>In January, our first cohort of pupils was welcomed into Class One, marking the official beginning of Fr. Joseph Richetti Catholic School. Parents showed tremendous confidence in this new educational venture.</p>
           </div>
           <div class="timeline-dot"></div>
         </div>
@@ -250,7 +322,7 @@
           <div class="timeline-content">
             <span class="timeline-year">2023-Present</span>
             <h4>Continued Excellence</h4>
-            <p>Under the leadership of Fr. John Kung'u (Director) and our dedicated staff, the school continues to thrive with 795 students, 70 staff members. The school now includes Junior Secondary section and has fully implemented the Competency-Based Education (CBE) curriculum.</p>
+            <p>Under the leadership of Fr. John Kung'u (Director) and our dedicated staff, the school continues to thrive as a vibrant community of learners and mentors. The school now includes Junior Secondary section and has fully implemented the Competency-Based Education (CBE) curriculum.</p>
           </div>
           <div class="timeline-dot"></div>
         </div>
@@ -359,7 +431,7 @@
         <div class="achievement-item">
           <div class="achievement-icon">👥</div>
           <h5>Growing Community</h5>
-          <p>From 68 students in 2006 to 795+ today</p>
+          <p>A welcoming school family that keeps expanding its impact year after year</p>
         </div>
         
         <div class="achievement-item">
@@ -452,6 +524,60 @@
           </div>
         </div>
       </div>
+
+      <!-- Learning Facilities & Enrichment -->
+      <div class="learning-enhancements">
+        <div class="section-subtitle">
+          <h4>Learning Facilities & Enrichment</h4>
+          <p>Dedicated spaces that extend discovery, creativity, and inclusive communication across every grade.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="facility-card">
+              <img src="assets/images/computer-lab.png" alt="Computer Lab" class="facility-image">
+              <div class="facility-content">
+                <h3>💻 Computer Lab</h3>
+                <p>All grades enjoy weekly ICT sessions that cultivate digital literacy, coding basics, and safe online habits.</p>
+                <p class="facility-instructor"><strong>Instructor:</strong> Ms. Rose</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="facility-card">
+              <img src="assets/images/french-class.png" alt="French Class" class="facility-image">
+              <div class="facility-content">
+                <h3>🇫🇷 French Class</h3>
+                <p>Interactive lessons introduce conversational French, cultural appreciation, and global awareness.</p>
+                <p class="facility-instructor"><strong>Facilitated by:</strong> Our language enrichment team</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="facility-card">
+              <img src="assets/images/sign-language.png" alt="Sign Language Program" class="facility-image">
+              <div class="facility-content">
+                <h3>🤟 Sign Language Club</h3>
+                <p>Students learn foundational Kenyan Sign Language, promoting empathy, confidence, and inclusive communication.</p>
+                <p class="facility-instructor"><strong>Facilitated by:</strong> Inclusive Education Mentors</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="facility-card">
+              <img src="assets/images/our_heritage.jpeg" alt="Catechism & Spiritual Formation" class="facility-image">
+              <div class="facility-content">
+                <h3>✝️ Catechism Sessions</h3>
+                <p>Weekly formation classes nurture faith, values, and service, open to every child in our school family.</p>
+                <p class="facility-instructor"><strong>Facilitated by:</strong> Parish Chaplaincy Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -479,65 +605,6 @@
                     
                     <br><br>
                     <strong>A DREAM REALIZED:</strong> Rev Fr. David Njau joined Karuri Parish in January 2004. The then St. Marks Nursery was running but not able to sustain itself financially due to low enrolment of pupils. In May 2004, together with the church leaders, Fr. Njau restructured the Nursery and two teachers were employed. By mid-2005, the parents requested that a private catholic school be established so that the nursery school graduates may continue their primary school education in the same serene environment.
-                    
-                    <br><br>
-                    <div class="enrollment-stats">
-                      <h5>📊 Student Enrollment Growth</h5>
-                      <div class="stats-table">
-                        <table class="enrollment-table">
-                          <thead>
-                            <tr>
-                              <th>Year</th>
-                              <th>Pre-School</th>
-                              <th>Primary</th>
-                              <th>Total</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong>2023</strong></td>
-                              <td>98</td>
-                              <td>380</td>
-                              <td><strong>478</strong></td>
-                            </tr>
-                            <tr>
-                              <td><strong>2024</strong></td>
-                              <td>115</td>
-                              <td>425</td>
-                              <td><strong>540</strong></td>
-                            </tr>
-                            <tr class="current-year">
-                              <td><strong>2025</strong></td>
-                              <td>135</td>
-                              <td>472</td>
-                              <td><strong>776</strong></td>
-                            </tr>
-                            <tr class="projected">
-                              <td><strong>2026*</strong></td>
-                              <td>165</td>
-                              <td>520</td>
-                              <td><strong>850</strong></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <p class="projection-note">*Projected enrollment</p>
-                      </div>
-                      
-                      <div class="visual-stats">
-                        <div class="stat-card">
-                          <div class="stat-number">776</div>
-                          <div class="stat-label">Current Students</div>
-                        </div>
-                        <div class="stat-card">
-                          <div class="stat-number">70</div>
-                          <div class="stat-label">Staff Members</div>
-                        </div>
-                        <div class="stat-card">
-                          <div class="stat-number">62%</div>
-                          <div class="stat-label">Growth Rate</div>
-                        </div>
-                      </div>
-                    </div>
                   </p>
                 </div>
               </div>
@@ -764,7 +831,76 @@
   </script>
   
   <!-- SLIDING SIDEBAR NAVIGATION SCRIPT -->
-  <!-- Old hamburger JavaScript removed - now using mside.js -->
+  <script>
+    (function() {
+        'use strict';
+        
+        // Wait for DOM to be ready
+        window.addEventListener('load', function() {
+            const hamburger = document.querySelector('.menu-trigger');
+            const nav = document.querySelector('.main-nav .nav');
+            const overlay = document.querySelector('.nav-overlay');
+            
+            if (!hamburger || !nav || !overlay) {
+                console.error('Required elements not found');
+                return;
+            }
+            
+            // Clone hamburger to remove any existing listeners
+            const newHamburger = hamburger.cloneNode(true);
+            hamburger.parentNode.replaceChild(newHamburger, hamburger);
+            const hamburgerBtn = document.querySelector('.menu-trigger');
+            
+            // Function to open menu
+            function openMenu() {
+                nav.classList.add('mobile-active');
+                hamburgerBtn.classList.add('active');
+                overlay.classList.add('active');
+                document.body.classList.add('menu-open');
+            }
+            
+            // Function to close menu
+            function closeMenu() {
+                nav.classList.remove('mobile-active');
+                hamburgerBtn.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+            
+            // Toggle menu on hamburger click
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (nav.classList.contains('mobile-active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+            
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', function() {
+                closeMenu();
+            });
+            
+            // Close menu when clicking a link
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+            
+            // Close menu on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && nav.classList.contains('mobile-active')) {
+                    closeMenu();
+                }
+            });
+        });
+    })();
+  </script>
   
   <script>
         //according to loftblog tut
@@ -813,70 +949,7 @@
         });
     </script>
     
-    <!-- New Mobile Menu - Same as Homepage -->
-    <script src="assets/js/mside.js"></script>
-    
-    <!-- Counting Animation Script -->
-    <script>
-    $(document).ready(function() {
-        // Counter animation function
-        function animateCounter($counter) {
-            const $this = $counter;
-            const countTo = $this.attr('data-count');
-            const hasPercent = $this.find('span').length > 0;
-            
-            $({ countNum: parseInt($this.text()) }).animate({
-                countNum: countTo
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function() {
-                    if (hasPercent) {
-                        $this.text(Math.floor(this.countNum) + '%');
-                    } else {
-                        $this.text(Math.floor(this.countNum) + (countTo >= 1000 ? '+' : ''));
-                    }
-                },
-                complete: function() {
-                    if (hasPercent) {
-                        $this.text(countTo + '%');
-                    } else {
-                        $this.text(countTo + (countTo >= 1000 ? '+' : ''));
-                    }
-                }
-            });
-        }
-        
-        // Check if element is in viewport
-        function isInViewport(element) {
-            var elementTop = $(element).offset().top;
-            var elementBottom = elementTop + $(element).outerHeight();
-            var viewportTop = $(window).scrollTop();
-            var viewportBottom = viewportTop + $(window).height();
-            
-            return elementBottom > viewportTop && elementTop < viewportBottom;
-        }
-        
-        // Trigger counter when in viewport
-        var hasAnimated = false;
-        $(window).scroll(function() {
-            if (!hasAnimated && isInViewport($('.stats-bar'))) {
-                $('.stat-number').each(function() {
-                    animateCounter($(this));
-                });
-                hasAnimated = true;
-            }
-        });
-        
-        // Trigger on page load if already visible
-        if (isInViewport($('.stats-bar'))) {
-            $('.stat-number').each(function() {
-                animateCounter($(this));
-            });
-            hasAnimated = true;
-        }
-    });
-    </script>
+    <script src="assets/js/mobile-navigation.js"></script>
     
     <!-- Video Header Smooth Loading Script -->
     <script>

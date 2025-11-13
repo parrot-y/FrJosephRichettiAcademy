@@ -59,6 +59,43 @@
     filter: brightness(1); /* Full brightness on hover */
 }
 
+.activities-category-header {
+    text-align: center;
+    color: #ffffff;
+    margin: 40px auto 25px;
+    max-width: 760px;
+    padding: 10px 20px 0;
+}
+
+.activities-category-header.secondary {
+    margin-top: 70px;
+}
+
+.activities-category-header h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.activities-category-header p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+}
+
+.category-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fefefe;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 /* Carousel styling for activity cards */
 .card-image .owl-carousel {
     height: 100%;

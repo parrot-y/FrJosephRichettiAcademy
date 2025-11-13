@@ -1617,12 +1617,12 @@ https://templatemo.com/tm-569-edu-meeting
               <!-- ANIMATION: Fade up with 100ms delay (staggered) -->
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <div class="thumb">
-                  <div class="price"><span>776</span></div>
-                  <img src="assets/images/current students.png" alt="Students">
+                  <div class="price"><span>Community</span></div>
+                  <img src="assets/images/current students.png" alt="Learners">
                 </div>
                 <div class="down-content">
-                  <h4>Current Students</h4>
-                  <p>Pre-School (135) & Primary School (472)</p>
+                  <h4>Learning Community</h4>
+                  <p>Pre-school and primary learners growing together every day.</p>
                 </div>
               </div>
             </div>
@@ -1630,7 +1630,7 @@ https://templatemo.com/tm-569-edu-meeting
               <!-- ANIMATION: Fade up with 200ms delay (staggered) -->
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="thumb">
-                  <div class="price"><span>15:1</span></div>
+                  <div class="price"><span>Focused</span></div>
                   <img src="assets/images/smallclasssize.png" alt="Classes">
                 </div>
                 <div class="down-content">
@@ -1643,7 +1643,7 @@ https://templatemo.com/tm-569-edu-meeting
               <!-- ANIMATION: Fade up with 300ms delay (staggered) -->
               <div class="meeting-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="thumb">
-                  <div class="price"><span>100%</span></div>
+                  <div class="price"><span>Proven</span></div>
                   <img src="assets/images/secondary placement.png" alt="Success">
                 </div>
                 <div class="down-content">
@@ -2385,9 +2385,9 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="stat-icon">
                 <i class="fa fa-graduation-cap"></i>
               </div>
-              <div class="count-digit">98%</div>
-              <div class="count-title">Success Rate</div>
-              <div class="count-description">Students passing to secondary school</div>
+              <div class="count-digit">Thriving</div>
+              <div class="count-title">Secondary Transition</div>
+              <div class="count-description">Learners progressing confidently to the next stage</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -2395,9 +2395,9 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="stat-icon">
                 <i class="fa fa-users"></i>
               </div>
-              <div class="count-digit">45</div>
-              <div class="count-title">Qualified Staff</div>
-              <div class="count-description">Experienced teachers & administrators</div>
+              <div class="count-digit">Dedicated</div>
+              <div class="count-title">Educator Team</div>
+              <div class="count-description">Experienced teachers and administrators</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -2405,9 +2405,9 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="stat-icon">
                 <i class="fa fa-user-graduate"></i>
               </div>
-              <div class="count-digit">850</div>
-              <div class="count-title">Total Students</div>
-              <div class="count-description">Pre-school & primary enrollment</div>
+              <div class="count-digit">Engaged</div>
+              <div class="count-title">Learner Community</div>
+              <div class="count-description">A vibrant pre-school & primary family</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -2415,9 +2415,9 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="stat-icon">
                 <i class="fa fa-trophy"></i>
               </div>
-              <div class="count-digit">25</div>
-              <div class="count-title">Academic Awards</div>
-              <div class="count-description">Competitions & recognitions won</div>
+              <div class="count-digit">Celebrated</div>
+              <div class="count-title">Academic & Creative Honors</div>
+              <div class="count-description">Competitions and recognitions earned across disciplines</div>
             </div>
           </div>
         </div>
@@ -2922,53 +2922,6 @@ https://templatemo.com/tm-569-edu-meeting
             var yPos = -(scrolled - offset) * speed;
             $(this).css('background-position', 'center ' + yPos + 'px');
           });
-        });
-    </script>
-    
-    <!-- COUNTER ANIMATION FOR ACHIEVEMENTS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const counters = document.querySelectorAll('#achievements .count-digit');
-            let animated = false;
-            
-            const animateCounters = () => {
-                if (animated) return;
-                animated = true;
-                
-                counters.forEach(counter => {
-                    const target = counter.textContent.trim();
-                    const isPercentage = target.includes('%');
-                    const number = parseInt(target.replace('%', ''));
-                    
-                    let current = 0;
-                    const increment = number / 100;
-                    const duration = 2000; // 2 seconds
-                    const stepTime = duration / 100;
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= number) {
-                            current = number;
-                            clearInterval(timer);
-                        }
-                        counter.textContent = Math.floor(current) + (isPercentage ? '%' : '');
-                    }, stepTime);
-                });
-            };
-            
-            // Trigger animation when section is in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounters();
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            const achievementsSection = document.getElementById('achievements');
-            if (achievementsSection) {
-                observer.observe(achievementsSection);
-            }
         });
     </script>
 </body>

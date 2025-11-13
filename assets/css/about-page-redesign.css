@@ -259,6 +259,92 @@
     background: rgba(248, 187, 208, 0.5) !important; /* Original hover pink with 50% opacity */
 }
 
+.learning-enhancements {
+    margin-top: 60px;
+    padding: 50px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(17, 40, 58, 0.85), rgba(8, 24, 36, 0.85));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.learning-enhancements .section-subtitle {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #ffffff;
+}
+
+.learning-enhancements .section-subtitle h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.learning-enhancements .section-subtitle p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.facility-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.facility-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.facility-content {
+    padding: 25px 22px 30px;
+    color: #ffffff;
+}
+
+.facility-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.facility-content p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.facility-instructor {
+    margin-top: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.facility-instructor strong {
+    color: #78D1C5;
+}
+
+.learning-enhancements .row {
+    row-gap: 30px;
+}
+
+.learning-enhancements .facility-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .minimal-list {
     display: flex;
     flex-direction: column;
