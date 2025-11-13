@@ -34,6 +34,9 @@
     <!-- mobile-navigation-fix.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
     <link rel="stylesheet" href="assets/css/about-page-redesign.css?v=20241028b">
     <link rel="stylesheet" href="assets/css/mobile-fix-final.css?v=9">
+    <!-- New Mobile Menu System - Same as Homepage & Activities -->
+    <link rel="stylesheet" href="assets/css/mside.css?v=20241105">
+    <link rel="stylesheet" href="assets/css/MOBILE_HEADER_FIX_TEST.css">
     <link rel="stylesheet" href="assets/css/transport-services.css">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
     <!-- sliding-sidebar-nav.css removed to avoid conflicts; using mobile-menu-simple.css sitewide -->
@@ -42,109 +45,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/scroll-animations.css">
     
-    <!-- Mobile Menu Inline Styles - COMPLETE MATCH HOMEPAGE -->
-    <style>
-      @media (max-width: 991px) {
-          /* DARK NAVY BLUE HEADER ON SCROLL */
-          body .header-area.background-header {
-              background: rgba(15, 32, 59, 0.85) !important;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-              transition: all 0.3s ease !important;
-          }
-          
-          /* DEFAULT HEADER - SEMI-TRANSPARENT */
-          body .header-area {
-              background: rgba(0, 0, 0, 0.3) !important;
-              backdrop-filter: blur(10px) !important;
-              transition: all 0.3s ease !important;
-          }
-          
-          /* HAMBURGER ICON - VISIBLE AND FUNCTIONAL */
-          body .header-area .main-nav .menu-trigger,
-          body .header-area .main-nav a.menu-trigger {
-              display: block !important;
-              position: absolute !important;
-              top: 10px !important;
-              right: 10px !important;
-              width: 50px !important;
-              height: 50px !important;
-              padding: 12px 8px !important;
-              background: transparent !important;
-              z-index: 999999 !important;
-              cursor: pointer !important;
-          }
-          
-          /* HAMBURGER 3 LINES - VISIBLE */
-          body .header-area .main-nav .menu-trigger span {
-              display: block !important;
-              width: 30px !important;
-              height: 4px !important;
-              background: #fff !important;
-              margin-bottom: 6px !important;
-              transition: all 0.3s ease !important;
-          }
-          
-          body .header-area .main-nav .menu-trigger span:last-child {
-              margin-bottom: 0 !important;
-          }
-          
-          /* X ANIMATION */
-          body .header-area .main-nav .menu-trigger.active span:nth-child(1) {
-              transform: rotate(45deg) translate(7px, 7px) !important;
-          }
-          body .header-area .main-nav .menu-trigger.active span:nth-child(2) {
-              opacity: 0 !important;
-          }
-          body .header-area .main-nav .menu-trigger.active span:nth-child(3) {
-              transform: rotate(-45deg) translate(7px, -7px) !important;
-          }
-          
-          /* FORCE DARK MENU BACKGROUND */
-          body .header-area .main-nav .nav,
-          body .header-area .main-nav ul.nav,
-          body .header-area .main-nav .nav.mobile-active,
-          html body .header-area .main-nav .nav.mobile-active {
-              background: #2c3e50 !important;
-              background-color: #2c3e50 !important;
-              background-image: none !important;
-          }
-          
-          /* FORCE DARK MENU ITEMS */
-          body .header-area .main-nav .nav li,
-          html body .header-area .main-nav .nav li,
-          body .header-area .main-nav .nav.mobile-active li {
-              background: transparent !important;
-              background-color: transparent !important;
-              border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-              pointer-events: auto !important;
-          }
-          
-          /* FORCE WHITE TEXT - CLICKABLE */
-          body .header-area .main-nav .nav li a,
-          html body .header-area .main-nav .nav li a,
-          body .header-area .main-nav .nav.mobile-active li a,
-          body.about-page .header-area .main-nav .nav li a {
-              color: #ffffff !important;
-              background: transparent !important;
-              background-color: transparent !important;
-              pointer-events: auto !important;
-              cursor: pointer !important;
-              position: relative !important;
-              z-index: 999999 !important;
-          }
-          
-          /* MENU MUST BE ON TOP */
-          body .header-area .main-nav .nav,
-          body .header-area .main-nav .nav.mobile-active {
-              pointer-events: auto !important;
-          }
-          
-          body .header-area .main-nav .nav li a:hover {
-              background: rgba(255,255,255,0.1) !important;
-              color: #ffffff !important;
-          }
-      }
-    </style>
+    <!-- Old inline mobile menu styles removed - using mside.css & MOBILE_HEADER_FIX_TEST.css instead -->
 
   </head>
 
@@ -202,11 +103,7 @@
                           <li><a href="index.html#newsletter">Newsletter</a></li>
                           <li><a href="index.html#contact">Contact</a></li> 
                       </ul>        
-                      <button class="menu-trigger" id="mobile-menu-trigger" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                      </button>
+                      <!-- Mobile menu trigger now handled by mside.js (same as Activities & Homepage) -->
                       <!-- ***** Menu End ***** -->
                   </nav>
               </div>
@@ -824,167 +721,8 @@
     });
   </script>
   
-  <!-- SLIDING SIDEBAR NAVIGATION SCRIPT -->
-  <script>
-    (function() {
-        'use strict';
-        
-        // Wait for DOM to be ready
-        window.addEventListener('load', function() {
-            const hamburger = document.querySelector('.menu-trigger');
-            const nav = document.querySelector('.main-nav .nav');
-            const overlay = document.querySelector('.nav-overlay');
-            
-            if (!hamburger || !nav || !overlay) {
-                console.error('Required elements not found');
-                return;
-            }
-            
-            // Clone hamburger to remove any existing listeners
-            const newHamburger = hamburger.cloneNode(true);
-            hamburger.parentNode.replaceChild(newHamburger, hamburger);
-            const hamburgerBtn = document.querySelector('.menu-trigger');
-            
-            // Function to open menu
-            function openMenu() {
-                nav.classList.add('mobile-active');
-                hamburgerBtn.classList.add('active');
-                overlay.classList.add('active');
-                document.body.classList.add('menu-open');
-            }
-            
-            // Function to close menu
-            function closeMenu() {
-                nav.classList.remove('mobile-active');
-                hamburgerBtn.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-            
-            // Toggle menu on hamburger click
-            hamburgerBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                if (nav.classList.contains('mobile-active')) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
-            });
-            
-            // Close menu when clicking overlay
-            overlay.addEventListener('click', function() {
-                closeMenu();
-            });
-            
-            // Close menu when clicking a link
-            const navLinks = nav.querySelectorAll('a');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    closeMenu();
-                });
-            });
-            
-            // Close menu on ESC key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && nav.classList.contains('mobile-active')) {
-                    closeMenu();
-                }
-            });
-        });
-    })();
-  </script>
-  
-  <script>
-        //according to loftblog tut
-        $('.nav li:first').addClass('active');
-
-        var showSection = function showSection(section, isAnimate) {
-          var
-          direction = section.replace(/#/, ''),
-          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-          reqSectionPos = reqSection.offset().top - 0;
-
-          if (isAnimate) {
-            $('body, html').animate({
-              scrollTop: reqSectionPos },
-            800);
-          } else {
-            $('body, html').scrollTop(reqSectionPos);
-          }
-
-        };
-
-        var checkSection = function checkSection() {
-          $('.section').each(function () {
-            var
-            $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-              var
-              currentId = $this.data('section'),
-              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-              reqLink.closest('li').addClass('active').
-              siblings().removeClass('active');
-            }
-          });
-        };
-
-        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-          e.preventDefault();
-          showSection($(this).attr('href'), true);
-        });
-
-        $(window).scroll(function () {
-          checkSection();
-        });
-    </script>
-    
-    <script src="assets/js/mobile-navigation.js"></script>
-    
-    <!-- Video Header Smooth Loading Script -->
-    <script>
-    (function() {
-        var video = document.querySelector('.header-video');
-        
-        if (video) {
-            // Add loaded class when video is ready
-            video.addEventListener('loadeddata', function() {
-                video.classList.add('loaded');
-                video.style.opacity = '1';
-            });
-            
-            // Reduce video quality on slower connections
-            if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
-                video.remove(); // Use fallback image instead
-            }
-            
-            // Pause video when not visible to save resources
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.25 });
-            
-            observer.observe(video);
-            
-            // Ensure video plays on mobile
-            video.play().catch(function(error) {
-                console.log('Video autoplay failed:', error);
-                // Fallback: show poster image
-            });
-        }
-    })();
-    </script>
-    
-    <!-- Keep original functionality only -->
+  <!-- New Mobile Menu - Same as Homepage & Activities -->
+  <script src="assets/js/mside.js"></script>
 </body>
 
 </html>
